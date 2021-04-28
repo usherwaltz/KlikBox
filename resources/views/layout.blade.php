@@ -34,7 +34,7 @@
     <div class="row">
         <div class="col-lg-2 col-md-4 col-sm-10 col-8 order-1">
             <div class="logo-box">
-                <a class="logo-a" href="{{url()->current()}}">
+                <a class="logo-a" href="/home">
                     <img class="logo-i" src="/images/logo-nav.png" alt="logo-nav" width="223px">
                 </a>
             </div>
@@ -106,7 +106,7 @@ height: 50px;">
                 <input type="submit" value="">
                 <input type="text" placeholder="Pretraga..." name="">
             </form>
-        </div>      
+        </div>
         <div class="bag-box">
                 <div class="dropdown" style="float:left;">
                     <button class="dropbtn">
@@ -138,10 +138,10 @@ height: 50px;">
                   </div>
         </div>
         <div class="neto-box">
-            
+
             <p></p>
         </div>
-    </div>  
+    </div>
  </div>-->
 
     <!-- --------------------------------------------------------------- -->
