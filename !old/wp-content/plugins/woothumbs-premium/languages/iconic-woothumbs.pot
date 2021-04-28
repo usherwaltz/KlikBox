@@ -1,0 +1,857 @@
+# Copyright (C) 2020 iconic-woothumbs
+# This file is distributed under the same license as the iconic-woothumbs package.
+msgid ""
+msgstr ""
+"Project-Id-Version: iconic-woothumbs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: iconic-woothumbs.php:369, inc/admin/bulk-edit.php:14
+msgid "Bulk Edit Variation Images"
+msgstr ""
+
+#: iconic-woothumbs.php:369
+msgid "Bulk Edit"
+msgstr ""
+
+#: iconic-woothumbs.php:377
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: iconic-woothumbs.php:389
+msgid "WooThumbs"
+msgstr ""
+
+#: iconic-woothumbs.php:403
+msgid "Disable WooThumbs?"
+msgstr ""
+
+#: iconic-woothumbs.php:410
+msgid "Video URL"
+msgstr ""
+
+#: iconic-woothumbs.php:412
+msgid "Enter a video URL to display in the lightbox only ( a video play icon will be placed over the gallery images ). Most video hosting services are supported."
+msgstr ""
+
+#: iconic-woothumbs.php:419
+msgid "Maintain Slide Index?"
+msgstr ""
+
+#: iconic-woothumbs.php:421
+msgid "When checked, the slide index will be maintained upon changing images. For example, if you're viewing the second image in the slider, and change variation, the second image will be selected from the new images."
+msgstr ""
+
+#: iconic-woothumbs.php:429
+msgid "Maintain Gallery?"
+msgstr ""
+
+#: iconic-woothumbs.php:431
+msgid "When checked, the main product gallery will also be used for variations."
+msgstr ""
+
+#: iconic-woothumbs.php:537
+msgid "There was no change."
+msgstr ""
+
+#: iconic-woothumbs.php:540
+msgid "Please use only numbers and commas."
+msgstr ""
+
+#: iconic-woothumbs.php:543
+msgid "Sorry, an error occurred. Please try again."
+msgstr ""
+
+#: iconic-woothumbs.php:546
+msgid "Nothing was entered."
+msgstr ""
+
+#: iconic-woothumbs.php:735, templates/loop-images.php:40, inc/admin/settings.php:44
+msgid "Fullscreen"
+msgstr ""
+
+#: iconic-woothumbs.php:736, templates/loop-images.php:44
+msgid "Play Video"
+msgstr ""
+
+#: iconic-woothumbs.php:1234
+msgid "Browse Wishlist"
+msgstr ""
+
+#: iconic-woothumbs.php:1236
+msgid "Add to Wishlist"
+msgstr ""
+
+#. translators: %s is the link to WooThumbs settings page.
+#: inc/class-compat-elementor.php:114
+msgid "This element is styled by WooThumbs. Go to the <a href=\"%s\" target=\"_blank\">settings page</a> to customise the product gallery."
+msgstr ""
+
+#: inc/class-core-cross-sells.php:78
+msgid "Display individual product variations of a variable product in your product listings. Make it easy for your customers to view and filter product variations."
+msgstr ""
+
+#: inc/class-core-cross-sells.php:93
+msgid "Enable zoom, sliders, video, fullscreen, multiple images per variation, and customisable layout options for your product imagery."
+msgstr ""
+
+#: inc/class-core-cross-sells.php:108
+msgid "Choose a delivery date and time for each order. Add a limit to the number of allowed reservations, restrict time slots to specific delivery methods, and so much more."
+msgstr ""
+
+#: inc/class-core-cross-sells.php:123
+msgid "Link a group of WooCommerce products together by their attributes; a new way to handle product variations."
+msgstr ""
+
+#: inc/class-core-cross-sells.php:138
+msgid "Use transparent image layers for your variable products, removing the need to create hundreds of final product variation images."
+msgstr ""
+
+#: inc/class-core-cross-sells.php:153
+msgid "A modern take on quick view for WooCommerce; expand product details within your product listings for a convenient shopping experience."
+msgstr ""
+
+#: inc/class-core-cross-sells.php:164
+msgid "Add and manage pages in your WooCommerce \"My Account\" area using the native WordPress \"Pages\" functionality."
+msgstr ""
+
+#: inc/class-core-cross-sells.php:175
+msgid "Quickly view any product from the catalog, without reloading the page. Encourage sales with easy and efficient product browsing."
+msgstr ""
+
+#: inc/class-core-cross-sells.php:190
+msgid "Bored of the standard dropdown fields when viewing a variable product? Turn them into colour, image, or text swatches!"
+msgstr ""
+
+#: inc/class-core-cross-sells.php:205
+msgid "Easily add custom fields to your product variations; the perfect way to display organised additional product data to your customers."
+msgstr ""
+
+#: inc/class-core-cross-sells.php:216
+msgid "Bundle a selection of products on a single product page. It even works with variable products!"
+msgstr ""
+
+#: inc/class-core-cross-sells.php:227
+msgid "Use proven cross-selling techniques to increase the average order value of your store."
+msgstr ""
+
+#: inc/class-core-cross-sells.php:238
+msgid "Prevent abandoned carts with a slick multi-step checkout experience, designed for your customer’s device."
+msgstr ""
+
+#: inc/class-core-cross-sells.php:313
+msgid "Learn More"
+msgstr ""
+
+#: inc/class-core-cross-sells.php:322
+msgid "View All Iconic Plugins"
+msgstr ""
+
+#: inc/class-core-cross-sells.php:327
+msgid "Trusted by over 10,000 WooCommerce Businesses and Online Shops"
+msgstr ""
+
+#: inc/class-core-licence.php:184
+msgid "Back to Settings"
+msgstr ""
+
+#: inc/class-core-licence.php:210
+msgid "Changelog"
+msgstr ""
+
+#: inc/class-core-licence.php:221
+msgid "Manage Licence &amp; Billing"
+msgstr ""
+
+#: inc/class-core-settings.php:337
+msgid "Thank you for choosing Iconic. We've put together some useful links to help you get started:"
+msgstr ""
+
+#: inc/class-core-settings.php:342
+msgid "Need some help?"
+msgstr ""
+
+#. translators: Documentation URL.
+#: inc/class-core-settings.php:346
+msgid "Take a look at our <a href=\"%s?utm_source=Iconic&utm_medium=Plugin&utm_campaign=iconic-woothumbs&utm_content=need-some-help\" target=\"_blank\">troubleshooting documentation</a>."
+msgstr ""
+
+#: inc/class-core-settings.php:350
+msgid "There is a permanent link to the plugin documentation in the \"Support\" section below."
+msgstr ""
+
+#: inc/class-core-settings.php:425
+msgid "Getting Started"
+msgstr ""
+
+#: inc/class-core-settings.php:469
+msgid "Dashboard"
+msgstr ""
+
+#: inc/class-core-settings.php:476
+msgid "License &amp; Account Settings"
+msgstr ""
+
+#: inc/class-core-settings.php:482
+msgid "License &amp; Billing"
+msgstr ""
+
+#: inc/class-core-settings.php:483
+msgid "Activate or sync your license, cancel your subscription, print invoices, and manage your account information."
+msgstr ""
+
+#: inc/class-core-settings.php:489
+msgid "Your Account"
+msgstr ""
+
+#: inc/class-core-settings.php:490
+msgid "Manage all of your Iconic plugins, supscriptions, renewals, and more."
+msgstr ""
+
+#: inc/class-core-settings.php:502, inc/class-core-settings.php:508
+msgid "Support"
+msgstr ""
+
+#: inc/class-core-settings.php:509
+msgid "Get premium support with a valid license."
+msgstr ""
+
+#: inc/class-core-settings.php:515
+msgid "Documentation"
+msgstr ""
+
+#: inc/class-core-settings.php:516
+msgid "Read the plugin documentation."
+msgstr ""
+
+#: inc/class-core-settings.php:893
+msgid "Submit Ticket"
+msgstr ""
+
+#: inc/class-core-settings.php:902
+msgid "Read Documentation"
+msgstr ""
+
+#: inc/class-core-settings.php:911
+msgid "Manage Your Account"
+msgstr ""
+
+#: inc/class-media.php:52
+msgid "WooThumbs Media Details"
+msgstr ""
+
+#: inc/class-media.php:56
+msgid "Media URL"
+msgstr ""
+
+#. translators: %s: Link to wordpress.org article
+#: inc/class-media.php:62
+msgid "Enter a <a href=\"%s\" target=\"_blank\">valid media URL</a>, or click \"Attach MP4\" to upload your own MP4 video into the WordPress media library."
+msgstr ""
+
+#: inc/class-media.php:67
+msgid "Attach MP4"
+msgstr ""
+
+#: inc/class-media.php:73
+msgid "Aspect Ratio"
+msgstr ""
+
+#: inc/class-media.php:80
+msgid "Note"
+msgstr ""
+
+#: inc/class-media.php:80
+msgid "Any changes made to the WooThumbs media settings are saved automatically."
+msgstr ""
+
+#: inc/class-settings.php:59
+msgid "Welcome to WooThumbs for WooCommerce"
+msgstr ""
+
+#: inc/class-settings.php:60
+msgid "This wizard will quickly get you started with WooThumbs. It is optional and should only take a few minutes."
+msgstr ""
+
+#: inc/class-settings.php:61
+msgid "Start"
+msgstr ""
+
+#: inc/class-settings.php:65
+msgid "Which thumbnail layout do you prefer?"
+msgstr ""
+
+#: inc/class-settings.php:66
+msgid "WooThumbs makes it easy to customise your product image gallery. How you would like the thumbnails to be displayed?"
+msgstr ""
+
+#: inc/class-settings.php:67, inc/class-settings.php:99
+msgid "Continue"
+msgstr ""
+
+#: inc/class-settings.php:77, inc/admin/settings.php:356
+msgid "Below"
+msgstr ""
+
+#: inc/class-settings.php:81, inc/admin/settings.php:77, inc/admin/settings.php:357, inc/admin/settings.php:485, inc/admin/settings.php:608
+msgid "Left"
+msgstr ""
+
+#: inc/class-settings.php:85, inc/admin/settings.php:78, inc/admin/settings.php:358, inc/admin/settings.php:484, inc/admin/settings.php:609
+msgid "Right"
+msgstr ""
+
+#: inc/class-settings.php:89, inc/admin/settings.php:79, inc/admin/settings.php:610
+msgid "None"
+msgstr ""
+
+#: inc/class-settings.php:97
+msgid "How should the images transition?"
+msgstr ""
+
+#: inc/class-settings.php:98
+msgid "When transitioning between images in the gallery, which effect would you like to use?"
+msgstr ""
+
+#: inc/class-settings.php:109, inc/admin/settings.php:236
+msgid "Horizontal"
+msgstr ""
+
+#: inc/class-settings.php:113, inc/admin/settings.php:237
+msgid "Vertical"
+msgstr ""
+
+#: inc/class-settings.php:117, inc/admin/settings.php:238
+msgid "Fade"
+msgstr ""
+
+#: inc/class-settings.php:125
+msgid "You're ready to start using WooThumbs!"
+msgstr ""
+
+#: inc/class-settings.php:128
+msgid "Once you've saved the settings using the button below, go and visit a product page to see it in action."
+msgstr ""
+
+#: inc/class-settings.php:130
+msgid "Don't worry, you can still come back and change these settings whenever you like."
+msgstr ""
+
+#: inc/class-settings.php:132
+msgid "Finish &amp; Save"
+msgstr ""
+
+#: inc/class-settings.php:202
+msgid "The image cache has been cleared."
+msgstr ""
+
+#: inc/class-settings.php:207
+msgid "Touch threshold cannot be less then less than 1, the value has been reset to 5."
+msgstr ""
+
+#: inc/class-settings.php:254, inc/admin/settings.php:655
+msgid "Clear Image Cache"
+msgstr ""
+
+#: inc/admin/bulk-edit.php:16
+msgid "From this page you can edit all variation images from one place. Simply enter a comma separated list (no spaces) of image IDs for each variation and click Update. You can find your image IDs in the <a href=\"%s\" target=\"_blank\">Media Library</a>."
+msgstr ""
+
+#: inc/admin/bulk-edit.php:108
+msgid "Sorry, no variations were found."
+msgstr ""
+
+#: inc/admin/bulk-edit.php:94, inc/admin/bulk-edit.php:94
+msgid "Update"
+msgstr ""
+
+#: inc/admin/bulk-edit.php:94
+msgid "Updating..."
+msgstr ""
+
+#: inc/admin/bulk-edit.php:94
+msgid "Updated"
+msgstr ""
+
+#: inc/admin/bulk-edit.php:94
+msgid "Error"
+msgstr ""
+
+#: inc/admin/settings.php:19
+msgid "Display"
+msgstr ""
+
+#: inc/admin/settings.php:24
+msgid "Carousel"
+msgstr ""
+
+#: inc/admin/settings.php:29
+msgid "Media"
+msgstr ""
+
+#: inc/admin/settings.php:34
+msgid "Navigation"
+msgstr ""
+
+#: inc/admin/settings.php:39
+msgid "Zoom"
+msgstr ""
+
+#: inc/admin/settings.php:49
+msgid "Responsive"
+msgstr ""
+
+#: inc/admin/settings.php:59
+msgid "Display Settings"
+msgstr ""
+
+#: inc/admin/settings.php:65
+msgid "Gallery Width (%)"
+msgstr ""
+
+#: inc/admin/settings.php:66
+msgid "Enter a percentage for the width of the image gallery. The default for your theme is %d%%"
+msgstr ""
+
+#: inc/admin/settings.php:72
+msgid "Position"
+msgstr ""
+
+#: inc/admin/settings.php:73
+msgid "Choose a position for the images. Go to the Responsive tab to change the position at a certain breakpoint."
+msgstr ""
+
+#: inc/admin/settings.php:84
+msgid "Icon Colours"
+msgstr ""
+
+#: inc/admin/settings.php:91
+msgid "Show Icons on Hover?"
+msgstr ""
+
+#: inc/admin/settings.php:92
+msgid "When enabled, icons will only be visible when the image is hovered."
+msgstr ""
+
+#: inc/admin/settings.php:96, inc/admin/settings.php:107, inc/admin/settings.php:182, inc/admin/settings.php:193, inc/admin/settings.php:204, inc/admin/settings.php:215, inc/admin/settings.php:255, inc/admin/settings.php:273, inc/admin/settings.php:301, inc/admin/settings.php:322, inc/admin/settings.php:344, inc/admin/settings.php:406, inc/admin/settings.php:427, inc/admin/settings.php:540, inc/admin/settings.php:551, inc/admin/settings.php:562, inc/admin/settings.php:583, inc/admin/settings.php:620
+msgid "Yes"
+msgstr ""
+
+#: inc/admin/settings.php:97, inc/admin/settings.php:108, inc/admin/settings.php:183, inc/admin/settings.php:194, inc/admin/settings.php:205, inc/admin/settings.php:216, inc/admin/settings.php:256, inc/admin/settings.php:274, inc/admin/settings.php:302, inc/admin/settings.php:323, inc/admin/settings.php:345, inc/admin/settings.php:407, inc/admin/settings.php:428, inc/admin/settings.php:541, inc/admin/settings.php:552, inc/admin/settings.php:563, inc/admin/settings.php:584, inc/admin/settings.php:621
+msgid "No"
+msgstr ""
+
+#: inc/admin/settings.php:102
+msgid "Show Icon Tooltips?"
+msgstr ""
+
+#: inc/admin/settings.php:103
+msgid "When icons are hovered, a tooltip will be displayed."
+msgstr ""
+
+#: inc/admin/settings.php:117
+msgid "Image Sizes"
+msgstr ""
+
+#: inc/admin/settings.php:123
+msgid "Single Image Width (px)"
+msgstr ""
+
+#: inc/admin/settings.php:124
+msgid "For a responsive site, set this to the largest size your single image will be. Images will be regenerated automatically, but may take time to appear on the frontend."
+msgstr ""
+
+#: inc/admin/settings.php:130
+msgid "Single Image Crop Ratio"
+msgstr ""
+
+#: inc/admin/settings.php:131
+msgid "Common examples: 1:1, 4:6, 16:9. If empty, no cropping will occur. Once changed, product gallery images will be regenerated automatically, but may take time to appear on the frontend."
+msgstr ""
+
+#: inc/admin/settings.php:141
+msgid "Thumbnail Image Width (px)"
+msgstr ""
+
+#: inc/admin/settings.php:142
+msgid "Images will be regenerated automatically, but may take time to appear on the frontend."
+msgstr ""
+
+#: inc/admin/settings.php:148
+msgid "Thumbnail Image Crop Ratio"
+msgstr ""
+
+#: inc/admin/settings.php:149
+msgid "Common examples: 1:1, 4:6, 16:9. If empty, no cropping will occur. Once changed, thumbnail images will be regenerated automatically, but may take time to appear on the frontend."
+msgstr ""
+
+#: inc/admin/settings.php:159
+msgid "Large Image Size"
+msgstr ""
+
+#: inc/admin/settings.php:160
+msgid "Choose a size for large images. Hover zoom and fullscreen will both use the size you select here."
+msgstr ""
+
+#: inc/admin/settings.php:171
+msgid "MP4 Settings"
+msgstr ""
+
+#: inc/admin/settings.php:177
+msgid "Show Controls?"
+msgstr ""
+
+#: inc/admin/settings.php:178
+msgid "When enabled, the video controls will be visible."
+msgstr ""
+
+#: inc/admin/settings.php:188
+msgid "Loop?"
+msgstr ""
+
+#: inc/admin/settings.php:189
+msgid "When enabled, the video will loop continuously."
+msgstr ""
+
+#: inc/admin/settings.php:199, inc/admin/settings.php:250
+msgid "Autoplay?"
+msgstr ""
+
+#: inc/admin/settings.php:200
+msgid "When enabled, the video will autoplay once the page has loaded. Note: autoplay may not work on all devices. Also, the videos will be muted."
+msgstr ""
+
+#: inc/admin/settings.php:210
+msgid "Lazyload MP4 videos?"
+msgstr ""
+
+#: inc/admin/settings.php:211
+msgid "When enabled, videos will only be loaded when play button is clicked. Helps reduce pageload time."
+msgstr ""
+
+#: inc/admin/settings.php:225
+msgid "Carousel Settings"
+msgstr ""
+
+#: inc/admin/settings.php:231
+msgid "Mode"
+msgstr ""
+
+#: inc/admin/settings.php:232
+msgid "How should the main images transition?"
+msgstr ""
+
+#: inc/admin/settings.php:243
+msgid "Transition Speed (ms)"
+msgstr ""
+
+#: inc/admin/settings.php:244
+msgid "The speed at which images slide or fade in milliseconds."
+msgstr ""
+
+#: inc/admin/settings.php:251
+msgid "When enabled, the slider images will automatically transition."
+msgstr ""
+
+#: inc/admin/settings.php:261
+msgid "Slide Duration (ms)"
+msgstr ""
+
+#: inc/admin/settings.php:262
+msgid "If you have autoplay set to true, then you can set the slide duration for each slide."
+msgstr ""
+
+#: inc/admin/settings.php:268
+msgid "Enable Infinite Loop?"
+msgstr ""
+
+#: inc/admin/settings.php:269
+msgid "When you get to the last image, loop back to the first. Horizontal or Vertical modes only."
+msgstr ""
+
+#: inc/admin/settings.php:279
+msgid "Main Slider Touch Threshold"
+msgstr ""
+
+#: inc/admin/settings.php:280
+msgid "A bigger number means less swipe length is needed to advance the slider."
+msgstr ""
+
+#: inc/admin/settings.php:290
+msgid "General Navigation Settings"
+msgstr ""
+
+#: inc/admin/settings.php:296
+msgid "Enable Prev/Next Arrows?"
+msgstr ""
+
+#: inc/admin/settings.php:297
+msgid "This will display prev/next arrows over the main slider image."
+msgstr ""
+
+#: inc/admin/settings.php:311
+msgid "Thumbnails Settings"
+msgstr ""
+
+#: inc/admin/settings.php:317
+msgid "Enable Thumbnails?"
+msgstr ""
+
+#: inc/admin/settings.php:318
+msgid "Choose whether to enable the thumbnail navigation."
+msgstr ""
+
+#: inc/admin/settings.php:328
+msgid "Thumbnails Type"
+msgstr ""
+
+#: inc/admin/settings.php:329
+msgid "Choose either sliding or stacked thumbnails."
+msgstr ""
+
+#: inc/admin/settings.php:333
+msgid "Sliding thumbnails"
+msgstr ""
+
+#: inc/admin/settings.php:334
+msgid "Stacked Thumbnails"
+msgstr ""
+
+#: inc/admin/settings.php:339
+msgid "Enable Thumbnail Controls?"
+msgstr ""
+
+#: inc/admin/settings.php:340
+msgid "If you are using sliding thumbnails, enable or disable the prev/next controls."
+msgstr ""
+
+#: inc/admin/settings.php:350
+msgid "Thumbnails Position"
+msgstr ""
+
+#: inc/admin/settings.php:351
+msgid "Choose where the thumbnails are positioned in relation to the main images."
+msgstr ""
+
+#: inc/admin/settings.php:355
+msgid "Above"
+msgstr ""
+
+#: inc/admin/settings.php:363
+msgid "Width (%)"
+msgstr ""
+
+#: inc/admin/settings.php:364
+msgid "If you chose to position your thumbanils on the left or right, enter a percentage width for them."
+msgstr ""
+
+#: inc/admin/settings.php:370
+msgid "Thumbnails Count"
+msgstr ""
+
+#: inc/admin/settings.php:371
+msgid "The number of thumbnails to display in a row."
+msgstr ""
+
+#: inc/admin/settings.php:377
+msgid "Thumbnails Transition Speed (ms)"
+msgstr ""
+
+#: inc/admin/settings.php:378
+msgid "The speed at which the sliding thumbnail navigation moves in milliseconds."
+msgstr ""
+
+#: inc/admin/settings.php:384
+msgid "Thumbnails Spacing (px)"
+msgstr ""
+
+#: inc/admin/settings.php:385
+msgid "The space between each thumbnail."
+msgstr ""
+
+#: inc/admin/settings.php:395
+msgid "Bullets Settings"
+msgstr ""
+
+#: inc/admin/settings.php:401
+msgid "Enable Bullets?"
+msgstr ""
+
+#: inc/admin/settings.php:402
+msgid "Choose whether to enable the bullet navigation."
+msgstr ""
+
+#: inc/admin/settings.php:416
+msgid "General Zoom Settings"
+msgstr ""
+
+#: inc/admin/settings.php:422
+msgid "Enable Hover Zoom?"
+msgstr ""
+
+#: inc/admin/settings.php:433
+msgid "Zoom Type"
+msgstr ""
+
+#: inc/admin/settings.php:438
+msgid "Inner"
+msgstr ""
+
+#: inc/admin/settings.php:439
+msgid "Outside"
+msgstr ""
+
+#: inc/admin/settings.php:440
+msgid "Follow"
+msgstr ""
+
+#: inc/admin/settings.php:449
+msgid "Outside and Follow Zoom Settings"
+msgstr ""
+
+#: inc/admin/settings.php:455
+msgid "Lens Width (px)"
+msgstr ""
+
+#: inc/admin/settings.php:456
+msgid "The width of your zoom lens."
+msgstr ""
+
+#: inc/admin/settings.php:462
+msgid "Lens Height (px)"
+msgstr ""
+
+#: inc/admin/settings.php:463
+msgid "The height of your zoom lens."
+msgstr ""
+
+#: inc/admin/settings.php:473
+msgid "Outside Zoom Settings"
+msgstr ""
+
+#: inc/admin/settings.php:479
+msgid "Zoom Position"
+msgstr ""
+
+#: inc/admin/settings.php:480
+msgid "Choose the position of your zoomed image in relation to the main image."
+msgstr ""
+
+#: inc/admin/settings.php:490
+msgid "Lens Colour"
+msgstr ""
+
+#: inc/admin/settings.php:497
+msgid "Lens opacity"
+msgstr ""
+
+#: inc/admin/settings.php:498
+msgid "Set an opacity between 0 and 1 for the lens."
+msgstr ""
+
+#: inc/admin/settings.php:508
+msgid "Follow Zoom Settings"
+msgstr ""
+
+#: inc/admin/settings.php:514
+msgid "Zoom Shape"
+msgstr ""
+
+#: inc/admin/settings.php:519
+msgid "Circular"
+msgstr ""
+
+#: inc/admin/settings.php:520
+msgid "Square"
+msgstr ""
+
+#: inc/admin/settings.php:529
+msgid "Fullscreen Settings"
+msgstr ""
+
+#: inc/admin/settings.php:535
+msgid "Enable Fullscreen?"
+msgstr ""
+
+#: inc/admin/settings.php:546
+msgid "Enable Click Anywhere?"
+msgstr ""
+
+#: inc/admin/settings.php:547
+msgid "When enabled, click anywhere on the main image to trigger fullscreen."
+msgstr ""
+
+#: inc/admin/settings.php:557
+msgid "Enable Image Title?"
+msgstr ""
+
+#: inc/admin/settings.php:558
+msgid "When enabled, the image title will be visible when viewing fullscreen."
+msgstr ""
+
+#: inc/admin/settings.php:572
+msgid "Responsive Settings"
+msgstr ""
+
+#: inc/admin/settings.php:578
+msgid "Enable Breakpoint?"
+msgstr ""
+
+#: inc/admin/settings.php:579
+msgid "If your website is responsive, you can change the width of the slider after a certain breakpoint."
+msgstr ""
+
+#: inc/admin/settings.php:589
+msgid "Breakpoint (px)"
+msgstr ""
+
+#: inc/admin/settings.php:590
+msgid "The slider width will be affected after the breakpoint."
+msgstr ""
+
+#: inc/admin/settings.php:596
+msgid "Width After Breakpoint (%)"
+msgstr ""
+
+#: inc/admin/settings.php:597
+msgid "The width of the images display after the breakpoint."
+msgstr ""
+
+#: inc/admin/settings.php:603
+msgid "Position After Breakpoint"
+msgstr ""
+
+#: inc/admin/settings.php:604
+msgid "Choose a position for the images after the breakpoint."
+msgstr ""
+
+#: inc/admin/settings.php:615
+msgid "Move Thumbnails Below After Breakpoint?"
+msgstr ""
+
+#: inc/admin/settings.php:616
+msgid "Choose whether to move the thumbnail navigation below the main image display after the breakpoint."
+msgstr ""
+
+#: inc/admin/settings.php:626
+msgid "Thumbnails Count After Breakpoint"
+msgstr ""
+
+#: inc/admin/settings.php:627
+msgid "The number of thumbnails to display in a row after the breakpoint."
+msgstr ""
+
+#: inc/admin/settings.php:649
+msgid "Tools"
+msgstr ""
+
+#: inc/admin/settings.php:656
+msgid "Clear the image cache to refresh all product imagery."
+msgstr ""

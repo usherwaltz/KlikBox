@@ -1,0 +1,917 @@
+/* BAG */
+
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.share {
+    width: 200px;
+    margin: 40px auto 0 auto;
+    text-align: center;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    font size: 20px;
+    color: #000000;
+    font-weight: 400;
+    background-color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+
+
+/* ......... BIG ......... */
+
+@media only screen and (min-width: 1300px) {
+
+
+    .page {
+        width: 100%;
+        height: auto;
+        background-color: #f6f6f6;
+        overflow: hidden;
+    }
+    
+    .step {
+        width: 260px;
+        height: 70px;
+        margin: 0 auto 0 auto;
+        padding: 20px 0 0 20px;
+    }
+    
+    .step img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    
+/* ... NAV - big ... */    
+    
+    .nav {
+        min-width: 100%;
+        height: auto;
+        background-color: #ffffff;
+        margin: 0 70px 0 0;
+        padding: 30px 0 30px 0;
+    }
+    
+    .nav .nav-box {
+        width: 100%;
+        height: 50px;
+    }
+    
+    .nav img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .nav .logo-box,
+    .nav .search-box,
+    .nav .neto-box,
+    .nav .bag-box
+    { 
+        height: 50px;
+        display: inline-block;
+    }
+    
+    .nav .logo-box {
+        width: auto;
+        margin: 0 10px 0 30px;
+        float: left;
+    }
+    
+    .nav input[type=text] {
+        height: 50px;
+        width: 600px;
+        padding: 0 0 0 50px;
+        background-color: #f6f6f6;
+        border: none;
+        border-radius: 25px;  
+        float: left;
+    }
+    
+    .nav input[type=submit] {
+        width: 30px;
+        height: 30px;
+        background-image: url("../images/search-pic.png");
+        background-size: cover;
+        margin: 10px 0 0 0;
+        border: none;
+        background-color: #f6f6f6;        
+        float: left;
+        position: relative;
+        left: 40px;
+        cursor: pointer;
+    }
+    
+    .nav .neto-box {
+        width: 40px;
+        height: 20px;
+        margin: 15px 0 0 0;
+        line-height: 20px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 110%;
+        float: right;
+        position: relative;
+        left: 45px;
+        top: 5px;
+        color: #ec7700
+    }
+    
+    .nav .bag-box {
+        width: 50px;
+        height: 50px;
+        margin: 0 30px 0 0;
+        float: right;
+    }
+     
+/* ...... BAG - big ...... */
+ 
+    
+    
+    
+    .bag {
+        width: 1300px;
+        height: auto;
+        padding: 30px 30px 30px 30px;
+        margin: 0 auto 30px auto;
+        background-color: #ffffff;
+        border-radius: 20px;
+        text-align: center;
+
+    }
+ 
+    
+    .bag .left {
+        width: 400px;
+        margin: 0 30px 0 0;
+        padding: 30px 30px 30px 30px;
+        background-color: aquamarine;
+        float: left;
+        margin: 0 40px 0 0;
+    }
+    
+    .bag .right {
+        width: 400px;
+        margin: 0 0 0 0;
+        padding: 30px 30px 30px 30px;
+        background-color: aquamarine;
+        float: right;
+        
+    }
+    
+    .bag .title {
+        padding: 30px 0 50px 0;
+        margin: 0 0 30px 0;
+        font-size: 180%;
+        font-weight: 600;
+    }    
+    
+    .bag .frmbox {
+            
+    }
+    
+    .bag label {
+        font-size: 60%; 
+        padding-bottom: 10px;
+        letter-spacing: 1px;
+        font-weight: 600;
+    }
+    
+    .bag input[type=text], 
+    .bag input[type=email] {
+        width: 100%;
+        height: 40px;
+        border: none;
+        border-bottom: 1px solid #d9d9d9;
+        background: none;
+    }
+    
+    
+    .bag input .submit {
+        width: 100%;
+        height: 40px;
+        border: none;
+        border-bottom: 1px solid #d9d9d9;
+        background: none;
+    }
+    
+    .bag input[type=submit] {
+        width: 340px;
+        height: 70px;
+        border: none;
+        margin: 0 auto 0 auto;
+
+    }
+    
+    .bag .pay-box {
+        width: 400px;
+        height: auto;
+        margin: 40px 0 40px 0;
+        text-align: left;
+        
+    }
+    
+    .bag .pay-box p {
+        margin: 0 auto 20px auto;
+        font-size: 170%;
+        font-weight: 800;
+        line-height: 1.2;
+    }
+    
+    .bag .pay-box span {
+        margin: 0 auto 20px auto;
+        font-size: 100%;
+        font-weight: 400;
+        line-height: 1.3;
+    } 
+
+/* ............. */  
+    
+    .content {
+        width: 400px;
+        height: 300px;
+        font-size: 60%;
+    } 
+    
+
+    
+    
+    
+    
+    
+    
+    
+/* ...... BOTTOM - big ...... */ 
+  
+    .bottom {
+        width: 100%;
+        height: auto;
+        padding: 80px 0 80px 0; 
+        background-image: url("../images/cover-img.png");
+        background-size: cover;
+        background-position: center; 
+    }
+    
+    .bottom .bottom-box {
+        width: 1300px;
+        height: 450px;
+        margin: 0 auto 0 auto;
+    }
+    
+    .bottom .bottom-left {
+        width: 550px;
+        height: 450px;
+        margin: 0 100px 0 150px;
+        display: inline-block;
+        float: left;
+    }
+    
+    .bottom .bottom-right {
+        width: 500px;
+        height: 450px;
+        display: inline-block;
+        float: left;
+    }
+    
+    .bottom .logo-bottom {
+        width: 260px;
+        height: 70px;
+    }
+    
+    .bottom img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .bottom .bottom-left p {
+        margin: 30px 0 0 0;
+        line-height: 1.6;
+        color: #ffffff;
+    }
+    
+    .bottom .bottom-left a {
+        color: #ffffff;
+        transition: 0.6s;
+    }  
+    
+    .bottom .bottom-left a:hover {
+        color: #ec7700;
+    } 
+    
+    .bottom .bottom-right p {
+        margin: 30px 0 0 0;
+        line-height: 1.3;
+        color: #ffffff;
+        font-size: 400%;
+        margin: 40px 0 0 40px;
+        font-weight: 700;
+    }
+    
+    .bottom .bottom-right a {
+        width: 300px;
+        height: 70px;
+        display: block;
+        margin: 100px 0 0 40px;
+        background-color: #ec7700;
+        border-radius: 10px;
+        text-align: center;
+        line-height: 70px;
+        color: #ffffff;
+        font-size: 140%;
+        margin: 40px 0 0 40px;
+        font-weight: 500;
+    }
+       
+/* ...... */ } /* ...... */
+
+/* ......... MIDDLE ......... */
+
+@media only screen and (min-width: 770px) and (max-width: 1299px) {
+
+
+   .page {
+        width: 100%;
+        height: auto;
+        background-color: #f6f6f6;
+        overflow: hidden;
+    }
+    
+    .step {
+        width: 260px;
+        height: 70px;
+        margin: 0 auto 0 auto;
+        padding: 20px 0 0 20px;
+    }
+    
+    .step img {
+        width: 100%;
+        height: 100%;
+    }
+    
+  
+/* ... NAV - big ... */    
+    
+    .nav {
+        min-width: 100%;
+        height: auto;
+        background-color: #ffffff;
+        margin: 0 70px 0 0;
+        padding: 30px 0 30px 0;
+    }
+    
+    .nav .nav-box {
+        width: 100%;
+        height: 50px;
+    }
+    
+    .nav img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .nav .logo-box,
+    .nav .search-box,
+    .nav .neto-box,
+    .nav .bag-box
+    { 
+        height: 50px;
+        display: inline-block;
+    }
+    
+    .nav .logo-box {
+        width: auto;
+        margin: 0 10px 0 30px;
+        float: left;
+    }
+    
+    .nav input[type=text] {
+        height: 50px;
+        width: 300px;
+        padding: 0 0 0 50px;
+        background-color: #f6f6f6;
+        border: none;
+        border-radius: 25px;  
+        float: left;
+    }
+    
+    .nav input[type=submit] {
+        width: 30px;
+        height: 30px;
+        background-image: url("../images/search-pic.png");
+        background-size: cover;
+        margin: 10px 0 0 0;
+        border: none;
+        background-color: #f6f6f6;        
+        float: left;
+        position: relative;
+        left: 40px;
+        cursor: pointer;
+    }
+    
+    .nav .neto-box {
+        width: 40px;
+        height: 20px;
+        margin: 15px 0 0 0;
+        line-height: 20px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 110%;
+        float: right;
+        position: relative;
+        left: 45px;
+        top: 5px;
+        color: #ec7700
+    }
+    
+    .nav .bag-box {
+        width: 50px;
+        height: 50px;
+        margin: 0 30px 0 0;
+        float: right;
+    }
+    
+/* ...... BAG - big ...... */
+ 
+.bag-section {
+        width: 1200px;
+        height: 1800;
+        margin: 20px auto 20px auto;
+        text-align: center;
+    }     
+     
+.bag .border-orange {
+        border: none;    
+    } 
+    
+    .bag .left {
+        width: 250px;
+        margin: 0 0 0 0;
+        display: inline-block;
+        float: left;
+    }
+    
+    .bag .right {
+        width: 350px;
+        margin: 0 0 0 0;
+        display: inline-block;
+        float: right;
+        background-color: gray;
+    }
+    
+
+    .bag {
+        width: 1300px;
+        height: 1200px;
+        padding: 30px 0 30px 0;
+        background-color: #ffffff;
+        border-radius: 20px;
+    }
+    
+    .bag .title {
+        padding: 30px 0 50px 0;
+        font-size: 180%;
+        font-weight: 600;
+    }
+    
+    .bag label {
+        font-size: 60%; 
+        padding-bottom: 10px;
+        letter-spacing: 1px;
+        font-weight: 600;
+    }
+    
+    .bag input[type=text], 
+    .bag input[type=email] {
+        width: 250px;
+        height: 40px;
+        border: none;
+        border-bottom: 1px solid #d9d9d9;
+        background: none;
+    }
+    
+    
+    .bag input .submit {
+        width: 100%;
+        height: 40px;
+        border: none;
+        border-bottom: 1px solid #d9d9d9;
+        background: none;
+    }
+    
+    .bag input[type=submit] {
+        width: 250px;
+        height: 70px;
+        border: none;
+    }
+    
+    .bag .pay-box {
+        width: 400px;
+        height: auto;
+        margin: 40px 0 40px 0;
+        text-align: left;
+        
+    }
+    
+    .bag .pay-box p {
+        width: 250px;
+        margin: 0 0 30px 0;
+        font-size: 120%;
+        font-weight: 800;
+        line-height: 1.2;
+        text-align: center;
+    }
+    
+    .bag .pay-box span {
+        width: 300px;
+        display: block;
+        margin: 0 0 20px 0;
+        font-size: 90%;
+        font-weight: 400;
+        line-height: 1.3;
+    }  
+/* ...... BOTTOM - big ...... */ 
+  
+    .bottom {
+        width: 100%;
+        height: auto;
+        padding: 80px 0 80px 0; 
+        background-image: url("../images/cover-img.png");
+        background-size: cover;
+        background-position: center; 
+    }
+    
+    .bottom .bottom-box {
+        width: 760px;
+        height: 450px;
+        margin: 0 auto 0 auto;
+    }
+    
+    .bottom .bottom-left {
+        width: 300px;
+        height: 450px;
+        margin: 0 30px 0 30px;
+        display: inline-block;
+        float: left;
+    }
+    
+    .bottom .bottom-right {
+        width: 300px;
+        height: 450px;
+        display: inline-block;
+        float: left;
+    }
+    
+    .bottom .logo-bottom {
+        width: 260px;
+        height: 70px;
+    }
+    
+    .bottom img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .bottom .bottom-left p {
+        margin: 30px 0 0 0;
+        line-height: 1.6;
+        color: #ffffff;
+    }
+    
+    .bottom .bottom-left a {
+        color: #ffffff;
+        transition: 0.6s;
+    }  
+    
+    .bottom .bottom-left a:hover {
+        color: #ec7700;
+    } 
+    
+    .bottom .bottom-right p {
+        margin: 30px 0 0 0;
+        line-height: 1.3;
+        color: #ffffff;
+        font-size: 300%;
+        margin: 40px 0 0 40px;
+        font-weight: 700;
+    }
+    
+    .bottom .bottom-right a {
+        width: 300px;
+        height: 70px;
+        display: block;
+        margin: 100px 0 0 40px;
+        background-color: #ec7700;
+        border-radius: 10px;
+        text-align: center;
+        line-height: 70px;
+        color: #ffffff;
+        font-size: 140%;
+        margin: 40px 0 0 40px;
+        font-weight: 500;
+    }
+    
+    
+  
+   
+/* ...... */ } /* ...... */
+
+
+
+@media only screen and (min-width: 319px) and (max-width: 769px) {
+
+
+   .page {
+        width: 100%;
+        height: auto;
+        background-color: #f6f6f6;
+        overflow: hidden;
+    }
+    
+    .step {
+        width: 260px;
+        height: 70px;
+        margin: 0 auto 0 auto;
+        padding: 20px 0 0 20px;
+    }
+    
+    .step img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+/* ... NAV - big ... */    
+    
+    .nav {
+        min-width: 100%;
+        height: auto;
+        background-color: #ffffff;
+        margin: 0 70px 0 0;
+        padding: 30px 0 30px 0;
+    }
+    
+    .nav .nav-box {
+        width: 100%;
+        height: 50px;
+    }
+    
+    .nav img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .nav .logo-box,
+    .nav .search-box,
+    .nav .neto-box,
+    .nav .bag-box
+    { 
+        height: 50px;
+        display: inline-block;
+    }
+    
+    .nav .logo-box {
+        width: auto;
+        margin: 0 0 0 10px;
+        float: left;
+    }
+    
+    .nav input[type=text] {
+        height: 50px;
+        width: 100px;
+        padding: 0 0 0 50px;
+        background-color: #f6f6f6;
+        border: none;
+        border-radius: 25px;  
+        float: left;
+    }
+    
+    .nav input[type=submit] {
+        width: 30px;
+        height: 30px;
+        background-image: url("../images/search-pic.png");
+        background-size: cover;
+        margin: 10px 0 0 0;
+        border: none;
+        background-color: #f6f6f6;        
+        float: left;
+        position: relative;
+        left: 40px;
+        cursor: pointer;
+    }
+    
+    .nav .neto-box {
+        width: 40px;
+        height: 20px;
+        margin: 15px 0 0 0;
+        line-height: 20px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 110%;
+        float: right;
+        position: relative;
+        left: 45px;
+        top: 5px;
+        color: #ec7700
+    }
+    
+    .nav .bag-box {
+        width: 50px;
+        height: 50px;
+        margin: 0 10px 0 0;
+        float: right;
+    }   
+
+    
+/* ...... BAG - big ...... */
+ 
+.bag-section {
+        width: auto;
+        height: 1800;
+        margin: 20px auto 20px auto;
+        text-align: center;
+    }     
+     
+  .bag .border-orange {
+        border: none;    
+    } 
+    
+    .bag .left {
+        width: 300px;
+        margin: 0 30px 0 0;
+    }
+    
+    .bag .right {
+        width: 300px;
+        margin: 0 30px 0 0;
+    }
+    
+    .bag {
+        width: 300px;
+        height: auto;
+        paddin: ;g: 30px 30px 30px 30px;
+        background-color: #ffffff;
+        border-radius: 20px;
+        margin: 20px auto 20px auto;
+    }
+    
+    .bag .title {
+        padding: 30px 0 50px 0;
+        font-size: 180%;
+        font-weight: 600;
+    }
+    
+    .bag .frmbox {
+            
+    }
+    
+    .bag label {
+        font-size: 60%; 
+        padding-bottom: 10px;
+        letter-spacing: 1px;
+        font-weight: 600;
+    }
+    
+    .bag input[type=text], 
+    .bag input[type=email] {
+        width: 90%;
+        height: 30px;
+        border: none;
+        border-bottom: 1px solid #d9d9d9;
+        background: none;
+    }
+    
+    
+    .bag input .submit {
+        width: 100%;
+        height: 40px;
+        border: none;
+        border-bottom: 1px solid #d9d9d9;
+        background: none;
+    }
+    
+    .bag input[type=submit] {
+        width: 260px;
+        height: 70px;
+        border: none;
+        margin: 0 auto 0 auto;
+
+    }
+    
+    .bag .pay-box {
+        width: 300px;
+        height: auto;
+        margin: 40px 0 40px 0;
+        text-align: left;
+        
+    }
+    
+    .bag .pay-box p {
+        margin: 0 auto 20px auto;
+        font-size: 160%;
+        font-weight: 800;
+        line-height: 1.2;
+    }
+    
+    .bag .pay-box span {
+        margin: 0 auto 20px auto;
+        font-size: 100%;
+        font-weight: 400;
+        line-height: 1.3;
+    }   
+    
+/* ...... BOTTOM - big ...... */ 
+  
+    .bottom {
+        width: 100%;
+        height: auto;
+        padding: 80px 0 80px 0; 
+        background-image: url("../images/cover-img.png");
+        background-size: cover;
+        background-position: center; 
+    }
+    
+    .bottom .bottom-box {
+        width: 760px;
+        height: 800px;
+        margin: 0 auto 0 auto;
+    }
+    
+    .bottom .bottom-left {
+        width: 300px;
+        height: 450px;
+        margin: 0 30px 0 40px;
+    }
+    
+    .bottom .bottom-right {
+        width: 300px;
+        height: 450px;
+        float: left;
+
+    }
+    
+    .bottom .logo-bottom {
+        width: 260px;
+        height: 70px;
+    }
+    
+    .bottom img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .bottom .bottom-left p {
+        margin: 30px 0 0 0;
+        line-height: 1.6;
+        color: #ffffff;
+    }
+    
+    .bottom .bottom-left a {
+        color: #ffffff;
+        transition: 0.6s;
+    }  
+    
+    .bottom .bottom-left a:hover {
+        color: #ec7700;
+    } 
+    
+    .bottom .bottom-right p {
+        margin: 30px 0 0 0;
+        line-height: 1.3;
+        color: #ffffff;
+        font-size: 300%;
+        margin: 40px 0 0 40px;
+        font-weight: 700;
+    }
+    
+    .bottom .bottom-right a {
+        width: 300px;
+        height: 70px;
+        display: block;
+        margin: 100px 0 0 40px;
+        background-color: #ec7700;
+        border-radius: 10px;
+        text-align: center;
+        line-height: 70px;
+        color: #ffffff;
+        font-size: 140%;
+        margin: 40px 0 0 40px;
+        font-weight: 500;
+    }
+    
+    
+   
+   
+/* ...... */ } /* ...... */
+

@@ -1,0 +1,2277 @@
+/* CARD */
+
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.share {
+    width: 200px;
+    margin: 40px auto 0 auto;
+    text-align: center;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    font size: 20px;
+    color: #000000;
+    font-weight: 400;
+    background-color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+
+
+/* ......... BIG ......... */
+
+@media only screen and (min-width: 1300px) {
+
+
+    .page {
+        width: 100%;
+        height: auto;
+        background-color: #f6f6f6;
+        overflow: hidden;
+    }
+    
+    
+/* ... INTRO-1 - big - big ... */   
+    
+    .intro {
+        width: 1000px;
+        text-align: center;
+        margin: 100px auto 100px auto;
+        text-align: center;
+    }
+    
+    .intro h2 {
+        font-size: 260%;
+        margin: 100px 0 30px 0;
+        font-weight: 800;
+        letter-spacing: 1px;
+        line-height: 1.3;
+    }
+    
+    .intro p {
+        font-size: 140%;
+        margin: 0 0 0 0;
+        font-weight: 400;
+        line-height: 1.3;
+    }
+   
+    
+/* ... NAV - big ... */    
+    
+    .nav {
+        min-width: 100%;
+        height: auto;
+        background-color: #ffffff;
+        margin: 0 70px 0 0;
+        padding: 30px 0 30px 0;
+    }
+    
+    .nav .nav-box {
+        width: 100%;
+        height: 50px;
+    }
+    
+    .nav img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .nav .logo-box,
+    .nav .search-box,
+    .nav .neto-box,
+    .nav .bag-box
+    { 
+        height: 50px;
+        display: inline-block;
+    }
+    
+    .nav .logo-box {
+        width: auto;
+        margin: 0 10px 0 30px;
+        float: left;
+    }
+    
+    .nav input[type=text] {
+        height: 50px;
+        width: 600px;
+        padding: 0 0 0 50px;
+        background-color: #f6f6f6;
+        border: none;
+        border-radius: 25px;  
+        float: left;
+    }
+    
+    .nav input[type=submit] {
+        width: 30px;
+        height: 30px;
+        background-image: url("../images/search-pic.png");
+        background-size: cover;
+        margin: 10px 0 0 0;
+        border: none;
+        background-color: #f6f6f6;        
+        float: left;
+        position: relative;
+        left: 40px;
+        cursor: pointer;
+    }
+    
+    .nav .neto-box {
+        width: 40px;
+        height: 20px;
+        margin: 15px 0 0 0;
+        line-height: 20px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 110%;
+        float: right;
+        position: relative;
+        left: 45px;
+        top: 5px;
+        color: #ec7700
+    }
+    
+    .nav .bag-box {
+        width: 50px;
+        height: 50px;
+        margin: 0 30px 0 0;
+        float: right;
+    }
+    
+    
+/* .......................... */ 
+    
+/* ... START - big ... */  
+    
+    .product-box {
+        width: 95%;
+        height: auto;
+        margin: 30px auto 30px auto;
+        padding: 0 0 30px 0;
+        background-color: #ffffff;
+        border-radius: 10px;
+    }
+    
+    .start {
+        width: 100%;
+        height: auto;
+        padding: 30px 0 30px     0;
+        text-align: center;
+    }
+    
+    .start .start-box {
+        width: 1200px;
+        height: auto;
+        margin: 0 auto 0 auto;
+        padding: 0 20px 100px 20px;
+    }
+    
+    .start .start-left {
+        width: 550px;
+        height: 550px;
+        display: inline-block;
+    }
+    
+    .start .start-procent {
+        width: 165px;
+        height: 100px;
+        position: absolute;
+        z-index: 1;
+    }
+    
+    .start .start-img {
+        width: 100%;
+        height: 100%;
+    }
+  
+    .start .start-right {
+        width: 550px;
+        height: auto;
+        display: inline-block;
+        float: right;
+        text-align: left;
+        margin: 0 60px 0 0;
+    } 
+    
+    .start-right .message {
+        display: inline-block;
+        height: 20px;
+        color: #ec7700;
+        font-weight: 600;
+        margin: 0 0 30px 0;
+        padding: 5px 10px 10px 10px;
+        border-radius: 15px;
+        border: 1px solid #ec7700;
+        letter-spacing: 1px;
+    }
+    
+    .start-right .message img {
+        height: 20px;
+        margin: 0 5px 0 5px;
+    }
+    
+    .start-right .title {
+        font-weight: 800;
+        font-size: 200%;
+        line-height: 1.2;
+        color: #000000;
+        margin: 0 0 20px 0;
+    }
+    
+    .start-right .desc {
+        font-weight: 400;
+        font-size: 100%;
+        line-height: 1.6;
+        color: #000000;
+        margin: 0 0 10px 0;
+    }
+    
+    .start-right .nn {
+        font-weight: 800;
+        font-size: 80%;
+        color: #000000;
+        margin: 0 0 15px 0;
+    }
+
+    .start-right .stars-box {
+        height: 20px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        margin: 0 0 40px 0;
+    }
+    
+    .start-right .stars-box img {
+        height: 15px;
+        margin: 0 15px 0 0;
+    }
+    
+    .start-right .price {
+        font-weight: 800;
+        font-size: 220%;
+        color: #ec7700;
+        margin: 0 0 40px 0;
+    }
+    
+    .start-right .price span {
+        font-weight: 800;
+        font-size: 100%;
+        color: #000000;
+        margin: 0 30px 15px 0;
+        text-decoration: line-through;
+        color: #cbcbcb;
+    }
+    
+    .start-right a {
+        display: block;
+        width: 300px;
+        height: 70px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        font-size: 100%;
+        color: #ffffff;
+        margin: 0 0 80px 0;
+        text-align: center;
+        background-color: #ec7700;
+        border-radius: 10px;
+        line-height: 70px;
+    }
+    
+    .start-right .garancy {
+        display: inline-block;
+        float: left;
+        width: auto;
+        margin: 0 0 0 0;
+        padding: 20px 0 0 0;
+        border-top: 1px solid #f2f2f2;
+        text-align: center;
+    }
+    
+    .start-right .garancy-box {
+        display: inline-block;
+        float: left;
+        width: 140px;
+        margin: 0 40px 0 0;
+        padding: 20px 0 0 0;
+    }
+    
+    .start-right .garancy-box img {
+        width: 70px;
+        height: 70px;
+        margin: 0 0 20px 0;
+    }
+    
+    .start-right .garancy-box p {
+        font-size: 100%;
+        font-weight: 500;
+        line-height: 1.3;
+        
+    }
+    
+/* ...... TOFU - big ...... */     
+   
+    .tofu {
+        width: 100%;
+        height: auto;
+    }
+    
+    .tofu .tofu-box {
+        width: 1200px;
+        height: auto;
+        margin: 100px auto 100px auto;
+    }
+    
+    .tofu .tofu-card {
+        width: 230px;
+        height: 450px;
+        display: inline-block;
+        margin: 0 30px 0 30px;
+        text-align: left;
+    }
+    
+    .tofu .img-box {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .tofu img {
+        width: 100%;
+        height: 100%;   
+    }
+    
+    .tofu h3 {
+        height: 60px;
+        font-size: 120%;
+        font-weight: 600;
+        margin: 30px 0 20px 0;
+        line-height: 1.2;
+        letter-spacing: 1px;
+    }
+    
+    .tofu p {
+        font-size: 100%;
+        font-weight: 400;
+        margin: 20px 0 20px 0;
+        line-height: 1.6; 
+    }
+    
+/* ... MOFU - big ... */  
+    
+    .mofu {
+        width: 100%;
+        height: auto;
+    }   
+  
+    .mofu .mofu-box {
+        width: 1000px;
+        height: 300px;
+        margin: 100px auto 0 auto;
+        text-align: center;
+    }
+    
+    .mofu .mofu-sides {
+        display: inline-block;
+        height: 300px;
+        margin: 0 20px 0 20px;
+    }
+    
+    .mofu .mofu-left {
+        width: 500px; 
+        float: left; 
+        text-align: left;
+    }
+    
+    .mofu .mofu-right {
+        width: 450px;
+        float: right;
+    }   
+    
+    .mofu img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .mofu h3 {
+        font-size: 180%;
+        font-weight: 600;
+        margin: 50px 0 50px 0;
+        line-height: 1.4;
+    }
+    
+    .mofu p {
+        font-size: 90%;
+        font-weight: 400;
+        margin: 50px 0 0 0;
+        line-height: 1.4; 
+        letter-spacing: 1px;
+    }
+    
+    /* ... BOFU - big ... */
+    
+    .bofu {
+        width: 100%;
+        height: auto;
+        padding: 30px 0 0 0;
+    
+    }
+    
+    .bofu .bofu-box {
+        width: 1200px;
+        height: auto;
+        margin: 150px auto 150px auto;
+        padding: 0 0 100px 0;
+        text-align: center;
+    }
+    
+    .bofu .bofu-left {
+        width: 550px;
+        height: 550px;
+        display: inline-block;
+    }
+    
+    .bofu .bofu-img {
+        width: 100%;
+        height: 100%;
+    }
+      
+    .bofu .bofu-right {
+        width: 550px;
+        height: auto;
+        display: inline-block;
+        float: right;
+        text-align: left;
+        margin: 0 60px 0 0;
+    } 
+    
+    .bofu-right .message {
+        display: inline-block;
+        height: 20px;
+        color: #ec7700;
+        font-weight: 600;
+        margin: 0 0 30px 0;
+        padding: 5px 10px 10px 10px;
+        border-radius: 15px;
+        border: 1px solid #ec7700;
+        letter-spacing: 1px;
+    }
+    
+    .bofu-right .message img {
+        height: 20px;
+        margin: 0 5px 0 5px;
+    }
+    
+    .bofu-right .title {
+        font-weight: 800;
+        font-size: 200%;
+        line-height: 1.2;
+        color: #000000;
+        margin: 0 0 20px 0;
+    }
+    
+    .bofu-right .desc {
+        font-weight: 400;
+        font-size: 100%;
+        line-height: 1.6;
+        color: #000000;
+        margin: 0 0 10px 0;
+    }
+    
+    .bofu-right .nn {
+        font-weight: 800;
+        font-size: 80%;
+        color: #000000;
+        margin: 0 0 15px 0;
+    }
+
+    .bofu-right .stars-box {
+        height: 20px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        margin: 0 0 40px 0;
+    }
+    
+    .bofu-right .stars-box img {
+        height: 15px;
+        margin: 0 15px 0 0;
+    }
+        
+    .bofu-right .garancy {
+        display: inline-block;
+        float: left;
+        width: auto;
+        padding: 20px 0 0 0;
+        border-top: 1px solid #f2f2f2;
+    }
+    
+    .bofu-right .garancy-box {
+        display: inline-block;
+        float: left;
+        width: 140px;
+        margin: 0 40px 0 0;
+        padding: 20px 0 0 0;
+        text-align: center;
+    }
+    
+    .bofu-right .garancy-box img {
+        width: 70px;
+        height: 70px;
+        margin: 0 0 20px 0;
+    }
+    
+    .bofu-right .garancy-box p {
+        font-size: 100%;
+        font-weight: 500;
+        line-height: 1.3;
+    }
+    
+    .bofu-right .form {
+        width: 100%;
+        height: 300px;
+        border: 1px solid #f2f2f2;
+        line-height: 1.8;
+        text-align: center;
+    }
+    
+    
+    
+    
+    
+    
+ /* ...... DEC - big ...... */    
+  
+    .dec {
+        width: 100%;
+        height: 660px;
+        padding: 30px 0 0 0;
+        margin: 50px 0 0 0;
+        text-align: center;
+        background-color: #f4f4f4;
+    }
+    
+    .dec .dec-box {
+        width: 1000px;
+        height: 650px;
+        margin: 100px auto 100px auto;
+        
+    }
+    
+    .dec .dec-sides {
+        text-align: center;
+        margin: 0 30px 0 30px;    
+    }
+    
+    .dec .dec-left {
+        width: 300px;
+        height: auto;
+        display: inline-block;
+        float: left;
+        margin: 0 180px 0 0; 
+        line-height: 1.4;
+    }
+  
+    .dec .dec-right {
+        width: 300px;
+        height: auto;
+        display: inline-block;
+        float: left;
+        margin: 0 0 0 0;
+    }  
+    
+    .dec h4 {
+        text-align: center;
+        font-size: 210%;
+        margin: 0 0 100px 0;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+    
+    .dec h5 {
+        text-align: left;
+        font-size: 110%;
+        margin: 0 0 10px 0; 
+        font-weight: 400;
+    }
+    
+    .dec p {
+        text-align: left;
+        font-size: 90%;
+        margin: 0 0 30px 0;
+        line-height: 1.4;
+        font-weight: 300;
+    }
+    
+/* ...... IMAGES - big ...... */    
+    
+    .images {
+        width: 100%;
+        height: auto;
+        padding: 30px 0 0 0;
+        text-align: center;
+    }
+    
+    .images .images-box {
+        width: 800px;
+        height: auto;
+        margin: 100px auto 100px auto;
+        text-align: center;
+    }  
+    
+    .images h6 {
+        font-size: 200%;
+        font-weight: 600;
+        line-height: 1.3;
+        letter-spacing: 1px;
+        margin: 0 0 40px 0;
+        text-align: center;
+    }
+    
+    .images p {
+        font-size: 100%;
+        font-weight: 300;
+        line-height: 1.3;
+        letter-spacing: 1px;
+        margin: 0 0 30px 0;
+    }
+    
+    .images img {
+        width: 400px;
+        height: 400px;
+        margin: 0 0 30px 0;
+    } 
+    
+/* ...... GALERY - big ...... */   
+
+    .galery {
+        width: 100%;
+        height: auto;
+    }   
+    
+    .galery .galery-box {
+        width: 1000px; 
+        height: 450px;
+        margin: 0 auto 0 auto;
+        text-align: center;
+    }
+    
+    .galery img {
+        width: 200px;
+        height: 200px;
+        display: inline-block;
+    }
+    
+    
+/* ...... VIDEO - big ...... */ 
+    
+    .video {
+        width: 100%;
+        height: auto;   
+    }
+
+    .video video {
+        display: block;
+        width: 600px;
+        height: auto;
+        margin: 60px auto 20px auto;
+    }
+    
+    .video a {
+        width: 270px;
+        height: 60px;
+        display: block;
+        margin: 60px auto 0 auto;
+        background-color: #ec7700;
+        border-radius: 10px;
+        line-height: 60px;
+        font-size: 120%;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: black;
+        transition: 0.6s;
+        text-align: center;
+        color: #ffffff;
+    }
+    
+    
+    
+/* ...... BOTTOM - big ...... */ 
+  
+    .bottom {
+        width: 100%;
+        height: auto;
+        padding: 80px 0 80px 0; 
+        background-image: url("../images/cover-img.png");
+        background-size: cover;
+        background-position: center; 
+    }
+    
+    .bottom .bottom-box {
+        width: 1300px;
+        height: 450px;
+        margin: 0 auto 0 auto;
+    }
+    
+    .bottom .bottom-left {
+        width: 550px;
+        height: 450px;
+        margin: 0 100px 0 150px;
+        display: inline-block;
+        float: left;
+    }
+    
+    .bottom .bottom-right {
+        width: 500px;
+        height: 450px;
+        display: inline-block;
+        float: left;
+    }
+    
+    .bottom .logo-bottom {
+        width: 260px;
+        height: 70px;
+    }
+    
+    .bottom img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .bottom .bottom-left p {
+        margin: 30px 0 0 0;
+        line-height: 1.6;
+        color: #ffffff;
+    }
+    
+    .bottom .bottom-left a {
+        color: #ffffff;
+        transition: 0.6s;
+    }  
+    
+    .bottom .bottom-left a:hover {
+        color: #ec7700;
+    } 
+    
+    .bottom .bottom-right p {
+        margin: 30px 0 0 0;
+        line-height: 1.3;
+        color: #ffffff;
+        font-size: 400%;
+        margin: 40px 0 0 40px;
+        font-weight: 700;
+    }
+    
+    .bottom .bottom-right a {
+        width: 300px;
+        height: 70px;
+        display: block;
+        margin: 100px 0 0 40px;
+        background-color: #ec7700;
+        border-radius: 10px;
+        text-align: center;
+        line-height: 70px;
+        color: #ffffff;
+        font-size: 140%;
+        margin: 40px 0 0 40px;
+        font-weight: 500;
+    }
+       
+/* ...... */ } /* ...... */
+
+/* ......... MIDDLE ......... */
+
+@media only screen and (min-width: 770px) and (max-width: 1299px) {
+
+    .page {
+        width: 100%;
+        height: auto;
+        background-color: #f6f6f6;
+        overflow: hidden;
+    }
+    
+    
+/* ... INTRO-1 - big - big ... */   
+    
+    .intro {
+        width: 90%;
+        text-align: center;
+        margin: 100px auto 100px auto;
+        text-align: center;
+    }
+    
+    .intro h2 {
+        font-size: 180%;
+        margin: 100px 0 30px 0;
+        font-weight: 800;
+        letter-spacing: 1px;
+        line-height: 1.2;
+    }
+    
+    .intro p {
+        font-size: 120%;
+        margin: 0 0 0 0;
+        font-weight: 400;
+        line-height: 1.3;
+    }
+    
+/* ... NAV - big ... */    
+    
+    .nav {
+        min-width: 100%;
+        height: auto;
+        background-color: #ffffff;
+        margin: 0 70px 0 0;
+        padding: 30px 0 30px 0;
+    }
+    
+    .nav .nav-box {
+        width: 100%;
+        height: 50px;
+    }
+    
+    .nav img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .nav .logo-box,
+    .nav .search-box,
+    .nav .neto-box,
+    .nav .bag-box
+    { 
+        height: 50px;
+        display: inline-block;
+    }
+    
+    .nav .logo-box {
+        width: auto;
+        margin: 0 10px 0 30px;
+        float: left;
+    }
+    
+    .nav input[type=text] {
+        height: 50px;
+        width: 300px;
+        padding: 0 0 0 50px;
+        background-color: #f6f6f6;
+        border: none;
+        border-radius: 25px;  
+        float: left;
+    }
+    
+    .nav input[type=submit] {
+        width: 30px;
+        height: 30px;
+        background-image: url("../images/search-pic.png");
+        background-size: cover;
+        margin: 10px 0 0 0;
+        border: none;
+        background-color: #f6f6f6;        
+        float: left;
+        position: relative;
+        left: 40px;
+        cursor: pointer;
+    }
+    
+    .nav .neto-box {
+        width: 40px;
+        height: 20px;
+        margin: 15px 0 0 0;
+        line-height: 20px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 110%;
+        float: right;
+        position: relative;
+        left: 45px;
+        top: 5px;
+        color: #ec7700
+    }
+    
+    .nav .bag-box {
+        width: 50px;
+        height: 50px;
+        margin: 0 30px 0 0;
+        float: right;
+    }
+   
+/* ... START - big ... */  
+    
+    .product-box {
+        width: 95%;
+        height: auto;
+        margin: 30px auto 30px auto;
+        padding: 0 0 30px 0;
+        background-color: #ffffff;
+        border-radius: 10px;
+    }
+    
+    .start {
+        width: 100%;
+        height: auto;
+        padding: 30px 0 30px 0;
+        text-align: center;
+    }
+    
+    .start .start-box {
+        width: 700px;
+        height: auto;
+        margin: 0 auto 0 auto;
+        padding: 0 20px 0 20px;
+    }
+    
+    .start .start-left {
+        width: 300px;
+        height: 300px;
+        display: inline-block;
+    }
+    
+    .start .start-procent {
+        width: 80px;
+        height: 50px;
+        position: absolute;
+        z-index: 1;
+    }
+    
+    .start .start-img {
+        width: 100%;
+        height: 100%;
+    }
+  
+    .start .start-right {
+        width: 350px;
+        height: auto;
+        display: inline-block;
+        float: right;
+        text-align: left;
+        margin: 0 0 0 0;
+    } 
+    
+    .start-right .message {
+        display: inline-block;
+        height: 20px;
+        width: 300px;
+        color: #ec7700;
+        font-weight: 600;
+        font-size: 80%;
+        margin: 0 0 30px 0;
+        padding: 5px 10px 10px 10px;
+        border-radius: 15px;
+        border: 1px solid #ec7700;
+        letter-spacing: 1px;
+    }
+    
+    .start-right .message img {
+        height: 20px;
+        margin: 0 5px 0 5px;
+    }
+    
+    .start-right .title {
+        font-weight: 800;
+        font-size: 200%;
+        line-height: 1.2;
+        color: #000000;
+        margin: 0 0 20px 0;
+    }
+    
+    .start-right .desc {
+        font-weight: 400;
+        font-size: 100%;
+        line-height: 1.6;
+        color: #000000;
+        margin: 0 0 10px 0;
+    }
+    
+    .start-right .nn {
+        font-weight: 800;
+        font-size: 80%;
+        color: #000000;
+        margin: 0 0 15px 0;
+    }
+
+    .start-right .stars-box {
+        height: 20px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        margin: 0 0 40px 0;
+    }
+    
+    .start-right .stars-box img {
+        height: 15px;
+        margin: 0 15px 0 0;
+    }
+    
+    .start-right .price {
+        font-weight: 800;
+        font-size: 220%;
+        color: #ec7700;
+        margin: 0 0 40px 0;
+    }
+    
+    .start-right .price span {
+        font-weight: 800;
+        font-size: 100%;
+        color: #000000;
+        margin: 0 30px 15px 0;
+        text-decoration: line-through;
+        color: #cbcbcb;
+    }
+    
+    .start-right a {
+        display: block;
+        width: 300px;
+        height: 70px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        font-size: 100%;
+        color: #ffffff;
+        margin: 0 0 80px 0;
+        text-align: center;
+        background-color: #ec7700;
+        border-radius: 10px;
+        line-height: 70px;
+    }
+    
+    .start-right .garancy {
+        display: inline-block;
+        width: 330px;
+        margin: 0 auto 0 auto;
+        padding: 20px 0 0 0;
+        border-top: 1px solid #f2f2f2;
+        text-align: center;
+    }
+    
+    .start-right .garancy-box {
+        display: inline-block;
+        float: left;
+        width: 80px;
+        margin: 0 30px 0 0;
+        padding: 20px 0 0 0;
+    }
+    
+    .start-right .garancy-box img {
+        width: 70px;
+        height: 70px;
+        margin: 0 0 20px 0;
+    }
+    
+    .start-right .garancy-box p {
+        font-size: 80%;
+        font-weight: 500;
+        line-height: 1.3;
+        
+    }
+    
+/* ...... TOFU - big ...... */     
+   
+    .tofu {
+        width: 100%;
+        height: auto;
+    }
+    
+    .tofu .tofu-box {
+        width: 700px;
+        height: auto;
+        margin: 100px auto 100px auto;
+    }
+    
+    .tofu .tofu-card {
+        width: 240px;
+        height: 400px;
+        display: inline-block;
+        margin: 0 50px 0 50px;
+        text-align: left;
+    }
+    
+    .tofu .img-box {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .tofu img {
+        width: 100%;
+        height: 100%;   
+    }
+    
+    .tofu h3 {
+        height: 40px;
+        font-size: 120%;
+        font-weight: 600;
+        margin: 20px 0 20px 0;
+        line-height: 1.2;
+        letter-spacing: 1px;
+    }
+    
+    .tofu p {
+        font-size: 90%;
+        font-weight: 400;
+        margin: 20px 0 20px 0;
+        line-height: 1.6; 
+    }
+    
+/* ... MOFU - big ... */  
+    
+    .mofu {
+        width: 100%;
+        height: auto;
+    }   
+  
+    .mofu .mofu-box {
+        width: 700px;
+        height: 300px;
+        margin: 0 auto 0 auto;
+        text-align: center;
+    }
+    
+    .mofu .mofu-sides {
+        display: inline-block;
+        height: 300px;
+        margin: 0 20px 0 20px;
+    }
+    
+    .mofu .mofu-left {
+        width: 300px; 
+        float: left; 
+        text-align: left;
+    }
+    
+    .mofu .mofu-right {
+        width: 300px;
+        float: right;
+        text-align: left;
+    }   
+    
+    .mofu img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .mofu h3 {
+        font-size: 120%;
+        font-weight: 600;
+        margin: 20px 0 50px 0;
+        line-height: 1.4;
+    }
+    
+    .mofu p {
+        font-size: 80%;
+        font-weight: 400;
+        margin: 50px 0 0 0;
+        line-height: 1.3; 
+        letter-spacing: 1px;
+    }
+    
+    /* ... BOFU - big ... */
+    
+    .bofu {
+        width: 100%;
+        height: auto;
+        padding: 30px 0 0 0;
+    
+    }
+    
+    .bofu .bofu-box {
+        width: 700px;
+        height: auto;
+        margin: 100px auto 100px auto;
+        padding: 0 0 100px 0;
+        text-align: center;
+    }
+    
+    .bofu .bofu-left {
+        width: 300px;
+        height: 300px;
+        display: inline-block;
+    }
+    
+    .bofu .bofu-img {
+        width: 100%;
+        height: 100%;
+    }
+      
+    .bofu .bofu-right {
+        width: 340px;
+        height: auto;
+        display: inline-block;
+        float: right;
+        text-align: left;
+        margin: 0 0 0 0;
+    } 
+    
+    .bofu-right .message {
+        display: inline-block;
+        height: 20px;
+        color: #ec7700;
+        font-weight: 600;
+        margin: 0 0 30px 0;
+        padding: 5px 10px 10px 10px;
+        border-radius: 15px;
+        border: 1px solid #ec7700;
+        letter-spacing: 1px;
+        font-size: 90%;
+    }
+    
+    .bofu-right .message img {
+        height: 20px;
+        margin: 0 5px 0 5px;
+    }
+    
+    .bofu-right .title {
+        font-weight: 800;
+        font-size: 200%;
+        line-height: 1.2;
+        color: #000000;
+        margin: 0 0 20px 0;
+    }
+    
+    .bofu-right .desc {
+        font-weight: 400;
+        font-size: 100%;
+        line-height: 1.6;
+        color: #000000;
+        margin: 0 0 10px 0;
+    }
+    
+    .bofu-right .nn {
+        font-weight: 800;
+        font-size: 80%;
+        color: #000000;
+        margin: 0 0 15px 0;
+    }
+
+    .bofu-right .stars-box {
+        height: 20px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        margin: 0 0 40px 0;
+    }
+    
+    .bofu-right .stars-box img {
+        height: 15px;
+        margin: 0 15px 0 0;
+    }
+        
+    .bofu-right .garancy {
+        width: 340px;
+        display: inline-block;
+        float: left;
+        width: auto;
+        padding: 20px 0 0 0;
+        border-top: 1px solid #f2f2f2;
+    }
+    
+    .bofu-right .garancy-box {
+        display: inline-block;
+        float: left;
+        width: 100px;
+        margin: 0 10px 0 0;
+        padding: 20px 0 0 0;
+        text-align: center;
+    }
+    
+    .bofu-right .garancy-box img {
+        width: 70px;
+        height: 70px;
+        margin: 0 0 20px 0;
+    }
+    
+    .bofu-right .garancy-box p {
+        font-size: 80%;
+        font-weight: 500;
+        line-height: 1.3;
+    }
+    
+    .bofu-right .form {
+        width: 100%;
+        height: 300px;
+        border: 1px solid #f2f2f2;
+        line-height: 1.8;
+        text-align: center;
+    }
+    
+    
+    
+    
+    
+    
+ /* ...... DEC - big ...... */    
+  
+   .dec {
+        width: 100%;
+        height: 660px;
+        padding: 30px 0 0 0;
+        margin: 50px 0 0 0;
+        text-align: center;
+        background-color: #f4f4f4;
+    }
+    
+    .dec .dec-box {
+        width: 700px;
+        height: 700px;
+        margin: 100px auto 100px auto;
+        
+    }
+    
+    .dec .dec-sides {
+        text-align: center;
+        margin: 0 30px 0 30px;    
+    }
+    
+    .dec .dec-left {
+        width: 200px;
+        height: auto;
+        display: inline-block;
+        float: left;
+        margin: 0 180px 0 0; 
+        line-height: 1.4;
+    }
+  
+    .dec .dec-right {
+        width: 200px;
+        height: auto;
+        display: inline-block;
+        float: left;
+        margin: 0 0 0 0;
+    }  
+    
+    .dec h4 {
+        text-align: center;
+        font-size: 210%;
+        margin: 0 0 100px 0;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+    
+    .dec h5 {
+        text-align: left;
+        font-size: 110%;
+        margin: 0 0 10px 0; 
+        font-weight: 400;
+    }
+    
+    .dec p {
+        text-align: left;
+        font-size: 90%;
+        margin: 0 0 30px 0;
+        line-height: 1.4;
+        font-weight: 300;
+    }
+    
+/* ...... IMAGES - big ...... */    
+    
+    .images {
+        width: 100%;
+        height: auto;
+        padding: 30px 0 0 0;
+        text-align: center;
+    }
+    
+    .images .images-box {
+        width: 600px;
+        height: auto;
+        margin: 100px auto 100px auto;
+        text-align: center;
+    }  
+    
+    .images h6 {
+        font-size: 200%;
+        font-weight: 600;
+        line-height: 1.3;
+        letter-spacing: 1px;
+        margin: 0 0 40px 0;
+        text-align: center;
+    }
+    
+    .images p {
+        font-size: 100%;
+        font-weight: 300;
+        line-height: 1.3;
+        letter-spacing: 1px;
+        margin: 0 0 30px 0;
+    }
+    
+    .images img {
+        width: 400px;
+        height: 400px;
+        margin: 0 0 30px 0;
+    } 
+    
+/* ...... GALERY - big ...... */   
+
+    .galery {
+        width: 100%;
+        height: auto;
+    }   
+    
+    .galery .galery-box {
+        width: 700px; 
+        height: 450px;
+        margin: 0 auto 0 auto;
+        text-align: center;
+    }
+    
+    .galery img {
+        width: 160px;
+        height: 160px;
+        display: inline-block;
+    }
+    
+    
+/* ...... VIDEO - big ...... */ 
+    
+    .video {
+        width: 100%;
+        height: auto;   
+    }
+
+    .video video {
+        display: block;
+        width: 600px;
+        height: auto;
+        margin: 60px auto 20px auto;
+    }
+    
+    .video a {
+        width: 270px;
+        height: 60px;
+        display: block;
+        margin: 60px auto 0 auto;
+        background-color: #ec7700;
+        border-radius: 10px;
+        line-height: 60px;
+        font-size: 120%;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: black;
+        transition: 0.6s;
+        text-align: center;
+        color: #ffffff;
+    }
+    
+    
+/* ...... BOTTOM - big ...... */ 
+  
+    .bottom {
+        width: 100%;
+        height: auto;
+        padding: 80px 0 80px 0; 
+        background-image: url("../images/cover-img.png");
+        background-size: cover;
+        background-position: center; 
+    }
+    
+    .bottom .bottom-box {
+        width: 760px;
+        height: 450px;
+        margin: 0 auto 0 auto;
+    }
+    
+    .bottom .bottom-left {
+        width: 300px;
+        height: 450px;
+        margin: 0 30px 0 30px;
+        display: inline-block;
+        float: left;
+    }
+    
+    .bottom .bottom-right {
+        width: 300px;
+        height: 450px;
+        display: inline-block;
+        float: left;
+    }
+    
+    .bottom .logo-bottom {
+        width: 260px;
+        height: 70px;
+    }
+    
+    .bottom img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .bottom .bottom-left p {
+        margin: 30px 0 0 0;
+        line-height: 1.6;
+        color: #ffffff;
+    }
+    
+    .bottom .bottom-left a {
+        color: #ffffff;
+        transition: 0.6s;
+    }  
+    
+    .bottom .bottom-left a:hover {
+        color: #ec7700;
+    } 
+    
+    .bottom .bottom-right p {
+        margin: 30px 0 0 0;
+        line-height: 1.3;
+        color: #ffffff;
+        font-size: 300%;
+        margin: 40px 0 0 40px;
+        font-weight: 700;
+    }
+    
+    .bottom .bottom-right a {
+        width: 300px;
+        height: 70px;
+        display: block;
+        margin: 100px 0 0 40px;
+        background-color: #ec7700;
+        border-radius: 10px;
+        text-align: center;
+        line-height: 70px;
+        color: #ffffff;
+        font-size: 140%;
+        margin: 40px 0 0 40px;
+        font-weight: 500;
+    }
+    
+  
+ 
+/* ...... */ } /* ...... */
+
+/* .......... SMALL .... */
+
+@media only screen and (min-width: 319px) and (max-width: 769px) {
+
+    .page {
+        width: 100%;
+        height: auto;
+        background-color: #f6f6f6;
+        overflow: hidden;
+    }
+    
+/* ... INTRO-1 - big - big ... */   
+    
+    .intro {
+        width: 90%;
+        text-align: center;
+        margin: 100px auto 100px auto;
+        text-align: center;
+    }
+    
+    .intro h2 {
+        font-size: 140%;
+        margin: 100px 0 30px 0;
+        font-weight: 800;
+        letter-spacing: 1px;
+        line-height: 1.2;
+    }
+    
+    .intro p {
+        font-size: 90%;
+        margin: 0 0 0 0;
+        font-weight: 400;
+        line-height: 1.3;
+    }
+     
+/* ... NAV - big ... */    
+    
+    .nav {
+        min-width: 100%;
+        height: auto;
+        background-color: #ffffff;
+        margin: 0 70px 0 0;
+        padding: 20px 0 20px 0;
+    }
+    
+    .nav .nav-box {
+        width: 100%;
+        height: 30px;
+    }
+    
+    .nav img {
+        width: auto;
+        height: 30px;
+    }
+    
+    .nav .logo-box,
+    .nav .search-box,
+    .nav .neto-box,
+    .nav .bag-box
+    { 
+        height: 30px;
+        display: inline-block;
+    }
+    
+    .nav .logo-box {
+        width: auto;
+        margin: 0 0 0 10px;
+        float: left;
+    }
+    
+    .nav input[type=text] {
+        height: 30px;
+        width: 90px;
+        padding: 0 0 0 50px;
+        background-color: #f6f6f6;
+        border: none;
+        border-radius: 15px;  
+        float: left;
+    }
+    
+    .nav input[type=submit] {
+        width: 20px;
+        height: 20px;
+        background-image: url("../images/search-pic.png");
+        background-size: cover;
+        margin: 0px 0 0 0;
+        border: none;
+        background-color: #f6f6f6;        
+        float: left;
+        position: relative;
+        left: 30px;
+        top: 5px;
+        cursor: pointer;
+        font-size: 80%;
+    }
+    
+    .nav .neto-box {
+        width: 20px;
+        height: 20px;
+        margin: 20px 0 0 0;
+        line-height: 15px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 110%;
+        float: right;
+        position: relative;
+        left: 25px;
+        top: -10px;
+        color: #ec7700;
+        font-size: 90%;
+    }
+    
+    .nav .bag-box {
+        width: 20px;
+        height: 20px;
+        margin: 0 10px 0 0;
+        float: right;
+    }
+    
+  /* ... START - big ... */  
+    
+    .product-box {
+        width: 95%;
+        height: auto;
+        margin: 30px auto 30px auto;
+        padding: 0 0 30px 0;
+        background-color: #ffffff;
+        border-radius: 10px;
+    }
+    
+    .start {
+        width: 100%;
+        height: auto;
+        padding: 30px 0 30px     0;
+        text-align: center;
+    }
+    
+    .start .start-box {
+        width: 300px;
+        height: auto;
+        margin: 0 auto 0 auto;
+        padding: 0 20px 100px 20px;
+    }
+    
+    .start .start-left {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .start .start-procent {
+        width: 80px;
+        height: 50px;
+        position: absolute;
+        z-index: 1;
+    }
+    
+    .start .start-img {
+        width: 100%;
+        height: 100%;
+    }
+  
+    .start .start-right {
+        width: 300px;
+        height: auto;
+        text-align: left;
+        margin: 0 60px 0 0;
+    } 
+    
+    .start-right .message {
+        width: 300px;
+        display: inline-block;
+        height: 20px;
+        color: #ec7700;
+        font-weight: 600;
+        margin: 30px 0 30px 0;
+        padding: 5px 10px 10px 10px;
+        border-radius: 15px;
+        border: 1px solid #ec7700;
+        letter-spacing: 1px;
+        font-size: 80%;
+    }
+    
+    .start-right .message img {
+        height: 20px;
+        margin: 0 5px 0 5px;
+    }
+    
+    .start-right .title {
+        font-weight: 800;
+        font-size: 180%;
+        line-height: 1.2;
+        color: #000000;
+        margin: 0 0 20px 0;
+    }
+    
+    .start-right .desc {
+        font-weight: 400;
+        font-size: 90%;
+        line-height: 1.6;
+        color: #000000;
+        margin: 0 0 10px 0;
+    }
+    
+    .start-right .nn {
+        font-weight: 800;
+        font-size: 80%;
+        color: #000000;
+        margin: 0 0 15px 0;
+    }
+
+    .start-right .stars-box {
+        height: 20px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        margin: 0 0 40px 0;
+    }
+    
+    .start-right .stars-box img {
+        height: 15px;
+        margin: 0 15px 0 0;
+    }
+    
+    .start-right .price {
+        font-weight: 800;
+        font-size: 220%;
+        color: #ec7700;
+        margin: 0 0 40px 0;
+    }
+    
+    .start-right .price span {
+        font-weight: 800;
+        font-size: 100%;
+        color: #000000;
+        margin: 0 30px 15px 0;
+        text-decoration: line-through;
+        color: #cbcbcb;
+    }
+    
+    .start-right a {
+        display: block;
+        width: 300px;
+        height: 70px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        font-size: 100%;
+        color: #ffffff;
+        margin: 0 0 80px 0;
+        text-align: center;
+        background-color: #ec7700;
+        border-radius: 10px;
+        line-height: 70px;
+    }
+    
+    .start-right .garancy {
+        width: 300px;
+        margin: 0 auto 0 auto;
+        padding: 20px 0 0 0;
+        border-top: 1px solid #f2f2f2;
+        text-align: center;
+    }
+    
+    .start-right .garancy-box {
+        width: 90px;
+        margin: 0 auto 0 auto;
+        float: left;
+        padding: 20px 0 0 0;
+    }
+    
+    .start-right .garancy-box img {
+        width: 70px;
+        height: 70px;
+        margin: 0 0 20px 0;
+    }
+    
+    .start-right .garancy-box p {
+        font-size: 80%;
+        font-weight: 400;
+        line-height: 1.3;
+        
+    }
+    
+/* ...... TOFU - big ...... */     
+   
+    .tofu {
+        width: 100%;
+        height: auto;
+    }
+    
+    .tofu .tofu-box {
+        width: 300px;
+        height: auto;
+        margin: 50px auto 50px auto;
+    }
+    
+    .tofu .tofu-card {
+        width: 300px;
+        height: 350px;
+        margin: 0 0 0 0;
+    }
+    
+    .tofu .img-box {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .tofu img {
+        width: 100%;
+        height: 100%;   
+    }
+    
+    .tofu h3 {
+        height: 60px;
+        font-size: 100%;
+        font-weight: 600;
+        margin: 30px 0 0 0;
+        line-height: 1.2;
+        letter-spacing: 1px;
+    }
+    
+    .tofu p {
+        font-size: 100%;
+        font-weight: 400;
+        margin: 0 0 20px 0;
+        line-height: 1.4; 
+    }
+    
+/* ... MOFU - big ... */  
+    
+    .mofu {
+        width: 100%;
+        height: auto;
+    }   
+  
+    .mofu .mofu-box {
+        width: 300px;
+        margin: 100px auto 0 auto;
+        float: center;
+    }
+    
+    .mofu .mofu-sides {
+        height: 300px;
+        margin: 0 20px 0 20px;
+    }
+    
+    .mofu .mofu-left {
+        width: 100%;
+    }
+    
+    .mofu .mofu-right {
+        width: 300px;
+    }   
+    
+    .mofu img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .mofu h3 {
+        font-size: 160%;
+        font-weight: 600;
+        margin: 20px 0 20px 0;
+        line-height: 1.4;
+    }
+    
+    .mofu p {
+        font-size: 80%;
+        font-weight: 400;
+        margin: 0 0 0 0;
+        line-height: 1.4; 
+        letter-spacing: 1px;
+    }
+    
+    /* ... BOFU - big ... */
+    
+    .bofu {
+        width: 100%;
+        height: auto;    
+    }
+    
+    .bofu .bofu-box {
+        width: 300px;
+        height: auto;
+        margin: 100px auto 150px auto;
+        padding: 0 0 100px 0;
+        text-align: center;
+    }
+    
+    .bofu .bofu-left {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .bofu .bofu-img {
+        width: 100%;
+        height: 100%;
+    }
+      
+    .bofu .bofu-right {
+        width: 300px;
+        height: auto;
+        text-align: left;
+        margin: 0 auto 0 auto;
+    } 
+    
+    .bofu-right .message {
+        display: inline-block;
+        height: 20px;
+        width: 300px;
+        color: #ec7700;
+        font-weight: 600;
+        margin: 50px 0 30px 0;
+        padding: 5px 10px 10px 10px;
+        border-radius: 15px;
+        border: 1px solid #ec7700;
+        letter-spacing: 1px;
+        font-size: 80%;
+    }
+    
+    .bofu-right .message img {
+        height: 20px;
+        margin: 0 5px 0 5px;
+    }
+    
+    .bofu-right .title {
+        font-weight: 800;
+        font-size: 180%;
+        line-height: 1.2;
+        color: #000000;
+        margin: 0 0 20px 0;
+    }
+    
+    .bofu-right .desc {
+        font-weight: 400;
+        font-size: 100%;
+        line-height: 1.4;
+        color: #000000;
+        margin: 0 0 10px 0;
+    }
+    
+    .bofu-right .nn {
+        font-weight: 800;
+        font-size: 80%;
+        color: #000000;
+        margin: 0 0 15px 0;
+    }
+
+    .bofu-right .stars-box {
+        height: 20px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        margin: 0 0 40px 0;
+    }
+    
+    .bofu-right .stars-box img {
+        height: 15px;
+        margin: 0 15px 0 0;
+    }
+        
+    .bofu-right .garancy {
+        float: left;
+        width: auto;
+        padding: 20px 0 0 0;
+        border-top: 1px solid #f2f2f2;
+    }
+    
+    .bofu-right .garancy-box {
+        width: 90px;
+        text-align: left;
+        margin: 0 auto 0 auto;
+        padding: 20px 0 20px 0;
+        text-align: center;
+        float: left;
+    }
+    
+    .bofu-right .garancy-box img {
+        width: 70px;
+        height: 70px;
+        margin: 0 0 20px 0;
+    }
+    
+    .bofu-right .garancy-box p {
+        font-size: 80%;
+        font-weight: 400;
+        line-height: 1.3;
+    }
+    
+    .bofu-right .form {
+        width: 100%;
+        height: 300px;
+        border: 1px solid #f2f2f2;
+        line-height: 1.8;
+        text-align: center;
+    }
+      
+  /* ...... DEC - big ...... */    
+  
+   .dec {
+        width: 100%;
+        height: auto;
+        padding: 30px 0 50px 0;
+        margin: 20px 0 0 0;
+        text-align: center;
+        background-color: #f4f4f4;
+    }
+    
+    .dec .dec-box {
+        width: 300px;
+        height: auto;
+        margin: 100px auto 100px auto;
+        
+    }
+    
+    .dec .dec-sides {
+        text-align: center;
+        margin: 0 30px 0 30px;    
+    }
+    
+    .dec .dec-left {
+        width: 300px;
+        height: auto;
+        margin: 0 180px 0 0; 
+        line-height: 1.4;
+    }
+  
+    .dec .dec-right {
+        width: 300px;
+        height: auto;
+        margin: 0 0 0 0;
+    }  
+    
+    .dec h4 {
+        width: 300px;
+        text-align: center;
+        font-size: 180%;
+        margin: 0 auto 100px auto;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+    
+    .dec h5 {
+        text-align: left;
+        font-size: 100%;
+        margin: 0 0 10px 0; 
+        font-weight: 600;
+    }
+    
+    .dec p {
+        text-align: left;
+        font-size: 90%;
+        margin: 0 0 30px 0;
+        line-height: 1.4;
+        font-weight: 300;
+    }
+    
+/* ...... IMAGES - big ...... */    
+    
+    .images {
+        width: 100%;
+        height: auto;
+        padding: 30px 0 0 0;
+        text-align: center;
+    }
+    
+    .images .images-box {
+        width: 300px;
+        height: auto;
+        margin: 50px auto 50px auto;
+        text-align: center;
+    }  
+    
+    .images h6 {
+        font-size: 140%;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: 1px;
+        margin: 0 0 40px 0;
+        text-align: center;
+    }
+    
+    .images p {
+        font-size: 80%;
+        font-weight: 300;
+        line-height: 1.3;
+        letter-spacing: 1px;
+        margin: 0 0 30px 0;
+    }
+    
+    .images img {
+        width: 300px;
+        height: 300px;
+        margin: 0 0 30px 0;
+    } 
+    
+/* ...... GALERY - big ...... */   
+
+    .galery {
+        width: 100%;
+        height: auto;
+    }   
+    
+    .galery .galery-box {
+        width: 300px; 
+        height: auto;
+        margin: 0 auto 0 auto;
+        text-align: center;
+    }
+    
+    .galery img {
+        width: 300px;
+        height: 300px;
+        display: inline-block;
+    }
+    
+    
+/* ...... VIDEO - big ...... */ 
+    
+    .video {
+        width: 100%;
+        height: auto;   
+    }
+
+    .video video {
+        display: block;
+        width: 300px;
+        height: auto;
+        margin: 60px auto 20px auto;
+    }
+    
+    .video a {
+        width: 270px;
+        height: 60px;
+        display: block;
+        margin: 60px auto 0 auto;
+        background-color: #ec7700;
+        border-radius: 10px;
+        line-height: 60px;
+        font-size: 120%;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: black;
+        transition: 0.6s;
+        text-align: center;
+        color: #ffffff;
+    }  
+    
+/* ...... BOTTOM - big ...... */ 
+  
+    .bottom {
+        width: 100%;
+        height: auto;
+        padding: 80px 0 80px 0; 
+        background-image: url("../images/cover-img.png");
+        background-size: cover;
+        background-position: center; 
+    }
+    
+    .bottom .bottom-box {
+        width: 760px;
+        height: 800px;
+        margin: 0 auto 0 auto;
+    }
+    
+    .bottom .bottom-left {
+        width: 300px;
+        height: 450px;
+        margin: 0 30px 0 40px;
+    }
+    
+    .bottom .bottom-right {
+        width: 300px;
+        height: 450px;
+        float: left;
+
+    }
+    
+    .bottom .logo-bottom {
+        width: 260px;
+        height: 70px;
+    }
+    
+    .bottom img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .bottom .bottom-left p {
+        margin: 30px 0 0 0;
+        line-height: 1.6;
+        color: #ffffff;
+    }
+    
+    .bottom .bottom-left a {
+        color: #ffffff;
+        transition: 0.6s;
+    }  
+    
+    .bottom .bottom-left a:hover {
+        color: #ec7700;
+    } 
+    
+    .bottom .bottom-right p {
+        margin: 30px 0 0 0;
+        line-height: 1.3;
+        color: #ffffff;
+        font-size: 300%;
+        margin: 40px 0 0 40px;
+        font-weight: 700;
+    }
+    
+    .bottom .bottom-right a {
+        width: 300px;
+        height: 70px;
+        display: block;
+        margin: 100px 0 0 40px;
+        background-color: #ec7700;
+        border-radius: 10px;
+        text-align: center;
+        line-height: 70px;
+        color: #ffffff;
+        font-size: 140%;
+        margin: 40px 0 0 40px;
+        font-weight: 500;
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+   
+/* ...... */ } /* ...... */
