@@ -12,6 +12,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "hardevine/shoppingcart": "^2.9",
         "intervention/image": "^2.5",
+        "itstructure/laravel-grid-view": "~1.0.7",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2"

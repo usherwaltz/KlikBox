@@ -6,56 +6,66 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Attribute;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use App\Http\Requests\CreateProductRequest;
 use App\Http\Requests\ProductUpdateRequest;
+use Itstructure\GridView\DataProviders\EloquentDataProvider;
 
 class ProductController extends Controller
 {
     /**
-     * Method index
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @return Application|Factory|View
      */
     public function index()
     {
-        $products = Product::paginate(20);
-        return view('products.index', compact('products'));
+
+        $dataProvider = new EloquentDataProvider(Product::query());
+//        $products = Product::paginate(20);
+        return view('products.index', [
+//            'products' => $products,
+            'dataProvider' => $dataProvider
+        ]);
     }
 
 
     /**
      * Method create
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @return Factory|View
      */
     public function create()
     {
         return view('products.create');
     }
 
-    /**
-     * Method show
-     *
-     * @param $slug $slug [explicite description]
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
-     */
-    public function show($slug)
-    {
-        $product = Product::where('slug', $slug)->first();
-
-        return view('product.show', compact('product'));
-    }
+//    /**
+//     * Method show
+//     *
+//     * @param $slug $slug [explicite description]
+//     *
+//     * @return Factory|View
+//     */
+//    public function show($slug)
+//    {
+//        $product = Product::where('slug', $slug)->first();
+//
+//        return view('product.show', compact('product'));
+//    }
 
     /**
      * Method edit
      *
      * @param $slug $slug [explicite description]
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @return Factory|View
      */
     public function edit($slug)
     {
@@ -73,10 +83,11 @@ class ProductController extends Controller
      * @param ProductUpdateRequest $request
      * @param $id $id
      *
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return Application
      */
     public function update(ProductUpdateRequest $request, $id)
     {
+
         if ($request->photo) {
             $photo = $request->file('photo');
             $filename = $photo->getClientOriginalName();
@@ -95,15 +106,22 @@ class ProductController extends Controller
         }
         $product->oldprice = $request->oldprice;
         $product->price = $request->price;
-        $product->save();
-        if ($request->categories) {
-            $product->categories()->sync($request->categories);
-        }
-        if ($request->options) {
-            $product->options()->sync($request->options);
-        }
 
-        return redirect(route('products.edit', $product->slug));
+        //check if product was saved
+        if($product->save()) {
+            if ($request->categories) {
+                $product->categories()->sync($request->categories);
+            }
+            if ($request->options) {
+                $product->options()->sync($request->options);
+            }
+            Session::flash('message', 'Detalji proizvoda "' . $product->name . '" su uspješno sačuvani!');
+            Session::flash('alert-class', 'alert-success');
+        } else {
+            Session::flash('message', 'Došlo je do greške prilikom izmjene proizvoda "' . $product->name . '"!');
+            Session::flash('alert-class', 'alert-danger');
+        }
+        return redirect(route('products.index'));
     }
 
     /**
@@ -111,7 +129,7 @@ class ProductController extends Controller
      *
      * @param CreateProductRequest $request Request with validation
      *
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return RedirectResponse|Redirector
      */
     public function store(CreateProductRequest $request)
     {
@@ -131,6 +149,8 @@ class ProductController extends Controller
      */
     public function upload(Request $request)
     {
+
+
         if ($request->hasFile('upload')) {
             $originName = $request->file('upload')->getClientOriginalName();
             $fileName = pathinfo($originName, PATHINFO_FILENAME);
@@ -148,6 +168,19 @@ class ProductController extends Controller
 
     public function destroy(Product $product){
         $product->delete();
+        return redirect(route('products.index'));
+    }
+
+    public function delete() {
+        $id = $_GET['id'];
+        $product = Product::find($id);
+        if($product->delete()) {
+            Session::flash('message', 'Uspješno ste obrisali proizvod ' . $product->name . '"');
+            Session::flash('alert-class', 'alert-success');
+        } else {
+            Session::flash('message', 'Doslo je do greške prilikom brisanja proizvoda "' . $product->name . '"');
+            Session::flash('alert-class', 'alert-danger');
+        }
         return redirect(route('products.index'));
     }
 }

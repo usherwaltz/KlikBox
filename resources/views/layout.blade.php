@@ -91,33 +91,8 @@ height: 50px;">
 </div>
 <div class="page-e">
 
-    <!-- --------------------------------------------------------------- -->
-    <!-- --------------------------------------------------------------- -->
-
-<!--<div class="nav">
-    <div class="nav-box">
-        <div class="logo-box">
-            <a class="logo-a" href="/">
-                <img class="logo-i" src="/images/logo-nav.png" alt="logo-nav">
-            </a>
-        </div>
-        <div class="search-box">
-            <form action="" method="">
-                <input type="submit" value="">
-                <input type="text" placeholder="Pretraga..." name="">
-            </form>
-        </div>
-        <div class="bag-box">
-                <div class="dropdown" style="float:left;">
-                    <button class="dropbtn">
                         {{ Cart::count() }}
-        </button>
-        <div class="dropdown-content" style="right:0;">
-            <ul>
 @forelse (Cart::content() as $row)
-    <li>
-        <div></div>
-        <div>
 {{$row->name}}
     @if(isset($row->options))
         <?php $opts = get_object_vars($row->options); ?>
@@ -125,56 +100,9 @@ height: 50px;">
             | {{$row->options->$key}}
         @endforeach
     @endif
-            </div>
-            <div>X</div>
-            <div>{{$row->qty}}</div>
-                            </li>
                             @empty
-    <li>Korpa je prazna</li>
 @endforelse
-        </ul>
-        <a href="{{ url('cart') }}" class="orangebutton cartbtn">Vidi korpu</a>
-                    </div>
-                  </div>
-        </div>
-        <div class="neto-box">
-
-            <p></p>
-        </div>
-    </div>
- </div>-->
-
-    <!-- --------------------------------------------------------------- -->
-    <!--<div class="clearfix"></div>  -->
-    <!-- --------------------------------------------------------------- -->
 @yield('content')
-
-<!-- --------------------------------------------------------------- -->
-    <!--<div class="clearfix"></div>-->
-    <!-- --------------------------------------------------------------- -->
-
-    <!--<div class="clearfix"></div>
-    <div class="bottom">
-        <div class="bottom-box">
-            <div class="bottom-left">
-                <div class="logo-bottom">
-                   <img src="/images/logo-bottom.png" alt="logo-bottom">
-                </div>
-                <p>Besplatan broj <br> <a href="tel:080050705">080 05 07 05</a></p>
-                <p><a href="mailto:info@klikbox.ba">info@klikbox.ba</a></p>
-                <p>
-                    <a href="https://www.google.com/maps/place/Teleklik/@44.7831412,17.1983771,16.75z/data=!4m5!3m4!1s0x0:0xa678a8c697b8d01a!8m2!3d44.7843704!4d17.1991509" target="_blank">Kralja Petra II Karađorđevića 39,<br>78000 Banja Luka</a>
-                </p>
-                <p><a class="copyright" href="#">Uslovi korišćenja</a> <br> <a class="copyright" href="#">Politika Privatnosti</a></p>
-                <p>2021 KlikBox | Teleklik.doo</p>
-            </div>
-            <div class="bottom-right">
-                <p class="bottom-title">Vaša kupovina <br> na klik !</p>
-                <a href="/" class="bootom-a">SVI PROIZVODI</a>
-            </div>
-        </div>
-    </div>
-    -->
     <div class="footer">
         <div class="container pt-5 pb-5">
             <div class="row">

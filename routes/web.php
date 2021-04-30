@@ -47,21 +47,19 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
 Route::group(
     ['prefix' => 'admin', 'middleware' => 'auth'],
     function () {
+        Route::get('/products/delete', [ProductController::class, 'delete'])->name('products.delete');
+        Route::resource('products', ProductController::class);
         Route::get('/', [DashboardController::class, 'index']);
-        Route::get('dashboard', [DashboardController::class, 'index'])
-            ->name('dashboard');
+        Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::resource('attribute', AttributeController::class);
         Route::resource('option', OptionController::class);
         Route::resource('category', CategoryController::class);
-        Route::resource('products', ProductController::class);
-        Route::post('imageupload', [ProductController::class, 'upload'])
-            ->name('imageupload');
+//        Route::resource('products', ProductController::class);
+        Route::post('imageupload', [ProductController::class, 'upload'])->name('imageupload');
         Route::resource('block', BlockController::class);
-        Route::get('orders', [OrderController::class, 'index'])
-            ->name('orders.index');
-        Route::get('orders/{id}', [OrderController::class, 'showOrder'])
-            ->name('orders.show');
-  Route::get('/settings', [SettingsController::class,'index'])->name('settings');
+        Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
+        Route::get('orders/{id}', [OrderController::class, 'showOrder'])->name('orders.show');
+        Route::get('/settings', [SettingsController::class,'index'])->name('settings');
         Route::post('/settings', [SettingsController::class,'store'])->name('settings.store');
     }
 );

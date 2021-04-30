@@ -1,75 +1,87 @@
+<?php
+
+use Itstructure\GridView\DataProviders\EloquentDataProvider;
+
+/** @var EloquentDataProvider $dataProvider */
+?>
+
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-sm-12">
-            <div class="card">
-                <div class="card-header">{{ __('Atributi') }}</div>
+    @if(Session::has('message'))
+        <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('message') }}</p>
+    @endif
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <a href="{{route('products.create')}}" class="btn btn-success">{{__('Dodaj proizvod')}}</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <h3>Proizvodi</h3>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Naziv</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @forelse ($products as $product)
-                                    <tr>
-                                        <td scope="row">{{$product->id}}</td>
-                                        <td>{{$product->name}}</td>
-                                        <td>
-                                            <div class="row">
-                                                <div class="col-m-6">
-                                                    <a href="{{route('products.edit',$product->slug)}}" class="btn btn-sm btn-primary">
-                                                        Izmjena
-                                                    </a>
-                                                </div>
-                                                <div class="col-m-6">
-                                                    <form action="{{route('products.destroy',$product)}}" method="post">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <input class="btn btn-sm btn-danger" type="submit" name="submit" value="Obriši">
-                                                    </form>
-                                                </div>
-                                            </div>
+    <?= @grid_view([
+        'dataProvider' => $dataProvider,
+        'title' => 'Proizvodi',
+        'useFilters' => false,
+        'tableSmall' => false,
+        'columnFields' => [
+            [
+                'label' => 'ID',
+                'value' => function ($product) {
+                    return $product->id;
+                },
+                'sort' => 'id'
+            ],
+            [
+                'label' => 'Naziv Proizvoda',
+                'value' => function ($product) {
+                    return $product->name;
+                },
+                'sort' => 'id'
+            ],
+            [
+                'label' => 'Slika', // Column label.
+                'value' => function ($row) { // You can set 'value' as a callback function to get a row data value dynamically.
+                    return $row->photo;
+                },
+                'filter' => false, // If false, then column will be without a search filter form field.
+                'format' => [ // Set special formatter. If $row->icon value is a url to image, it will be inserted in to 'src' attribute of <img> tag.
+                    'class' => Itstructure\GridView\Formatters\ImageFormatter::class, // REQUIRED. For this case it is necessary to set 'class'.
+                    'htmlAttributes' => [ // Html attributes for <img> tag.
+                        'width' => '100'
+                    ]
+                ]
+            ],
+            [
+                'label' => 'Kreirano',
+                'value' => function ($product) {
+                    return date("d.m.Y H:i", strtotime($product->created_at));
+                },
+                'sort' => 'created_at'
+            ],
+            [
+                'label' => '', // Optional
+                'class' => \Itstructure\GridView\Columns\ActionColumn::class, // Required
+                'actionTypes' => [ // Required
+                    [
+                        'class' => \Itstructure\GridView\Actions\Edit::class,
+                        'url' => function ($product) {
+                            return '/admin/products/' . $product->slug . '/edit';
+                        },
+                        'htmlAttributes' => [
+                            'style' => 'color: white'
+                        ]
+                    ],
+                    [
+                        'class' => \Itstructure\GridView\Actions\Delete::class, // Required
+                        'url' => function ($product) { // Optional
+                            return 'products/delete?id=' . $product->id;
+                        },
+                        'htmlAttributes' => [ // Optional
+                            'style' => 'color: white; font-size: 16px;'
+                        ]
+                    ]
+                ]
+            ],
 
+        ],
+    ]); ?>
 
-                                        </td>
-                                    </tr>
-                                    @empty
-                                        
-                                    @endforelse
-                                    
-                                    <tr>
-                                        <td scope="row"></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            {{$products->links()}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <a href="{{route('products.create')}}" class="btn btn-success mt-3">{{__('Dodaj proizvod')}}</a>
 </div>
 @endsection

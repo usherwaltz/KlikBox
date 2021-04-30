@@ -10002,3 +10002,12 @@ h3 {
     border-color: #dee2e6;
   }
 }
+
+.card > .card-body > table > thead > tr > th {
+    text-align: center !important;
+}
+
+.card > .card-body > table > tbody > tr > td {
+    text-align: center !important;
+    vertical-align: middle !important;
+}

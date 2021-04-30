@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Product extends Model
 {
@@ -12,9 +14,9 @@ class Product extends Model
     /**
      * Method category
      *
-     * @return void
+     * @return BelongsToMany
      */
-    public function categories()
+    public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Category::class);
     }
@@ -22,9 +24,9 @@ class Product extends Model
     /**
      * Method attributes
      *
-     * @return void
+     * @return BelongsToMany
      */
-    public function attributes()
+    public function attributes(): BelongsToMany
     {
         return $this->belongsToMany(Attribute::class, 'product_attribute');
     }
@@ -32,9 +34,9 @@ class Product extends Model
     /**
      * Method blocks
      *
-     * @return void
+     * @return HasMany
      */
-    public function blocks()
+    public function blocks(): HasMany
     {
         return $this->hasMany(Block::class);
     }
@@ -42,9 +44,9 @@ class Product extends Model
     /**
      * Method options
      *
-     * @return void
+     * @return BelongsToMany
      */
-    public function options()
+    public function options(): BelongsToMany
     {
         return $this->belongsToMany(Option::class);
     }
