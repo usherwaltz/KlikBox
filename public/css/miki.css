@@ -1518,6 +1518,11 @@ a.bottom-add-cart {
     color: #ec7700 !important;
 }
 
+.navbar-toggler:focus {
+    border: none !important;
+    box-shadow: none !important;
+}
+
 .navbar-brand {
     margin: 0 0 0 10px
 }
