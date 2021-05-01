@@ -38,14 +38,20 @@
 <div class="wrap">
     <header id="header" class="sticky-top" id="header">
         <div class="collapse" id="navbarToggleExternalContent">
-            <div class="p-4">
+            <div class="bg-light p-4">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <a class="bg-white shadow-sm w3-bar-item" href="/novo"><i class="fas fa-tags"></i> NOVO</a>
-                            <a class="bg-white shadow-sm w3-bar-item" href="/trend"> <i class="fas fa-arrow-up"></i> TREND</a>
-                            <a class="bg-white shadow-sm w3-bar-item" href="/akcija"><i class="fas fa-percentage"></i> AKCIJA</a>
-                        </div>
+                    <div class="navbar-collapse collapse show" id="collapsibleNavbar" style="">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link custom-anchor-tag text-center" href="/novo">NOVO</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link custom-anchor-tag text-center" href="/trend">TREND</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link custom-anchor-tag text-center" href="/akcija">AKCIJA</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
