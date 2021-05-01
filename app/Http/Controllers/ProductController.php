@@ -87,7 +87,6 @@ class ProductController extends Controller
      */
     public function update(ProductUpdateRequest $request, $id)
     {
-
         if ($request->photo) {
             $photo = $request->file('photo');
             $filename = $photo->getClientOriginalName();
@@ -100,6 +99,7 @@ class ProductController extends Controller
         $product = Product::find($id);
         $product->name = $request->name;
         $product->slug = $request->slug;
+        $product->top_choice = isset($request->top_choice) && $request->top_choice == "on" ? 1 : 0;
         $product->description = $request->description;
         if ($request->photo) {
             $product->photo = '/photos/' . $filename;

@@ -3,21 +3,10 @@
 @section('title', 'Products')
 
 @section('css')
-<link rel="stylesheet" type="text/css" href="{{asset('css/miki.css')}}"> 
+<link rel="stylesheet" type="text/css" href="{{asset('css/miki.css')}}">
 @endsection
 @section('content')
-<div class="container-fluid">
-    @if(setting('show_categories'))
-	<div class="row">
-		<div class="col-12">
-			<a class="w3-bar-item" href="/novo"><i class="fas fa-tags"></i> NOVO</a>
-			<a class="w3-bar-item" href="/trend"> <i class="fas fa-arrow-up"></i> TREND</a>
-			<a class="w3-bar-item" href="/akcija"><i class="fas fa-percentage"></i> AKCIJA</a>
-		</div>
-	</div>
-        @endif
-</div>
-<div class="container-fluid mt-4 all-products-home">
+<div class="container mt-4 all-products-home">
    <div class="row">
 	@forelse ($products as $product)
 		<div class="col-md-6 col-lg-3 col-xl-2 p-0">
@@ -27,7 +16,7 @@
 						<div class="card-box">
 							<div class="procent-box">
 								<div class="procent"><span>-50%</span></div>
-							</div>  
+							</div>
 							<div class="img-box">
 								@if($product->photo)
 									<img class="start-img" src="{{$product->photo}}" alt="{{$product->title}}">
@@ -44,13 +33,13 @@
 								@endif
 								{{round($product->price)}} KM
 							</div>
-						</div>  
-					</a> 
+						</div>
+					</a>
 				</div>
 			</div>
 		</div>
-      @empty   
-    @endforelse	
+      @empty
+    @endforelse
    </div>
 </div>
 <div class="tofu">
@@ -63,7 +52,7 @@
             <img src="/images/delivery-pic.png" alt="delivery-pic">
             <p>BRZA <br>DOSTAVA 24H</p>
         </div>
-        
+
         <div class="tofu-card">
             <img src="/images/quality-pic.png" alt="quality-pic">
             <p>KONTROLA <br>KVALITETA</p>

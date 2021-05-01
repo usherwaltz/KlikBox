@@ -16,54 +16,108 @@
     <meta property="og:locale" content="bs_BA" />
 @endsection
 @section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-12">
-			<a class="w3-bar-item" href="/novo"><i class="fas fa-tags"></i> NOVO</a>
-			<a class="w3-bar-item" href="/trend"> <i class="fas fa-arrow-up"></i> TREND</a>
-			<a class="w3-bar-item" href="/akcija"><i class="fas fa-percentage"></i> AKCIJA</a>
-		</div>
-	</div>
-</div>
-<div class="container-fluid mt-4 mb-4 single">
+<div class="container-fluid mt-4 single">
 	<div class="card">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-12 pt-5 pb-5">
-					<div class="start-procent">
-						<div class="procent"><span>-50%</span></div>
-					</div>
-					@if($product->photo)
-						<img class="start-img" src="{{$product->photo}}" alt="{{$product->name}}">
-					@else
-						<img class="start-img" src="/images/no-image.png" alt="fire">
-					@endif
-				</div>
-				<div class="col-lg-6 col-md-12 pt-5 pb-5">
-					<div class="message"><img src="/images/fire.png" alt="fire" width="21px">Još samo 12 artikala na zalihama</div>
-					<div class="title"><h1>{{$product->name}}<h1></div>
-					<div class="desc">{!!$product->description!!}</div>
-					<div class="stars-box"><i class="fas fa-star"></i> 4.7 / 5 <span>Proizvod dostupan samo na KlikBox.ba</span></div>
-					<div class="price mt-2 mb-4 top-price">@if($product->oldprice)<span>{{$product->oldprice}} KM</span>@endif {{$product->price}} KM</div>
-					<div class="col-12 mb-4 px-0"><a href="#bofu">DODAJ U KORPU</a></div>
-					<div class="garancy pt-2">
+
+            <div id="bofu" class="bofu">
+                <div class="bofu-box">
+                    <div class="container">
                         <div class="row">
-                            <div class="col-4 garancy-box">
-                                <img src="{{asset('/images/delivery-pic.png')}}" alt="delivery">
-                                <p>BRZA DOSTAVA 24H</p>
+                            <div class="col-lg-6 col-md-12 pt-5 pb-5">
+                                <div class="bofu-left">
+                                    <div class="start-procent">
+                                        <div class="procent"><span>-50%</span></div>
+                                    </div>
+                                    @if($product->photo)
+                                        <img class="start-img" src="{{$product->photo}}" alt="{{$product->title}}">
+                                    @else
+                                        <img class="start-img" src="/images/no-image.png" alt="fire">
+                                    @endif
+                                </div>
                             </div>
-                            <div class="col-4 garancy-box">
-                                <img src="{{asset('/images/pay-pic.png')}}" alt="pay">
-                                <p>PLAĆANJE POUZEĆEM</p>
-                            </div>
-                            <div class="col-4 garancy-box">
-                                <img src="{{asset('/images/garancy-pic.png')}}" alt="garancy">
-                                <p>GARANTOVAN POVRAT NOVCA</p>
+                            <div class="col-lg-6 col-md-12 pt-5 pb-5">
+                                <div class="bofu-right">
+                                    <div class="message"><img src="/images/fire.png" alt="fire" width="21px">Još samo 12 artikala na zalihama</div>
+                                    <div class="title"><h2>{{$product->name}}</h2></div>
+                                    <div class="desc">{!!$product->description!!}</div>
+                                    <div class="stars-box"><i class="fas fa-star"></i> 4.7 / 5 <span>Proizvod dostupan samo na KlikBox.ba</span></div>
+                                    <div class="form">
+                                        <form action="{{route('cart.store')}}" method="post" name="cartform">
+                                            @csrf
+                                            <input type="hidden" name="product_id" value="{{$product->id}}">
+                                            <div class="attributes">
+                                                @foreach ($attributes as $attribute )
+                                                    <div class="atribut">
+                                                        <select name="{{Str::lower($attribute->name)}}" id="{{Str::lower($attribute->name)}}" class="attr-select" required>
+                                                            <option value="">{{$attribute->name}}</option>
+                                                            @foreach ($product->options->where('attribute_id',$attribute->id) as $option )
+                                                                <option value="{{$option->value}}">{{$option->name}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                            @if($product->top_choice === 1)
+                                            <div class="choicebox">
+                                                <span class="topponuda">TOP ODABIR</span>
+                                                <div class="btn active">
+                                                    <span class="choicebtn" data-quantity="1" data-oldprice="{{round($product->oldprice)}}" data-prc="{{round($product->price)}}">1 x {{round($product->price)}} KM</span>
+                                                </div>
+                                                <div class="btn">
+                                                    <span class="choicebtn" data-quantity="2" data-oldprice="{{round($product->oldprice)}}" data-prc="{{round($product->price * ((100-22) / 100))}}">2 x {{round($product->price * ((100-22) / 100))}} KM</span>
+                                                </div>
+                                                <div class="btn">
+                                                    <span class="choicebtn" data-quantity="3" data-oldprice="{{round($product->oldprice)}}" data-prc="{{round($product->price * ((100-30) / 100))}}">3 x {{round($product->price * ((100-30) / 100))}} KM</span>
+                                                </div>
+                                            </div>
+                                            @endif
+                                            <input type="hidden" name="qty" id="qty" value="1">
+                                            <input type="hidden" name="prc" id="prc" value="{{$product->price}}">
+                                            <div class="price mt-2 mb-4" id="selectedprice">
+                                                @if($product->oldprice)
+                                                    <div id="oldprice">
+                                                        <span>{{$product->oldprice}}</span> KM
+                                                    </div>
+                                                @endif
+                                                <div id="newprice">
+                                                    <span>{{$product->price}}</span> KM
+                                                </div>
+                                            </div>
+                                            <input type="submit" class="addtocartbtn" value="DODAJ U KORPU">
+                                        </form>
+                                    </div>
+                                    <div class="garancy">
+                                        <div class="row">
+                                            <div class="col-4 garancy-box">
+                                                <img src="{{asset('/images/delivery-pic.png')}}" alt="delivery">
+                                                <p>BRZA DOSTAVA 24H</p>
+                                            </div>
+                                            <div class="col-4 garancy-box">
+                                                <img src="{{asset('/images/pay-pic.png')}}" alt="pay">
+                                                <p>PLAĆANJE POUZEĆEM</p>
+                                            </div>
+                                            <div class="col-4 garancy-box">
+                                                <img src="{{asset('/images/garancy-pic.png')}}" alt="garancy">
+                                                <p>GARANTOVAN POVRAT NOVCA</p>
+                                            </div>
+                                        </div>
+                                        {{--<div class="garancy-box">--}}
+                                        {{----}}
+                                        {{--</div>--}}
+                                        {{--<div class="garancy-box">--}}
+                                        {{----}}
+                                        {{--</div>--}}
+                                        {{--<div class="garancy-box">--}}
+                                        {{----}}
+                                        {{--</div>--}}
+                                    </div>
+                                </div>
                             </div>
                         </div>
-					</div>
-				</div>
-			</div>
+                    </div>
+                </div>
+            </div>
 		</div>
 		@forelse ($product->blocks as $block)
 			@switch($block->type)
@@ -82,106 +136,10 @@
 						{!! $block->content !!}
 					</div>
 				@break
-				@default      
+				@default
 			@endswitch
 			@empty
 		@endforelse
-		<div id="bofu" class="bofu">
-			<div class="bofu-box">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-6 col-md-12 pt-5 pb-5">
-							<div class="bofu-left">
-								<div class="start-procent">
-									<div class="procent"><span>-50%</span></div>
-								</div>
-								@if($product->photo)
-									<img class="start-img" src="{{$product->photo}}" alt="{{$product->title}}">
-								@else
-									<img class="start-img" src="/images/no-image.png" alt="fire">
-								@endif
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-12 pt-5 pb-5">
-							<div class="bofu-right">
-								<div class="message"><img src="/images/fire.png" alt="fire" width="21px">Još samo 12 artikala na zalihama</div>
-								<div class="title"><h2>{{$product->name}}</h2></div>
-								<div class="desc">{!!$product->description!!}</div>
-								<div class="stars-box"><i class="fas fa-star"></i> 4.7 / 5 <span>Proizvod dostupan samo na KlikBox.ba</span></div>
-								<div class="form">
-									<form action="{{route('cart.store')}}" method="post" name="cartform">
-									@csrf
-										<input type="hidden" name="product_id" value="{{$product->id}}"> 
-										<div class="attributes">
-										@foreach ($attributes as $attribute )
-											<div class="atribut">
-												<select name="{{Str::lower($attribute->name)}}" id="{{Str::lower($attribute->name)}}" class="attr-select" required>
-													<option value="">{{$attribute->name}}</option>
-													@foreach ($product->options->where('attribute_id',$attribute->id) as $option )
-													<option value="{{$option->value}}">{{$option->name}}</option>                            
-													@endforeach
-												</select>
-											</div>
-										@endforeach
-										</div>
-										<div class="choicebox">
-											<span class="topponuda">TOP ODABIR</span>
-											<div class="btn active">
-												<span class="choicebtn" data-quantity="1" data-oldprice="{{round($product->oldprice)}}" data-prc="{{round($product->price)}}">1 x {{round($product->price)}} KM</span>
-											</div>
-											<div class="btn">
-												<span class="choicebtn" data-quantity="2" data-oldprice="{{round($product->oldprice)}}" data-prc="{{round($product->price * ((100-22) / 100))}}">2 x {{round($product->price * ((100-22) / 100))}} KM</span>
-											</div>
-											<div class="btn">
-												<span class="choicebtn" data-quantity="3" data-oldprice="{{round($product->oldprice)}}" data-prc="{{round($product->price * ((100-30) / 100))}}">3 x {{round($product->price * ((100-30) / 100))}} KM</span>
-											</div>
-										</div> 
-										<input type="hidden" name="qty" id="qty" value="1">
-										<input type="hidden" name="prc" id="prc" value="{{$product->price}}">
-										<div class="price mt-2 mb-4" id="selectedprice">
-											@if($product->oldprice)
-												<div id="oldprice">
-													<span>{{$product->oldprice}}</span> KM
-												</div>
-											@endif
-												<div id="newprice">
-													<span>{{$product->price}}</span> KM
-												</div>
-										</div>
-										<input type="submit" class="addtocartbtn" value="DODAJ U KORPU">      
-									</form>
-								</div>
-								<div class="garancy">
-                                    <div class="row">
-                                        <div class="col-4 garancy-box">
-                                            <img src="{{asset('/images/delivery-pic.png')}}" alt="delivery">
-                                            <p>BRZA DOSTAVA 24H</p>
-                                        </div>
-                                        <div class="col-4 garancy-box">
-                                            <img src="{{asset('/images/pay-pic.png')}}" alt="pay">
-                                            <p>PLAĆANJE POUZEĆEM</p>
-                                        </div>
-                                        <div class="col-4 garancy-box">
-                                            <img src="{{asset('/images/garancy-pic.png')}}" alt="garancy">
-                                            <p>GARANTOVAN POVRAT NOVCA</p>
-                                        </div>
-                                    </div>
-									{{--<div class="garancy-box">--}}
-										{{----}}
-									{{--</div>--}}
-                                    {{--<div class="garancy-box">--}}
-                                       {{----}}
-                                    {{--</div>--}}
-									{{--<div class="garancy-box">--}}
-										   {{----}}
-									{{--</div>--}}
-								</div>
-							</div>
-						</div>
-					</div>          
-				</div>  
-			</div>
-		</div>
 
 		@forelse ($product->blocks as $block)
 			@switch($block->type)
@@ -204,12 +162,12 @@
 					<div class="video">
 						{!!$block->content!!}
 					</div>
-				@break	
-				@default   
+				@break
+				@default
 			@endswitch
 			@empty
 		@endforelse
-        <a href="#bofu" class="bottom-add-cart">DODAJ U KORPU</a> 
+        <a href="#bofu" class="bottom-add-cart">DODAJ U KORPU</a>
 	</div>
 </div>
 
@@ -226,7 +184,7 @@
 
    $('.choicebtn').each(function () {
     var $this = $(this);
-    
+
     $this.on("click", function () {
         $('#qty').val($(this).data('quantity'));
         $('#prc').val($(this).data('prc'));

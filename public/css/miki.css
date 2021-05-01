@@ -29,7 +29,7 @@ img {
 
 .search-box {
     display: inline-block;
-    width: 100%;
+    width: 50%;
 }
 
 .search-box form {
@@ -247,7 +247,7 @@ a.w3-bar-item svg {
 }
 
 .all-products-home .card-box {
-    min-height: 290px;
+    /*min-height: 290px;*/
     position: relative;
 }
 
@@ -1477,4 +1477,96 @@ a.bottom-add-cart {
         word-break: break-word;
         padding: 0;
     }
+}
+
+.navbar {
+    height: 80px
+}
+
+.header-contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-icon {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    padding:0;
+    color: #5B5B5B;
+}
+
+.contact-icon svg {
+    height: 100% !important;
+    width: 100% !important;
+    padding: 5px;
+}
+
+.contact-text h5{
+    font-size: 15px;
+}
+
+.contact-text h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navbar-toggler {
+    border: none !important;
+    color: #ec7700 !important;
+}
+
+.navbar-toggler:focus {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("../images/hamburger.svg") !important;
+}
+
+.navbar-brand {
+    margin: 0 0 0 10px
+}
+
+.footer-bg {
+    background-color: #3c3c3c !important;
+}
+
+.custom-anchor-tag {
+    text-decoration: none !important;
+    color: black !important;
+}
+
+body {
+    min-height: 100vh !important;
+}
+
+body .wrap {
+    min-height: 100vh !important;
+    position: relative;
+    padding-bottom: 154px !important;
+}
+
+#header {
+    height: 80px;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 140px
+}
+
+.footer-bg {
+    background-color: #3c3c3c;
+    color: white !important;
+}
+
+.navbar-bottom {
+    height: 140px !important;
 }

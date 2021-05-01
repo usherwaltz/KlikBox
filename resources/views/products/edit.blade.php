@@ -83,7 +83,7 @@
                                     @forelse ($categories as $category )
                                         <div class="form-check">
                                             <input type="checkbox" value="{{ $category->id }}" @if($product->categories->contains($category->id)) checked @endif class="form-check-input" name="categories[]">
-                                            <label class="form-check-label" 
+                                            <label class="form-check-label"
                                                 for="categories">{{ $category->name }}</label>
                                         </div>
                                     @empty
@@ -129,9 +129,18 @@
                                         </div>
                                         @endforeach
                                     @endforeach
+
+                                        <hr>
+
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" name="top_choice" @if($product->top_choice == 1) checked @endif>
+                                                Top Odabir
+                                            </label>
+                                        </div>
                                 </div>
                                 <div class="card-footer text-muted">
-                                   
+
                                 </div>
                             </div>
                         </div>
@@ -206,18 +215,18 @@
                                             </form>
                                     </div>
                                     <div class="card-footer text-muted">
-                                       
+
                                     </div>
                                 </div>
                             </div>
                         </div>
-                       
+
                     </div>
-                    
+
                 </div>
             </div>
-           
-            
+
+
         </div>
     </div>
 @endsection
