@@ -9,6 +9,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Product extends Model
 {
+    protected $attributes = [
+        'top_choice' => 0
+    ];
     use HasFactory;
 
     /**

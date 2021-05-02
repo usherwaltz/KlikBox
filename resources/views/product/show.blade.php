@@ -197,7 +197,7 @@
 });
 });
     const cartform = document.getElementsByName('cartform');
-    cartform.addEventListener('submit',function (evnt) {
+    cartform[0].addEventListener('submit',function (evnt) {
         for (var i = 0; i < selects.length; i++) {
             let select = selects[i];
             select.addEventListener("input", function (event) {

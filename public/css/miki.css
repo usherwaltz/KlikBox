@@ -1575,8 +1575,51 @@ body .wrap {
 
 .banner {
     position: relative;
+    min-height: 250px;
+}
+
+.banner-background {
+    min-height: 250px;
+    object-fit: cover;
 }
 
 .banner-text {
     position: absolute;
+    left: 20px;
+    top: 30%;
+}
+
+.banner-logo {
+    position: absolute;
+    top: 20px;
+    right:20px;
+    height: 60px;
+}
+
+@media (max-width: 1200px) {
+    .banner-logo {
+        height: 40px !important;
+    }
+
+    .banner-text {
+        height: 220px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .banner-text {
+        height: 170px !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .title-box {
+        min-height: 36px;
+    }
+}
+
+.image-placeholder {
+    min-height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
 }

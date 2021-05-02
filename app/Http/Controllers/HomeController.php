@@ -6,7 +6,11 @@ use App\Models\Option;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Attribute;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -189,5 +193,109 @@ class HomeController extends Controller
 
             session()->flash('success', 'Product removed successfully');
         }
+    }
+
+    /**
+     * @param Request $request
+     * @return Application|Factory|View|string
+     */
+    public function getHomeProducts(Request $request)
+    {
+        $results = Product::orderBy('id')->paginate(15);
+
+        if ($request->ajax()) {
+            return $this->appendData($results);
+        }
+        return view('home');
+    }
+
+    /**
+     * @param Request $request
+     * @return Application|Factory|View|string
+     */
+    public function getAkcijaProducts(Request $request)
+    {
+        $category = Category::where('slug', 'akcija')->first();
+        $category->load('products')->paginate(15);
+        $results = $category->products;
+
+        if ($request->ajax()) {
+            return $this->appendData($results);
+        }
+        return view('akcija');
+    }
+
+    /**
+     * @param Request $request
+     * @return Application|Factory|View|string
+     */
+    public function getTrendProducts(Request $request)
+    {
+        $category = Category::where('slug', 'trend')->first();
+        $category->load('products')->paginate(15);
+        $results = $category->products;
+
+        if ($request->ajax()) {
+            return $this->appendData($results);
+        }
+        return view('trend');
+    }
+
+    /**
+     * @param Request $request
+     * @return Application|Factory|View|string
+     */
+    public function getNovoProducts(Request $request)
+    {
+        $category = Category::where('slug', 'novo')->first();
+        $category->load('products')->paginate(15);
+        $results = $category->products;
+
+        if ($request->ajax()) {
+            return $this->appendData($results);
+        }
+        return view('novo');
+    }
+
+    public function appendData($results) {
+        $products = '';
+        foreach ($results as $result) {
+            $slug = $result->slug;
+            $name = $result->name;
+            $photo = $result->photo ?
+                '<img class="start-img" src="' . $result->photo . '" alt="photo">' :
+                '<img class="image-placeholder start-img" src="/images/placeholder.png" alt="fire">';
+            $price = $result->oldprice ?
+                '<span>' . round($result->oldprice) . ' KM</span> ' . round($result->price) . ' KM' :
+                round($result->price) . ' KM' ;
+            $product = '
+                <div class="col-lg-4 col-md-6 col-xl p-0">
+                    <div class="card m-2">
+                        <div class="card-body">
+                            <a href="/product/' . $slug . '">
+                                <div class="card-box">
+                                    <div class="procent-box">
+                                        <div class="procent">
+                                            <span>-50%</span>
+                                        </div>
+                                    </div>
+                                    <div class="img-box image-placeholder">
+                                        ' . $photo . '
+                                    </div>
+                                    <div class="title-box">
+                                        <p>' . $name . '</p>
+                                    </div>
+                                    <div class="price-box">
+                                        ' . $price . '
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>';
+
+            $products .= $product;
+        }
+        return $products;
     }
 }
