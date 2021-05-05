@@ -122,21 +122,25 @@
             <div class="row container">
                 @for($i = 0; $i < count($product->blocks); $i++)
                     @if($i % 2)
-                        <div class="col-12 row mb-4">
+                        <div class="col-12 row mb-4 justify-content-center">
                             @if($product->blocks[$i]->photo != null)
-                                <img class="col-6" src="{{$product->blocks[$i]->photo}}" alt="photo" style="height: 600px; width: 600px">
+                                <img class="@if($product->blocks[$i]->content == null) col-12 @else col-6 @endif" src="{{$product->blocks[$i]->photo}}" alt="photo" style="height: 600px; width: 600px">
                             @endif
-                            <div class="<?= $product->blocks[$i]->photo == null ? 'col-12 ' : 'col-6 ' ?> text-center">
-                                @php echo htmlspecialchars_decode(stripslashes($product->blocks[$i]->content)); @endphp
-                            </div>
+                            @if($product->blocks[$i]->content != null)
+                                <div class="@if($product->blocks[$i]->photo == null) col-12 @else col-6 @endif text-center align-self-center">
+                                    @php echo htmlspecialchars_decode(stripslashes($product->blocks[$i]->content)); @endphp
+                                </div>
+                            @endif
                         </div>
                     @else
-                        <div class="col-12 row mb-4">
-                            <div class="<?= $product->blocks[$i]->photo == null ? 'col-12 ' : 'col-6 ' ?> text-center">
-                                @php echo htmlspecialchars_decode(stripslashes($product->blocks[$i]->content)); @endphp
-                            </div>
+                        <div class="col-12 row mb-4 justify-content-center">
+                            @if($product->blocks[$i]->content != null)
+                                <div class="@if($product->blocks[$i]->photo == null) col-12 @else col-6 @endif text-center align-self-center">
+                                    @php echo htmlspecialchars_decode(stripslashes($product->blocks[$i]->content)); @endphp
+                                </div>
+                            @endif
                             @if($product->blocks[$i]->photo != null)
-                                <img class="col-6" src="{{$product->blocks[$i]->photo}}" alt="photo" style="height: 600px; width: 600px">
+                                <img class="@if($product->blocks[$i]->content == null) col-12 @else col-6 @endif" src="{{$product->blocks[$i]->photo}}" alt="photo" style="height: 600px; width: 600px">
                             @endif
                         </div>
                     @endif
