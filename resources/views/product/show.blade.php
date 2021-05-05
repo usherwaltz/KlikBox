@@ -118,55 +118,79 @@
                     </div>
                 </div>
             </div>
+            <hr>
+            <div class="row container">
+                @for($i = 0; $i < count($product->blocks); $i++)
+                    @if($i % 2)
+                        <div class="col-12 row mb-4">
+                            @if($product->blocks[$i]->photo != null)
+                                <img class="col-6" src="{{$product->blocks[$i]->photo}}" alt="photo" style="height: 600px; width: 600px">
+                            @endif
+                            <div class="<?= $product->blocks[$i]->photo == null ? 'col-12 ' : 'col-6 ' ?> text-center">
+                                @php echo htmlspecialchars_decode(stripslashes($product->blocks[$i]->content)); @endphp
+                            </div>
+                        </div>
+                    @else
+                        <div class="col-12 row mb-4">
+                            <div class="<?= $product->blocks[$i]->photo == null ? 'col-12 ' : 'col-6 ' ?> text-center">
+                                @php echo htmlspecialchars_decode(stripslashes($product->blocks[$i]->content)); @endphp
+                            </div>
+                            @if($product->blocks[$i]->photo != null)
+                                <img class="col-6" src="{{$product->blocks[$i]->photo}}" alt="photo" style="height: 600px; width: 600px">
+                            @endif
+                        </div>
+                    @endif
+                @endfor
+            </div>
 		</div>
-		@forelse ($product->blocks as $block)
-			@switch($block->type)
-				@case('intro')
-					<div class="intro intor-1">
-					{!!$block->content!!}
-					</div>
-                @break
-				@case('tofu')
-					<div class="tofu">
-						{!!$block->content!!}
-					</div>
-				@break
-				@case('mofu')
-					<div class="mofu">
-						{!! $block->content !!}
-					</div>
-				@break
-				@default
-			@endswitch
-			@empty
-		@endforelse
+{{--		@forelse ($product->blocks as $block)--}}
+{{--			@switch($block->type)--}}
+{{--				@case('intro')--}}
+{{--					<div class="intro intor-1">--}}
+{{--					{!!$block->content!!}--}}
+{{--					</div>--}}
+{{--                @break--}}
+{{--				@case('tofu')--}}
+{{--					<div class="tofu">--}}
+{{--						{!!$block->content!!}--}}
+{{--					</div>--}}
+{{--				@break--}}
+{{--				@case('mofu')--}}
+{{--					<div class="mofu">--}}
+{{--						{!! $block->content !!}--}}
+{{--					</div>--}}
+{{--				@break--}}
+{{--				@default--}}
+{{--			@endswitch--}}
+{{--			@empty--}}
+{{--		@endforelse--}}
 
-		@forelse ($product->blocks as $block)
-			@switch($block->type)
-				@case('dec')
-					<div class="bg-silver">
-						{!!$block->content!!}
-					</div>
-				@break
-				@case('intro2')
-					<div class="intro2">
-						{!!$block->content!!}
-					</div>
-				@break
-				@case('images')
-					<div class="box-for-image">
-						{!!$block->content!!}
-					</div>
-				@break
-				@case('video')
-					<div class="video">
-						{!!$block->content!!}
-					</div>
-				@break
-				@default
-			@endswitch
-			@empty
-		@endforelse
+{{--		@forelse ($product->blocks as $block)--}}
+{{--			@switch($block->type)--}}
+{{--				@case('dec')--}}
+{{--					<div class="bg-silver">--}}
+{{--						{!!$block->content!!}--}}
+{{--					</div>--}}
+{{--				@break--}}
+{{--				@case('intro2')--}}
+{{--					<div class="intro2">--}}
+{{--						{!!$block->content!!}--}}
+{{--					</div>--}}
+{{--				@break--}}
+{{--				@case('images')--}}
+{{--					<div class="box-for-image">--}}
+{{--						{!!$block->content!!}--}}
+{{--					</div>--}}
+{{--				@break--}}
+{{--				@case('video')--}}
+{{--					<div class="video">--}}
+{{--						{!!$block->content!!}--}}
+{{--					</div>--}}
+{{--				@break--}}
+{{--				@default--}}
+{{--			@endswitch--}}
+{{--			@empty--}}
+{{--		@endforelse--}}
         <a href="#bofu" class="bottom-add-cart">DODAJ U KORPU</a>
 	</div>
 </div>

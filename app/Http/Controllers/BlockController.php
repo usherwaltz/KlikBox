@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Block;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class BlockController extends Controller
 {
@@ -34,12 +35,22 @@ class BlockController extends Controller
      */
     public function store(Request $request)
     {
-        $type = $request->type ? $request->type : 'intro';
-        $content = $this->getContent($type);
+        if ($request->photo) {
+            $photo = $request->file('photo');
+            $filename = $photo->getClientOriginalName();
+            $image_resize = Image::make($photo->getRealPath());
+            $image_resize->fit(600, 600)
+                ->save(public_path('photos/' . $filename));
+            $image_resize->fit(230, 230)
+                ->save(public_path('thumbnails/' . $filename));
+        }
+
         $block = new Block();
-        $block->type = $type;
         $block->product_id = $request->product_id;
-        $block->content = $content;
+        $block->content = $request->content;
+        if ($request->photo) {
+            $block->photo = '/photos/' . $filename;
+        }
         $block->save();
 
         return redirect(route('products.edit', $request->product_slug));
@@ -77,7 +88,20 @@ class BlockController extends Controller
      */
     public function update(Request $request, Block $block)
     {
+        if ($request->photo) {
+            $photo = $request->file('photo');
+            $filename = $photo->getClientOriginalName();
+            $image_resize = Image::make($photo->getRealPath());
+            $image_resize->fit(600, 600)
+                ->save(public_path('photos/' . $filename));
+            $image_resize->fit(230, 230)
+                ->save(public_path('thumbnails/' . $filename));
+        }
+
         $block = Block::with('product')->find($block->id);
+        if($request->photo) {
+            $block->photo = '/photos/' . $filename;
+        }
         $product_slug = $block->product->slug;
         $block->content = $request->content;
         $block->display = $request->display;
@@ -197,22 +221,22 @@ class BlockController extends Controller
 									<div class="mofu-left mofu-sides col-12">
 										<h3>Mijenja svaku torbicu</h3>
 										<p>Muške torbice su uglavnom predviđene za nošenje preko ramena</p>
-										<img src="' . $image . '" alt="mofu-img"> 
+										<img src="' . $image . '" alt="mofu-img">
 									</div>
 									<div class="mofu-left mofu-sides col-12">
 										<h3>Mijenja svaku torbicu</h3>
 										<p>Muške torbice su uglavnom predviđene za nošenje preko ramena</p>
-										<img src="' . $image . '" alt="mofu-img"> 
+										<img src="' . $image . '" alt="mofu-img">
 									</div>
 									<div class="mofu-left mofu-sides col-12">
 										<h3>Mijenja svaku torbicu</h3>
 										<p>Muške torbice su uglavnom predviđene za nošenje preko ramena</p>
-										<img src="' . $image . '" alt="mofu-img"> 
+										<img src="' . $image . '" alt="mofu-img">
 									</div>
 									<div class="mofu-left mofu-sides col-12">
 										<h3>Mijenja svaku torbicu</h3>
 										<p>Muške torbice su uglavnom predviđene za nošenje preko ramena</p>
-										<img src="' . $image . '" alt="mofu-img"> 
+										<img src="' . $image . '" alt="mofu-img">
 									</div>
 								</div>
 							</div>';
@@ -225,30 +249,30 @@ class BlockController extends Controller
 										<div class="mofu-left mofu-sides col-lg-6 col-md-12">
 											<h3>Mijenja svaku torbicu</h3>
 											<p>Muške torbice su uglavnom predviđene za nošenje preko ramena, oko struka ili u ruci. Ako niste ljubitelj i pristalica nijednog načina nošenja    torbice, napravićete pravi izbor s Edward novčanikom. Neće se naduvati pa ga možete staviti u svaki džep.
-											</p>     
+											</p>
 										</div>
 									<div class="mofu-right mofu-sides col-lg-6 col-md-12">
-										<img src="' . $image . '" alt="mofu-img">     
-									</div>    
+										<img src="' . $image . '" alt="mofu-img">
+									</div>
 								</div>
 								<div class="mofu-box row align-items-center">
-									<div class="mofu-left mofu-sides col-lg-6 col-md-12 order-2 order-lg-1"> 
-										<img src="' . $image . '" alt="mofu-img">						
+									<div class="mofu-left mofu-sides col-lg-6 col-md-12 order-2 order-lg-1">
+										<img src="' . $image . '" alt="mofu-img">
 									</div>
 									<div class="mofu-right mofu-sides col-lg-6 col-md-12 order-1 order-lg-2">
 										<h3>Mijenja svaku torbicu</h3>
 										<p>Muške torbice su uglavnom predviđene za nošenje preko ramena, oko struka ili u ruci. Ako niste ljubitelj i pristalica nijednog načina nošenja    torbice, napravićete pravi izbor s Edward novčanikom. Neće se naduvati pa ga možete staviti u svaki džep.
-										</p>      
-									</div>    
+										</p>
+									</div>
 								</div>
 								<div class="mofu-box row align-items-center">
 									<div class="mofu-left mofu-sides col-lg-6 col-md-12">
 										<h3>Mijenja svaku torbicu</h3>
-										<p>Muške torbice su uglavnom predviđene za nošenje preko ramena, oko struka ili u ruci. Ako niste ljubitelj i pristalica nijednog načina nošenja    torbice, napravićete pravi izbor s Edward novčanikom. Neće se naduvati pa ga možete staviti u svaki džep. </p>     
+										<p>Muške torbice su uglavnom predviđene za nošenje preko ramena, oko struka ili u ruci. Ako niste ljubitelj i pristalica nijednog načina nošenja    torbice, napravićete pravi izbor s Edward novčanikom. Neće se naduvati pa ga možete staviti u svaki džep. </p>
 									</div>
 									<div class="mofu-right mofu-sides col-lg-6 col-md-12">
-										<img src="' . $image . '" alt="mofu-img">     
-									</div>    
+										<img src="' . $image . '" alt="mofu-img">
+									</div>
 								</div>
 							</div>
 						</div>';
@@ -258,11 +282,11 @@ class BlockController extends Controller
                 $content = '<div class="container">
 								<div class="row">
 									<div class="col-lg-6 col-md-12">
-										<img src="' . $image . '" alt="mofu-img">      
+										<img src="' . $image . '" alt="mofu-img">
 									</div>
 									<div class="col-lg-6 col-md-12">
-										<img src="' . $image . '" alt="mofu-img">      
-									</div>   
+										<img src="' . $image . '" alt="mofu-img">
+									</div>
 								</div>
 							</div>';
                 break;
@@ -291,25 +315,25 @@ class BlockController extends Controller
 											<div class="doc-info">
 											<div class="doc-col">
 											<h5>MATERIJAL:</h5>
-											<p>Poliuretan</p>  
+											<p>Poliuretan</p>
 											</div>
 											<div class="doc-col">
 											<h5>BOJA:</h5>
-											<p>plava</p> 
+											<p>plava</p>
 											</div>
-											<div class="doc-col">   
+											<div class="doc-col">
 											<h5>TEŽINA:</h5>
-											<p>0.08kg</p>   
-											</div> 
+											<p>0.08kg</p>
+											</div>
 											</div>
 										</div>
 									</div>
 									<div class="col-lg-6 col-md-12">
 										<div class="dec-right">
 											<h5>DIMENZIJE:</h5>
-											<p>12 cm (dužina) x 1,5 cm (širina) x 9 cm (visina)t</p>        
+											<p>12 cm (dužina) x 1,5 cm (širina) x 9 cm (visina)t</p>
 											<h5>PAKET:</h5>
-											<p>U pakovanju dolazi 1 x Edward luksuzni muški novčanik.</p>    
+											<p>U pakovanju dolazi 1 x Edward luksuzni muški novčanik.</p>
 										</div>
 									</div>
 								</div>

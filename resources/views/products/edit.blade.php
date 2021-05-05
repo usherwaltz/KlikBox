@@ -163,12 +163,20 @@
                                         {{Str::upper($block->type)}}
                                     </div>
                                     <div class="card-body">
-                                        <form action="{{route('block.update',$block->id)}}" method="post">
+                                        <form enctype="multipart/form-data" action="{{route('block.update',$block->id)}}" method="post">
                                             @csrf
                                             @method('PATCH')
-                                            <div class="form-group">
-                                              <label for="content">Sadrzaj</label>
-                                              <textarea class="form-control ckeditor" name="content" id="content" rows="10">{{$block->content}}</textarea>
+                                            <div class="form-group row">
+                                                <label class="col-8" for="content">Sadrzaj
+                                                    <textarea class="form-control ckeditor" name="content" id="content" rows="10">{{$block->content}}</textarea>
+                                                </label>
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <label for="photo">Slika</label>
+                                                        <input type="file" class="form-control-file" name="photo" placeholder="">
+                                                    </div>
+                                                    <img src="{{ $block->photo }}" width="300px" class="src">
+                                                </div>
                                             </div>
                                             <input type="hidden" name="display" value="1">
                                             <button type="submit" class="btn btn-primary">{{__('Snimi')}}</button>
@@ -193,23 +201,18 @@
                                     <div class="card-header">
                                         Dodaj blok
                                     </div>
-                                    <div class="card-body">
-                                        <form action="{{route('block.store')}}" method="post">
+                                    <div class="card-body p-4">
+                                        <form enctype="multipart/form-data" action="{{route('block.store')}}" method="post">
                                             @csrf
                                             <input type="hidden" name="product_id" value="{{$product->id}}">
                                             <input type="hidden" name="product_slug" value="{{$product->slug}}">
-                                            <div class="form-group">
-                                              <label for="type">Blok</label>
-                                              <select class="form-control" name="type" id="type">
-                                                <option></option>
-                                                <option value="intro">Intro</option>
-                                                <option value="tofu">TOFU</option>
-                                                <option value="intro2">Intro 2</option>
-                                                <option value="mofu">MOFU</option>
-                                                <option value="dec">Specifikacije</option>
-                                                  <option value="images">Slike</option>
-                                                  <option value="video">Video</option>
-                                              </select>
+                                            <div class="form-group row">
+                                                <label class="col-8" for="content">Blok tekst
+                                                    <textarea class="col-12 form-control ckeditor" type="textarea" name="content"></textarea>
+                                                </label>
+                                                <label class="col-4" for="photo">Slika
+                                                    <input type="file" class="form-control-file" name="photo" placeholder="">
+                                                </label>
                                             </div>
                                             <button type="submit" class="btn btn-primary">Dodaj Blok</button>
                                             </form>
