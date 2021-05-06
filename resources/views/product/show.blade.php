@@ -121,26 +121,51 @@
             <hr>
             <div class="row container">
                 @for($i = 0; $i < count($product->blocks); $i++)
+                    @php $block = $product->blocks[$i] @endphp
                     @if($i % 2)
                         <div class="col-12 row mb-4 justify-content-center">
-                            @if($product->blocks[$i]->photo != null)
-                                <img class="@if($product->blocks[$i]->content == null) col-12 @else col-6 @endif" src="{{$product->blocks[$i]->photo}}" alt="photo" style="height: 600px; width: 600px">
-                            @endif
-                            @if($product->blocks[$i]->content != null)
-                                <div class="@if($product->blocks[$i]->photo == null) col-12 @else col-6 @endif text-center align-self-center">
-                                    @php echo htmlspecialchars_decode(stripslashes($product->blocks[$i]->content)); @endphp
+                            @if($block->photo != null && $block->photo_2 != null)
+                                @if($block->content != null)
+                                    <div class="col-12 text-center align-self-center custom-content mb-4">
+                                        {!!$block->content!!}
+                                    </div>
+                                @endif
+                                <img class= col-6" src="{{$block->photo}}" alt="photo" style="height: 600px; width: 600px">
+                                <img class="col-6" src="{{$block->photo_2}}" alt="photo" style="height: 600px; width: 600px">
+                            @elseif(($block->photo != null || $block->photo_2) && $block->content != null)
+                                <img class="col-6" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo" style="height: 600px; width: 600px">
+                                <div class="col-6 text-center align-self-center custom-content">
+                                    {!!$block->content!!}
+                                </div>
+                            @elseif(($block->photo != null || $block->photo_2) && $block->content == null)
+                                <img class="col-12" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo" style="height: 600px; width: 600px">
+                            @elseif(($block->photo == null && $block->photo_2 == null) && $block->content != null)
+                                <div class="col-12 text-center align-self-center custom-content">
+                                    {!!$block->content!!}
                                 </div>
                             @endif
                         </div>
                     @else
                         <div class="col-12 row mb-4 justify-content-center">
-                            @if($product->blocks[$i]->content != null)
-                                <div class="@if($product->blocks[$i]->photo == null) col-12 @else col-6 @endif text-center align-self-center">
-                                    @php echo htmlspecialchars_decode(stripslashes($product->blocks[$i]->content)); @endphp
+                            @if($block->photo != null && $block->photo_2 != null)
+                                @if($block->content != null)
+                                    <div class="col-12 text-center align-self-center custom-content mb-4">
+                                        {!!$block->content!!}
+                                    </div>
+                                @endif
+                                <img class= col-6" src="{{$block->photo}}" alt="photo" style="height: 600px; width: 600px">
+                                <img class="col-6" src="{{$block->photo_2}}" alt="photo" style="height: 600px; width: 600px">
+                            @elseif(($block->photo != null || $block->photo_2) && $block->content != null)
+                                <div class="col-6 text-center align-self-center custom-content">
+                                    {!!$block->content!!}
                                 </div>
-                            @endif
-                            @if($product->blocks[$i]->photo != null)
-                                <img class="@if($product->blocks[$i]->content == null) col-12 @else col-6 @endif" src="{{$product->blocks[$i]->photo}}" alt="photo" style="height: 600px; width: 600px">
+                                <img class="col-6" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo" style="height: 600px; width: 600px">
+                            @elseif(($block->photo != null || $block->photo_2) && $block->content == null)
+                                <img class="col-12" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo" style="height: 600px; width: 600px">
+                            @elseif(($block->photo == null && $block->photo_2 == null) && $block->content != null)
+                                <div class="col-12 text-center align-self-center custom-content">
+                                    {!!$block->content!!}
+                                </div>
                             @endif
                         </div>
                     @endif

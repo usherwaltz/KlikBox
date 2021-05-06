@@ -148,84 +148,98 @@
                 </div>
             </div>
         </form>
+
+        <hr>
+
         <div class="row mb-2">
             <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        Blokovi
-                    </div>
-                    <div class="card-body">
-                        @forelse($product->blocks as $block)
-                        <div class="row mb-5">
-                            <div class="col-sm-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        {{Str::upper($block->type)}}
-                                    </div>
-                                    <div class="card-body">
-                                        <form enctype="multipart/form-data" action="{{route('block.update',$block->id)}}" method="post">
-                                            @csrf
-                                            @method('PATCH')
-                                            <div class="form-group row">
-                                                <label class="col-8" for="content">Sadrzaj
-                                                    <textarea class="form-control ckeditor" name="content" id="content" rows="10">{{$block->content}}</textarea>
-                                                </label>
-                                                <div class="col-4">
-                                                    <div class="form-group">
-                                                        <label for="photo">Slika</label>
-                                                        <input type="file" class="form-control-file" name="photo" placeholder="">
-                                                    </div>
-                                                    <img src="{{ $block->photo }}" width="300px" class="src">
-                                                </div>
-                                            </div>
-                                            <input type="hidden" name="display" value="1">
-                                            <button type="submit" class="btn btn-primary">{{__('Snimi')}}</button>
-                                        </form>
-                                    </div>
-                                    <div class="card-footer text-muted">
-                                        <form action="{{route('block.destroy',$block->id)}}" method="post">
-                                            @csrf
-                                            @method('DELETE')
-                                            <input type="hidden" name="product_slug" value="{{$product->slug}}">
-                                            <button type="submit" class="btn btn-danger">Obriši</button>
-                                        </form>
-                                    </div>
+                @for($i = 0; $i < count($product->blocks); $i++)
+                    @php $block = $product->blocks[$i]; @endphp
+                    <div class="row mb-5">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    Block {{$i + 1}}
                                 </div>
-                            </div>
-                        </div>
-                        @empty
-                        @endforelse
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        Dodaj blok
-                                    </div>
-                                    <div class="card-body p-4">
-                                        <form enctype="multipart/form-data" action="{{route('block.store')}}" method="post">
-                                            @csrf
-                                            <input type="hidden" name="product_id" value="{{$product->id}}">
-                                            <input type="hidden" name="product_slug" value="{{$product->slug}}">
-                                            <div class="form-group row">
-                                                <label class="col-8" for="content">Blok tekst
-                                                    <textarea class="col-12 form-control ckeditor" type="textarea" name="content"></textarea>
-                                                </label>
-                                                <label class="col-4" for="photo">Slika
+                                <div class="card-body">
+                                    <form enctype="multipart/form-data" action="{{route('block.update',$block->id)}}" method="post">
+                                        @csrf
+                                        @method('PATCH')
+                                        <div class="form-group row">
+                                            <label class="col-6" for="content">Sadrzaj
+                                                <textarea class="form-control ckeditor" name="content" id="content" rows="10">{{$block->content}}</textarea>
+                                            </label>
+                                            <div class="col-3">
+                                                <div class="form-group">
+                                                    <label for="photo">Slika 1</label>
                                                     <input type="file" class="form-control-file" name="photo" placeholder="">
-                                                </label>
+                                                </div>
+                                                <img src="{{ $block->photo }}" width="300px" class="src">
                                             </div>
-                                            <button type="submit" class="btn btn-primary">Dodaj Blok</button>
-                                            </form>
-                                    </div>
-                                    <div class="card-footer text-muted">
-
-                                    </div>
+                                            <div class="col-3">
+                                                <div class="form-group">
+                                                    <label for="photo">Slika 2</label>
+                                                    <input type="file" class="form-control-file" name="photo_2" placeholder="">
+                                                </div>
+                                                <img src="{{ $block->photo_2 }}" width="300px" class="src">
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="display" value="1">
+                                        <button type="submit" class="btn btn-primary">{{__('Snimi')}}</button>
+                                    </form>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <form action="{{route('block.destroy',$block->id)}}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <input type="hidden" name="product_slug" value="{{$product->slug}}">
+                                        <button type="submit" class="btn btn-danger">Obriši</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
-
                     </div>
+                @endfor
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                Dodaj blok
+                            </div>
+                            <div class="card-body p-4">
+                                <form enctype="multipart/form-data" action="{{route('block.store')}}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="product_id" value="{{$product->id}}">
+                                    <input type="hidden" name="product_slug" value="{{$product->slug}}">
+                                    <div class="form-group row">
+                                        <label class="col-6" for="content">Blok tekst
+                                            <textarea class="col-12 form-control ckeditor" type="textarea" name="content"></textarea>
+                                        </label>
+                                        <label class="col-3" for="photo">Slika 1
+                                            <input type="file" class="form-control-file" name="photo" placeholder="">
+                                        </label>
+                                        <label class="col-3" for="photo">Slika 2
+                                            <input type="file" class="form-control-file" name="photo_2" placeholder="">
+                                        </label>
+                                    </div>
+                                    <div class="row form-group">
+                                        <label class="col-2" for="icons">
+                                            Ikonice
+                                            <input type="checkbox" name="icons">
+                                        </label>
+                                        <label class="col-2" for="video">
+                                            Video
+                                            <input type="checkbox" name="video">
+                                        </label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Dodaj Blok</button>
+                                </form>
+                            </div>
+                            <div class="card-footer text-muted">
 
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

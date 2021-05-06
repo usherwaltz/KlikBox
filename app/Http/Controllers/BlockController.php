@@ -45,12 +45,36 @@ class BlockController extends Controller
                 ->save(public_path('thumbnails/' . $filename));
         }
 
+        if ($request->photo_2) {
+            $photo = $request->file('photo_2');
+            $filename_2 = $photo->getClientOriginalName();
+            $image_resize = Image::make($photo->getRealPath());
+            $image_resize->fit(600, 600)
+                ->save(public_path('photos/' . $filename_2));
+            $image_resize->fit(230, 230)
+                ->save(public_path('thumbnails/' . $filename_2));
+        }
+
         $block = new Block();
         $block->product_id = $request->product_id;
-        $block->content = $request->content;
-        if ($request->photo) {
-            $block->photo = '/photos/' . $filename;
+
+        if($request->icons == "on") {
+            $block->content = $this->getIcons();
+        } elseif($request->video == "on") {
+            $block->content = $this->getContent('video');
+        } else {
+            $block->content = $request->content;
+            if ($request->photo) {
+                $block->photo = '/photos/' . $filename;
+            }
+
+            if($request->photo_2) {
+                $block->photo_2 = '/photos/' . $filename_2;
+            }
         }
+
+
+
         $block->save();
 
         return redirect(route('products.edit', $request->product_slug));
@@ -98,13 +122,35 @@ class BlockController extends Controller
                 ->save(public_path('thumbnails/' . $filename));
         }
 
-        $block = Block::with('product')->find($block->id);
-        if($request->photo) {
-            $block->photo = '/photos/' . $filename;
+        if ($request->photo_2) {
+            $photo = $request->file('photo_2');
+            $filename_2 = $photo->getClientOriginalName();
+            $image_resize = Image::make($photo->getRealPath());
+            $image_resize->fit(600, 600)
+                ->save(public_path('photos/' . $filename_2));
+            $image_resize->fit(230, 230)
+                ->save(public_path('thumbnails/' . $filename_2));
         }
-        $product_slug = $block->product->slug;
-        $block->content = $request->content;
-        $block->display = $request->display;
+
+        $block = Block::with('product')->find($block->id);
+
+        if($request->icons == "on") {
+            $block->content = $this->getIcons();
+        } elseif($request->video == "on") {
+            $block->content = $this->getContent("video");
+        } else {
+            if($request->photo) {
+                $block->photo = '/photos/' . $filename;
+            }
+
+            if($request->photo_2) {
+                $block->photo_2 = '/photos/' . $filename_2;
+            }
+            $product_slug = $block->product->slug;
+            $block->content = $request->content;
+            $block->display = $request->display;
+        }
+
         $block->save();
 
         return redirect(route('products.edit', $product_slug));
@@ -345,5 +391,31 @@ class BlockController extends Controller
         }
 
         return $content;
+    }
+
+    protected function getIcons() {
+        return '<div class="tofu-box-home mt-4 mb-4">
+            <div class="tofu-card">
+                <img src="/images/safe-pic.png" alt="safe-pic">
+                <p>SIGURNA <br>DOSTAVA</p>
+            </div>
+            <div class="tofu-card">
+                <img src="/images/delivery-pic.png" alt="delivery-pic">
+                <p>BRZA <br>DOSTAVA 24H</p>
+            </div>
+
+            <div class="tofu-card">
+                <img src="/images/quality-pic.png" alt="quality-pic">
+                <p>KONTROLA <br>KVALITETA</p>
+            </div>
+            <div class="tofu-card">
+                <img src="/images/pay-pic.png" alt="pay-pic">
+                <p>PLAĆANJE <br>POUZEĆEM</p>
+            </div>
+            <div class="tofu-card">
+                <img src="/images/garancy-pic.png" alt="garancy-pic">
+                <p>GARANTOVAN <br>POVRAT NOVCA</p>
+            </div>
+        </div>';
     }
 }

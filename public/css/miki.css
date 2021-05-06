@@ -1623,3 +1623,26 @@ body .wrap {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.custom-content h1 {
+    font-size: 2em !important;
+    font-weight: bolder !important;
+}
+
+.custom-content h2 {
+    font-size: 1.5em !important;
+    font-weight: bolder;
+}
+
+.custom-content h3 {
+    font-size: 1.17em !important;
+    font-weight: bolder;
+}
+
+.custom-content p {
+    font-weight: normal !important;
+}
+
+.cke_editable {
+    padding: 10px !important;
+}
