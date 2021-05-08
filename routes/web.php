@@ -29,10 +29,13 @@ Route::get('/akcija', [HomeController::class, 'akcija']);
 Route::get('/novo', [HomeController::class, 'novo']);
 Route::get('/trend', [HomeController::class, 'trend']);
 Route::get('/product/{slug}', [HomeController::class, 'show'])->name('product');
+
+//AJAX routes
 Route::get('/homeproducts', [HomeController::class, 'getHomeProducts']);
 Route::get('/novoproducts', [HomeController::class, 'getNovoProducts']);
 Route::get('/trendproducts', [HomeController::class, 'getTrendProducts']);
 Route::get('/akcijaproducts', [HomeController::class, 'getAkcijaProducts']);
+// AJAX routes end
 
 Route::get('cart', [HomeController::class, 'cart']);
 Route::resource('cart', CartController::class);
@@ -60,6 +63,7 @@ Route::group(
         Route::resource('category', CategoryController::class);
 //        Route::resource('products', ProductController::class);
         Route::post('imageupload', [ProductController::class, 'upload'])->name('imageupload');
+        Route::delete('/remove', [BlockController::class, 'remove']);
         Route::resource('block', BlockController::class);
         Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
         Route::get('orders/{id}', [OrderController::class, 'showOrder'])->name('orders.show');

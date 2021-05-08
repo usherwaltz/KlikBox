@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Block;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Attribute;
@@ -87,40 +88,79 @@ class ProductController extends Controller
      */
     public function update(ProductUpdateRequest $request, $id)
     {
-        if ($request->photo) {
-            $photo = $request->file('photo');
-            $filename = $photo->getClientOriginalName();
-            $image_resize = Image::make($photo->getRealPath());
-            $image_resize->fit(600, 600)
-                ->save(public_path('photos/' . $filename));
-            $image_resize->fit(230, 230)
-                ->save(public_path('thumbnails/' . $filename));
-        }
         $product = Product::find($id);
-        $product->name = $request->name;
-        $product->slug = $request->slug;
-        $product->top_choice = isset($request->top_choice) && $request->top_choice == "on" ? 1 : 0;
-        $product->description = $request->description;
-        if ($request->photo) {
-            $product->photo = '/photos/' . $filename;
-        }
-        $product->oldprice = $request->oldprice;
-        $product->price = $request->price;
+        if(isset($request->blocks)) {
+            foreach ($request->blocks as $block) {
+                $blockToSave = null;
+                if(isset($block['id'])) {
+                    $blockToSave = Block::find($block['id']);
+                } else {
+                    $blockToSave = new Block();
+                    $blockToSave->product_id = $product->id;
+                }
 
-        //check if product was saved
-        if($product->save()) {
-            if ($request->categories) {
-                $product->categories()->sync($request->categories);
+                $blockToSave->content = $block['content'];
+
+                if(isset($block['photo'])) {
+                    $block_photo = $block['photo'];
+                    $block_photo_filename = $block_photo->getClientOriginalName();
+                    $image_resize = Image::make($block_photo->getRealPath());
+                    $image_resize->fit(600, 600)
+                        ->save(public_path('photos/' . $block_photo_filename));
+                    $image_resize->fit(230, 230)
+                        ->save(public_path('thumbnails/' . $block_photo_filename));
+                    $blockToSave->photo = '/photos/' . $block_photo_filename;
+                }
+
+                if(isset($block['photo_2'])) {
+                    $block_photo_2 = $block['photo_2'];
+                    $block_photo_2_filename = $block_photo_2->getClientOriginalName();
+                    $image_resize = Image::make($block_photo_2->getRealPath());
+                    $image_resize->fit(600, 600)
+                        ->save(public_path('photos/' . $block_photo_2_filename));
+                    $image_resize->fit(230, 230)
+                        ->save(public_path('thumbnails/' . $block_photo_2_filename));
+                    $blockToSave->photo_2 = '/photos/' . $block_photo_2_filename;
+                }
+
+                $blockToSave->save();
             }
-            if ($request->options) {
-                $product->options()->sync($request->options);
-            }
-            Session::flash('message', 'Detalji proizvoda "' . $product->name . '" su uspješno sačuvani!');
-            Session::flash('alert-class', 'alert-success');
-        } else {
-            Session::flash('message', 'Došlo je do greške prilikom izmjene proizvoda "' . $product->name . '"!');
-            Session::flash('alert-class', 'alert-danger');
         }
+
+//        if ($request->photo) {
+//            $photo = $request->file('photo');
+//            $filename = $photo->getClientOriginalName();
+//            $image_resize = Image::make($photo->getRealPath());
+//            $image_resize->fit(600, 600)
+//                ->save(public_path('photos/' . $filename));
+//            $image_resize->fit(230, 230)
+//                ->save(public_path('thumbnails/' . $filename));
+//        }
+//        $product = Product::find($id);
+//        $product->name = $request->name;
+//        $product->slug = $request->slug;
+//        $product->top_choice = isset($request->top_choice) && $request->top_choice == "on" ? 1 : 0;
+//        $product->description = $request->description;
+//        if ($request->photo) {
+//            $product->photo = '/photos/' . $filename;
+//        }
+//        $product->oldprice = $request->oldprice;
+//        $product->price = $request->price;
+//
+//        //check if product was saved
+//        if($product->save()) {
+//            if ($request->categories) {
+//                $product->categories()->sync($request->categories);
+//            }
+//            if ($request->options) {
+//                $product->options()->sync($request->options);
+//            }
+//            Session::flash('message', 'Detalji proizvoda "' . $product->name . '" su uspješno sačuvani!');
+//            Session::flash('alert-class', 'alert-success');
+//        } else {
+//            Session::flash('message', 'Došlo je do greške prilikom izmjene proizvoda "' . $product->name . '"!');
+//            Session::flash('alert-class', 'alert-danger');
+//        }
         return redirect(route('products.index'));
     }
 

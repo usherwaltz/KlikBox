@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
     <style>
         .hidden{
             display:none;
@@ -26,7 +27,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -61,8 +62,18 @@
                           </li>
                     </ul>
                     @endguest
+
+
+                    @php
+                    $action = \Illuminate\Support\Facades\Route::getCurrentRoute()->getActionName();
+                    $cleanAction = substr($action, strpos($action, "\\") + 1);
+                    @endphp
+                    @if($cleanAction === "Http\Controllers\ProductController@edit")
+                    <div class="btn btn-success blok-submit ml-auto">Snimi Promjene</div>
+                    @endif
+
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -105,5 +116,6 @@
         </main>
     </div>
     @yield('scripts')
+    <script src="https://kit.fontawesome.com/6efa268c2e.js" crossorigin="anonymous"></script>
 </body>
 </html>

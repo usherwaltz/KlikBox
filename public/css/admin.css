@@ -1,0 +1,14 @@
+.block-photo {
+    width: 100% !important;
+}
+
+
+.remove-button {
+    background-color: red;
+    color: white;
+    width: 30px;
+    text-align: center;
+    border: 1px solid grey;
+    border-radius: 4px;
+    cursor: pointer;
+}

@@ -102,6 +102,19 @@ class BlockController extends Controller
     {
     }
 
+    public function remove(Request $request) {
+        if($request->ajax()) {
+            if(isset($request->block_id)) {
+                $block = Block::find($request->block_id);
+                if($block->delete()) {
+                    return true;
+                }
+                return false;
+            }
+        }
+        return false;
+    }
+
     /**
      * Update the specified resource in storage.
      *

@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid">
-        <form class="form" name="productform" action="{{ route('products.update', $product) }}" method="post" enctype="multipart/form-data">
+    <div class="container">
+        <form enctype="multipart/form-data"  class="form" name="productform" action="{{ route('products.update', $product) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('patch')
-            <div class="row mb-2">
+            <div class="row mb-4">
                 <div class="col-sm-12 col-md-8">
                     <div class="card">
                         <div class="card-header">{{ __('Proizvod') }}</div>
@@ -111,7 +111,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row mb-2">
+                    <div class="row">
                         <div class="col-sm-12">
                             <div class="card">
                                 <div class="card-header">
@@ -147,96 +147,50 @@
                     </div>
                 </div>
             </div>
-        </form>
+            <hr>
 
-        <hr>
-
-        <div class="row mb-2">
-            <div class="col-sm-12">
-                @for($i = 0; $i < count($product->blocks); $i++)
-                    @php $block = $product->blocks[$i]; @endphp
-                    <div class="row mb-5">
-                        <div class="col-sm-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    Block {{$i + 1}}
-                                </div>
-                                <div class="card-body">
-                                    <form enctype="multipart/form-data" action="{{route('block.update',$block->id)}}" method="post">
-                                        @csrf
-                                        @method('PATCH')
+            <div class="row mb-2 mt-4">
+            <div class="col-12">
+                <div class="row mb-5">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            @for($i = 0; $i < count($product->blocks); $i++)
+                                @php $block = $product->blocks[$i]; @endphp
+                                <div class="block-wrapper" data-blok="{{$i}}" data-id="{{$block->id}}">
+                                    <div class="card-header border-top border-bottom-0 font-weight-bold font-size-xl">
+                                        Blok {{$i + 1}}
+                                        <div class="remove-button float-lg-right">
+                                            <i class="fas fa-minus"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <input type="text" value="{{$block->id}}" name="blocks[{{$i}}][id]" hidden>
                                         <div class="form-group row">
-                                            <label class="col-6" for="content">Sadrzaj
-                                                <textarea class="form-control ckeditor" name="content" id="content" rows="10">{{$block->content}}</textarea>
+                                            <label class="col-lg-6 col-sm-12" for="content">Sadrzaj
+                                                <textarea class="form-control ckeditor" name="blocks[{{$i}}][content]" id="content-{{$i}}" rows="10">{{$block->content}}</textarea>
                                             </label>
-                                            <div class="col-3">
+                                            <div class="col-lg-3 col-sm-12">
                                                 <div class="form-group">
                                                     <label for="photo">Slika 1</label>
-                                                    <input type="file" class="form-control-file" name="photo" placeholder="">
+                                                    <input type="file" class="form-control-file" name="blocks[{{$i}}][photo]" placeholder="">
                                                 </div>
-                                                <img src="{{ $block->photo }}" width="300px" class="src">
+                                                <img src="{{ $block->photo }}" class="src block-photo">
                                             </div>
-                                            <div class="col-3">
+                                            <div class="col-lg-3 col-sm-12">
                                                 <div class="form-group">
                                                     <label for="photo">Slika 2</label>
-                                                    <input type="file" class="form-control-file" name="photo_2" placeholder="">
+                                                    <input type="file" class="form-control-file" name="blocks[{{$i}}][photo_2]" placeholder="">
                                                 </div>
-                                                <img src="{{ $block->photo_2 }}" width="300px" class="src">
+                                                <img src="{{ $block->photo_2 }}" class="src block-photo">
                                             </div>
                                         </div>
                                         <input type="hidden" name="display" value="1">
-                                        <button type="submit" class="btn btn-primary">{{__('Snimi')}}</button>
-                                    </form>
-                                </div>
-                                <div class="card-footer text-muted">
-                                    <form action="{{route('block.destroy',$block->id)}}" method="post">
-                                        @csrf
-                                        @method('DELETE')
-                                        <input type="hidden" name="product_slug" value="{{$product->slug}}">
-                                        <button type="submit" class="btn btn-danger">Obriši</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endfor
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="card">
-                            <div class="card-header">
-                                Dodaj blok
-                            </div>
-                            <div class="card-body p-4">
-                                <form enctype="multipart/form-data" action="{{route('block.store')}}" method="post">
-                                    @csrf
-                                    <input type="hidden" name="product_id" value="{{$product->id}}">
-                                    <input type="hidden" name="product_slug" value="{{$product->slug}}">
-                                    <div class="form-group row">
-                                        <label class="col-6" for="content">Blok tekst
-                                            <textarea class="col-12 form-control ckeditor" type="textarea" name="content"></textarea>
-                                        </label>
-                                        <label class="col-3" for="photo">Slika 1
-                                            <input type="file" class="form-control-file" name="photo" placeholder="">
-                                        </label>
-                                        <label class="col-3" for="photo">Slika 2
-                                            <input type="file" class="form-control-file" name="photo_2" placeholder="">
-                                        </label>
                                     </div>
-                                    <div class="row form-group">
-                                        <label class="col-2" for="icons">
-                                            Ikonice
-                                            <input type="checkbox" name="icons">
-                                        </label>
-                                        <label class="col-2" for="video">
-                                            Video
-                                            <input type="checkbox" name="video">
-                                        </label>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Dodaj Blok</button>
-                                </form>
-                            </div>
-                            <div class="card-footer text-muted">
-
+                                </div>
+                             @endfor
+                            <div class="card-footer insert-before">
+                                <button type="submit" class="btn btn-primary edit-product" hidden>{{__('Snimi Promjene')}}</button>
+                                <div class="add-block btn btn-success float-lg-right">Dodaj Blok</div>
                             </div>
                         </div>
                     </div>
@@ -245,21 +199,124 @@
 
 
         </div>
+        </form>
+        <div class="toast">
+            <div class="toast-header">
+                KlikBox
+            </div>
+            <div class="toast-body">
+                Uspješno ste obrisali blok.
+            </div>
+        </div>
     </div>
 @endsection
 @section('scripts')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 <script>
-    CKEDITOR.replace('description',{
-        filebrowserUploadUrl: "{{route('imageupload', ['_token' => csrf_token() ])}}",
-        filebrowserUploadMethod: 'form'
+    $(document).ready(function () {
+        replaceEditor();
+
+        $('.add-block').on('click', function(e) {
+            e.preventDefault();
+            let wrapper = $('.block-wrapper');
+            let lastWrapper = wrapper[wrapper.length - 1]
+            let data = $(lastWrapper).attr('data-blok');
+            let dataInt = parseInt(data);
+            let newData = isNaN(dataInt) ? 0 : dataInt + 1;
+            let ordNum = newData + 1;
+
+            let html =
+                '<div class="block-wrapper" data-blok="' + newData + '">' +
+                    '<div class="card-header border-top border-bottom-0 font-weight-bold font-size-xl">' +
+                        'Blok ' + ordNum +
+                        '<div class="remove-button no-ajax float-lg-right pointer">' +
+                            '<i class="fas fa-minus"></i>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="card-body">' +
+                        '<div class="form-group row">' +
+                            '<label class="col-lg-6 col-sm-12" for="content">Sadrzaj' +
+                                '<textarea class="form-control ckeditor" name="blocks[' + newData + '][content]" id="content-' + newData + '" rows="10"></textarea>' +
+                            '</label>' +
+                            '<div class="col-lg-3 col-sm-12">' +
+                                '<div class="form-group">' +
+                                    '<label for="photo">Slika 1</label>' +
+                                    '<input type="file" class="form-control-file" name="blocks[' + newData + '][photo]" placeholder="">' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="col-lg-3 col-sm-12">' +
+                                '<div class="form-group">' +
+                                    '<label for="photo_2">Slika 2</label>' +
+                                    '<input type="file" class="form-control-file" name="blocks[' + newData + '][photo_2]" placeholder="">' +
+                                '</div>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>';
+
+            appendHtml(html, ".insert-before");
+            replaceEditor('content-' + newData);
+
+        });
+
+        function appendHtml(str, element) {
+            $(str).insertBefore(element).hide().show('slow');
+        }
+
+        function replaceEditor(newElement) {
+            let element = 'description';
+            if(newElement != null) {
+                element = newElement
+            }
+            CKEDITOR.replace(element,{
+                filebrowserUploadUrl: "{{route('imageupload', ['_token' => csrf_token() ])}}",
+                filebrowserUploadMethod: 'form'
+            });
+            // CKEDITOR.config.extraPlugins = 'embed';
+            CKEDITOR.config.contentsCss = "{{asset('css/editor.css')}}";
+            CKEDITOR.config.extraAllowedContent = 'h5 div(*)';
+            CKEDITOR.config.filebrowserUploadUrl= "{{route('imageupload', ['_token' => csrf_token() ])}}";
+            CKEDITOR.config.filebrowserUploadMethod= 'form';
+            CKEDITOR.replaceClass ='ckeditor';
+        }
+
+        $('.blok-submit').on('click', function(e) {
+            e.preventDefault();
+
+            $('.edit-product').click();
+        });
+
+        $(document).on('click', '.remove-button', function() {
+            if($(this).hasClass('no-ajax')) {
+                let target = $(this).closest('.block-wrapper');
+                target.hide('slow', function() {
+                    target.remove();
+                });
+            } else {
+                let block_id = $(this).closest(".block-wrapper").attr('data-id');
+                let target = $(this).closest('.block-wrapper');
+                $.ajax({
+                    url: '/admin/remove',
+                    type: 'DELETE',
+                    data: {
+                        "_token": "{{csrf_token()}}",
+                        block_id
+                    },
+                    success: (response) => {
+                        console.log('success');
+                        target.hide('slow', function() {
+                            target.remove();
+                        });
+                        $('.toast').toast({delay: 5000}).toast('show');
+                    },
+                    error: function (response) {
+                        console.log('error');
+                    }
+                });
+            }
+        });
     });
-    // CKEDITOR.config.extraPlugins = 'embed';
-    CKEDITOR.config.contentsCss = "{{asset('css/editor.css')}}";
-    CKEDITOR.config.extraAllowedContent = 'h5 div(*)';
-    CKEDITOR.config.filebrowserUploadUrl= "{{route('imageupload', ['_token' => csrf_token() ])}}";
-    CKEDITOR.config.filebrowserUploadMethod= 'form';
-    CKEDITOR.replaceClass ='ckeditor';
 
 </script>
 @endsection
