@@ -400,7 +400,7 @@
                                     '<div class="col-lg-12">' +
                                         '<div class="form-group">' +
                                             '<label for="video">Video Link</label>' +
-                                            '<input type="text" class="form-control" name="blocks[' + newData + '][video]" placeholder="npr: https://www.youtube.com/watch?v=04854XqcfCY">' +
+                                            '<textarea type="text" class="form-control" name="blocks[' + newData + '][video]" placeholder="Link se mora dijeliti kao \'EMBEDED LINK\'"></textarea>' +
                                         '</div>' +
                                     '</div>' +
                                 '</div>' +
