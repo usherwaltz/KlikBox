@@ -69,7 +69,7 @@
                     $cleanAction = substr($action, strpos($action, "\\") + 1);
                     @endphp
                     @if($cleanAction === "Http\Controllers\ProductController@edit")
-                    <div class="btn btn-success blok-submit ml-auto">Snimi Promjene</div>
+                    <div class="btn btn-success blok-submit ml-auto mr-2">Snimi Promjene</div>
                     @endif
 
                     <!-- Right Side Of Navbar -->

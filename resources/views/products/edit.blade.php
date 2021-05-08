@@ -65,8 +65,6 @@
                                             <div class="error">{{ $errors->first('price') }}</div>
                                         @endif
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-
                                 </div>
                             </div>
                         </div>
@@ -156,41 +154,113 @@
                         <div class="card">
                             @for($i = 0; $i < count($product->blocks); $i++)
                                 @php $block = $product->blocks[$i]; @endphp
-                                <div class="block-wrapper" data-blok="{{$i}}" data-id="{{$block->id}}">
-                                    <div class="card-header border-top border-bottom-0 font-weight-bold font-size-xl">
-                                        Blok {{$i + 1}}
-                                        <div class="remove-button float-lg-right">
-                                            <i class="fas fa-minus"></i>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <input type="text" value="{{$block->id}}" name="blocks[{{$i}}][id]" hidden>
-                                        <div class="form-group row">
-                                            <label class="col-lg-6 col-sm-12" for="content">Sadrzaj
-                                                <textarea class="form-control ckeditor" name="blocks[{{$i}}][content]" id="content-{{$i}}" rows="10">{{$block->content}}</textarea>
-                                            </label>
-                                            <div class="col-lg-3 col-sm-12">
-                                                <div class="form-group">
-                                                    <label for="photo">Slika 1</label>
-                                                    <input type="file" class="form-control-file" name="blocks[{{$i}}][photo]" placeholder="">
+                                @switch($block->type)
+                                    @case("STANDARD")
+                                        <div class="block-wrapper" data-blok="{{$i}}" data-id="{{$block->id}}">
+                                            <div class="card-header border-top border-bottom-0 font-weight-bold font-size-xl">
+                                                Blok {{$i + 1}}
+                                                <div class="remove-button float-lg-right">
+                                                    <i class="fas fa-minus"></i>
                                                 </div>
-                                                <img src="{{ $block->photo }}" class="src block-photo">
                                             </div>
-                                            <div class="col-lg-3 col-sm-12">
-                                                <div class="form-group">
-                                                    <label for="photo">Slika 2</label>
-                                                    <input type="file" class="form-control-file" name="blocks[{{$i}}][photo_2]" placeholder="">
+                                            <div class="card-body">
+                                                <input type="text" value="{{$block->id}}" name="blocks[{{$i}}][id]" hidden>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-6 col-sm-12" for="content">Sadrzaj
+                                                        <textarea class="form-control ckeditor" name="blocks[{{$i}}][content]" id="content-{{$i}}" rows="10">{{$block->content}}</textarea>
+                                                    </label>
+                                                    <div class="col-lg-3 col-sm-12">
+                                                        <div class="form-group">
+                                                            <label for="photo">Slika 1</label>
+                                                            <input type="file" class="form-control-file" name="blocks[{{$i}}][photo]" placeholder="">
+                                                        </div>
+                                                        <img src="{{ $block->photo }}" class="src block-photo">
+                                                    </div>
+                                                    <div class="col-lg-3 col-sm-12">
+                                                        <div class="form-group">
+                                                            <label for="photo">Slika 2</label>
+                                                            <input type="file" class="form-control-file" name="blocks[{{$i}}][photo_2]" placeholder="">
+                                                        </div>
+                                                        <img src="{{ $block->photo_2 }}" class="src block-photo">
+                                                    </div>
                                                 </div>
-                                                <img src="{{ $block->photo_2 }}" class="src block-photo">
+                                                <input type="hidden" name="display" value="1">
                                             </div>
                                         </div>
-                                        <input type="hidden" name="display" value="1">
-                                    </div>
-                                </div>
+                                    @break
+                                    @case("VIDEO")
+                                        <div class="block-wrapper" data-blok="{{$i}}" data-id="{{$block->id}}">
+                                            <div class="card-header border-top border-bottom-0 font-weight-bold font-size-xl">
+                                                Blok {{$i + 1}}
+                                                <div class="remove-button float-lg-right">
+                                                    <i class="fas fa-minus"></i>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <input type="text" value="{{$block->id}}" name="blocks[{{$i}}][id]" hidden>
+                                                <div class="form-group row">
+                                                    <div class="col-lg-12 text-center">
+                                                        {!! $block->video !!}
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" name="display" value="1">
+                                            </div>
+                                        </div>
+                                    @break
+                                    @case("ICONS")
+                                        <div class="block-wrapper" data-blok="{{$i}}" data-id="{{$block->id}}">
+                                            <div class="card-header border-top border-bottom-0 font-weight-bold font-size-xl">
+                                                Blok {{$i + 1}}
+                                                <div class="remove-button float-lg-right">
+                                                    <i class="fas fa-minus"></i>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <input type="text" value="{{$block->id}}" name="blocks[{{$i}}][id]" hidden>
+                                                <div class="form-group row">
+                                                    <div class="col-lg-3">
+                                                        <img class="src block-photo" src="{{$block->icon_1}}" alt="icon">
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <img class="src block-photo" src="{{$block->icon_2}}" alt="icon">
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <img class="src block-photo" src="{{$block->icon_3}}" alt="icon">
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <img class="src block-photo" src="{{$block->icon_4}}" alt="icon">
+                                                    </div>
+                                                    <div class="col-lg-3 text-center">
+                                                        {{$block->icon_1_text}}
+                                                    </div>
+                                                    <div class="col-lg-3 text-center">
+                                                        {{$block->icon_2_text}}
+                                                    </div>
+                                                    <div class="col-lg-3 text-center">
+                                                        {{$block->icon_3_text}}
+                                                    </div>
+                                                    <div class="col-lg-3 text-center">
+                                                        {{$block->icon_4_text}}
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" name="display" value="1">
+                                            </div>
+                                        </div>
+                                    @break
+                                @endswitch
                              @endfor
                             <div class="card-footer insert-before">
                                 <button type="submit" class="btn btn-primary edit-product" hidden>{{__('Snimi Promjene')}}</button>
-                                <div class="add-block btn btn-success float-lg-right">Dodaj Blok</div>
+                                <div class="dropdown float-lg-right">
+                                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Dodaj Blok
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item add-block" data-type="standard" href="#">Standard</a>
+                                        <a class="dropdown-item add-block" data-type="video" href="#">Video</a>
+                                        <a class="dropdown-item add-block" data-type="icons" href="#">Icons</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -226,38 +296,119 @@
             let newData = isNaN(dataInt) ? 0 : dataInt + 1;
             let ordNum = newData + 1;
 
-            let html =
-                '<div class="block-wrapper" data-blok="' + newData + '">' +
-                    '<div class="card-header border-top border-bottom-0 font-weight-bold font-size-xl">' +
-                        'Blok ' + ordNum +
-                        '<div class="remove-button no-ajax float-lg-right pointer">' +
-                            '<i class="fas fa-minus"></i>' +
-                        '</div>' +
-                    '</div>' +
-                    '<div class="card-body">' +
-                        '<div class="form-group row">' +
-                            '<label class="col-lg-6 col-sm-12" for="content">Sadrzaj' +
-                                '<textarea class="form-control ckeditor" name="blocks[' + newData + '][content]" id="content-' + newData + '" rows="10"></textarea>' +
-                            '</label>' +
-                            '<div class="col-lg-3 col-sm-12">' +
-                                '<div class="form-group">' +
-                                    '<label for="photo">Slika 1</label>' +
-                                    '<input type="file" class="form-control-file" name="blocks[' + newData + '][photo]" placeholder="">' +
+            let block_type = $(this).attr('data-type');
+            console.log(block_type);
+
+            let html = '';
+
+            switch (block_type) {
+                case 'standard':
+                    html =
+                        '<div class="block-wrapper" data-blok="' + newData + '">' +
+                            '<input type="hidden" name=blocks[' + newData + '][type] value="STANDARD">' +
+                            '<div class="card-header border-top border-bottom-0 font-weight-bold font-size-xl">' +
+                                'Blok ' + ordNum +
+                                '<div class="remove-button no-ajax float-lg-right pointer">' +
+                                    '<i class="fas fa-minus"></i>' +
                                 '</div>' +
                             '</div>' +
-                            '<div class="col-lg-3 col-sm-12">' +
-                                '<div class="form-group">' +
-                                    '<label for="photo_2">Slika 2</label>' +
-                                    '<input type="file" class="form-control-file" name="blocks[' + newData + '][photo_2]" placeholder="">' +
+                            '<div class="card-body">' +
+                                '<div class="form-group row">' +
+                                    '<label class="col-lg-6 col-sm-12" for="content">Sadrzaj' +
+                                        '<textarea class="form-control ckeditor" name="blocks[' + newData + '][content]" id="content-' + newData + '" rows="10"></textarea>' +
+                                    '</label>' +
+                                    '<div class="col-lg-3 col-sm-12">' +
+                                        '<div class="form-group">' +
+                                            '<label for="photo">Slika 1</label>' +
+                                            '<input type="file" class="form-control-file" name="blocks[' + newData + '][photo]" placeholder="">' +
+                                        '</div>' +
+                                    '</div>' +
+                                    '<div class="col-lg-3 col-sm-12">' +
+                                        '<div class="form-group">' +
+                                            '<label for="photo_2">Slika 2</label>' +
+                                            '<input type="file" class="form-control-file" name="blocks[' + newData + '][photo_2]" placeholder="">' +
+                                        '</div>' +
+                                    '</div>' +
                                 '</div>' +
                             '</div>' +
-                        '</div>' +
-                    '</div>' +
-                '</div>';
+                        '</div>';
 
-            appendHtml(html, ".insert-before");
-            replaceEditor('content-' + newData);
+                    appendHtml(html, ".insert-before");
+                    replaceEditor('content-' + newData);
+                    break;
 
+                case 'icons':
+                    html =
+                        '<div class="block-wrapper" data-blok="' + newData + '">' +
+                            '<input type="hidden" name=blocks[' + newData + '][type] value="ICONS">' +
+                            '<div class="card-header border-top border-bottom-0 font-weight-bold font-size-xl">' +
+                                'Blok ' + ordNum +
+                                '<div class="remove-button no-ajax float-lg-right pointer">' +
+                                    '<i class="fas fa-minus"></i>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="card-body">' +
+                                '<div class="form-group row">' +
+                                    '<div class="col-3">' +
+                                        '<div class="form-group">' +
+                                            '<label for="Icon 1">Icon 1</label>' +
+                                            '<input type="file" class="form-control-file mb-2" name="blocks[' + newData + '][icon_1]" placeholder="">' +
+                                            '<textarea type="text" class="form-control" name="blocks[' + newData + '][icon_1_text]" placeholder=""></textarea>' +
+                                        '</div>' +
+                                    '</div>' +
+
+                                    '<div class="col-3">' +
+                                        '<div class="form-group">' +
+                                            '<label for="Icon 1">Icon 2</label>' +
+                                            '<input type="file" class="form-control-file mb-2" name="blocks[' + newData + '][icon_2]" placeholder="">' +
+                                            '<textarea type="text" class="form-control" name="blocks[' + newData + '][icon_2_text]" placeholder=""></textarea>' +
+                                        '</div>' +
+                                    '</div>' +
+
+                                    '<div class="col-3">' +
+                                        '<div class="form-group">' +
+                                            '<label for="Icon 1">Icon 3</label>' +
+                                            '<input type="file" class="form-control-file mb-2" name="blocks[' + newData + '][icon_3]" placeholder="">' +
+                                            '<textarea type="text" class="form-control" name="blocks[' + newData + '][icon_3_text]" placeholder=""></textarea>' +
+                                        '</div>' +
+                                    '</div>' +
+
+                                    '<div class="col-3">' +
+                                        '<div class="form-group">' +
+                                            '<label for="Icon 1">Icon 4</label>' +
+                                            '<input type="file" class="form-control-file mb-2" name="blocks[' + newData + '][icon_4]" placeholder="">' +
+                                            '<textarea type="text" class="form-control" name="blocks[' + newData + '][icon_4_text]" placeholder=""></textarea>' +
+                                        '</div>' +
+                                    '</div>' +
+                                '</div>' +
+                            '</div>' +
+                        '</div>';
+                    appendHtml(html, ".insert-before");
+                    break;
+                case 'video':
+                    html =
+                        '<div class="block-wrapper" data-blok="' + newData + '">' +
+                            '<input type="hidden" name=blocks[' + newData + '][type] value="VIDEO">' +
+                            '<div class="card-header border-top border-bottom-0 font-weight-bold font-size-xl">' +
+                                'Blok ' + ordNum +
+                                '<div class="remove-button no-ajax float-lg-right pointer">' +
+                                    '<i class="fas fa-minus"></i>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="card-body">' +
+                                '<div class="form-group row">' +
+                                    '<div class="col-lg-12">' +
+                                        '<div class="form-group">' +
+                                            '<label for="video">Video Link</label>' +
+                                            '<input type="text" class="form-control" name="blocks[' + newData + '][video]" placeholder="npr: https://www.youtube.com/watch?v=04854XqcfCY">' +
+                                        '</div>' +
+                                    '</div>' +
+                                '</div>' +
+                            '</div>'+
+                        '</div>';
+                    appendHtml(html, ".insert-before");
+                    break;
+            }
         });
 
         function appendHtml(str, element) {
