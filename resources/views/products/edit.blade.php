@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="container">
+        @if(Session::has('message'))
+            <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('message') }}</p>
+        @endif
         <form enctype="multipart/form-data"  class="form" name="productform" action="{{ route('products.update', $product) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('patch')
@@ -218,29 +221,45 @@
                                             <div class="card-body">
                                                 <input type="text" value="{{$block->id}}" name="blocks[{{$i}}][id]" hidden>
                                                 <div class="form-group row">
-                                                    <div class="col-lg-3">
-                                                        <img class="src block-photo" src="{{$block->icon_1}}" alt="icon">
+                                                    <div class="col-lg-3 text-center mb-2">
+                                                        <div class="form-group">
+                                                            <label for="photo">Icon 1</label>
+                                                            <input type="file" class="form-control-file" name="blocks[{{$i}}][icons_1]" placeholder="">
+                                                        </div>
+                                                        <img class="src icons-photo" src="{{$block->icon_1}}" alt="icon">
                                                     </div>
-                                                    <div class="col-lg-3">
-                                                        <img class="src block-photo" src="{{$block->icon_2}}" alt="icon">
+                                                    <div class="col-lg-3 text-center mb-2">
+                                                        <div class="form-group">
+                                                            <label for="photo">Icon 2</label>
+                                                            <input type="file" class="form-control-file" name="blocks[{{$i}}][icon_2]" placeholder="">
+                                                        </div>
+                                                        <img class="src icons-photo" src="{{$block->icon_2}}" alt="icon">
                                                     </div>
-                                                    <div class="col-lg-3">
-                                                        <img class="src block-photo" src="{{$block->icon_3}}" alt="icon">
+                                                    <div class="col-lg-3 text-center mb-2">
+                                                        <div class="form-group">
+                                                            <label for="photo">Icon 3</label>
+                                                            <input type="file" class="form-control-file" name="blocks[{{$i}}][icon_3]" placeholder="">
+                                                        </div>
+                                                        <img class="src icons-photo" src="{{$block->icon_3}}" alt="icon">
                                                     </div>
-                                                    <div class="col-lg-3">
-                                                        <img class="src block-photo" src="{{$block->icon_4}}" alt="icon">
+                                                    <div class="col-lg-3 text-center mb-2">
+                                                        <div class="form-group">
+                                                            <label for="photo">Icon 4</label>
+                                                            <input type="file" class="form-control-file" name="blocks[{{$i}}][icon_4]" placeholder="">
+                                                        </div>
+                                                        <img class="src icons-photo" src="{{$block->icon_4}}" alt="icon">
                                                     </div>
                                                     <div class="col-lg-3 text-center">
-                                                        {{$block->icon_1_text}}
+                                                        <textarea name="blocks[{{$i}}][icon_1_text]">{{$block->icon_1_text}}</textarea>
                                                     </div>
                                                     <div class="col-lg-3 text-center">
-                                                        {{$block->icon_2_text}}
+                                                        <textarea name="blocks[{{$i}}][icon_2_text]">{{$block->icon_2_text}}</textarea>
                                                     </div>
                                                     <div class="col-lg-3 text-center">
-                                                        {{$block->icon_3_text}}
+                                                        <textarea name="blocks[{{$i}}][icon_3_text]">{{$block->icon_3_text}}</textarea>
                                                     </div>
                                                     <div class="col-lg-3 text-center">
-                                                        {{$block->icon_4_text}}
+                                                        <textarea name="blocks[{{$i}}][icon_4_text]">{{$block->icon_4_text}}</textarea>
                                                     </div>
                                                 </div>
                                                 <input type="hidden" name="display" value="1">

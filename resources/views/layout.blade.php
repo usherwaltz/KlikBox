@@ -92,38 +92,10 @@
                 </a>
 
                 <!-- CART ICON -->
-                <div class="col-lg-1 col-md-1 col-sm-1 col-2 order-3 order-md-4 order-lg-4">
-                    <div class="bag-box">
-                        <div class="dropdown">
-                            <button class="dropbtn">
-                                {{ Cart::count() }}
-                            </button>
-                            <div class="dropdown-content" style="right:0;">
-                                <ul>
-                                    @forelse (Cart::content() as $row)
-                                        <li>
-                                            <div></div>
-                                            <div>
-                                                {{$row->name}}
-                                                @if(isset($row->options))
-                                                    <?php $opts = get_object_vars($row->options); ?>
-                                                    @foreach ($opts as $key => $option)
-                                                        | {{$row->options->$key}}
-                                                    @endforeach
-                                                @endif
-                                            </div>
-                                            <div>X</div>
-                                            <div>{{$row->qty}}</div>
-                                        </li>
-                                    @empty
-                                        <li>Korpa je prazna</li>
-                                    @endforelse
-                                </ul>
-                                <a href="{{ url('cart') }}" class="orangebutton cartbtn">Vidi korpu</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <button class="text-center col-lg-1 col-md-1 col-sm-1 col-2 order-3 order-md-4 order-lg-4 cart-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-controls="offcanvasRight">
+                        <img src="/images/cart-icon.svg" alt="cart-icon">
+                        <div class="cart-count">{{ Cart::count() }}</div>
+                </button>
             </div>
         </nav>
     </header>
@@ -225,6 +197,55 @@
 
 </div>
 </body>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+
+    <div class="offcanvas-header">
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <hr class="m-0">
+    <div class="offcanvas-body p-4">
+        @forelse (Cart::content() as $row)
+            <?php $product = \App\Models\Product::getProduct($row->id); ?>
+
+            <div class="row">
+                <div class="col-4">
+                    <img src="{{$product->photo}}" alt="img" class="cart-photo">
+                </div>
+                <div class="col-8 row flex-column justify-content-between">
+                    <span class="cart-product-name">{{$product->name}}<span class="cart-ammount"> X {{$row->qty}}</span></span>
+                    <span>{{$row->price}}.00 KM</span>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-4">
+                    <span>Dostava</span>
+                </div>
+                <div class="col-8">
+                    <span>7 KM</span>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-4 align-self-center">
+                    <span class="cart-product-name">Total</span>
+                </div>
+                <div class="col-8">
+                    <span class="cart-total">{{Cart::total() + 7}} KM</span>
+                </div>
+            </div>
+
+        @empty
+            <li>Korpa je prazna</li>
+        @endforelse
+        <a href="{{ url('cart') }}" class="orangebutton cartbtn cart-button-margin w-100 text-decoration-none">VIDI KORPU</a>
+        <a href="javascript:void(0)" class="orangebutton orangebutton-inverse cartbtn cart-button-margin w-100 text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">NASTAVI KUPOVINU</a>
+    </div>
+</div>
 <div class="modal" id="privacy-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">

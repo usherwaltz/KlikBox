@@ -179,11 +179,11 @@
                         @break
                         @case("ICONS")
                             <div class="col-12 row mb-4 justify-content-center">
-                                <div class="col-lg-3 mb-4"><img src="{{$block->icon_1}}" alt="img"></div>
-                                <div class="col-lg-3 mb-4"><img src="{{$block->icon_2}}" alt="img"></div>
-                                <div class="col-lg-3 mb-4"><img src="{{$block->icon_3}}" alt="img"></div>
-                                <div class="col-lg-3 mb-4"><img src="{{$block->icon_4}}" alt="img"></div>
-                                <div class="col-lg-3 text-center">
+                                <div class="col-lg-3 text-center mb-4"><img class="icons-photo" src="{{$block->icon_1}}" alt="img"></div>
+                                <div class="col-lg-3 text-center mb-4"><img class="icons-photo" src="{{$block->icon_2}}" alt="img"></div>
+                                <div class="col-lg-3 text-center mb-4"><img class="icons-photo" src="{{$block->icon_3}}" alt="img"></div>
+                                <div class="col-lg-3 text-center mb-4"><img class="icons-photo" src="{{$block->icon_4}}" alt="img"></div>
+                                <div class="col-lg-3 text-center text-center">
                                     {{$block->icon_1_text}}
                                 </div>
                                 <div class="col-lg-3 text-center">

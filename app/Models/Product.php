@@ -53,4 +53,8 @@ class Product extends Model
     {
         return $this->belongsToMany(Option::class);
     }
+
+    public static function getProduct($id) {
+        return self::find($id);
+    }
 }

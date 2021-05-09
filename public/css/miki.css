@@ -1646,3 +1646,53 @@ body .wrap {
 .cke_editable {
     padding: 10px !important;
 }
+
+.cart-button > img {
+    width: 44px;
+    height: 44px;
+    pointer-events: none;
+}
+
+.cart-button {
+    position: relative;
+    border: none;
+    background-color: transparent;
+}
+
+.cart-count {
+    position: absolute;
+    top:calc(50% - 8px);
+    right:calc(50% - 7px);
+    font-size: 24px;
+    color: #ec7700;
+    pointer-events: none;
+}
+
+.cart-photo {
+    height: 90px;
+    width: 90px;
+}
+
+.cart-ammount {
+    font-weight: bolder;
+    color: #ec7700;
+}
+
+.cart-product-name {
+    font-weight: bolder;
+}
+
+.cart-total {
+    font-size: 32px;
+    font-weight: bolder;
+}
+
+.cart-button-margin {
+    margin: 1.5em 0 0 0 !important;
+}
+
+.orangebutton-inverse {
+    background-color: white !important;
+    border: 1px solid #ec7700 !important;
+    color: #ec7700 !important;
+}

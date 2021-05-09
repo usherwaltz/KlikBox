@@ -138,17 +138,38 @@ class ProductController extends Controller
                     break;
 
                 case "ICONS":
-                    if(isset($block['icon_1']) && isset($block['icon_2']) && isset($block['icon_3']) && isset($block['icon_4'])) {
+                    if(isset($block['icon_1'])) {
                         $blockToSave->icon_1 = $this->uploadImage($block['icon_1']);
-                        $blockToSave->icon_2 = $this->uploadImage($block['icon_2']);
-                        $blockToSave->icon_3 = $this->uploadImage($block['icon_3']);
-                        $blockToSave->icon_4 = $this->uploadImage($block['icon_4']);
-                        $blockToSave->icon_1_text = $block['icon_1_text'];
-                        $blockToSave->icon_2_text = $block['icon_2_text'];
-                        $blockToSave->icon_3_text = $block['icon_3_text'];
-                        $blockToSave->icon_4_text = $block['icon_4_text'];
-                        $blockToSave->save();
                     }
+
+                    if(isset($block['icon_2'])) {
+                        $blockToSave->icon_2 = $this->uploadImage($block['icon_2']);
+                    }
+
+                    if(isset($block['icon_3'])) {
+                        $blockToSave->icon_3 = $this->uploadImage($block['icon_3']);
+                    }
+
+                    if(isset($block['icon_4'])) {
+                        $blockToSave->icon_4 = $this->uploadImage($block['icon_4']);
+                    }
+
+                    if(isset($block['icon_1_text'])) {
+                        $blockToSave->icon_1_text = $block['icon_1_text'];
+                    }
+
+                    if(isset($block['icon_2_text'])) {
+                        $blockToSave->icon_2_text = $block['icon_2_text'];
+                    }
+
+                    if(isset($block['icon_3_text'])){
+                        $blockToSave->icon_3_text = $block['icon_3_text'];
+                    }
+
+                    if(isset($block['icon_4_text'])) {
+                        $blockToSave->icon_4_text = $block['icon_4_text'];
+                    }
+                    $blockToSave->save();
                     break;
 
             }
@@ -188,7 +209,7 @@ class ProductController extends Controller
             Session::flash('alert-class', 'alert-danger');
         }
 
-        return redirect(route('products.index'));
+        return redirect(route('products.edit', $product->slug));
     }
 
     /**
