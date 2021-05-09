@@ -1657,12 +1657,14 @@ body .wrap {
     position: relative;
     border: none;
     background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cart-count {
+    margin-top: 9px;
     position: absolute;
-    top:calc(50% - 8px);
-    right:calc(50% - 7px);
     font-size: 24px;
     color: #ec7700;
     pointer-events: none;
