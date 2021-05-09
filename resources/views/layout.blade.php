@@ -230,6 +230,10 @@
 
             <hr>
 
+        @empty
+            <li>Korpa je prazna</li>
+        @endforelse
+
             <div class="row">
                 <div class="col-4 align-self-center">
                     <span class="cart-product-name">Total</span>
@@ -238,10 +242,6 @@
                     <span class="cart-total">{{Cart::total() + 7}} KM</span>
                 </div>
             </div>
-
-        @empty
-            <li>Korpa je prazna</li>
-        @endforelse
         <a href="{{ url('cart') }}" class="orangebutton cartbtn cart-button-margin w-100 text-decoration-none">VIDI KORPU</a>
         <a href="javascript:void(0)" class="orangebutton orangebutton-inverse cartbtn cart-button-margin w-100 text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">NASTAVI KUPOVINU</a>
     </div>
