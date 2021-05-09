@@ -136,7 +136,7 @@
                 <!-- EMAIL CONTACT -->
                 <a class="custom-anchor-tag" href="mailto:info@klikbox.ba">
                     <div class="header-contact">
-                        <div class="contact-icon">
+                        <div class="contact-icon d-flex justify-content-center">
                             <img src="/images/email-contact.svg" alt="phone">
                         </div>
                         <div class="contact-text">
