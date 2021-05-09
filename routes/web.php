@@ -24,7 +24,9 @@ use App\Http\Controllers\SettingsController;
 |
 */
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/', function () {
+    return view('home');
+});
 Route::get('/akcija', [HomeController::class, 'akcija']);
 Route::get('/novo', [HomeController::class, 'novo']);
 Route::get('/trend', [HomeController::class, 'trend']);
