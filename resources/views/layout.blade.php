@@ -36,7 +36,7 @@
 
 <body>
 <div class="wrap">
-    <header id="header" class="sticky-top" id="header">
+    <header id="header" class="sticky-top">
         <div class="collapse" id="navbarToggleExternalContent">
             <div class="bg-light">
                 <div class="navbar-collapse collapse show" id="collapsibleNavbar" style="">
@@ -65,15 +65,15 @@
 
                 <!-- BRAND ICON -->
                 <a class="navbar-brand mr-4" href="/home">
-                    <img height="50px" src="/images/logo-nav.png" alt="logo" class="logo-default">
+                    <img height="50px" width="180" src="/images/logo-header.svg" alt="logo" class="logo-default">
                 </a>
 
                 <!-- SEARCH BOX -->
-                <div class="search-box mx-auto">
+                <div class="search-box">
                     <form action="#" method="">
-                        <div class="input-group">
-                            <input type="text" class="form-control search" placeholder="Pretraga...">
-                            <input type="#" value="" class="search-button">
+                        <div class="row align-items-center search-row">
+                            <img class="search-icon col-1 p-0" src="/images/search-icon.svg" alt="img">
+                            <input type="text" class="search p-0 col-11" placeholder="Pretraga...">
                         </div>
                     </form>
                 </div>
@@ -82,7 +82,7 @@
                 <a class="custom-anchor-tag" href="tel:080050705">
                     <div class="header-contact">
                         <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
+                            <img src="/images/phone-header.svg" alt="phone">
                         </div>
                         <div class="contact-text">
                             <h5 class="mb-1">Besplatni telefon:</h5>
@@ -117,14 +117,14 @@
             <div class="container">
                 <!-- BRAND ICON -->
                 <a class="navbar-brand mr-4" href="/home">
-                    <img height="50px" src="/images/logo-bottom.png" alt="logo" class="logo-default">
+                    <img height="50px" width="200" src="/images/logo-footer.svg" alt="logo" class="logo-default">
                 </a>
 
                 <!-- CONTACT PHONE -->
                 <a class="custom-anchor-tag" href="tel:080050705">
                     <div class="header-contact">
                         <div class="contact-icon">
-                            <i class="fas fa-phone-alt text-white-50"></i>
+                            <img src="/images/phone-footer.svg" alt="phone">
                         </div>
                         <div class="contact-text">
                             <h5 class="mb-1 text-white-50">Besplatni telefon:</h5>
@@ -137,7 +137,7 @@
                 <a class="custom-anchor-tag" href="mailto:info@klikbox.ba">
                     <div class="header-contact">
                         <div class="contact-icon">
-                            <i class="fas fa-envelope text-white-50"></i>
+                            <img src="/images/email-contact.svg" alt="phone">
                         </div>
                         <div class="contact-text">
                             <h3 class="text-white-50">info@klikbox.ba</h3>

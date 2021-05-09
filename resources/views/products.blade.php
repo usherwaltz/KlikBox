@@ -11,36 +11,49 @@ use Illuminate\Support\Facades\Route;
 @section('content')
 <div class="products-home">
     <div class="container-fluid container-lg mt-4 all-products-home">
-
-        <!-- BANNER -->
-        <div class="banner">
-            <img class="banner-background" src="/images/home-banner.png" alt="banner">
+        <!-- SLIDER -->
+        <div id="carouselExampleControls" class="carousel slide banner" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="/images/slider-image-1.png" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="/images/slider-image-2.jpg" alt="Second slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="javascript:void(0)" role="button" data-slide="prev" onclick="$(this).closest('.carousel').carousel('prev');">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="javascript:void(0)" role="button" data-slide="next" onclick="$(this).closest('.carousel').carousel('next');">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
             <img src="/images/banner-text.png" alt="text" class="banner-text">
             <img class="banner-logo" src="/images/logo-nav.png" alt="logo">
         </div>
 
         <!-- ICONS -->
-        <div class="tofu-box-home mt-4 mb-4">
-            <div class="tofu-card">
-                <img src="/images/safe-pic.png" alt="safe-pic">
-                <p>SIGURNA <br>DOSTAVA</p>
-            </div>
-            <div class="tofu-card">
-                <img src="/images/delivery-pic.png" alt="delivery-pic">
-                <p>BRZA <br>DOSTAVA 24H</p>
+        <div class="row mt-5 mb-5">
+
+            <div class="col-lg-3 align-items-center home-icon-group">
+                <img class="icon-home" src="/images/brza-dostava.svg" alt="delivery-pic">
+                <p class=" align-self-center">BRZA <br>DOSTAVA 24H</p>
             </div>
 
-            <div class="tofu-card">
-                <img src="/images/quality-pic.png" alt="quality-pic">
-                <p>KONTROLA <br>KVALITETA</p>
+            <div class="col-lg-3 align-items-center home-icon-group">
+                <img class="icon-home" src="/images/sigurna-kupovina.svg" alt="safe-pic">
+                <p class=" align-self-center">SIGURNA <br>DOSTAVA</p>
             </div>
-            <div class="tofu-card">
-                <img src="/images/pay-pic.png" alt="pay-pic">
-                <p>PLAĆANJE <br>POUZEĆEM</p>
+
+            <div class="col-lg-3 align-items-center home-icon-group">
+                <img class="icon-home" src="/images/placanje-pouzecu.svg" alt="pay-pic">
+                <p class=" align-self-center">PLAĆANJE <br>POUZEĆEM</p>
             </div>
-            <div class="tofu-card">
-                <img src="/images/garancy-pic.png" alt="garancy-pic">
-                <p>GARANTOVAN <br>POVRAT NOVCA</p>
+
+            <div class="col-lg-3 align-items-center home-icon-group">
+                <img class="icon-home" src="/images/povrat-novca.svg" alt="quality-pic">
+                <p class=" align-self-center">GARANTOVAN <br>POVRAT NOVCA</p>
             </div>
         </div>
 
@@ -114,6 +127,12 @@ use Illuminate\Support\Facades\Route;
             console.log('Server error occured');
         });
     }
+
+    $(document).ready(function() {
+        $('.carousel').carousel({
+            interval: 3000
+        })
+    });
 
 </script>
 @endsection
