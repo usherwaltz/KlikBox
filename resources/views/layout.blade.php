@@ -220,29 +220,31 @@
             <hr>
 
         @empty
-            <li>Korpa je prazna</li>
+            <h3>Korpa je prazna</h3>
         @endforelse
 
-            <div class="row">
-                <div class="col-4">
-                    <span>Dostava</span>
+        @if(count(Cart::content()) > 0)
+                <div class="row">
+                    <div class="col-4">
+                        <span>Dostava</span>
+                    </div>
+                    <div class="col-8">
+                        <span>7 KM</span>
+                    </div>
                 </div>
-                <div class="col-8">
-                    <span>7 KM</span>
-                </div>
-            </div>
 
-            <hr>
+                <hr>
 
-            <div class="row">
-                <div class="col-4 align-self-center">
-                    <span class="cart-product-name">Total</span>
+                <div class="row">
+                    <div class="col-4 align-self-center">
+                        <span class="cart-product-name">Total</span>
+                    </div>
+                    <div class="col-8">
+                        <span class="cart-total">{{Cart::total() + 7}} KM</span>
+                    </div>
                 </div>
-                <div class="col-8">
-                    <span class="cart-total">{{Cart::total() + 7}} KM</span>
-                </div>
-            </div>
-        <a href="{{ url('cart') }}" class="orangebutton cartbtn cart-button-margin w-100 text-decoration-none">VIDI KORPU</a>
+                <a href="{{ url('cart') }}" class="orangebutton cartbtn cart-button-margin w-100 text-decoration-none">VIDI KORPU</a>
+        @endif
         <a href="javascript:void(0)" class="orangebutton orangebutton-inverse cartbtn cart-button-margin w-100 text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">NASTAVI KUPOVINU</a>
     </div>
 </div>
