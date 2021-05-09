@@ -50,6 +50,9 @@
                         <li class="nav-item">
                             <a class="nav-link custom-anchor-tag text-center" href="/akcija">AKCIJA</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link custom-anchor-tag text-center" href="/o-nama">O NAMA</a>
+                        </li>
                     </ul>
                 </div>
             </div>
