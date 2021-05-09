@@ -219,6 +219,10 @@
 
             <hr>
 
+        @empty
+            <li>Korpa je prazna</li>
+        @endforelse
+
             <div class="row">
                 <div class="col-4">
                     <span>Dostava</span>
@@ -229,10 +233,6 @@
             </div>
 
             <hr>
-
-        @empty
-            <li>Korpa je prazna</li>
-        @endforelse
 
             <div class="row">
                 <div class="col-4 align-self-center">
