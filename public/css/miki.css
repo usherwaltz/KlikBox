@@ -1627,10 +1627,6 @@ body {
         justify-content: start !important;
     }
 
-    .navbar-bottom > .container > a {
-        width: auto !important;
-    }
-
     .margin-footer-320 {
         margin-bottom: 20px !important;
     }
