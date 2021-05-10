@@ -67,22 +67,26 @@
 
 
                 <!-- BRAND ICON -->
-                <a class="navbar-brand mr-4" href="/home">
-                    <img height="50px" width="180" src="/images/logo-header.svg" alt="logo" class="logo-default">
+                <a class="navbar-brand m-sm-0 mr-4" href="/home">
+                    <img height="50" width="180" src="/images/logo-header.svg" alt="logo" class="d-none d-md-block">
+                    <img height="20" src="/images/logo-sm.png" alt="small-logo" class="d-md-none">
                 </a>
 
                 <!-- SEARCH BOX -->
-                <div class="search-box">
+                <div class="search-box d-none d-md-block">
                     <form action="#" method="">
                         <div class="row align-items-center search-row">
-                            <img class="search-icon col-1 p-0" src="/images/search-icon.svg" alt="img">
-                            <input type="text" class="search p-0 col-11" placeholder="Pretraga...">
+                            <img class="search-icon col-md-2 col-lg-1 p-0" src="/images/search-icon.svg" alt="img">
+                            <input type="text" class="search p-0 col-md-2 col-lg-11" placeholder="Pretraga...">
                         </div>
                     </form>
                 </div>
 
+                <!-- MOBILE SEARCH -->
+                <img class="d-sm-block d-md-none search-icon col-1 p-0" src="/images/search-icon.svg" alt="img">
+
                 <!-- CONTACT PHONE -->
-                <a class="custom-anchor-tag" href="tel:080050705">
+                <a class="custom-anchor-tag d-none d-lg-block d-xl-block" href="tel:080050705">
                     <div class="header-contact">
                         <div class="contact-icon">
                             <img src="/images/phone-header.svg" alt="phone">
@@ -117,15 +121,15 @@
 <!-- Footer -->
     <footer id="footer" class="text-center text-lg-start">
         <nav class="navbar navbar-bottom navbar-light shadow-sm bg-white footer-bg">
-            <div class="container">
+            <div class="container row-cols-sm-1 row-cols-md-3 row-cols-lg-4">
                 <!-- BRAND ICON -->
-                <a class="navbar-brand mr-4" href="/home">
+                <a class="col-12 col-sm-12 col-md-12 margin-footer-320 text-align-initial" href="/home">
                     <img height="50px" width="200" src="/images/logo-footer.svg" alt="logo" class="logo-default">
                 </a>
 
                 <!-- CONTACT PHONE -->
-                <a class="custom-anchor-tag" href="tel:080050705">
-                    <div class="header-contact">
+                <a class="col-12 col-sm-12 custom-anchor-tag margin-footer-320 text-align-initial" href="tel:080050705">
+                    <div class="header-contact justify-content-md-center">
                         <div class="contact-icon">
                             <img src="/images/phone-footer.svg" alt="phone">
                         </div>
@@ -137,8 +141,8 @@
                 </a>
 
                 <!-- EMAIL CONTACT -->
-                <a class="custom-anchor-tag" href="mailto:info@klikbox.ba">
-                    <div class="header-contact">
+                <a class="col-12 col-sm-12 custom-anchor-tag m-0 margin-footer-320 text-align-initial" href="mailto:info@klikbox.ba">
+                    <div class="header-contact justify-content-md-center">
                         <div class="contact-icon d-flex justify-content-center">
                             <img src="/images/email-contact.svg" alt="phone">
                         </div>
@@ -149,14 +153,14 @@
                 </a>
 
                 <!-- PRIVACY POLICY & TERMS AND CONDITIONS -->
-                <div class="header-contact">
+                <div class="col-12 col-sm-12 justify-content-md-center header-contact margin-footer-320 text-align-initial">
                     <div class="contact-text">
                         <a id="toggle-terms" style="text-decoration: none" href="javascript:void(0)"><h5 class="text-white-50 mb-2">Uslovi Korištenja</h5></a>
                         <a id="toggle-privacy" style="text-decoration: none" href="javascript:void(0)"><h5 class="text-white-50">Politika privatnosti</h5></a>
                     </div>
                 </div>
             </div>
-            <div class="container justify-content-center text-white-50">
+            <div class="container justify-content-center text-white-50 mt-md-4">
                 @ <?= date("Y") ?> KlikBox | Teleklik d.o.o.
             </div>
         </nav>

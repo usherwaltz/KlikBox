@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Route;
         <div id="carouselExampleControls" class="carousel slide banner" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="/images/slider-image-1.png" alt="First slide">
+                    <img class="d-block w-100 carousel-image" src="/images/slider-image-1.png" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="/images/slider-image-2.jpg" alt="Second slide">
+                    <img class="d-block w-100 carousel-image" src="/images/slider-image-2.jpg" alt="Second slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="javascript:void(0)" role="button" data-slide="prev" onclick="$(this).closest('.carousel').carousel('prev');">
@@ -34,26 +34,26 @@ use Illuminate\Support\Facades\Route;
         </div>
 
         <!-- ICONS -->
-        <div class="row mt-5 mb-5">
+        <div class="row mt-5 mb-5 responsive-left-padding">
 
-            <div class="col-lg-3 align-items-center home-icon-group">
+            <div class="col-sm-12 col-md-3 d-flex my-4 my-md-0 align-icons">
                 <img class="icon-home" src="/images/brza-dostava.svg" alt="delivery-pic">
-                <p class=" align-self-center">BRZA <br>DOSTAVA 24H</p>
+                <p class="responsive-icon-text">BRZA <br>DOSTAVA 24H</p>
             </div>
 
-            <div class="col-lg-3 align-items-center home-icon-group">
+            <div class="col-sm-12 col-md-3 d-flex my-4 my-md-0 align-icons">
                 <img class="icon-home" src="/images/sigurna-kupovina.svg" alt="safe-pic">
-                <p class=" align-self-center">SIGURNA <br>DOSTAVA</p>
+                <p class="responsive-icon-text">SIGURNA <br>DOSTAVA</p>
             </div>
 
-            <div class="col-lg-3 align-items-center home-icon-group">
+            <div class="col-sm-12 col-md-3 d-flex my-4 my-md-0 align-icons">
                 <img class="icon-home" src="/images/placanje-pouzecu.svg" alt="pay-pic">
-                <p class=" align-self-center">PLAĆANJE <br>POUZEĆEM</p>
+                <p class="responsive-icon-text">PLAĆANJE <br>POUZEĆEM</p>
             </div>
 
-            <div class="col-lg-3 align-items-center home-icon-group">
+            <div class="col-sm-12 col-md-3 d-flex my-4 my-md-0 align-icons">
                 <img class="icon-home" src="/images/povrat-novca.svg" alt="quality-pic">
-                <p class=" align-self-center">GARANTOVAN <br>POVRAT NOVCA</p>
+                <p class="responsive-icon-text">GARANTOVAN <br>POVRAT NOVCA</p>
             </div>
         </div>
 

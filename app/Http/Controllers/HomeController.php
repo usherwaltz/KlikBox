@@ -274,7 +274,7 @@ class HomeController extends Controller
                 '<span>' . round($result->oldprice) . ' KM</span> ' . round($result->price) . ' KM' :
                 round($result->price) . ' KM' ;
             $product = '
-                <div class="col-lg-4 col-md-6 col-xl p-0">
+                <div class="col-lg-4 col-md-4 col-xl p-0">
                     <div class="card m-2">
                         <div class="card-body">
                             <a href="/product/' . $slug . '">

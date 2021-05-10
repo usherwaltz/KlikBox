@@ -1286,7 +1286,7 @@ a.bottom-add-cart {
     }
 
     .all-products-home .card-box {
-        min-height: 410px;
+        min-height: 260px;
     }
 }
 
@@ -1314,6 +1314,29 @@ a.bottom-add-cart {
     }
 }
 
+.align-icons {
+    justify-content: center;
+    align-items: center;
+}
+
+body .wrap {
+    min-height: 100vh !important;
+    position: relative;
+    padding-bottom: 154px !important;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 140px
+}
+
+.navbar-bottom {
+    height: 140px !important;
+}
+
 @media only screen and (max-width: 579px) {
     .tofu-box, .tofu-box-home {
         display: inline-block;
@@ -1333,7 +1356,7 @@ a.bottom-add-cart {
     }
 
     .all-products-home .card-box {
-        min-height: 390px;
+        min-height: 340px;
     }
 
     .tofu .tofu-card:last-child, .tofu-box-home .tofu-card:last-child {
@@ -1450,7 +1473,23 @@ a.bottom-add-cart {
     .topponuda {
         left: 33%;
     }
+
+    .responsive-left-padding {
+        padding-left: 40px !important;
+    }
+
+
+    .carousel-image {
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .align-icons {
+        justify-content: start;
+        align-items: center;
+    }
 }
+
 @media only screen and (max-width: 420px) {
     .choicebtn{
         font-size: 14px;
@@ -1524,7 +1563,7 @@ a.bottom-add-cart {
 }
 
 .navbar-brand {
-    margin: 0 0 0 10px
+    margin: 0 0 0 10px;
 }
 
 .footer-bg {
@@ -1540,22 +1579,8 @@ body {
     min-height: 100vh !important;
 }
 
-body .wrap {
-    min-height: 100vh !important;
-    position: relative;
-    padding-bottom: 154px !important;
-}
-
 #header {
     height: 80px;
-}
-
-#footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 140px
 }
 
 .footer-bg {
@@ -1563,8 +1588,56 @@ body .wrap {
     color: white !important;
 }
 
-.navbar-bottom {
-    height: 140px !important;
+@media (max-width: 768px) {
+    #footer {
+        height: calc(140px + 1.5rem) !important;
+    }
+
+    .navbar-bottom {
+        height: calc(140px + 1.5rem) !important;
+    }
+
+    .responsive-icon-text {
+        font-size: 13px !important;
+    }
+
+    .icon-home {
+        margin-right: 5px !important;
+    }
+
+    .navbar-brand {
+        margin: 0 !important;
+    }
+}
+
+@media (max-width: 579px) {
+    body > .wrap {
+        padding-bottom: 305px !important;
+    }
+
+    #footer {
+        height: calc(270px + 1.5rem) !important;
+    }
+
+    .navbar-bottom {
+        height: calc(270px + 1.5rem) !important;
+    }
+
+    .header-contact {
+        justify-content: start !important;
+    }
+
+    .navbar-bottom > .container > a {
+        width: auto !important;
+    }
+
+    .margin-footer-320 {
+        margin-bottom: 20px !important;
+    }
+
+    .text-align-initial {
+        text-align: initial !important;
+    }
 }
 
 .nav-item:hover {
@@ -1718,14 +1791,8 @@ body .wrap {
 .icon-home {
     width: 35px;
     height: 35px;
-    margin-right: 1.5em;
 }
 
 .icon-home > p {
     line-height: 1.5em;
-}
-
-.home-icon-group {
-    display: flex;
-    justify-content: center;
 }
