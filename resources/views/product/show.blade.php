@@ -200,23 +200,28 @@
             @case("ICONS")
                 <div class="bg-{{$background}}">
                     <div class="container block-padding">
-                        <div class="col-12 row justify-content-center">
-                            <div class="col-lg-3 text-center mb-4"><img class="icons-photo" src="{{$block->icon_1}}" alt="img"></div>
-                            <div class="col-lg-3 text-center mb-4"><img class="icons-photo" src="{{$block->icon_2}}" alt="img"></div>
-                            <div class="col-lg-3 text-center mb-4"><img class="icons-photo" src="{{$block->icon_3}}" alt="img"></div>
-                            <div class="col-lg-3 text-center mb-4"><img class="icons-photo" src="{{$block->icon_4}}" alt="img"></div>
-                            <div class="col-lg-3 text-center icon-description">
+                        <div class="col-12 row block-parent justify-content-center">
+
+                            <div class="col-sm-12 col-lg-3 order-1 text-center mb-4 icon-description">
+                                <img class="icons-photo d-block m-auto" src="{{$block->icon_1}}" alt="img">
                                 <strong>{{strtoupper($block->icon_1_text)}}</strong>
                             </div>
-                            <div class="col-lg-3 text-center icon-description">
-                                <strong class="icon-description">{{strtoupper($block->icon_2_text)}}</strong>
+
+                            <div class="col-sm-12 col-lg-3 order-3 text-center mb-4 icon-description">
+                                <img class="icons-photo d-block m-auto" src="{{$block->icon_2}}" alt="img">
+                                <strong>{{strtoupper($block->icon_2_text)}}</strong>
                             </div>
-                            <div class="col-lg-3 text-center icon-description">
+
+                            <div class="col-sm-12 col-lg-3 order-5 text-center mb-4 icon-description">
+                                <img class="icons-photo d-block m-auto" src="{{$block->icon_3}}" alt="img">
                                 <strong>{{strtoupper($block->icon_3_text)}}</strong>
                             </div>
-                            <div class="col-lg-3 text-center icon-description">
+
+                            <div class="col-sm-12 col-lg-3 order-7 text-center mb-4 icon-description">
+                                <img class="icons-photo d-block m-auto" src="{{$block->icon_4}}" alt="img">
                                 <strong>{{strtoupper($block->icon_4_text)}}</strong>
                             </div>
+
                         </div>
                     </div>
                 </div>
