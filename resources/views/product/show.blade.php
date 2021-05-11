@@ -49,20 +49,20 @@
                                     <i class="fas fa-star"></i>
                                     4.7 / 5 <span>Proizvod dostupan samo na KlikBox.ba</span></div>
                                 <div class="desc">{!!$product->description!!}</div>
-                                <input type="hidden" name="qty" id="qty" value="1">
-                                <input type="hidden" name="prc" id="prc" value="{{$product->price}}">
-                                <div class="price mt-4 mb-4" id="selectedprice">
-                                    @if($product->oldprice)
-                                        <div id="oldprice">
-                                            <span>{{$product->oldprice}}</span> KM
-                                        </div>
-                                    @endif
-                                    <div id="newprice">
-                                        <span>{{$product->price}}</span> KM
-                                    </div>
-                                </div>
                                 <div class="form">
                                     <form action="{{route('cart.store')}}" method="post" name="cartform">
+                                        <input type="hidden" name="qty" id="qty" value="1">
+                                        <input type="hidden" name="prc" id="prc" value="{{$product->price}}">
+                                        <div class="price mt-4 mb-4" id="selectedprice">
+                                            @if($product->oldprice)
+                                                <div id="oldprice">
+                                                    <span>{{$product->oldprice}}</span> KM
+                                                </div>
+                                            @endif
+                                            <div id="newprice">
+                                                <span>{{$product->price}}</span> KM
+                                            </div>
+                                        </div>
                                         @csrf
                                         <input type="hidden" name="product_id" value="{{$product->id}}">
                                         <div class="attributes">
