@@ -160,7 +160,7 @@
                     </div>
                 </div>
             @else
-                <div class="bg-{{background}}">
+                <div class="bg-{{$background}}">
                     <div class="container block-padding">
                         <div class="col-12 row justify-content-space-between">
                             @if($block->photo != null && $block->photo_2 != null)
