@@ -1324,6 +1324,7 @@ body .wrap {
     min-height: 100vh !important;
     position: relative;
     padding-bottom: 154px !important;
+    overflow: hidden !important;
 }
 
 #footer {
