@@ -273,17 +273,23 @@ class HomeController extends Controller
             $price = $result->oldprice ?
                 '<span>' . round($result->oldprice) . ' KM</span> ' . round($result->price) . ' KM' :
                 round($result->price) . ' KM' ;
+
+            $hasPercent = $result->oldprice != null;
+            $percent = '';
+            if($hasPercent) {
+                $percent = '<div class="procent-box">
+                                <div class="procent">
+                                    <span>- ' . round($result->price / $result->oldprice * 100) . '%</span>
+                                </div>
+                            </div>';
+            }
             $product = '
                 <div class="col-lg-4 col-md-4 col-xl p-0">
                     <div class="card m-2">
                         <div class="card-body">
                             <a href="/product/' . $slug . '">
                                 <div class="card-box">
-                                    <div class="procent-box">
-                                        <div class="procent">
-                                            <span>-50%</span>
-                                        </div>
-                                    </div>
+                                    '. $percent . '
                                     <div class="img-box image-placeholder">
                                         ' . $photo . '
                                     </div>

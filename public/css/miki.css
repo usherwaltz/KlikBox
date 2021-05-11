@@ -186,7 +186,8 @@ a.w3-bar-item svg {
 
 .procent-box {
     position: absolute;
-    max-width: 71px;
+    max-width: 200px;
+    width: 100px;
 }
 
 .procent-box .procent {
@@ -1826,4 +1827,49 @@ body {
 .block-content {
     padding: 0 80px 0 80px;
     line-height: 30px;
+}
+
+@media (max-width: 579px) {
+    .block-padding {
+        padding: 30px 0 30px 0;
+    }
+
+    .video-content {
+        height: 300px;
+        width: auto;
+    }
+
+    .video-content > iframe {
+        height: 300px;
+    }
+
+    .block-parent {
+        flex-direction: column;
+        width: auto;
+    }
+
+    .block-content {
+        padding: 0 40px 0 40px;
+    }
+
+    .bofu-right {
+        margin: 0;
+    }
+
+    .product-image-wrapper {
+        padding-top: 3rem !important;
+    }
+
+    .block-center {
+        text-align: center;
+        padding-bottom: 1.5rem;
+    }
+
+    .block-image {
+        height: 280px !important;
+    }
+
+    .block-image-padding-bottom {
+        padding-bottom: 1.5rem !important;
+    }
 }

@@ -23,7 +23,7 @@
             <div class="bofu-box">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-6 col-md-12 pt-5 pb-5">
+                        <div class="col-lg-6 col-md-12 product-image-wrapper pt-lg-5 pb-lg-5">
                             <div class="bofu-left">
                                 @if($product->oldprice != null)
                                     <div class="start-procent">
@@ -135,22 +135,22 @@
             @if($i % 2)
                 <div class="bg-{{$background}}">
                     <div class="container block-padding">
-                        <div class="col-12 row justify-content-space-between">
+                        <div class="col-12 row block-parent justify-content-space-between">
                             @if($block->photo != null && $block->photo_2 != null)
                                 @if($block->content != null)
                                     <div class="col-12 block-content text-center align-self-center custom-content mb-4">
                                         {!!$block->content!!}
                                     </div>
                                 @endif
-                                <img class="col-6 block-image block-content" src="{{$block->photo}}" alt="photo">
-                                <img class="col-6 block-image block-content" src="{{$block->photo_2}}" alt="photo">
+                                <img class="col-lg-6 col-sm-12 block-image block-content block-image-padding-bottom" src="{{$block->photo}}" alt="photo">
+                                <img class="col-lg-6 col-sm-12 block-image block-content" src="{{$block->photo_2}}" alt="photo">
                             @elseif(($block->photo != null || $block->photo_2 != null) && $block->content != null)
-                                <img class="col-6 block-image block-content" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo">
-                                <div class="col-6 block-content align-self-center custom-content">
+                                <img class="col-lg-6 col-sm-12 order-last order-md-first block-image block-content" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo">
+                                <div class="col-lg-6 col-sm-12 order-first order-md-last block-content block-center align-self-center custom-content">
                                     {!!$block->content!!}
                                 </div>
                             @elseif(($block->photo != null || $block->photo_2 != null) && $block->content == null)
-                                <img class="col-6 offset-3 block-image block-content" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo">
+                                <img class="col-lg-6 col-sm-12 offset-sm-0 offset-md-3 block-image block-content" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo">
                             @elseif(($block->photo == null && $block->photo_2 == null) && $block->content != null)
                                 <div class="col-12 text-center block-content align-self-center custom-content">
                                     {!!$block->content!!}
@@ -162,22 +162,22 @@
             @else
                 <div class="bg-{{$background}}">
                     <div class="container block-padding">
-                        <div class="col-12 row justify-content-space-between">
+                        <div class="col-12 row block-parent justify-content-space-between">
                             @if($block->photo != null && $block->photo_2 != null)
                                 @if($block->content != null)
                                     <div class="col-12 block-content text-center align-self-center custom-content mb-4">
                                         {!!$block->content!!}
                                     </div>
                                 @endif
-                                <img class="col-6 block-image block-content" src="{{$block->photo}}" alt="photo">
-                                <img class="col-6 block-image block-content" src="{{$block->photo_2}}" alt="photo">
+                                <img class="col-lg-6 col-sm-12 block-image block-content block-image-padding-bottom" src="{{$block->photo}}" alt="photo">
+                                <img class="col-lg-6 col-sm-12 block-image block-content" src="{{$block->photo_2}}" alt="photo">
                             @elseif(($block->photo != null || $block->photo_2 != null) && $block->content != null)
-                                <div class="col-6 block-content align-self-center custom-content">
+                                <div class="col-lg-6 col-sm-12 block-content block-center align-self-center custom-content">
                                     {!!$block->content!!}
                                 </div>
-                                <img class="col-6 block-image block-content" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo">
+                                <img class="col-lg-6 col-sm-12 block-image block-content" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo">
                             @elseif(($block->photo != null || $block->photo_2 != null) && $block->content == null)
-                                <img class="col-6 offset-3 block-image block-content" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo">
+                                <img class="col-lg-6 col-sm-12 offset-sm-0 offset-md-3 block-image block-content" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo">
                             @elseif(($block->photo == null && $block->photo_2 == null) && $block->content != null)
                                 <div class="col-12 block-content text-center align-self-center custom-content">
                                     {!!$block->content!!}
