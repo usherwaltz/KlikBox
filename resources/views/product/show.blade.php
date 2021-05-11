@@ -16,101 +16,103 @@
     <meta property="og:locale" content="bs_BA" />
 @endsection
 @section('content')
-<div class="container-fluid mt-4 single">
-	<div class="card">
-		<div class="container">
+<div class="container-fluid mt-4 single bg-white">
+    <div class="container">
 
-            <div id="bofu" class="bofu">
-                <div class="bofu-box">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-12 pt-5 pb-5">
-                                <div class="bofu-left">
+        <div id="bofu" class="bofu">
+            <div class="bofu-box">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 pt-5 pb-5">
+                            <div class="bofu-left">
+                                @if($product->oldprice != null)
                                     <div class="start-procent">
-                                        <div class="procent"><span>-50%</span></div>
+                                        <div class="procent"><span>- {{round($product->price / $product->oldprice * 100)}}%</span></div>
                                     </div>
-                                    @if($product->photo)
-                                        <img class="start-img" src="{{$product->photo}}" alt="{{$product->title}}">
-                                    @else
-                                        <img class="start-img" src="/images/no-image.png" alt="fire">
-                                    @endif
-                                </div>
+                                @endif
+                                @if($product->photo)
+                                    <img class="start-img" src="{{$product->photo}}" alt="{{$product->title}}">
+                                @else
+                                    <img class="start-img" src="/images/no-image.png" alt="fire">
+                                @endif
                             </div>
-                            <div class="col-lg-6 col-md-12 pt-5 pb-5">
-                                <div class="bofu-right">
-                                    <div class="message"><img src="/images/fire.png" alt="fire" width="21px">Još samo 12 artikala na zalihama</div>
-                                    <div class="title"><h2>{{$product->name}}</h2></div>
-                                    <div class="desc">{!!$product->description!!}</div>
-                                    <div class="stars-box"><i class="fas fa-star"></i> 4.7 / 5 <span>Proizvod dostupan samo na KlikBox.ba</span></div>
-                                    <div class="form">
-                                        <form action="{{route('cart.store')}}" method="post" name="cartform">
-                                            @csrf
-                                            <input type="hidden" name="product_id" value="{{$product->id}}">
-                                            <div class="attributes">
-                                                @foreach ($attributes as $attribute )
-                                                    <div class="atribut">
-                                                        <select name="{{Str::lower($attribute->name)}}" id="{{Str::lower($attribute->name)}}" class="attr-select" required>
-                                                            <option value="">{{$attribute->name}}</option>
-                                                            @foreach ($product->options->where('attribute_id',$attribute->id) as $option )
-                                                                <option value="{{$option->value}}">{{$option->name}}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                @endforeach
-                                            </div>
-                                            @if($product->top_choice === 1)
-                                            <div class="choicebox">
-                                                <span class="topponuda">TOP ODABIR</span>
-                                                <div class="btn active">
-                                                    <span class="choicebtn" data-quantity="1" data-oldprice="{{round($product->oldprice)}}" data-prc="{{round($product->price)}}">1 x {{round($product->price)}} KM</span>
-                                                </div>
-                                                <div class="btn">
-                                                    <span class="choicebtn" data-quantity="2" data-oldprice="{{round($product->oldprice)}}" data-prc="{{round($product->price * ((100-22) / 100))}}">2 x {{round($product->price * ((100-22) / 100))}} KM</span>
-                                                </div>
-                                                <div class="btn">
-                                                    <span class="choicebtn" data-quantity="3" data-oldprice="{{round($product->oldprice)}}" data-prc="{{round($product->price * ((100-30) / 100))}}">3 x {{round($product->price * ((100-30) / 100))}} KM</span>
-                                                </div>
-                                            </div>
-                                            @endif
-                                            <input type="hidden" name="qty" id="qty" value="1">
-                                            <input type="hidden" name="prc" id="prc" value="{{$product->price}}">
-                                            <div class="price mt-2 mb-4" id="selectedprice">
-                                                @if($product->oldprice)
-                                                    <div id="oldprice">
-                                                        <span>{{$product->oldprice}}</span> KM
-                                                    </div>
-                                                @endif
-                                                <div id="newprice">
-                                                    <span>{{$product->price}}</span> KM
-                                                </div>
-                                            </div>
-                                            <input type="submit" class="addtocartbtn" value="DODAJ U KORPU">
-                                        </form>
-                                    </div>
-                                    <div class="garancy">
-                                        <div class="row">
-                                            <div class="col-4 garancy-box">
-                                                <img src="{{asset('/images/delivery-pic.png')}}" alt="delivery">
-                                                <p>BRZA DOSTAVA 24H</p>
-                                            </div>
-                                            <div class="col-4 garancy-box">
-                                                <img src="{{asset('/images/pay-pic.png')}}" alt="pay">
-                                                <p>PLAĆANJE POUZEĆEM</p>
-                                            </div>
-                                            <div class="col-4 garancy-box">
-                                                <img src="{{asset('/images/garancy-pic.png')}}" alt="garancy">
-                                                <p>GARANTOVAN POVRAT NOVCA</p>
-                                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 pt-5 pb-5">
+                            <div class="bofu-right">
+                                <div class="message"><img src="/images/fire.png" alt="fire" width="21px">Još samo 12 artikala na zalihama</div>
+                                <div class="title"><h2>{{$product->name}}</h2></div>
+                                <div class="stars-box mb-4">
+                                    <i class="fas fa-star mr-1"></i>
+                                    <i class="fas fa-star mr-1"></i>
+                                    <i class="fas fa-star mr-1"></i>
+                                    <i class="fas fa-star mr-1"></i>
+                                    <i class="fas fa-star"></i>
+                                    4.7 / 5 <span>Proizvod dostupan samo na KlikBox.ba</span></div>
+                                <div class="desc">{!!$product->description!!}</div>
+                                <input type="hidden" name="qty" id="qty" value="1">
+                                <input type="hidden" name="prc" id="prc" value="{{$product->price}}">
+                                <div class="price mt-4 mb-4" id="selectedprice">
+                                    @if($product->oldprice)
+                                        <div id="oldprice">
+                                            <span>{{$product->oldprice}}</span> KM
                                         </div>
-                                        {{--<div class="garancy-box">--}}
-                                        {{----}}
-                                        {{--</div>--}}
-                                        {{--<div class="garancy-box">--}}
-                                        {{----}}
-                                        {{--</div>--}}
-                                        {{--<div class="garancy-box">--}}
-                                        {{----}}
-                                        {{--</div>--}}
+                                    @endif
+                                    <div id="newprice">
+                                        <span>{{$product->price}}</span> KM
+                                    </div>
+                                </div>
+                                <div class="form">
+                                    <form action="{{route('cart.store')}}" method="post" name="cartform">
+                                        @csrf
+                                        <input type="hidden" name="product_id" value="{{$product->id}}">
+                                        <div class="attributes">
+                                            @foreach ($attributes as $attribute )
+                                                <div class="atribut">
+                                                    <select name="{{Str::lower($attribute->name)}}" id="{{Str::lower($attribute->name)}}" class="attr-select" required>
+                                                        <option value="">{{$attribute->name}}</option>
+                                                        @foreach ($product->options->where('attribute_id',$attribute->id) as $option )
+                                                            <option value="{{$option->value}}">{{$option->name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                        @if($product->top_choice === 1)
+                                            <div class="text-center">
+                                                <div class="choicebox">
+                                                    <span class="topponuda">TOP ODABIR</span>
+                                                    <div class="btn active">
+                                                        <span class="choicebtn" data-quantity="1" data-oldprice="{{round($product->oldprice)}}" data-prc="{{round($product->price)}}">1 x {{round($product->price)}} KM</span>
+                                                    </div>
+                                                    <div class="btn">
+                                                        <span class="choicebtn" data-quantity="2" data-oldprice="{{round($product->oldprice)}}" data-prc="{{round($product->price * ((100-22) / 100))}}">2 x {{round($product->price * ((100-22) / 100))}} KM</span>
+                                                    </div>
+                                                    <div class="btn">
+                                                        <span class="choicebtn" data-quantity="3" data-oldprice="{{round($product->oldprice)}}" data-prc="{{round($product->price * ((100-30) / 100))}}">3 x {{round($product->price * ((100-30) / 100))}} KM</span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 mt-3">
+                                                    <span>Proizvod dostupan samo na KlikBox.ba</span>
+                                                </div>
+                                            </div>
+                                        @endif
+                                        <input type="submit" class="addtocartbtn w-100" value="DODAJ U KORPU">
+                                    </form>
+                                </div>
+                                <div class="garancy">
+                                    <div class="row">
+                                        <div class="col-4 garancy-box">
+                                            <img src="{{asset('/images/delivery-pic.png')}}" alt="delivery">
+                                            <p>BRZA DOSTAVA 24H</p>
+                                        </div>
+                                        <div class="col-4 garancy-box">
+                                            <img src="{{asset('/images/pay-pic.png')}}" alt="pay">
+                                            <p>PLAĆANJE POUZEĆEM</p>
+                                        </div>
+                                        <div class="col-4 garancy-box">
+                                            <img src="{{asset('/images/garancy-pic.png')}}" alt="garancy">
+                                            <p>GARANTOVAN POVRAT NOVCA</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -118,91 +120,109 @@
                     </div>
                 </div>
             </div>
-            <hr>
-            <div class="row container">
-                @for($i = 0; $i < count($product->blocks); $i++)
-                    @php $block = $product->blocks[$i] @endphp
-                    @switch($block->type)
-                        @case("STANDARD")
-                            @if($i % 2)
-                                <div class="col-12 row mb-4 justify-content-center">
-                                    @if($block->photo != null && $block->photo_2 != null)
-                                        @if($block->content != null)
-                                            <div class="col-12 text-center align-self-center custom-content mb-4">
-                                                {!!$block->content!!}
-                                            </div>
-                                        @endif
-                                        <img class= col-6" src="{{$block->photo}}" alt="photo" style="height: 600px; width: 600px">
-                                        <img class="col-6" src="{{$block->photo_2}}" alt="photo" style="height: 600px; width: 600px">
-                                    @elseif(($block->photo != null || $block->photo_2) && $block->content != null)
-                                        <img class="col-6" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo" style="height: 600px; width: 600px">
-                                        <div class="col-6 text-center align-self-center custom-content">
-                                            {!!$block->content!!}
-                                        </div>
-                                    @elseif(($block->photo != null || $block->photo_2) && $block->content == null)
-                                        <img class="col-12" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo" style="height: 600px; width: 600px">
-                                    @elseif(($block->photo == null && $block->photo_2 == null) && $block->content != null)
-                                        <div class="col-12 text-center align-self-center custom-content">
-                                            {!!$block->content!!}
-                                        </div>
-                                    @endif
+        </div>
+        <hr>
+    </div>
+</div>
+<div class="">
+    @for($i = 0; $i < count($product->blocks); $i++)
+        @php
+            $block = $product->blocks[$i];
+            $background = $i % 2 ? "white" : "light";
+        @endphp
+        @switch($block->type)
+            @case("STANDARD")
+            @if($i % 2)
+                <div class="bg-{{$background}}">
+                    <div class="container block-padding">
+                        <div class="col-12 row justify-content-space-between">
+                            @if($block->photo != null && $block->photo_2 != null)
+                                @if($block->content != null)
+                                    <div class="col-12 block-content align-self-center custom-content mb-4">
+                                        {!!$block->content!!}
+                                    </div>
+                                @endif
+                                <img class="col-6 block-image" src="{{$block->photo}}" alt="photo" style="height: 600px; width: 600px">
+                                <img class="col-6 block-image" src="{{$block->photo_2}}" alt="photo" style="height: 600px; width: 600px">
+                            @elseif(($block->photo != null || $block->photo_2) && $block->content != null)
+                                <img class="col-6 block-image" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo" style="height: 600px; width: 600px">
+                                <div class="col-6 block-content align-self-center custom-content">
+                                    {!!$block->content!!}
                                 </div>
-                            @else
-                                <div class="col-12 row mb-4 justify-content-center">
-                                    @if($block->photo != null && $block->photo_2 != null)
-                                        @if($block->content != null)
-                                            <div class="col-12 text-center align-self-center custom-content mb-4">
-                                                {!!$block->content!!}
-                                            </div>
-                                        @endif
-                                        <img class= col-6" src="{{$block->photo}}" alt="photo" style="height: 600px; width: 600px">
-                                        <img class="col-6" src="{{$block->photo_2}}" alt="photo" style="height: 600px; width: 600px">
-                                    @elseif(($block->photo != null || $block->photo_2) && $block->content != null)
-                                        <div class="col-6 text-center align-self-center custom-content">
-                                            {!!$block->content!!}
-                                        </div>
-                                        <img class="col-6" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo" style="height: 600px; width: 600px">
-                                    @elseif(($block->photo != null || $block->photo_2) && $block->content == null)
-                                        <img class="col-12" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo" style="height: 600px; width: 600px">
-                                    @elseif(($block->photo == null && $block->photo_2 == null) && $block->content != null)
-                                        <div class="col-12 text-center align-self-center custom-content">
-                                            {!!$block->content!!}
-                                        </div>
-                                    @endif
+                            @elseif(($block->photo != null || $block->photo_2) && $block->content == null)
+                                <img class="col-12 block-image" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo" style="height: 600px; width: 600px">
+                            @elseif(($block->photo == null && $block->photo_2 == null) && $block->content != null)
+                                <div class="col-12 text-center block-content align-self-center custom-content">
+                                    {!!$block->content!!}
                                 </div>
                             @endif
-                        @break
-                        @case("VIDEO")
-                            <div class="col-12 row mb-4 justify-content-center video-content">
-                                {!! $block->video !!}
+                        </div>
+                    </div>
+                </div>
+            @else
+                <div class="bg-{{background}}">
+                    <div class="container block-padding">
+                        <div class="col-12 row justify-content-space-between">
+                            @if($block->photo != null && $block->photo_2 != null)
+                                @if($block->content != null)
+                                    <div class="col-12 block-content align-self-center custom-content mb-4">
+                                        {!!$block->content!!}
+                                    </div>
+                                @endif
+                                <img class="col-6 block-image" src="{{$block->photo}}" alt="photo" style="height: 600px; width: 600px">
+                                <img class="col-6 block-image" src="{{$block->photo_2}}" alt="photo" style="height: 600px; width: 600px">
+                            @elseif(($block->photo != null || $block->photo_2) && $block->content != null)
+                                <div class="col-6 block-content align-self-center custom-content">
+                                    {!!$block->content!!}
+                                </div>
+                                <img class="col-6 block-image" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo" style="height: 600px; width: 600px">
+                            @elseif(($block->photo != null || $block->photo_2) && $block->content == null)
+                                <img class="col-12 block-image" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo" style="height: 600px; width: 600px">
+                            @elseif(($block->photo == null && $block->photo_2 == null) && $block->content != null)
+                                <div class="col-12 block-content text-center align-self-center custom-content">
+                                    {!!$block->content!!}
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            @endif
+            @break
+            @case("VIDEO")
+                <div class="bg-{{$background}}">
+                    <div class="container block-padding">
+                        <div class="col-12 row justify-content-center video-content">
+                            {!! $block->video !!}
+                        </div>
+                    </div>
+                </div>
+            @break
+            @case("ICONS")
+                <div class="bg-{{$background}}">
+                    <div class="container block-padding">
+                        <div class="col-12 row justify-content-center">
+                            <div class="col-lg-3 text-center mb-4"><img class="icons-photo" src="{{$block->icon_1}}" alt="img"></div>
+                            <div class="col-lg-3 text-center mb-4"><img class="icons-photo" src="{{$block->icon_2}}" alt="img"></div>
+                            <div class="col-lg-3 text-center mb-4"><img class="icons-photo" src="{{$block->icon_3}}" alt="img"></div>
+                            <div class="col-lg-3 text-center mb-4"><img class="icons-photo" src="{{$block->icon_4}}" alt="img"></div>
+                            <div class="col-lg-3 text-center icon-description">
+                                <strong>{{strtoupper($block->icon_1_text)}}</strong>
                             </div>
-                        @break
-                        @case("ICONS")
-                            <div class="col-12 row mb-4 justify-content-center">
-                                <div class="col-lg-3 text-center mb-4"><img class="icons-photo" src="{{$block->icon_1}}" alt="img"></div>
-                                <div class="col-lg-3 text-center mb-4"><img class="icons-photo" src="{{$block->icon_2}}" alt="img"></div>
-                                <div class="col-lg-3 text-center mb-4"><img class="icons-photo" src="{{$block->icon_3}}" alt="img"></div>
-                                <div class="col-lg-3 text-center mb-4"><img class="icons-photo" src="{{$block->icon_4}}" alt="img"></div>
-                                <div class="col-lg-3 text-center text-center">
-                                    {{$block->icon_1_text}}
-                                </div>
-                                <div class="col-lg-3 text-center">
-                                    {{$block->icon_2_text}}
-                                </div>
-                                <div class="col-lg-3 text-center">
-                                    {{$block->icon_3_text}}
-                                </div>
-                                <div class="col-lg-3 text-center">
-                                    {{$block->icon_4_text}}
-                                </div>
+                            <div class="col-lg-3 text-center icon-description">
+                                <strong class="icon-description">{{strtoupper($block->icon_2_text)}}</strong>
                             </div>
-                        @break
-                    @endswitch
-                @endfor
-            </div>
-		</div>
-        <a href="#bofu" class="bottom-add-cart">DODAJ U KORPU</a>
-	</div>
+                            <div class="col-lg-3 text-center icon-description">
+                                <strong>{{strtoupper($block->icon_3_text)}}</strong>
+                            </div>
+                            <div class="col-lg-3 text-center icon-description">
+                                <strong>{{strtoupper($block->icon_4_text)}}</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @break
+        @endswitch
+    @endfor
 </div>
 
 @endsection

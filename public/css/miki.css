@@ -1252,9 +1252,9 @@ a.bottom-add-cart {
     color: #afafaf;
     font-weight: 400;
     text-decoration: line-through;
-    align-self: end;
+    align-self: center;
     margin-right: 10px;
-    padding-bottom: 1.5%;
+    /*padding-bottom: 1.5%;*/
 }
 
 #newprice {
@@ -1791,4 +1791,40 @@ body {
 
 .icon-home > p {
     line-height: 1.5em;
+}
+
+.video-content {
+    height: 715px;
+}
+
+.video-content > iframe {
+    height: 715px;
+}
+
+.icons-photo {
+    height: 100px;
+    width: 100px;
+}
+
+.icon-description {
+    padding: 0 50px 0 50px;
+}
+
+.icon-description > strong {
+    font-weight: 500 !important;
+}
+
+.block-padding {
+    padding: 80px 0 80px 0
+}
+
+.block-image {
+    width: 600px !important;
+    height: 400px !important;
+    object-fit: cover;
+}
+
+.block-content {
+    padding: 0 100px 0 100px;
+    line-height: 30px;
 }
