@@ -142,15 +142,15 @@
                                         {!!$block->content!!}
                                     </div>
                                 @endif
-                                <img class="col-6 block-image" src="{{$block->photo}}" alt="photo">
-                                <img class="col-6 block-image" src="{{$block->photo_2}}" alt="photo">
+                                <img class="col-6 block-image block-content" src="{{$block->photo}}" alt="photo">
+                                <img class="col-6 block-image block-content" src="{{$block->photo_2}}" alt="photo">
                             @elseif(($block->photo != null || $block->photo_2 != null) && $block->content != null)
-                                <img class="col-6 block-image" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo">
+                                <img class="col-6 block-image block-content" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo">
                                 <div class="col-6 block-content align-self-center custom-content">
                                     {!!$block->content!!}
                                 </div>
                             @elseif(($block->photo != null || $block->photo_2 != null) && $block->content == null)
-                                <img class="col-6 offset-3 block-image" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo">
+                                <img class="col-6 offset-3 block-image block-content" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo">
                             @elseif(($block->photo == null && $block->photo_2 == null) && $block->content != null)
                                 <div class="col-12 text-center block-content align-self-center custom-content">
                                     {!!$block->content!!}
@@ -169,15 +169,15 @@
                                         {!!$block->content!!}
                                     </div>
                                 @endif
-                                <img class="col-6 block-image" src="{{$block->photo}}" alt="photo">
-                                <img class="col-6 block-image" src="{{$block->photo_2}}" alt="photo">
+                                <img class="col-6 block-image block-content" src="{{$block->photo}}" alt="photo">
+                                <img class="col-6 block-image block-content" src="{{$block->photo_2}}" alt="photo">
                             @elseif(($block->photo != null || $block->photo_2 != null) && $block->content != null)
                                 <div class="col-6 block-content align-self-center custom-content">
                                     {!!$block->content!!}
                                 </div>
-                                <img class="col-6 block-image" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo">
+                                <img class="col-6 block-image block-content" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo">
                             @elseif(($block->photo != null || $block->photo_2 != null) && $block->content == null)
-                                <img class="col-6 offset-3 block-image" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo">
+                                <img class="col-6 offset-3 block-image block-content" src="{{$block->photo != null ? $block->photo : $block->photo_2}}" alt="photo">
                             @elseif(($block->photo == null && $block->photo_2 == null) && $block->content != null)
                                 <div class="col-12 block-content text-center align-self-center custom-content">
                                     {!!$block->content!!}
