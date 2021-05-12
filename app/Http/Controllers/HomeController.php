@@ -277,9 +277,10 @@ class HomeController extends Controller
             $hasPercent = $result->oldprice != null;
             $percent = '';
             if($hasPercent) {
+                $discount = 100 - round($result->price/$result->oldprice * 100);
                 $percent = '<div class="procent-box">
                                 <div class="procent">
-                                    <span>- ' . 100 - round($result->price / $result->oldprice * 100) . '%</span>
+                                    <span>- ' . $discount . '%</span>
                                 </div>
                             </div>';
             }
