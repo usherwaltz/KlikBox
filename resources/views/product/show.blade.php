@@ -27,7 +27,7 @@
                             <div class="bofu-left">
                                 @if($product->oldprice != null)
                                     <div class="start-procent">
-                                        <div class="procent"><span>- {{round($product->price / $product->oldprice * 100)}}%</span></div>
+                                        <div class="procent"><span>- {{100 - round($product->price / $product->oldprice * 100)}}%</span></div>
                                     </div>
                                 @endif
                                 @if($product->photo)
