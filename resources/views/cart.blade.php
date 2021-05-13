@@ -27,11 +27,11 @@
 						<h1 class="cart-address mb-4">Adresa za dostavu</h1>
                         <input class="form-control my-2 col-12 cart-input" type="text" name="name" id="name" required placeholder="Ime">
                         <input class="form-control my-2 col-12 cart-input" type="text" name="lastname" id="lastname" required placeholder="Prezime">
-                        <input class="form-control my-2 col-12 cart-input" type="email" name="email" id="email" placeholder="Email adresa">
-                        <input class="form-control my-2 col-12 cart-input" type="text" name="city" id="city" required placeholder="Grad">
-                        <input class="form-control my-2 col-12 cart-input" type="text" name="postcode" id="postcode" required placeholder="Poštanski broj">
-                        <input class="form-control my-2 col-12 cart-input" type="text" name="street" id="street" required placeholder="Ulica i broj">
                         <input class="form-control my-2 col-12 cart-input" type="text" name="phone" id="phone" required placeholder="Broj telefona">
+                        <input class="form-control my-2 col-12 cart-input" type="text" name="street" id="street" required placeholder="Ulica i broj">
+                        <input class="form-control my-2 col-12 cart-input" type="text" name="postcode" id="postcode" required placeholder="Poštanski broj">
+                        <input class="form-control my-2 col-12 cart-input" type="text" name="city" id="city" required placeholder="Grad">
+                        <input class="form-control my-2 col-12 cart-input" type="email" name="email" id="email" placeholder="Email adresa">
 					</div>
 				</form>
             </div>
