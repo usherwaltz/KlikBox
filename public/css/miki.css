@@ -1911,3 +1911,7 @@ body {
 .bottom-0 {
     bottom: 0;
 }
+
+.max-600 {
+    max-width: 600px !important;
+}

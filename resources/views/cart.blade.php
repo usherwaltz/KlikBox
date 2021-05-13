@@ -19,14 +19,14 @@
 </div>
 <form action="{{route('order.store')}}" name="order_frm" method="POST" class="orderfrm">
     <div class="container container-md-fluid">
-	<div class="card cart-card-padding">
+	<div class="card d-flex justify-content-center align-items-center p-4">
 		<div class="col-12">
 			@if(Session::has('success'))
 				<p class="alert" style="background-color: #d9d9d9 ">{{ Session::get('success') }}</p>
 			@endif
 		</div>
 		<div class="row">
-			<div class="col-lg-6">
+			<div class="col-lg-6 max-600">
 				@csrf
                 <div class="row m-0">
                     <h1 class="cart-address mb-4">Adresa za dostavu</h1>
@@ -39,7 +39,7 @@
                     <input class="form-control my-2 col-12 cart-input" type="email" name="email" id="email" placeholder="Email adresa">
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 max-600">
                 <h2 class="cart-address mb-4">Proizvodi u korpi</h2>
                 <hr class="mb-0">
                     <table id="cart" class="table table-condensed">
@@ -50,7 +50,7 @@
                                 <div class="col-3 my-2">
                                     <img src="{{$products->where('id', $row->id)->first()->photo}}" alt="">
                                 </div>
-                                <div class="col-6 my-2 row justify-content-between">
+                                <div class="col-5 my-2 row justify-content-between">
                                     <div class="d-block align-self-center cart-product-name">
                                         {{$row->name}}
                                     </div>
@@ -68,7 +68,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-3 my-2 cart-product-price position-relative">
+                                <div class="col-4 my-2 cart-product-price position-relative">
                                     <div class="d-block text-end">
                                         <button class="remove-from-cart align-self-start" data-id="{{ $row->rowId }}">X</button>
                                     </div>
