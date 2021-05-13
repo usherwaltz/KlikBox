@@ -100,78 +100,80 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
 
-        foreach ($request->blocks as $block) {
-            $blockToSave = null;
-            if(isset($block['id'])) {
-                $blockToSave = Block::find($block['id']);
-            } else {
-                $blockToSave = new Block();
-                $blockToSave->product_id = $product->id;
-            }
+        if(isset($request->blocks)) {
+            foreach ($request->blocks as $block) {
+                $blockToSave = null;
+                if(isset($block['id'])) {
+                    $blockToSave = Block::find($block['id']);
+                } else {
+                    $blockToSave = new Block();
+                    $blockToSave->product_id = $product->id;
+                }
 
-            if(isset($block['type'])) {
-                $blockToSave->type = $block['type'];
-            }
+                if(isset($block['type'])) {
+                    $blockToSave->type = $block['type'];
+                }
 
-            switch ($blockToSave->type) {
-                case "STANDARD":
-                    $blockToSave->content = $block['content'];
+                switch ($blockToSave->type) {
+                    case "STANDARD":
+                        $blockToSave->content = $block['content'];
 
-                    if(isset($block['photo'])) {
-                        $blockToSave->photo = $this->uploadImage($block['photo']);
-                    }
+                        if(isset($block['photo'])) {
+                            $blockToSave->photo = $this->uploadImage($block['photo']);
+                        }
 
-                    if(isset($block['photo_2'])) {
-                        $blockToSave->photo_2 = $this->uploadImage($block['photo_2']);
-                    }
+                        if(isset($block['photo_2'])) {
+                            $blockToSave->photo_2 = $this->uploadImage($block['photo_2']);
+                        }
 
 
-                    $blockToSave->save();
-                    break;
-
-                case "VIDEO":
-                    if(isset($block['video'])) {
-                        $blockToSave->video = $block['video'];
                         $blockToSave->save();
-                    }
+                        break;
 
-                    break;
+                    case "VIDEO":
+                        if(isset($block['video'])) {
+                            $blockToSave->video = $block['video'];
+                            $blockToSave->save();
+                        }
 
-                case "ICONS":
-                    if(isset($block['icon_1'])) {
-                        $blockToSave->icon_1 = $this->uploadImage($block['icon_1']);
-                    }
+                        break;
 
-                    if(isset($block['icon_2'])) {
-                        $blockToSave->icon_2 = $this->uploadImage($block['icon_2']);
-                    }
+                    case "ICONS":
+                        if(isset($block['icon_1'])) {
+                            $blockToSave->icon_1 = $this->uploadImage($block['icon_1']);
+                        }
 
-                    if(isset($block['icon_3'])) {
-                        $blockToSave->icon_3 = $this->uploadImage($block['icon_3']);
-                    }
+                        if(isset($block['icon_2'])) {
+                            $blockToSave->icon_2 = $this->uploadImage($block['icon_2']);
+                        }
 
-                    if(isset($block['icon_4'])) {
-                        $blockToSave->icon_4 = $this->uploadImage($block['icon_4']);
-                    }
+                        if(isset($block['icon_3'])) {
+                            $blockToSave->icon_3 = $this->uploadImage($block['icon_3']);
+                        }
 
-                    if(isset($block['icon_1_text'])) {
-                        $blockToSave->icon_1_text = $block['icon_1_text'];
-                    }
+                        if(isset($block['icon_4'])) {
+                            $blockToSave->icon_4 = $this->uploadImage($block['icon_4']);
+                        }
 
-                    if(isset($block['icon_2_text'])) {
-                        $blockToSave->icon_2_text = $block['icon_2_text'];
-                    }
+                        if(isset($block['icon_1_text'])) {
+                            $blockToSave->icon_1_text = $block['icon_1_text'];
+                        }
 
-                    if(isset($block['icon_3_text'])){
-                        $blockToSave->icon_3_text = $block['icon_3_text'];
-                    }
+                        if(isset($block['icon_2_text'])) {
+                            $blockToSave->icon_2_text = $block['icon_2_text'];
+                        }
 
-                    if(isset($block['icon_4_text'])) {
-                        $blockToSave->icon_4_text = $block['icon_4_text'];
-                    }
-                    $blockToSave->save();
-                    break;
+                        if(isset($block['icon_3_text'])){
+                            $blockToSave->icon_3_text = $block['icon_3_text'];
+                        }
 
+                        if(isset($block['icon_4_text'])) {
+                            $blockToSave->icon_4_text = $block['icon_4_text'];
+                        }
+                        $blockToSave->save();
+                        break;
+
+                }
             }
         }
 
