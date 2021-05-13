@@ -216,7 +216,7 @@
 
             <div class="row">
                 <div class="col-4">
-                    <img src="{{$product->photo}}" alt="img" class="cart-photo">
+                    <img src="@if($product->photo != null){{$product->photo}}@endif" alt="img" class="cart-photo">
                 </div>
                 <div class="col-8 row flex-column justify-content-between">
                     <span class="cart-product-name">{{$product->name}}<span class="cart-ammount"> X {{$row->qty}}</span></span>
