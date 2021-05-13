@@ -5,6 +5,11 @@
 <link rel="stylesheet" type="text/css" href="{{asset('css/miki.css')}}">
 @endsection
 @section('content')
+@php
+    $counter = 1;
+    $total = count(Cart::content());
+@endphp
+
 <div class="con my-4">
 	<ul class="nav-cart">
 		<li class="activ">Vaša korpa</li>
@@ -13,7 +18,7 @@
 	</ul>
 </div>
 <form action="{{route('order.store')}}" name="order_frm" method="POST" class="orderfrm">
-    <div class="container">
+    <div class="container container-md-fluid">
 	<div class="card cart-card-padding">
 		<div class="col-12">
 			@if(Session::has('success'))
@@ -35,13 +40,12 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <h2 class="cart-address mb-4 mt-sm-4">Proizvodi u korpi</h2>
+                <h2 class="cart-address mb-4">Proizvodi u korpi</h2>
                 <hr class="mb-0">
                     <table id="cart" class="table table-condensed">
                     @foreach(Cart::content() as $row)
                         <tr>
                             <td>
-
                                 <div class="row justify-content-between py-3">
                                 <div class="col-3 my-2">
                                     <img src="{{$products->where('id', $row->id)->first()->photo}}" alt="">
@@ -74,8 +78,12 @@
                                 </div>
 
                                 </div>
+                                @if($counter != $total)
+                                    <hr>
+                                @endif
                             </td>
                         </tr>
+                        @php $counter++; @endphp
                     @endforeach
                     </table>
                 <hr>

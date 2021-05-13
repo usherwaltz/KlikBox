@@ -1877,6 +1877,12 @@ body {
     padding: 50px 200px 50px 200px;
 }
 
+@media (max-width: 1200px) {
+    .cart-card-padding {
+        padding: 10px 20px 10px 20px;
+    }
+}
+
 @media (max-width: 579px) {
     .cart-card-padding {
         padding: 10px 20px 10px 20px;
