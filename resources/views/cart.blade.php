@@ -87,15 +87,15 @@
                     </table>
                 <hr>
                 <div class="row">
-                    <div class="col-3"></div>
-                    <div class="col-6">Dostava</div>
-                    <div class="col-3">7 KM</div>
+                    <div class="d-none d-md-block col-3"></div>
+                    <div class="col-9 col-md-6">Dostava</div>
+                    <div class="col-4 col-md-3">7 KM</div>
                 </div>
                 <hr>
                 <div class="row mb-4">
-                    <div class="col-3"></div>
-                    <div class="col-6">Konačna cijena</div>
-                    <div class="col-3 font-bold cart-total">{{ Cart::subtotal()+7 }} KM</div>
+                    <div class="d-none d-md-block col-3"></div>
+                    <div class="col-8 col-md-6">Konačna cijena</div>
+                    <div class="col-4 col-md-3 font-bold cart-total">{{ Cart::subtotal()+7 }} KM</div>
                 </div>
                 <div class="frmbox">
                     <input type="submit" value="Naruči Odmah" class="continueshoppingbtn cart-submit btn-orange">
