@@ -74,7 +74,6 @@
                                 </div>
 
                                 </div>
-                                <hr class="m-0">
                             </td>
                         </tr>
                     @endforeach
