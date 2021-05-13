@@ -1596,7 +1596,7 @@ body {
     }
 
     .icon-home {
-        margin-right: 5px !important;
+        margin-right: 10px !important;
     }
 
     .navbar-brand {
@@ -1781,6 +1781,7 @@ body {
 .icon-home {
     width: 35px;
     height: 35px;
+    margin-right: 10px !important;
 }
 
 .icon-home > p {

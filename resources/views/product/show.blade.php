@@ -91,11 +91,11 @@
                                                         <span class="choicebtn" data-quantity="3" data-oldprice="{{round($product->oldprice)}}" data-prc="{{round($product->price * ((100-30) / 100))}}">3 x {{round($product->price * ((100-30) / 100))}} KM</span>
                                                     </div>
                                                 </div>
-                                                <div class="mb-4 mt-3">
-                                                    <span>Proizvod dostupan samo na KlikBox.ba</span>
-                                                </div>
                                             </div>
                                         @endif
+                                        <div class="mb-2 mt-3 text-center">
+                                            <span>Proizvod dostupan samo na KlikBox.ba</span>
+                                        </div>
                                         <input type="submit" class="addtocartbtn w-100" value="DODAJ U KORPU">
                                     </form>
                                 </div>
