@@ -43,7 +43,7 @@ use Illuminate\Support\Facades\Route;
 
             <div class="col-sm-12 col-md-3 d-flex my-4 my-md-0 align-icons">
                 <img class="icon-home" src="/images/sigurna-kupovina.svg" alt="safe-pic">
-                <p class="responsive-icon-text">SIGURNA <br>DOSTAVA</p>
+                <p class="responsive-icon-text">SIGURNA <br>KUPOVINA</p>
             </div>
 
             <div class="col-sm-12 col-md-3 d-flex my-4 my-md-0 align-icons">

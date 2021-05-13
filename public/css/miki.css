@@ -284,7 +284,6 @@ a.w3-bar-item svg {
 input.continueshoppingbtn.btn-orange {
     background: #eb7700;
     display: inline;
-    width: 50%;
     vertical-align: top;
     padding: 15px 40px;
     text-transform: uppercase;
@@ -293,6 +292,7 @@ input.continueshoppingbtn.btn-orange {
     cursor: pointer;
     letter-spacing: 3px;
     font-weight: 600;
+    width: 100%;
 }
 
 .left-side .tofu-card {
@@ -418,14 +418,6 @@ p.title-sale {
 
 .contactdetails h2 {
     padding-left: 13px;
-}
-
-/*dugmici za kolicinu*/
-.number-box {
-    float: left;
-    width: 100%;
-    margin-top: 10px;
-    padding-left: 10px;
 }
 
 input[type="number"] {
@@ -1152,10 +1144,10 @@ a.bottom-add-cart {
 }
 
 .frmbox {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 10px;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*align-items: flex-start;*/
+    /*margin: 10px;*/
 }
 
 .frmrow {
@@ -1756,7 +1748,7 @@ body {
 }
 
 .cart-total {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: bolder;
 }
 
@@ -1878,4 +1870,31 @@ body {
         margin-top: 3rem !important;
         margin-bottom: 1.5rem !important;
     }
+}
+
+.cart-card-padding {
+    padding: 50px 200px 50px 200px;
+}
+
+.cart-address {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.cart-input {
+    height: 50px;
+    border-radius: 10px;
+}
+
+.cart-product-price {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.font-bold {
+    font-weight: bold
+}
+
+.bottom-0 {
+    bottom: 0;
 }
