@@ -12,7 +12,8 @@
 		<li>Gotovi ste!</li>
 	</ul>
 </div>
-<div class="container">
+<form action="{{route('order.store')}}" name="order_frm" method="POST" class="orderfrm">
+    <div class="container">
 	<div class="card cart-card-padding">
 		<div class="col-12">
 			@if(Session::has('success'))
@@ -21,19 +22,17 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-6">
-				<form action="{{route('order.store')}}" name="order_frm" method="POST" class="orderfrm">
 				@csrf
-					<div class="row m-0">
-						<h1 class="cart-address mb-4">Adresa za dostavu</h1>
-                        <input class="form-control my-2 col-12 cart-input" type="text" name="name" id="name" required placeholder="Ime">
-                        <input class="form-control my-2 col-12 cart-input" type="text" name="lastname" id="lastname" required placeholder="Prezime">
-                        <input class="form-control my-2 col-12 cart-input" type="text" name="phone" id="phone" required placeholder="Broj telefona">
-                        <input class="form-control my-2 col-12 cart-input" type="text" name="street" id="street" required placeholder="Ulica i broj">
-                        <input class="form-control my-2 col-12 cart-input" type="text" name="postcode" id="postcode" required placeholder="Poštanski broj">
-                        <input class="form-control my-2 col-12 cart-input" type="text" name="city" id="city" required placeholder="Grad">
-                        <input class="form-control my-2 col-12 cart-input" type="email" name="email" id="email" placeholder="Email adresa">
-					</div>
-				</form>
+                <div class="row m-0">
+                    <h1 class="cart-address mb-4">Adresa za dostavu</h1>
+                    <input class="form-control my-2 col-12 cart-input" type="text" name="name" id="name" required placeholder="Ime">
+                    <input class="form-control my-2 col-12 cart-input" type="text" name="lastname" id="lastname" required placeholder="Prezime">
+                    <input class="form-control my-2 col-12 cart-input" type="text" name="phone" id="phone" required placeholder="Broj telefona">
+                    <input class="form-control my-2 col-12 cart-input" type="text" name="street" id="street" required placeholder="Ulica i broj">
+                    <input class="form-control my-2 col-12 cart-input" type="text" name="postcode" id="postcode" required placeholder="Poštanski broj">
+                    <input class="form-control my-2 col-12 cart-input" type="text" name="city" id="city" required placeholder="Grad">
+                    <input class="form-control my-2 col-12 cart-input" type="email" name="email" id="email" placeholder="Email adresa">
+                </div>
             </div>
             <div class="col-lg-6">
                 <h2 class="cart-address mb-4 mt-sm-4">Proizvodi u korpi</h2>
@@ -180,6 +179,7 @@
 		</div>
     </div>
 </div>
+</form>
 
 
 @endsection
