@@ -36,41 +36,50 @@
 				</form>
             </div>
             <div class="col-lg-6">
-                <h2 class="cart-address mb-4">Proizvodi u korpi</h2>
+                <h2 class="cart-address mb-4 mt-sm-4">Proizvodi u korpi</h2>
                 <hr class="mb-0">
-                <div class="row justify-content-between py-3">
+                    <table id="cart" class="table table-condensed">
                     @foreach(Cart::content() as $row)
-                        <div class="col-3">
-                            <img src="{{$products->where('id', $row->id)->first()->photo}}" alt="">
-                        </div>
-                        <div class="col-6 row justify-content-between">
-                            <div class="d-block align-self-center cart-product-name">
-                                {{$row->name}}
-                            </div>
-                            <div class="d-block align-self-end">
-                                <div class="mt-2">
-                                    <div class="number-input">
-                                        <button class="minus" data-id="{{ $row->rowId }}"></button>
-                                        <input type="number" value="{{ $row->qty }}" class="form-control quantity" title="quantity" />
-                                        <button class="plus" data-id="{{ $row->rowId }}"></button>
-                                    </div>
+                        <tr>
+                            <td>
 
-                                    @foreach ($row->options as $key=>$option)
-                                        <span>{{$option}}</span>
-                                    @endforeach
+                                <div class="row justify-content-between py-3">
+                                <div class="col-3 my-2">
+                                    <img src="{{$products->where('id', $row->id)->first()->photo}}" alt="">
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-3 cart-product-price position-relative">
-                            <div class="d-block text-end">
-                                <button class="remove-from-cart align-self-start" data-id="{{ $row->rowId }}">X</button>
-                            </div>
-                            <div class="d-block align-self-end position-absolute bottom-0">
-                                {{$row->total}} KM
-                            </div>
-                        </div>
+                                <div class="col-6 my-2 row justify-content-between">
+                                    <div class="d-block align-self-center cart-product-name">
+                                        {{$row->name}}
+                                    </div>
+                                    <div class="d-block align-self-end">
+                                        <div class="mt-2">
+                                            <div class="number-input">
+                                                <button class="minus" data-id="{{ $row->rowId }}"></button>
+                                                <input type="number" value="{{ $row->qty }}" class="form-control quantity" title="quantity" />
+                                                <button class="plus" data-id="{{ $row->rowId }}"></button>
+                                            </div>
+
+{{--                                            @foreach ($row->options as $key=>$option)--}}
+{{--                                                <span>{{$option}}</span>--}}
+{{--                                            @endforeach--}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3 my-2 cart-product-price position-relative">
+                                    <div class="d-block text-end">
+                                        <button class="remove-from-cart align-self-start" data-id="{{ $row->rowId }}">X</button>
+                                    </div>
+                                    <div class="d-block align-self-end position-absolute bottom-0">
+                                        {{$row->total}} KM
+                                    </div>
+                                </div>
+
+                                </div>
+                                <hr class="m-0">
+                            </td>
+                        </tr>
                     @endforeach
-                </div>
+                    </table>
                 <hr>
                 <div class="row">
                     <div class="col-3"></div>
