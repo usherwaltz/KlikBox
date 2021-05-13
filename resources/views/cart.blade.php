@@ -18,14 +18,14 @@
 	</ul>
 </div>
 <form action="{{route('order.store')}}" name="order_frm" method="POST" class="orderfrm">
-    <div class="container container-md-fluid">
-	<div class="card d-flex justify-content-center align-items-center p-4">
+    <div class="container-fluid">
+	<div class="card d-flex justify-content-center align-items-center px-4 py-5">
 		<div class="col-12">
 			@if(Session::has('success'))
 				<p class="alert" style="background-color: #d9d9d9 ">{{ Session::get('success') }}</p>
 			@endif
 		</div>
-		<div class="row">
+		<div class="row cart-linup">
 			<div class="col-lg-6 max-600">
 				@csrf
                 <div class="row m-0">
@@ -40,43 +40,42 @@
                 </div>
             </div>
             <div class="col-lg-6 max-600">
-                <h2 class="cart-address mb-4">Proizvodi u korpi</h2>
+                <h2 class="cart-address mobile-top-margin mb-4">Proizvodi u korpi</h2>
                 <hr class="mb-0">
                     <table id="cart" class="table table-condensed">
                     @foreach(Cart::content() as $row)
                         <tr>
                             <td>
                                 <div class="row justify-content-between py-3">
-                                <div class="col-3 my-2">
-                                    <img src="{{$products->where('id', $row->id)->first()->photo}}" alt="">
-                                </div>
-                                <div class="col-5 my-2 row justify-content-between">
-                                    <div class="d-block align-self-center cart-product-name">
-                                        {{$row->name}}
+                                    <div class="d-none d-md-block col-3 my-2">
+                                        <img src="{{$products->where('id', $row->id)->first()->photo}}" alt="">
                                     </div>
-                                    <div class="d-block align-self-end">
-                                        <div class="mt-2">
-                                            <div class="number-input">
-                                                <button class="minus" data-id="{{ $row->rowId }}"></button>
-                                                <input type="number" value="{{ $row->qty }}" class="form-control quantity" title="quantity" />
-                                                <button class="plus" data-id="{{ $row->rowId }}"></button>
-                                            </div>
+                                    <div class="col-8 col-md-5 my-2 row justify-content-between">
+                                        <div class="d-block align-self-center cart-product-name">
+                                            {{$row->name}}
+                                        </div>
+                                        <div class="d-block align-self-end">
+                                            <div class="mt-2">
+                                                <div class="number-input">
+                                                    <button class="minus" data-id="{{ $row->rowId }}"></button>
+                                                    <input type="number" value="{{ $row->qty }}" class="form-control quantity" title="quantity" />
+                                                    <button class="plus" data-id="{{ $row->rowId }}"></button>
+                                                </div>
 
-{{--                                            @foreach ($row->options as $key=>$option)--}}
-{{--                                                <span>{{$option}}</span>--}}
-{{--                                            @endforeach--}}
+    {{--                                            @foreach ($row->options as $key=>$option)--}}
+    {{--                                                <span>{{$option}}</span>--}}
+    {{--                                            @endforeach--}}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-4 my-2 cart-product-price position-relative">
-                                    <div class="d-block text-end">
-                                        <button class="remove-from-cart align-self-start" data-id="{{ $row->rowId }}">X</button>
+                                    <div class="col-4 my-2 cart-product-price position-relative">
+                                        <div class="d-block text-end">
+                                            <button class="remove-from-cart align-self-start" data-id="{{ $row->rowId }}">X</button>
+                                        </div>
+                                        <div class="d-block align-self-end position-absolute bottom-0 float-right">
+                                            {{$row->total}} KM
+                                        </div>
                                     </div>
-                                    <div class="d-block align-self-end position-absolute bottom-0">
-                                        {{$row->total}} KM
-                                    </div>
-                                </div>
-
                                 </div>
                                 @if($counter != $total)
                                     <hr>

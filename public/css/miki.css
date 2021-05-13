@@ -1910,8 +1910,26 @@ body {
 
 .bottom-0 {
     bottom: 0;
+    right: 0;
+    padding-right: 12px;
 }
 
 .max-600 {
     max-width: 600px !important;
+}
+
+.cart-linup {
+    min-width: 1300px;
+    justify-content: space-between;
+}
+
+@media (max-width: 1300px) {
+    .cart-linup {
+        min-width: initial;
+        justify-content: center;
+    }
+
+    .mobile-top-margin {
+        margin-top: 20px
+    }
 }
