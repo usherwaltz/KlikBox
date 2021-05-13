@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('css/miki.css')}}">
 @endsection
 @section('content')
-<div class="con"> 
+<div class="con my-4">
 	<ul class="nav-cart">
 		<li>Vaša korpa</li>
 		<li class="activ">Potvrda</li>
@@ -18,7 +18,7 @@
         @if(session('order'))
             @foreach($order['cart'] as $row)
             <div class="product-box-cart">
-                <img src="{{ $products->where('id',$row->id)->first()->photo }}" alt="">
+                <img src="@if($products->where('id',$row->id)->first()->photo != null){{ $products->where('id',$row->id)->first()->photo }}@else /images/placeholder.png @endif" alt="">
                 <h2>{{ $row->name}} x {{ $row->qty }}</h2>
                 <p class="text-right"> {{ $row->total }} KM </p>
             </div>
@@ -27,6 +27,7 @@
         <div class="delivery">
             <p>Dostava <span>7 KM </span></p>
         </div>
+        <hr>
         <div class="total">
             <h3>Total <span> {{Cart::subtotal() + 7}} KM </span></h3>
         </div>
@@ -38,12 +39,12 @@
         <p> {{$order['data']['street']}}</p>
         <p>{{$order['data']['phone']}}</p>
         @if($order['data']['email'])
-        <p>{{$order['data']['email']}}</p> 
+        <p>{{$order['data']['email']}}</p>
         @endif
-    </div> 
+    </div>
 	<p class="text-center no-bottom-m"><a href="{{route('order.confirm',$id)}}" class="continueshoppingbtn btn-orange">POTVRDI</a></p>
 	<p class="text-center safe"><i class="fas fa-lock"></i> Sigurna kupovina</p>
-	<div class="tofu-box">
+	<div class="tofu-box mt-4">
         <div class="tofu-card">
             <img src="/images/delivery-pic.png" alt="delivery-pic">
             <p>BRZA DOSTAVA 24H</p>
