@@ -47,7 +47,7 @@
                                     <i class="fas fa-star mr-1"></i>
                                     <i class="fas fa-star mr-1"></i>
                                     <i class="fas fa-star"></i>
-                                    4.7 / 5 <span>Proizvod dostupan samo na KlikBox.ba</span></div>
+                                    4.7 / 5</div>
                                 <div class="desc">{!!$product->description!!}</div>
                                 <div class="form">
                                     <form action="{{route('cart.store')}}" method="post" name="cartform">
@@ -204,22 +204,22 @@
 
                             <div class="col-sm-12 col-lg-3 order-1 text-center mb-4 icon-description">
                                 <img class="mobile-margin-bottom icons-photo d-block m-auto" src="{{$block->icon_1}}" alt="img">
-                                <strong>{{strtoupper($block->icon_1_text)}}</strong>
+                                <strong>{{$block->icon_1_text}}</strong>
                             </div>
 
                             <div class="col-sm-12 col-lg-3 order-3 text-center mb-4 icon-description">
                                 <img class="mobile-margin-bottom icons-photo d-block m-auto" src="{{$block->icon_2}}" alt="img">
-                                <strong>{{strtoupper($block->icon_2_text)}}</strong>
+                                <strong>{{$block->icon_2_text}}</strong>
                             </div>
 
                             <div class="col-sm-12 col-lg-3 order-5 text-center mb-4 icon-description">
                                 <img class="mobile-margin-bottom icons-photo d-block m-auto" src="{{$block->icon_3}}" alt="img">
-                                <strong>{{strtoupper($block->icon_3_text)}}</strong>
+                                <strong>{{$block->icon_3_text}}</strong>
                             </div>
 
                             <div class="col-sm-12 col-lg-3 order-7 text-center mb-4 icon-description">
                                 <img class="mobile-margin-bottom icons-photo d-block m-auto" src="{{$block->icon_4}}" alt="img">
-                                <strong>{{strtoupper($block->icon_4_text)}}</strong>
+                                <strong>{{$block->icon_4_text}}</strong>
                             </div>
 
                         </div>
