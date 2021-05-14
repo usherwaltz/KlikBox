@@ -19,7 +19,7 @@
 <div class="container-fluid mt-4 single bg-white">
     <div class="container @if(Session::has('message')) pt-4 @endif">
         @if(Session::has('message'))
-            <p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('message') }}</p>
+            <p class="alert {{ Session::get('alert-class', 'alert-dark') }}">{{ Session::get('message') }}</p>
         @endif
 
         <div id="bofu" class="bofu">

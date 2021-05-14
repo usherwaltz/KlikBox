@@ -62,7 +62,7 @@ class CartController extends Controller
             abort(404);
         }
         Session::flash('message', 'Proizvod "' . $product->name . '" je uspješno dodan u korpu!');
-        Session::flash('alert-class', 'alert-success');
+        Session::flash('alert-class', 'alert-dark');
 
         // session()->put('cart', $cart);
         if($productCount<2){

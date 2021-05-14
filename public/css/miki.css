@@ -1786,8 +1786,8 @@ body {
 
 @media (max-width: 579px) {
     .search-icon {
-        width: 44px !important;
-        height: 44px !important;
+        width: 40px !important;
+        height: 40px !important;
     }
 }
 
