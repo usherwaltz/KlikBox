@@ -2063,3 +2063,14 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.search-mobile-content, .close-mobile-search {
+    width: 40px !important;
+    background-color: #EC7700 !important;
+    color: white !important;
+}
+
+#search {
+    border-radius: 50px;
+    background: #F4F4F4;
+}
