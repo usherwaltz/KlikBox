@@ -262,6 +262,7 @@
                 searchString = urlParams.get('searchString')
 
                 if(isMobile) {
+                    $(".mobile-search-input").show()
                     $('#search').val(searchString);
                 } else {
                     $('.search').val(searchString);
