@@ -1606,15 +1606,15 @@ body {
 
 @media (max-width: 579px) {
     body > .wrap {
-        padding-bottom: 305px !important;
+        padding-bottom: 345px !important;
     }
 
     #footer {
-        height: calc(270px + 1.5rem) !important;
+        height: calc(320px + 1.5rem) !important;
     }
 
     .navbar-bottom {
-        height: calc(270px + 1.5rem) !important;
+        height: calc(320px + 1.5rem) !important;
     }
 
     .header-contact {
@@ -1623,6 +1623,7 @@ body {
 
     .margin-footer-320 {
         margin-bottom: 20px !important;
+        margin-top: 20px !important;
     }
 
     .text-align-initial {
@@ -1807,6 +1808,10 @@ body {
 
 .icon-description > strong {
     font-weight: 500 !important;
+}
+
+.icon-description > img {
+    margin-bottom: 10px !important;
 }
 
 .block-padding {
