@@ -182,6 +182,13 @@ use Illuminate\Support\Facades\Route;
             }
         });
 
+        $('#search').keypress(function(event){
+            // event.preventDefault();
+            if(event.which == 13) {
+                infinteLoadMore(1, '/searchproducts?page=', true)
+            }
+        });
+
         $('.search-mobile').on('click', function () {
             $(".mobile-search-input").fadeIn()
         });
