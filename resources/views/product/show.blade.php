@@ -20,10 +20,8 @@
 @if(Session::has('message'))
     <div class="backdrop"></div>
     <div class="notification-cart">
-        <div class="notification-header">
-            <i class="fas fa-times notification-close"></i>
-        </div>
         <div class="notification-body">
+            <img class="popup-checkmark" src="/images/popup_checkmark.svg" alt="checkmark">
             <p>{{Session::get('message')}}</p>
         </div>
     </div>

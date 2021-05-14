@@ -101,7 +101,7 @@
                         <div class="cart-count">{{ Cart::count() }}</div>
                 </button>
 
-                <div class="mobile-search-input" style="display: none">
+                <div class="mobile-search-input" @if(Route::getCurrentRoute()->getActionMethod() != 'getProductsSearch') style="display: none" @endif>
                     <div class="row justify-content-center">
                         <div class="col-7">
                             <input id="search" type="text" name="searchString" class="mobile-search form-control" placeholder="Pretraga...">

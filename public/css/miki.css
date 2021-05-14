@@ -1996,6 +1996,12 @@ body {
     left: calc(50vw - 200px);
     z-index: 999;
     border-radius: 6px;
+    text-align: center;
+}
+
+.popup-checkmark {
+    height: 60%;
+    margin-bottom: 10px
 }
 
 .notification-header {
