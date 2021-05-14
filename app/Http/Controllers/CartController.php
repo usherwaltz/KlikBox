@@ -121,6 +121,7 @@ class CartController extends Controller
     {
         if ($request->id) {
             Cart::remove($request->id);
+            $this->update($request);
             session()->flash('success', 'Korpa uspješno osvježena');
         }
     }
