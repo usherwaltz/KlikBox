@@ -80,7 +80,7 @@
                 </div>
 
                 <!-- MOBILE SEARCH -->
-                <img class="d-sm-block d-md-none search-icon col-1 p-0 margin-left-auto" src="/images/mobile-search-icon.svg" alt="img">
+                <img class="d-sm-block d-md-none search-icon search-mobile col-1 p-0 margin-left-auto" src="/images/mobile-search-icon.svg" alt="img">
 
                 <!-- CONTACT PHONE -->
                 <a class="custom-anchor-tag d-none d-lg-block d-xl-block" href="tel:080050705">
@@ -100,6 +100,24 @@
                         <img src="/images/cart-icon.svg" alt="cart-icon">
                         <div class="cart-count">{{ Cart::count() }}</div>
                 </button>
+
+                <div class="mobile-search-input" style="display: none">
+                    <div class="row justify-content-center">
+                        <div class="col-7">
+                            <input id="search" type="text" name="searchString" class="mobile-search form-control" placeholder="Pretraga...">
+                        </div>
+                        <div class="col-2">
+                            <button class="px-0 btn btn-secondary search-mobile-content w-100">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <div class="col-2">
+                            <button class="px-0 btn btn-secondary close-mobile-search w-100">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
         </nav>
     </header>
     @forelse (Cart::content() as $row)

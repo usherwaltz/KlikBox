@@ -2031,6 +2031,28 @@ body {
 .spinner-grow {
     position: fixed;
     top: 400px;
-    left: 50vw;
+    left: calc(50vw - 16px);
     z-index: 999;
+}
+
+@media (max-width: 579px) {
+    .spinner-grow {
+        top: 300px !important;
+    }
+}
+
+.navbar {
+    position: relative;
+}
+
+.mobile-search-input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

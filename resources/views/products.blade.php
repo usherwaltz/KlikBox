@@ -109,11 +109,11 @@ use Illuminate\Support\Facades\Route;
         }
     });
 
-    function infinteLoadMore(page, endpoint = null) {
+    function infinteLoadMore(page, endpoint = null, isMobile = false) {
         let finalEndpoint = endpoint !== null ? endpoint : ENDPOINT
         let searchString = '';
         if(endpoint !== null) {
-            searchString = $('.search').val();
+            searchString = isMobile ? $('#search').val() : $('.search').val();
         }
         $.ajax({
             url: finalEndpoint + page,
@@ -180,6 +180,20 @@ use Illuminate\Support\Facades\Route;
             if(event.which == 13) {
                 infinteLoadMore(1, '/searchproducts?page=')
             }
+        });
+
+        $('.search-mobile').on('click', function () {
+            $(".mobile-search-input").fadeIn()
+        });
+
+        $('.close-mobile-search').on('click', function () {
+            $('#search').val('');
+            infinteLoadMore(1, '/searchproducts?page=', true)
+            $(".mobile-search-input").fadeOut()
+        });
+
+        $('.search-mobile-content').on('click', function () {
+            infinteLoadMore(1, '/searchproducts?page=', true)
         });
 
     });
