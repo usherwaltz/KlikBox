@@ -211,9 +211,9 @@ class HomeController extends Controller
 
         if ($request->ajax()) {
             return $this->appendData($results);
+        } else {
+            return view('products', compact('results'));
         }
-
-        return view('home');
     }
 
     /**

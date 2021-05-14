@@ -88,122 +88,129 @@ use Illuminate\Support\Facades\Route;
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
 
 <script>
-    let ENDPOINT = "{{ url('/') }}" + <?php $route = Route::getCurrentRoute()->getActionMethod(); if($route == 'index' || $route == 'home') { ?>
-        "/homeproducts?page=";
-        <?php } elseif ($route == 'novo') {?>
-        "/novoproducts?page=";
-        <?php } elseif ($route == 'trend') {?>
-            "/trendproducts?page=";
-        <?php } elseif ($route == 'akcija') {?>
-            "/akcijaproducts?page=";
-    <?php } ?>
-    let page = 1;
-    infinteLoadMore(page);
+    {{--let CURRENT_ROUTE = "{{$route = Route::getCurrentRoute()->getActionMethod()}}";--}}
+    {{--let ENDPOINT = "{{ url('/') }}" + <?php $route = Route::getCurrentRoute()->getActionMethod(); if($route == 'index' || $route == 'home') { ?>--}}
+    {{--    "/homeproducts?page=";--}}
+    {{--    <?php } elseif ($route == 'novo') {?>--}}
+    {{--    "/novoproducts?page=";--}}
+    {{--    <?php } elseif ($route == 'trend') {?>--}}
+    {{--        "/trendproducts?page=";--}}
+    {{--    <?php } elseif ($route == 'akcija') {?>--}}
+    {{--        "/akcijaproducts?page=";--}}
+    {{--<?php } ?>--}}
+    {{--let page = 1;--}}
+    {{--infinteLoadMore(page);--}}
 
-    $(window).scroll(function () {
-        if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
-            page++;
-            <?php if ($route == 'index' || $route == 'home') { ?>
-            infinteLoadMore(page);
-            <?php } ?>
-        }
-    });
+    {{--$(window).scroll(function () {--}}
+    {{--    if ($(window).scrollTop() + $(window).height() >= $(document).height()) {--}}
+    {{--        page++;--}}
+    {{--        <?php if ($route == 'index' || $route == 'home') { ?>--}}
+    {{--        infinteLoadMore(page);--}}
+    {{--        <?php } ?>--}}
+    {{--    }--}}
+    {{--});--}}
 
-    function infinteLoadMore(page, endpoint = null, isMobile = false) {
-        let finalEndpoint = endpoint !== null ? endpoint : ENDPOINT
-        let searchString = '';
-        if(endpoint !== null) {
-            searchString = isMobile ? $('#search').val() : $('.search').val();
-        }
-        $.ajax({
-            url: finalEndpoint + page,
-            datatype: "html",
-            type: "get",
-            data: {
-              searchString
-            },
-            beforeSend: function () {
-                if(endpoint != null) {
-                    $('.loader').fadeIn();
-                    $('.spinner-grow').show();
-                    $('.auto-load').show();
-                } else {
-                    $('.auto-load').show();
-                }
-            }
-        }).done(function (response) {
-            if (response.length === 0 && page === 1) {
-                if(endpoint != null) {
-                    $("#data-wrapper").empty();
-                    $('.auto-load').html("Trenutno nemamo proizvoda za navesti. Molimo da nas posjetite malo kasnije.");
-                    $('.loader').fadeOut();
-                    $('.spinner-grow').hide();
-                } else {
-                    $('.auto-load').html("Trenutno nemamo proizvoda za navesti. Molimo da nas posjetite malo kasnije.");
-                }
-                return;
-            } else if(response.length === 0) {
-                if(endpoint != null) {
-                    $("#data-wrapper").empty();
-                    $('.auto-load').html("Svi proizvodi su navedeni.");
-                    $('.loader').fadeOut();
-                    $('.spinner-grow').hide();
-                } else {
-                    $('.auto-load').html("Svi proizvodi su navedeni.");
-                }
-                return;
-            }
-            $('.auto-load').hide();
-            if(endpoint != null) {
-                $('.loader').fadeOut();
-                $('.spinner-grow').hide();
-            }
-            if(endpoint != null) {
-                $("#data-wrapper").empty();
-                $("#data-wrapper").append(response);
-            } else {
-                $("#data-wrapper").append(response);
-            }
-        })
-        .fail(function (jqXHR, ajaxOptions, thrownError) {
-            console.log('Server error occured');
-        });
-    }
+    {{--function infinteLoadMore(page, endpoint = null, isMobile = false) {--}}
+    {{--    let finalEndpoint = endpoint !== null ? endpoint : ENDPOINT--}}
+    {{--    let searchString = '';--}}
+    {{--    if(endpoint !== null) {--}}
+    {{--        searchString = isMobile ? $('#search').val() : $('.search').val();--}}
+    {{--    }--}}
+    {{--    $.ajax({--}}
+    {{--        url: finalEndpoint + page,--}}
+    {{--        datatype: "html",--}}
+    {{--        type: "get",--}}
+    {{--        data: {--}}
+    {{--          searchString--}}
+    {{--        },--}}
+    {{--        beforeSend: function () {--}}
+    {{--            if(endpoint != null) {--}}
+    {{--                $('.loader').fadeIn();--}}
+    {{--                $('.spinner-grow').show();--}}
+    {{--                $('.auto-load').show();--}}
+    {{--            } else {--}}
+    {{--                $('.auto-load').show();--}}
+    {{--            }--}}
+    {{--        }--}}
+    {{--    }).done(function (response) {--}}
+    {{--        if (response.length === 0 && page === 1) {--}}
+    {{--            if(endpoint != null) {--}}
+    {{--                $("#data-wrapper").empty();--}}
+    {{--                $('.auto-load').html("Trenutno nemamo proizvoda za navesti. Molimo da nas posjetite malo kasnije.");--}}
+    {{--                $('.loader').fadeOut();--}}
+    {{--                $('.spinner-grow').hide();--}}
+    {{--            } else {--}}
+    {{--                $('.auto-load').html("Trenutno nemamo proizvoda za navesti. Molimo da nas posjetite malo kasnije.");--}}
+    {{--            }--}}
+    {{--            return;--}}
+    {{--        } else if(response.length === 0) {--}}
+    {{--            if(endpoint != null) {--}}
+    {{--                $("#data-wrapper").empty();--}}
+    {{--                $('.auto-load').html("Svi proizvodi su navedeni.");--}}
+    {{--                $('.loader').fadeOut();--}}
+    {{--                $('.spinner-grow').hide();--}}
+    {{--            } else {--}}
+    {{--                $('.auto-load').html("Svi proizvodi su navedeni.");--}}
+    {{--            }--}}
+    {{--            return;--}}
+    {{--        }--}}
+    {{--        $('.auto-load').hide();--}}
+    {{--        if(endpoint != null) {--}}
+    {{--            $('.loader').fadeOut();--}}
+    {{--            $('.spinner-grow').hide();--}}
+    {{--        }--}}
+    {{--        if(endpoint != null) {--}}
+    {{--            $("#data-wrapper").empty();--}}
+    {{--            $("#data-wrapper").append(response);--}}
+    {{--        } else {--}}
+    {{--            $("#data-wrapper").append(response);--}}
+    {{--        }--}}
+    {{--    })--}}
+    {{--    .fail(function (jqXHR, ajaxOptions, thrownError) {--}}
+    {{--        console.log('Server error occured');--}}
+    {{--    });--}}
+    {{--}--}}
 
-    $(document).ready(function() {
-        $('.carousel').carousel({
-            interval: 3000
-        });
+    {{--$(document).ready(function() {--}}
+    {{--    $('.carousel').carousel({--}}
+    {{--        interval: 3000--}}
+    {{--    });--}}
 
-        $('.search').keypress(function(event){
-            // event.preventDefault();
-            if(event.which == 13) {
-                infinteLoadMore(1, '/searchproducts?page=')
-            }
-        });
+    {{--    $('.search').keypress(function(event){--}}
+    {{--        // event.preventDefault();--}}
+    {{--        if(event.which == 13) {--}}
+    {{--            if(CURRENT_ROUTE !== '/home' && CURRENT_ROUTE !== 'index') {--}}
+    {{--                window.location.replace('/searchproducts?page=1&searchString=' + $(".search").val());--}}
+    {{--            } else {--}}
+    {{--                infinteLoadMore(1, '/searchproducts?page=')--}}
+    {{--            }--}}
+    {{--        }--}}
+    {{--    });--}}
 
-        $('#search').keypress(function(event){
-            // event.preventDefault();
-            if(event.which == 13) {
-                infinteLoadMore(1, '/searchproducts?page=', true)
-            }
-        });
+    {{--    $('#search').keypress(function(event){--}}
+    {{--        // event.preventDefault();--}}
+    {{--        if(event.which == 13) {--}}
+    {{--            infinteLoadMore(1, '/searchproducts?page=', true)--}}
+    {{--        }--}}
 
-        $('.search-mobile').on('click', function () {
-            $(".mobile-search-input").fadeIn()
-        });
 
-        $('.close-mobile-search').on('click', function () {
-            $('#search').val('');
-            infinteLoadMore(1, '/searchproducts?page=', true)
-            $(".mobile-search-input").fadeOut()
-        });
+    {{--    });--}}
 
-        $('.search-mobile-content').on('click', function () {
-            infinteLoadMore(1, '/searchproducts?page=', true)
-        });
+    {{--    $('.search-mobile').on('click', function () {--}}
+    {{--        $(".mobile-search-input").fadeIn()--}}
+    {{--    });--}}
 
-    });
+    {{--    $('.close-mobile-search').on('click', function () {--}}
+    {{--        $('#search').val('');--}}
+    {{--        infinteLoadMore(1, '/searchproducts?page=', true)--}}
+    {{--        $(".mobile-search-input").fadeOut()--}}
+    {{--    });--}}
+
+    {{--    $('.search-mobile-content').on('click', function () {--}}
+    {{--        infinteLoadMore(1, '/searchproducts?page=', true)--}}
+    {{--    });--}}
+
+    {{--});--}}
 
 </script>
 @endsection

@@ -213,6 +213,168 @@
             });
 
         });
+
+        let CURRENT_ROUTE = "{{$route = Route::getCurrentRoute()->getActionMethod()}}";
+        let ENDPOINT = "{{ url('/') }}" + <?php $route = Route::getCurrentRoute()->getActionMethod(); if($route == 'index' || $route == 'home') { ?>
+            "/homeproducts?page=";
+        <?php } elseif ($route == 'novo') {?>
+            "/novoproducts?page=";
+        <?php } elseif ($route == 'trend') {?>
+            "/trendproducts?page=";
+        <?php } elseif ($route == 'akcija') {?>
+            "/akcijaproducts?page=";
+        <?php } else { ?>
+            "";
+        <?php } ?>
+        let page = 1;
+        let possibleRoutes = ['index', '/home', '/novo', '/akcija', '/trend'];
+        $(document).ready(function () {
+            if(possibleRoutes.includes(CURRENT_ROUTE)) {
+                infinteLoadMore(page);
+            } else if (CURRENT_ROUTE === 'getSearchProducts') {
+                let isMobile;
+                isMobile = $('.search').length <= 0;
+                infinteLoadMore(page, '/searchproducts?page=', isMobile, true)
+            }
+        });
+
+        $(window).scroll(() => {
+            if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
+                page++;
+                if(possibleRoutes.includes(CURRENT_ROUTE)) {
+                    infinteLoadMore(page);
+                }
+            }
+        });
+
+        function infinteLoadMore(page, endpoint = null, isMobile = false, searchScreen = false) {
+            let finalEndpoint = endpoint !== null ? endpoint : ENDPOINT
+            let searchString = '';
+
+            if(endpoint !== null && !searchScreen) {
+
+                searchString = isMobile ? $('#search').val() : $('.search').val();
+
+            } else if(endpoint !== null && searchScreen) {
+
+                let queryString = window.location.search;
+                let urlParams = new URLSearchParams(queryString);
+                searchString = urlParams.get('searchString')
+
+                if(isMobile) {
+                    $('#search').val(searchString);
+                } else {
+                    $('.search').val(searchString);
+                }
+
+            }
+
+            $.ajax({
+                url: finalEndpoint + page,
+                datatype: "html",
+                type: "get",
+                data: {
+                    searchString
+                },
+                beforeSend: function () {
+                    if(endpoint != null) {
+                        $('.loader').fadeIn();
+                        $('.spinner-grow').show();
+                        $('.auto-load').show();
+                    } else {
+                        $('.auto-load').show();
+                    }
+                }
+            }).done(function (response) {
+                if (response.length === 0 && page === 1) {
+                    if(endpoint != null) {
+                        $("#data-wrapper").empty();
+                        $('.auto-load').html("Trenutno nemamo proizvoda za navesti. Molimo da nas posjetite malo kasnije.");
+                        $('.loader').fadeOut();
+                        $('.spinner-grow').hide();
+                    } else {
+                        $('.auto-load').html("Trenutno nemamo proizvoda za navesti. Molimo da nas posjetite malo kasnije.");
+                    }
+                    return;
+                } else if(response.length === 0) {
+                    if(endpoint != null) {
+                        $("#data-wrapper").empty();
+                        $('.auto-load').html("Svi proizvodi su navedeni.");
+                        $('.loader').fadeOut();
+                        $('.spinner-grow').hide();
+                    } else {
+                        $('.auto-load').html("Svi proizvodi su navedeni.");
+                    }
+                    return;
+                }
+                $('.auto-load').hide();
+                if(endpoint != null) {
+                    $('.loader').fadeOut();
+                    $('.spinner-grow').hide();
+                }
+                if(endpoint != null) {
+                    $("#data-wrapper").empty();
+                    $("#data-wrapper").append(response);
+                } else {
+                    $("#data-wrapper").append(response);
+                }
+            })
+                .fail(function (jqXHR, ajaxOptions, thrownError) {
+                    console.log('Server error occured');
+                });
+        }
+
+        $(document).ready(function() {
+            $('.carousel').carousel({
+                interval: 3000
+            });
+
+            $('.search').keypress(function(event){
+                // event.preventDefault();
+                if(event.which == 13) {
+                    if(!possibleRoutes.includes(CURRENT_ROUTE)) {
+                        window.location.replace('/searchproducts?page=1&searchString=' + $(".search").val());
+                    } else {
+                        infinteLoadMore(1, '/searchproducts?page=')
+                    }
+                }
+            });
+
+            $('#search').keypress(function(event){
+                // event.preventDefault();
+                if(event.which == 13) {
+                    if(!possibleRoutes.includes(CURRENT_ROUTE)) {
+                        window.location.replace('/searchproducts?page=1&searchString=' + $("#search").val());
+                    } else {
+                        infinteLoadMore(1, '/searchproducts?page=', true)
+                    }
+                }
+
+
+            });
+
+            $('.search-mobile').on('click', function () {
+                $(".mobile-search-input").fadeIn()
+            });
+
+            $('.close-mobile-search').on('click', function () {
+                $('#search').val('');
+                if(possibleRoutes.includes(CURRENT_ROUTE)) {
+                    infinteLoadMore(1, '/searchproducts?page=', true)
+                }
+                $(".mobile-search-input").fadeOut()
+            });
+
+            $('.search-mobile-content').on('click', function () {
+                if(!possibleRoutes.includes(CURRENT_ROUTE)) {
+                    window.location.replace('/searchproducts?page=1&searchString=' + $("#search").val());
+                } else {
+                    infinteLoadMore(1, '/searchproducts?page=', true)
+                }
+            });
+
+        });
+
     </script>
     @yield('scripts')
 
