@@ -2014,4 +2014,5 @@ body {
     height: 100% !important;
     width: 9%;
     margin-right: 5px;
+    cursor: pointer;
 }
