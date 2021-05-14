@@ -306,9 +306,9 @@
         }
     });
 
-    window.addEventListener("load", function () {
-        setTimeout(removeNotification(), 4000);
-    }, false);
+    window.onload = function() {
+        setTimeout(removeNotification(), 5000)
+    };
 
     $(document).ready(function () {
         $('.notification-close').on('click', function() {
