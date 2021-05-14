@@ -321,8 +321,8 @@
         let alert = $('.notification-cart');
 
         if(alert.length > 0 && backdrop.length > 0) {
-            backdrop.fadeOut();
-            alert.fadeOut();
+            backdrop.delay(4000).fadeOut();
+            alert.delay(4000).fadeOut();
         }
     }
 
