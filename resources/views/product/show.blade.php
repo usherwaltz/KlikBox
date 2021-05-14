@@ -16,12 +16,20 @@
     <meta property="og:locale" content="bs_BA" />
 @endsection
 @section('content')
-<div class="container-fluid mt-4 single bg-white">
-    <div class="container @if(Session::has('message')) pt-4 @endif">
-        @if(Session::has('message'))
-            <p class="alert {{ Session::get('alert-class', 'alert-dark') }}">{{ Session::get('message') }}</p>
-        @endif
 
+@if(Session::has('message'))
+    <div class="backdrop"></div>
+    <div class="notification-cart">
+        <div class="notification-header">
+            <i class="fas fa-times notification-close"></i>
+        </div>
+        <div class="notification-body">
+            <p>{{Session::get('message')}}</p>
+        </div>
+    </div>
+@endif
+<div class="container-fluid mt-4 single bg-white">
+    <div class="container">
         <div id="bofu" class="bofu">
             <div class="bofu-box">
                 <div class="container">
@@ -296,6 +304,13 @@
                 }
             });
         }
+    });
+
+    $(document).ready(function () {
+       $('.notification-close').on('click', function (e) {
+          $('.backdrop').hide();
+          $('.notification-cart').hide();
+       });
     });
 
 
