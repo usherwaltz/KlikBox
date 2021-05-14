@@ -227,7 +227,7 @@
             "";
         <?php } ?>
         let page = 1;
-        let possibleRoutes = ['index', '/home', '/novo', '/akcija', '/trend'];
+        let possibleRoutes = ['index', '/home', 'novo', 'akcija', 'trend'];
         $(document).ready(function () {
             if(possibleRoutes.includes(CURRENT_ROUTE)) {
                 infinteLoadMore(page);
@@ -241,7 +241,7 @@
         $(window).scroll(() => {
             if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
                 page++;
-                if(possibleRoutes.includes(CURRENT_ROUTE)) {
+                if(CURRENT_ROUTE === 'index' || CURRENT_ROUTE === '/home') {
                     infinteLoadMore(page);
                 }
             }
