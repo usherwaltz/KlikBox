@@ -34,24 +34,24 @@ use Illuminate\Support\Facades\Route;
         </div>
 
         <!-- ICONS -->
-        <div class="row mt-5 mb-5 responsive-left-padding">
+        <div class="row my-sm-2 my-md-5 padding-x-12">
 
-            <div class="col-sm-12 col-md-3 d-flex my-4 my-md-0 align-icons">
+            <div class="col-sm-4 w-50 width-25-tablet px-0 col-md-3 d-flex my-4 my-md-0 align-icons">
                 <img class="icon-home" src="/images/brza-dostava.svg" alt="delivery-pic">
                 <p class="responsive-icon-text">BRZA <br>DOSTAVA 24H</p>
             </div>
 
-            <div class="col-sm-12 col-md-3 d-flex my-4 my-md-0 align-icons">
+            <div class="col-sm-4 w-50 width-25-tablet px-0 col-md-3 d-flex my-4 my-md-0 align-icons">
                 <img class="icon-home" src="/images/sigurna-kupovina.svg" alt="safe-pic">
                 <p class="responsive-icon-text">SIGURNA <br>KUPOVINA</p>
             </div>
 
-            <div class="col-sm-12 col-md-3 d-flex my-4 my-md-0 align-icons">
+            <div class="col-sm-4 w-50 width-25-tablet px-0 col-md-3 d-flex my-4 my-md-0 align-icons">
                 <img class="icon-home" src="/images/placanje-pouzecu.svg" alt="pay-pic">
                 <p class="responsive-icon-text">PLAĆANJE <br>POUZEĆEM</p>
             </div>
 
-            <div class="col-sm-12 col-md-3 d-flex my-4 my-md-0 align-icons">
+            <div class="col-sm-4 w-50 width-25-tablet px-0 col-md-3 d-flex my-4 my-md-0 align-icons">
                 <img class="icon-home" src="/images/povrat-novca.svg" alt="quality-pic">
                 <p class="responsive-icon-text">GARANTOVAN <br>POVRAT NOVCA</p>
             </div>

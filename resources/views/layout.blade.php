@@ -36,7 +36,7 @@
 
 <body>
 <div class="wrap">
-    <header id="header" class="sticky-top">
+    <header id="header" class="sticky-top bg-white shadow-sm">
         <div class="collapse" id="navbarToggleExternalContent">
             <div class="bg-light">
                 <div class="navbar-collapse collapse show" id="collapsibleNavbar" style="">
@@ -57,8 +57,7 @@
                 </div>
             </div>
         </div>
-        <nav class="navbar navbar-light shadow-sm bg-white">
-            <div class="container">
+        <nav class="navbar navbar-light bg-white container">
 
                 <!-- DROPDOWN TOGGLE -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,7 +66,7 @@
 
 
                 <!-- BRAND ICON -->
-                <a class="navbar-brand m-sm-0 mr-4" href="/home">
+                <a class="navbar-brand m-sm-0 mr-4 float-left" href="/home">
                     <img height="50" width="180" src="/images/logo-header.svg" alt="logo" class="d-none d-md-block">
                     <img height="20" src="/images/logo-sm.png" alt="small-logo" class="d-md-none">
                 </a>
@@ -83,7 +82,7 @@
                 </div>
 
                 <!-- MOBILE SEARCH -->
-                <img class="d-sm-block d-md-none search-icon col-1 p-0" src="/images/search-icon.svg" alt="img">
+                <img class="d-sm-block d-md-none search-icon col-1 p-0 margin-left-auto" src="/images/search-icon.svg" alt="img">
 
                 <!-- CONTACT PHONE -->
                 <a class="custom-anchor-tag d-none d-lg-block d-xl-block" href="tel:080050705">
@@ -103,7 +102,6 @@
                         <img src="/images/cart-icon.svg" alt="cart-icon">
                         <div class="cart-count">{{ Cart::count() }}</div>
                 </button>
-            </div>
         </nav>
     </header>
     @forelse (Cart::content() as $row)

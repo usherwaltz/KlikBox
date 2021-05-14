@@ -751,7 +751,7 @@ img.start-img {
 }
 
 .desc p {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
 }
 
@@ -792,7 +792,7 @@ img.start-img {
 .garancy {
     display: block;
     width: 100%;
-    border-top: 1px solid #eee;
+    /*border-top: 1px solid #eee;*/
 }
 
 .garancy-box {
@@ -1600,7 +1600,7 @@ body {
     }
 
     .navbar-brand {
-        margin: 0 !important;
+        margin: 0 0 0 20px !important;
     }
 }
 
@@ -1930,6 +1930,24 @@ body {
     }
 
     .mobile-top-margin {
-        margin-top: 20px
+        margin-top: 40px
     }
+}
+
+.max-1300 {
+    max-width: 1300px;
+}
+
+.padding-x-12 {
+    padding: 0 12px 0 12px;
+}
+
+@media (min-width: 768px) {
+    .width-25-tablet {
+        width: 25% !important;
+    }
+}
+
+.margin-left-auto {
+    margin-left: auto !important;
 }

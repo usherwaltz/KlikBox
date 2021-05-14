@@ -19,8 +19,8 @@
 </div>
 <form action="{{route('order.store')}}" name="order_frm" method="POST" class="orderfrm">
     <div class="container-fluid">
-	<div class="card d-flex justify-content-center align-items-center px-4 py-5">
-		<div class="col-12">
+	<div class="card d-flex justify-content-center align-items-center px-4 @if(Session::has('success')) pb-5 pt-1 @else py-5 @endif">
+		<div class="col-12 max-1300">
 			@if(Session::has('success'))
 				<p class="alert" style="background-color: #d9d9d9 ">{{ Session::get('success') }}</p>
 			@endif
@@ -46,7 +46,7 @@
                     @foreach(Cart::content() as $row)
                         <tr>
                             <td>
-                                <div class="row justify-content-between py-3">
+                                <div class="row justify-content-between">
                                     <div class="d-none d-md-block col-3 my-2">
                                         <img src="{{$products->where('id', $row->id)->first()->photo}}" alt="">
                                     </div>
@@ -77,11 +77,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                @if($counter != $total)
-                                    <hr>
-                                @endif
                             </td>
                         </tr>
+
+                            @if($counter != $total)
+                                <tr>
+                                    <td class="p-0">
+                                        <hr class="m-0">
+                                    </td>
+                                </tr>
+                            @endif
                         @php $counter++; @endphp
                     @endforeach
                     </table>
