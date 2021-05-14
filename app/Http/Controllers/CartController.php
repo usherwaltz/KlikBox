@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\Attribute;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
@@ -60,42 +61,8 @@ class CartController extends Controller
         if (!$product) {
             abort(404);
         }
-
-        // $cart = session()->get('cart');
-
-        // // if cart is empty then this the first product
-        // if (!$cart) {
-        //     $cart = [
-        //         $product_id => [
-        //             "name" => $product->name,
-        //             "quantity" => $request->qty,
-        //             "price" => $price,
-        //             "photo" => $product->photo,
-        //             'attributes' => $attribs
-        //         ]
-        //     ];
-
-        //     session()->put('cart', $cart);
-
-        //     return redirect()->back()
-        //         ->with('success', 'Product added to cart successfully!');
-        // }
-
-        // if cart not empty then check if this product exist then increment quantity
-        // if (isset($cart[$product_id])) {
-        //     $cart[$product_id]['quantity']++;
-        //     session()->put('cart', $cart);
-        //     return redirect()->back()
-        //         ->with('success', 'Product added to cart successfully!');
-        // }
-
-        // if item not exist in cart then add to cart with quantity = 1
-        // $cart[$product_id] = [
-        //     "name" => $product->name,
-        //     "quantity" => 1,
-        //     "price" => $product->price,
-        //     "photo" => $product->photo
-        // ];
+        Session::flash('message', 'Proizvod "' . $product->name . '" je uspješno dodan u korpu!');
+        Session::flash('alert-class', 'alert-success');
 
         // session()->put('cart', $cart);
         if($productCount<2){

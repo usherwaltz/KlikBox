@@ -844,6 +844,12 @@ img.start-img {
     border-bottom-right-radius: 20px;
 }
 
+@media (max-width: 579px) {
+    .start-procent {
+        font-size: 30px !important;
+    }
+}
+
 /*tofu*/
 .bg-silver {
     background: #f4f4f4;
@@ -1026,9 +1032,15 @@ video {
 }
 
 a.bottom-add-cart {
+    padding: 20px;
     max-width: 300px;
     text-align: center;
-    margin: 1em auto 4em;
+    margin: 2em auto 2em;
+    text-decoration: none;
+}
+
+.bottom-add-cart:hover {
+    color: white !important;
 }
 
 /*start-miki*/

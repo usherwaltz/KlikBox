@@ -82,7 +82,7 @@
                 </div>
 
                 <!-- MOBILE SEARCH -->
-                <img class="d-sm-block d-md-none search-icon col-1 p-0 margin-left-auto" src="/images/search-icon.svg" alt="img">
+                <img class="d-sm-block d-md-none search-icon col-1 p-0 margin-left-auto" src="/images/mobile-search-icon.svg" alt="img">
 
                 <!-- CONTACT PHONE -->
                 <a class="custom-anchor-tag d-none d-lg-block d-xl-block" href="tel:080050705">

@@ -8,7 +8,7 @@
     visibility: hidden;
 }
 
-html {
+.page html {
     font-family: 'Montserrat', sans-serif;
     font size: 20px;
     color: #000000;
@@ -20,12 +20,12 @@ body {
 
 }
 
-a {
+.page a {
     text-decoration: none;
     color: blue;
 }
 
-a:hover {
+.page a:hover {
     color: red;
 }
 
