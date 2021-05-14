@@ -1982,21 +1982,22 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: black;
-    opacity: 0.5;
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 555;
+    justify-content: center;
+    align-items: center;
 }
 
 .notification-cart {
     height: 150px;
     width: 300px;
     background-color: white;
-    position: absolute;
-    top: calc(50vh - 75px);
-    left: calc(50vw - 200px);
-    z-index: 999;
     border-radius: 6px;
     text-align: center;
+    position: fixed;
+    margin: 0 !important;
+    top: 25vh;
+    left: calc(50vw - 150px);
 }
 
 .popup-checkmark {

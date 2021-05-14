@@ -18,11 +18,12 @@
 @section('content')
 
 @if(Session::has('message'))
-    <div class="backdrop"></div>
-    <div class="notification-cart">
-        <div class="notification-body">
-            <img class="popup-checkmark" src="/images/popup_checkmark.svg" alt="checkmark">
-            <p>{{Session::get('message')}}</p>
+    <div class="backdrop">
+        <div class="notification-cart">
+            <div class="notification-body">
+                <img class="popup-checkmark" src="/images/popup_checkmark.svg" alt="checkmark">
+                <p>{{Session::get('message')}}</p>
+            </div>
         </div>
     </div>
 @endif
@@ -305,7 +306,7 @@
     });
 
     window.onload = function() {
-        setTimeout(removeNotification(), 5000)
+        setTimeout(removeNotification(), 2000)
     };
 
     $(document).ready(function () {
@@ -319,8 +320,8 @@
         let alert = $('.notification-cart');
 
         if(alert.length > 0 && backdrop.length > 0) {
-            backdrop.delay(4000).fadeOut();
-            alert.delay(4000).fadeOut();
+            backdrop.delay(2000).fadeOut();
+            alert.delay(2000).fadeOut();
         }
     }
 
