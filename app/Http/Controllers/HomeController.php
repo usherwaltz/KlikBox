@@ -200,6 +200,18 @@ class HomeController extends Controller
         }
     }
 
+    public function getSearchProducts(Request $request)
+    {
+        $results = Product::where('name', 'like', "$request->searchString%")
+            ->orWhere('description', 'like', "$request->searchString%")->get();
+
+        if ($request->ajax()) {
+            return $this->appendData($results);
+        }
+
+        return view('home');
+    }
+
     /**
      * @param Request $request
      * @return Application|Factory|View|string

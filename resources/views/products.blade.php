@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Route;
 @endsection
 @section('content')
 <div class="products-home">
+    <div class="loader" style="display: none">
+    </div>
+    <div class="spinner-grow text-light" role="status" style="display: none">
+        <span class="sr-only">Loading...</span>
+    </div>
     <div class="container-fluid container-lg mt-4 all-products-home">
         <!-- SLIDER -->
         <div id="carouselExampleControls" class="carousel slide banner" data-ride="carousel">
@@ -104,24 +109,61 @@ use Illuminate\Support\Facades\Route;
         }
     });
 
-    function infinteLoadMore(page) {
+    function infinteLoadMore(page, endpoint = null) {
+        let finalEndpoint = endpoint !== null ? endpoint : ENDPOINT
+        let searchString = '';
+        if(endpoint !== null) {
+            searchString = $('.search').val();
+        }
         $.ajax({
-            url: ENDPOINT + page,
+            url: finalEndpoint + page,
             datatype: "html",
             type: "get",
+            data: {
+              searchString
+            },
             beforeSend: function () {
-                $('.auto-load').show();
+                if(endpoint != null) {
+                    $('.loader').fadeIn();
+                    $('.spinner-grow').show();
+                    $('.auto-load').show();
+                } else {
+                    $('.auto-load').show();
+                }
             }
         }).done(function (response) {
             if (response.length === 0 && page === 1) {
-                $('.auto-load').html("Trenutno nemamo proizvoda za navesti. Molimo da nas posjetite malo kasnije.");
+                if(endpoint != null) {
+                    $("#data-wrapper").empty();
+                    $('.auto-load').html("Trenutno nemamo proizvoda za navesti. Molimo da nas posjetite malo kasnije.");
+                    $('.loader').fadeOut();
+                    $('.spinner-grow').hide();
+                } else {
+                    $('.auto-load').html("Trenutno nemamo proizvoda za navesti. Molimo da nas posjetite malo kasnije.");
+                }
                 return;
             } else if(response.length === 0) {
-                $('.auto-load').html("Svi proizvodi su navedeni.");
+                if(endpoint != null) {
+                    $("#data-wrapper").empty();
+                    $('.auto-load').html("Svi proizvodi su navedeni.");
+                    $('.loader').fadeOut();
+                    $('.spinner-grow').hide();
+                } else {
+                    $('.auto-load').html("Svi proizvodi su navedeni.");
+                }
                 return;
             }
             $('.auto-load').hide();
-            $("#data-wrapper").append(response);
+            if(endpoint != null) {
+                $('.loader').fadeOut();
+                $('.spinner-grow').hide();
+            }
+            if(endpoint != null) {
+                $("#data-wrapper").empty();
+                $("#data-wrapper").append(response);
+            } else {
+                $("#data-wrapper").append(response);
+            }
         })
         .fail(function (jqXHR, ajaxOptions, thrownError) {
             console.log('Server error occured');
@@ -131,7 +173,15 @@ use Illuminate\Support\Facades\Route;
     $(document).ready(function() {
         $('.carousel').carousel({
             interval: 3000
-        })
+        });
+
+        $('.search').keypress(function(event){
+            // event.preventDefault();
+            if(event.which == 13) {
+                infinteLoadMore(1, '/searchproducts?page=')
+            }
+        });
+
     });
 
 </script>

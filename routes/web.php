@@ -36,6 +36,7 @@ Route::get('/homeproducts', [HomeController::class, 'getHomeProducts']);
 Route::get('/novoproducts', [HomeController::class, 'getNovoProducts']);
 Route::get('/trendproducts', [HomeController::class, 'getTrendProducts']);
 Route::get('/akcijaproducts', [HomeController::class, 'getAkcijaProducts']);
+Route::get('/searchproducts', [HomeController::class, 'getSearchProducts']);
 // AJAX routes end
 
 Route::get('cart', [HomeController::class, 'cart']);

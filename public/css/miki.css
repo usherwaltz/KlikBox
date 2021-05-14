@@ -2016,3 +2016,21 @@ body {
     margin-right: 5px;
     cursor: pointer;
 }
+
+.loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 599;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.spinner-grow {
+    position: fixed;
+    top: 400px;
+    left: 50vw;
+    z-index: 999;
+}
