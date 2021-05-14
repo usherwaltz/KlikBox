@@ -53,9 +53,8 @@ class CartController extends Controller
                 $attribs[$attributeName] = $request->$attributeName;
             }
         }
-        $price = ($request->qty == 1) ? $product->price : $request->prc;
 
-        Cart::add($product->id, $product->name, $request->qty, $price, $attribs);
+        Cart::add($product->id, $product->name, $request->qty, $product->price, $attribs);
 
 
         if (!$product) {

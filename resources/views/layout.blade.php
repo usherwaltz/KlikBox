@@ -209,8 +209,37 @@
     </div>
     <hr class="m-0">
     <div class="offcanvas-body p-4">
+        @php $cartTotal = 0; @endphp
         @forelse (Cart::content() as $row)
-            <?php $product = \App\Models\Product::getProduct($row->id); ?>
+            <?php
+                $product = \App\Models\Product::getProduct($row->id);
+                $price = null;
+
+                $n = $product->price;
+                switch($row->qty) {
+                    case 1:
+                        $whole = floor($product->price);
+                        $fraction = $product->price - $whole;
+                        $price = $fraction >= 0.5 ? round($product->price) : $product->price;
+                        $cartTotal = $cartTotal + $price * $row->qty;
+                        break;
+                    case 2:
+                        $discountPrice = $product->price * 0.85;
+                        $whole = floor($discountPrice);
+                        $fraction = $discountPrice - $whole;
+                        $price = $fraction >= 0.5 ? round($discountPrice) : $whole;
+                        $cartTotal = $cartTotal + $price * $row->qty;
+                        break;
+                    default:
+                        $discountPrice = $product->price * 0.75;
+                        $whole = floor($product->price * 0.75);
+                        $fraction = $discountPrice - $whole;
+                        $price = $fraction >= 0.5 ? round($discountPrice) : $whole;
+                        $cartTotal = $cartTotal + $price * $row->qty;
+                        break;
+                }
+
+            ?>
 
             <div class="row">
                 <div class="col-4">
@@ -218,7 +247,7 @@
                 </div>
                 <div class="col-8 row flex-column justify-content-between">
                     <span class="cart-product-name">{{$product->name}}<span class="cart-ammount"> X {{$row->qty}}</span></span>
-                    <span>{{$row->price}}.00 KM</span>
+                    <span>{{$row->qty}} x {{$price}}.00 KM</span>
                 </div>
             </div>
 
@@ -245,7 +274,7 @@
                         <span class="cart-product-name">Total</span>
                     </div>
                     <div class="col-8">
-                        <span class="cart-total">{{Cart::total() + 7}} KM</span>
+                        <span class="cart-total">{{$cartTotal + 7}} KM</span>
                     </div>
                 </div>
                 <a href="{{ url('cart') }}" class="orangebutton cartbtn cart-button-margin w-100 text-decoration-none">VIDI KORPU</a>

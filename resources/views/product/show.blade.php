@@ -81,17 +81,40 @@
                                             @endforeach
                                         </div>
                                         @if($product->top_choice === 1)
+                                            @php
+                                                $n = $product->price;
+                                                $priceOne = null;
+                                                $priceTwo = null;
+                                                $priceThree = null;
+
+                                                $percentTwo = $n * 0.85;
+                                                $percentThree = $n * 0.75;
+
+                                                $wholeOne = floor($n);
+                                                $wholeTwo = floor($percentTwo);
+                                                $wholeThree = floor($percentThree);
+
+                                                $fractionOne = $n - $wholeOne;
+                                                $fractionTwo = $n - $wholeTwo;
+                                                $fractionThree = $n - $wholeThree;
+
+                                                $priceOne = $fractionOne >= 0.5 ? round($n) : $n;
+                                                $priceTwo = $fractionTwo >= 0.5 ? round($percentTwo) : $percentTwo;
+                                                $priceThree = $fractionThree >= 0.5 ? round($percentThree) : $percentThree;
+
+
+                                            @endphp
                                             <div class="text-center">
                                                 <div class="choicebox">
                                                     <span class="topponuda">TOP ODABIR</span>
                                                     <div class="btn active">
-                                                        <span class="choicebtn" data-quantity="1" data-oldprice="{{round($product->oldprice)}}" data-prc="{{round($product->price)}}">1 x {{round($product->price)}} KM</span>
+                                                        <span class="choicebtn" data-quantity="1" data-oldprice="{{$product->oldprice}}" data-prc="{{$priceOne}}">1 x {{$priceOne}} KM</span>
                                                     </div>
                                                     <div class="btn">
-                                                        <span class="choicebtn" data-quantity="2" data-oldprice="{{round($product->oldprice)}}" data-prc="{{round($product->price * ((100-22) / 100))}}">2 x {{round($product->price * ((100-22) / 100))}} KM</span>
+                                                        <span class="choicebtn" data-quantity="2" data-oldprice="{{$product->oldprice}}" data-prc="{{$priceTwo}}">2 x {{$priceTwo}} KM</span>
                                                     </div>
                                                     <div class="btn">
-                                                        <span class="choicebtn" data-quantity="3" data-oldprice="{{round($product->oldprice)}}" data-prc="{{round($product->price * ((100-30) / 100))}}">3 x {{round($product->price * ((100-30) / 100))}} KM</span>
+                                                        <span class="choicebtn" data-quantity="3" data-oldprice="{{$product->oldprice}}" data-prc="{{$priceThree}}">3 x {{$priceThree}} KM</span>
                                                     </div>
                                                 </div>
                                             </div>

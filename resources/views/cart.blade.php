@@ -43,7 +43,37 @@
                 <h2 class="cart-address mobile-top-margin mb-4">Proizvodi u korpi</h2>
                 <hr class="mb-0">
                     <table id="cart" class="table table-condensed">
+                    @php $cartTotal = 0; @endphp
                     @foreach(Cart::content() as $row)
+                            <?php
+                            $product = \App\Models\Product::getProduct($row->id);
+                            $price = null;
+
+                            $n = $product->price;
+                            switch($row->qty) {
+                                case 1:
+                                    $whole = floor($product->price);
+                                    $fraction = $product->price - $whole;
+                                    $price = $fraction >= 0.5 ? round($product->price) : $product->price;
+                                    $cartTotal = $cartTotal + $price * $row->qty;
+                                    break;
+                                case 2:
+                                    $discountPrice = $product->price * 0.85;
+                                    $whole = floor($discountPrice);
+                                    $fraction = $discountPrice - $whole;
+                                    $price = $fraction >= 0.5 ? round($discountPrice) : $whole;
+                                    $cartTotal = $cartTotal + $price * $row->qty;
+                                    break;
+                                default:
+                                    $discountPrice = $product->price * 0.75;
+                                    $whole = floor($product->price * 0.75);
+                                    $fraction = $discountPrice - $whole;
+                                    $price = $fraction >= 0.5 ? round($discountPrice) : $whole;
+                                    $cartTotal = $cartTotal + $price * $row->qty;
+                                    break;
+                            }
+
+                            ?>
                         <tr>
                             <td>
                                 <div class="row justify-content-between">
@@ -61,10 +91,6 @@
                                                     <input type="number" value="{{ $row->qty }}" class="form-control quantity" title="quantity" />
                                                     <button class="plus" data-id="{{ $row->rowId }}"></button>
                                                 </div>
-
-    {{--                                            @foreach ($row->options as $key=>$option)--}}
-    {{--                                                <span>{{$option}}</span>--}}
-    {{--                                            @endforeach--}}
                                             </div>
                                         </div>
                                     </div>
@@ -73,7 +99,7 @@
                                             <button class="remove-from-cart align-self-start" data-id="{{ $row->rowId }}">X</button>
                                         </div>
                                         <div class="d-block align-self-end position-absolute bottom-0 float-right">
-                                            {{$row->total}} KM
+                                            {{$price * $row->qty}} KM
                                         </div>
                                     </div>
                                 </div>
@@ -100,7 +126,7 @@
                 <div class="row mb-4">
                     <div class="d-none d-md-block col-3"></div>
                     <div class="col-6 col-md-6">Konačna cijena</div>
-                    <div class="col-6 col-md-3 font-bold cart-total">{{ Cart::subtotal()+7 }} KM</div>
+                    <div class="col-6 col-md-3 font-bold cart-total">{{ $cartTotal+7 }} KM</div>
                 </div>
                 <div class="frmbox">
                     <input type="submit" value="Naruči Odmah" class="continueshoppingbtn cart-submit btn-orange">
