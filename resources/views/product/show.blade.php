@@ -306,12 +306,25 @@
         }
     });
 
+    window.addEventListener("load", function () {
+        setTimeout(removeNotification(), 4000);
+    }, false);
+
     $(document).ready(function () {
-       $('.notification-close').on('click', function (e) {
-          $('.backdrop').hide();
-          $('.notification-cart').hide();
-       });
+        $('.notification-close').on('click', function() {
+            removeNotification()
+        });
     });
+
+    function removeNotification() {
+        let backdrop = $('.backdrop');
+        let alert = $('.notification-cart');
+
+        if(alert.length > 0 && backdrop.length > 0) {
+            backdrop.fadeOut();
+            alert.fadeOut();
+        }
+    }
 
 
 </script>
