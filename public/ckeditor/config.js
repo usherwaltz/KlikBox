@@ -8,15 +8,20 @@ CKEDITOR.editorConfig = function( config ) {
 	// For complete reference see:
 	// https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html
 
+
+    config.extraPlugins = 'dialog,tabletools,table,tableresizerowandcolumn';
+
+    // config.toolbar = [
+    //     { name: 'insert', items: [ 'Table' ] }
+    // ];
 	// The toolbar groups arrangement, optimized for two toolbar rows.
 	config.toolbarGroups = [
 		// { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
 		// { name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
-		// { name: 'insert' },
+		{ name: 'insert', groups: ['Table', 'TableTools', 'TableResize']},
 		// { name: 'forms' },
 		// { name: 'tools' },
 		// { name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
-		// { name: 'others' },
 		// '/',
 		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
         { name: 'links' },

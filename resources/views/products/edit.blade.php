@@ -266,6 +266,25 @@
                                             </div>
                                         </div>
                                     @break
+                                    @case("TABLE")
+                                        <div class="block-wrapper" data-blok="{{$i}}" data-id="{{$block->id}}">
+                                        <div class="card-header border-top border-bottom-0 font-weight-bold font-size-xl">
+                                            Blok {{$i + 1}}
+                                            <div class="remove-button float-lg-right">
+                                                <i class="fas fa-minus"></i>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <input type="text" value="{{$block->id}}" name="blocks[{{$i}}][id]" hidden>
+                                            <div class="form-group row">
+                                                <label class="col-lg-12 col-sm-12" for="content">Sadrzaj
+                                                    <textarea class="form-control ckeditor" name="blocks[{{$i}}][content]" id="content-{{$i}}" rows="10">{{$block->content}}</textarea>
+                                                </label>
+                                            </div>
+                                            <input type="hidden" name="display" value="1">
+                                        </div>
+                                    </div>
+                                    @break
                                 @endswitch
                              @endfor
                             <div class="card-footer insert-before">
@@ -278,6 +297,7 @@
                                         <a class="dropdown-item add-block" data-type="standard" href="#">Standard</a>
                                         <a class="dropdown-item add-block" data-type="video" href="#">Video</a>
                                         <a class="dropdown-item add-block" data-type="icons" href="#">Icons</a>
+                                        <a class="dropdown-item add-block" data-type="table" href="#">Table</a>
                                     </div>
                                 </div>
                             </div>
@@ -316,7 +336,6 @@
             let ordNum = newData + 1;
 
             let block_type = $(this).attr('data-type');
-            console.log(block_type);
 
             let html = '';
 
@@ -426,6 +445,28 @@
                             '</div>'+
                         '</div>';
                     appendHtml(html, ".insert-before");
+                    break;
+                case 'table':
+                    html =
+                        '<div class="block-wrapper" data-blok="' + newData + '">' +
+                            '<input type="hidden" name=blocks[' + newData + '][type] value="TABLE">' +
+                            '<div class="card-header border-top border-bottom-0 font-weight-bold font-size-xl">' +
+                                'Blok ' + ordNum +
+                                '<div class="remove-button no-ajax float-lg-right pointer">' +
+                                    '<i class="fas fa-minus"></i>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="card-body">' +
+                                '<div class="form-group row">' +
+                                    '<label class="col-lg-12 col-sm-12" for="content">Sadrzaj' +
+                                        '<textarea class="form-control ckeditor" name="blocks[' + newData + '][content]" id="content-' + newData + '" rows="10"></textarea>' +
+                                    '</label>' +
+                                '</div>' +
+                            '</div>' +
+                        '</div>';
+
+                    appendHtml(html, ".insert-before");
+                    replaceEditor('content-' + newData);
                     break;
             }
         });

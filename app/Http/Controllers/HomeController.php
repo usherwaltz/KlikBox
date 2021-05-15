@@ -203,8 +203,8 @@ class HomeController extends Controller
     public function getSearchProducts(Request $request)
     {
         if($request->searchString != "" || $request->searchString != null) {
-            $results = Product::where('name', 'like', "$request->searchString%")
-                ->orWhere('description', 'like', "$request->searchString%")->get();
+            $results = Product::where('name', 'like', "%$request->searchString%")
+                ->orWhere('description', 'like', "%$request->searchString%")->get();
         } else {
             $results = Product::orderBy('id')->paginate(15);
         }

@@ -172,7 +172,11 @@ class ProductController extends Controller
                         }
                         $blockToSave->save();
                         break;
-
+                    case "TABLE":
+                        if(isset($block['content'])) {
+                            $blockToSave->content = $block['content'];
+                        }
+                        $blockToSave->save();
                 }
             }
         }

@@ -258,6 +258,17 @@
                     </div>
                 </div>
             @break
+            @case("TABLE")
+                <div class="bg-{{$background}}">
+                    <div class="container block-padding">
+                        <div class="col-12 row block-parent justify-content-space-between">
+                            <div class="col-12 block-content mb-4 table-content">
+                                {!!$block->content!!}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @break
         @endswitch
     @endfor
 

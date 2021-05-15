@@ -2097,3 +2097,7 @@ body {
     z-index: 555;
     display: none;
 }
+
+.table-content > table {
+    margin: auto !important;
+}
