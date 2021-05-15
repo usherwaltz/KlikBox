@@ -2062,15 +2062,29 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 999;
 }
 
-.search-mobile-content, .close-mobile-search {
+.search-mobile-content {
     width: 40px !important;
     background-color: #EC7700 !important;
     color: white !important;
+    border-radius: 50px;
+    max-width: 100%;
 }
 
 #search {
     border-radius: 50px;
     background: #F4F4F4;
+}
+
+.mobile-search-backdrop {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 555;
+    display: none;
 }
