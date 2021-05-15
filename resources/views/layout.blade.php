@@ -301,6 +301,7 @@
                         $('.auto-load').html("Svi proizvodi su navedeni.");
                         $('.loader').fadeOut();
                         $('.spinner-grow').hide();
+                        $('.backdrop').fadeOut();
                     } else {
                         $('.auto-load').html("Svi proizvodi su navedeni.");
                     }
@@ -310,6 +311,7 @@
                 if(endpoint != null) {
                     $('.loader').fadeOut();
                     $('.spinner-grow').hide();
+                    $('.backdrop').fadeOut();
                 }
                 if(endpoint != null) {
                     $("#data-wrapper").empty();
@@ -364,6 +366,20 @@
                 }
                 $(".mobile-search-input").fadeOut()
                 $(".mobile-search-backdrop").fadeOut()
+            });
+
+            $(window).on("navigate", function (event, data) {
+                if($(".mobile-search-input").length > 0) {
+                    let direction = data.state.direction;
+                    if (direction == 'back') {
+                        $('#search').val('');
+                        if(possibleRoutes.includes(CURRENT_ROUTE)) {
+                            infinteLoadMore(1, '/searchproducts?page=', true)
+                        }
+                        $(".mobile-search-input").fadeOut()
+                        $(".mobile-search-backdrop").fadeOut()
+                    }
+                }
             });
 
             $('.search-mobile-content').on('click', function () {
