@@ -2070,7 +2070,15 @@ body {
     background-color: #EC7700 !important;
     color: white !important;
     border-radius: 50px;
-    max-width: 100%;
+}
+
+@media (max-width: 320px) {
+    .search-mobile-content {
+        max-width: 100%;
+    }
+    .mobile-search-input .col-2 {
+        padding: 0 !important;
+    }
 }
 
 #search {

@@ -366,14 +366,16 @@
             });
 
             $(window).on("navigate", function (event, data) {
-                let direction = data.state.direction;
-                if (direction == 'back') {
-                    $('#search').val('');
-                    if(possibleRoutes.includes(CURRENT_ROUTE)) {
-                        infinteLoadMore(1, '/searchproducts?page=', true)
+                if($(".mobile-search-input").length > 0) {
+                    let direction = data.state.direction;
+                    if (direction == 'back') {
+                        $('#search').val('');
+                        if(possibleRoutes.includes(CURRENT_ROUTE)) {
+                            infinteLoadMore(1, '/searchproducts?page=', true)
+                        }
+                        $(".mobile-search-input").fadeOut()
+                        $(".mobile-search-backdrop").fadeOut()
                     }
-                    $(".mobile-search-input").fadeOut()
-                    $(".mobile-search-backdrop").fadeOut()
                 }
             });
 
