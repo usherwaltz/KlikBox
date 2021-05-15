@@ -276,7 +276,9 @@
                 },
                 beforeSend: function () {
                     if(endpoint != null) {
-                        $('.loader').fadeIn();
+                        if(!isMobile) {
+                            $('.loader').fadeIn();
+                        }
                         $('.spinner-grow').show();
                         $('.auto-load').show();
                     } else {
@@ -290,7 +292,8 @@
                         $('.auto-load').html("Trenutno nemamo proizvoda za navesti. Molimo da nas posjetite malo kasnije.");
                         $('.loader').fadeOut();
                         $('.spinner-grow').hide();
-                        $('.backdrop').fadeOut();
+                        $('.mobile-search-backdrop').fadeOut();
+                        $('.mobile-search-input').slideUp()
                     } else {
                         $('.auto-load').html("Trenutno nemamo proizvoda za navesti. Molimo da nas posjetite malo kasnije.");
                     }
@@ -301,7 +304,8 @@
                         $('.auto-load').html("Svi proizvodi su navedeni.");
                         $('.loader').fadeOut();
                         $('.spinner-grow').hide();
-                        $('.backdrop').fadeOut();
+                        $('.mobile-search-backdrop').fadeOut();
+                        $('.mobile-search-input').slideUp()
                     } else {
                         $('.auto-load').html("Svi proizvodi su navedeni.");
                     }
@@ -311,7 +315,8 @@
                 if(endpoint != null) {
                     $('.loader').fadeOut();
                     $('.spinner-grow').hide();
-                    $('.backdrop').fadeOut();
+                    $('.mobile-search-backdrop').fadeOut();
+                    $('.mobile-search-input').slideUp()
                 }
                 if(endpoint != null) {
                     $("#data-wrapper").empty();
@@ -355,7 +360,7 @@
             });
 
             $('.search-mobile').on('click', function () {
-                $(".mobile-search-input").fadeIn()
+                $(".mobile-search-input").slideDown()
                 $(".mobile-search-backdrop").fadeIn()
             });
 

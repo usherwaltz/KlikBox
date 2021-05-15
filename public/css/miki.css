@@ -2084,6 +2084,7 @@ body {
 #search {
     border-radius: 50px;
     background: #F4F4F4;
+    border: none;
 }
 
 .mobile-search-backdrop {
