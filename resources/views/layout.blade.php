@@ -84,7 +84,7 @@
             <img class="d-sm-block d-md-none search-icon search-mobile col-1 p-0 margin-left-auto" src="/images/mobile-search-icon.svg" alt="img">
 
             <!-- CONTACT PHONE -->
-            <a class="custom-anchor-tag d-none d-lg-block d-xl-block" href="tel:080050705">
+            <a class="custom-anchor-tag d-none d-xl-block" href="tel:080050705">
                 <div class="header-contact">
                     <div class="contact-icon">
                         <img src="/images/phone-header.svg" alt="phone">

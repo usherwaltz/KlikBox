@@ -1741,7 +1741,7 @@ body {
 .cart-count {
     margin-top: 9px;
     position: absolute;
-    font-size: 24px;
+    font-size: 1.4rem;
     color: #ec7700;
     pointer-events: none;
 }
@@ -2100,4 +2100,8 @@ body {
 
 .table-content > table {
     margin: auto !important;
+}
+
+.nav-cart {
+    padding-left: 0 !important;
 }

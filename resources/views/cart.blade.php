@@ -26,10 +26,10 @@
 			@endif
 		</div>
 		<div class="row cart-linup">
-			<div class="col-lg-6 max-600">
+			<div class="order-1 order-md-0 col-lg-6 max-600">
 				@csrf
                 <div class="row m-0">
-                    <h1 class="cart-address mb-4">Adresa za dostavu</h1>
+                    <h1 class="cart-address mobile-top-margin mb-4">Adresa za dostavu</h1>
                     <input class="form-control my-2 col-12 cart-input" type="text" name="name" id="name" required placeholder="Ime">
                     <input class="form-control my-2 col-12 cart-input" type="text" name="lastname" id="lastname" required placeholder="Prezime">
                     <input class="form-control my-2 col-12 cart-input" type="text" name="phone" id="phone" required placeholder="Broj telefona">
@@ -39,8 +39,8 @@
                     <input class="form-control my-2 col-12 cart-input" type="email" name="email" id="email" placeholder="Email adresa">
                 </div>
             </div>
-            <div class="col-lg-6 max-600">
-                <h2 class="cart-address mobile-top-margin mb-4">Proizvodi u korpi</h2>
+            <div class="order-0 order-md-1 col-lg-6 max-600">
+                <h2 class="cart-address mb-4">Proizvodi u korpi</h2>
                 <hr class="mb-0">
                     <table id="cart" class="table table-condensed">
                     @php $cartTotal = 0; @endphp

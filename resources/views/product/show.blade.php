@@ -105,9 +105,9 @@
                                                 $fractionTwo = $n - $wholeTwo;
                                                 $fractionThree = $n - $wholeThree;
 
-                                                $priceOne = $fractionOne >= 0.5 ? round($n) : $n;
-                                                $priceTwo = $fractionTwo >= 0.5 ? round($percentTwo) : $percentTwo;
-                                                $priceThree = $fractionThree >= 0.5 ? round($percentThree) : $percentThree;
+                                                $priceOne = $fractionOne >= 0.5 || $fractionOne == 0.00 ? round($n) : $n;
+                                                $priceTwo = $fractionTwo >= 0.5 || $fractionTwo == 0.00 ? round($percentTwo) : $percentTwo;
+                                                $priceThree = $fractionThree >= 0.5 || $fractionThree == 0.00 ? round($percentThree) : $percentThree;
 
 
                                             @endphp
@@ -265,6 +265,19 @@
                             <div class="col-12 block-content mb-4 table-content">
                                 {!!$block->content!!}
                             </div>
+                        </div>
+                    </div>
+                </div>
+            @break
+            @case("PHOTOS")
+                <div class="bg-{{$background}}">
+                    <div class="container block-padding">
+                        <div class="row row-cols-1 row-cols-md-@php echo count(json_decode($block->photos)) @endphp">
+                        @foreach(json_decode($block->photos) as $photo)
+                            <div class="col mb-4 mb-md-0">
+                                <img src="{{$photo}}" amb-2 mb-md-0lt="photo">
+                            </div>
+                        @endforeach
                         </div>
                     </div>
                 </div>

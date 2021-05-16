@@ -19,6 +19,7 @@ use Intervention\Image\Facades\Image;
 use App\Http\Requests\CreateProductRequest;
 use App\Http\Requests\ProductUpdateRequest;
 use Itstructure\GridView\DataProviders\EloquentDataProvider;
+use Psy\Util\Json;
 
 class ProductController extends Controller
 {
@@ -177,6 +178,16 @@ class ProductController extends Controller
                             $blockToSave->content = $block['content'];
                         }
                         $blockToSave->save();
+                        break;
+                    case "PHOTOS":
+                        if(isset($block['photos'])) {
+                            $helperArray = [];
+                            foreach ($block['photos'] as $photo) {
+                                $helperArray[] = $this->uploadImage($photo);
+                            }
+                            $blockToSave->photos = Json::encode($helperArray);
+                            $blockToSave->save();
+                        }
                 }
             }
         }

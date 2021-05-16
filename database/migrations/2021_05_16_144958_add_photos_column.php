@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddNewTypeBlocks extends Migration
+class AddPhotosColumn extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddNewTypeBlocks extends Migration
     public function up()
     {
         Schema::table('blocks', function (Blueprint $table) {
-            $table->enum('type', ['STANDARD', 'VIDEO', 'ICONS', 'TABLE', 'PHOTOS']);
+            $table->json('photos')->nullable();
         });
     }
 

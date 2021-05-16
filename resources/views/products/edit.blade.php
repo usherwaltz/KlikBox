@@ -285,6 +285,33 @@
                                         </div>
                                     </div>
                                     @break
+                                    @case("PHOTOS")
+                                    <div class="block-wrapper" data-blok="{{$i}}" data-id="{{$block->id}}">
+                                        <div class="card-header border-top border-bottom-0 font-weight-bold font-size-xl">
+                                            Blok {{$i + 1}}
+                                            <div class="remove-button float-lg-right">
+                                                <i class="fas fa-minus"></i>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <input type="text" value="{{$block->id}}" name="blocks[{{$i}}][id]" hidden>
+                                            <div class="form-group row row-cols-@php echo count(json_decode($block->photos)) @endphp">
+                                                @php $counter = 1; @endphp
+                                                @foreach(json_decode($block->photos) as $photo)
+                                                    <div class="col text-center mb-2">
+                                                        <div class="form-group">
+                                                            <label for="photo">Photo {{$counter}}</label>
+                                                            <input type="file" class="form-control-file" name="blocks[{{$i}}][photos][photo_{{$counter}}]" placeholder="">
+                                                        </div>
+                                                        <img class="src w-100" src="{{$photo}}" alt="icon">
+                                                    </div>
+                                                    @php $counter++ @endphp
+                                                @endforeach
+                                            </div>
+                                            <input type="hidden" name="display" value="1">
+                                        </div>
+                                    </div>
+                                    @break
                                 @endswitch
                              @endfor
                             <div class="card-footer insert-before">
@@ -298,6 +325,7 @@
                                         <a class="dropdown-item add-block" data-type="video" href="#">Video</a>
                                         <a class="dropdown-item add-block" data-type="icons" href="#">Icons</a>
                                         <a class="dropdown-item add-block" data-type="table" href="#">Table</a>
+                                        <a class="dropdown-item add-block" data-type="photos" href="#">Photos</a>
                                     </div>
                                 </div>
                             </div>
@@ -464,6 +492,50 @@
                                 '</div>' +
                             '</div>' +
                         '</div>';
+                case 'photos':
+                    html =
+                        '<div class="block-wrapper" data-blok="' + newData + '">' +
+                        '<input type="hidden" name=blocks[' + newData + '][type] value="PHOTOS">' +
+                        '<div class="card-header border-top border-bottom-0 font-weight-bold font-size-xl">' +
+                        'Blok ' + ordNum +
+                        '<div class="remove-button no-ajax float-lg-right pointer">' +
+                        '<i class="fas fa-minus"></i>' +
+                        '</div>' +
+                        '</div>' +
+                        '<div class="card-body">' +
+                        '<div class="form-group row">' +
+                        '<div class="col-3">' +
+                        '<div class="form-group">' +
+                        '<label for="Icon 1">Photo 1</label>' +
+                        '<input type="file" class="form-control-file mb-2" name="blocks[' + newData + '][photos][photo_one]" placeholder="">' +
+                        '</div>' +
+                        '</div>' +
+
+                        '<div class="col-3">' +
+                        '<div class="form-group">' +
+                        '<label for="Icon 1">Photo 2</label>' +
+                        '<input type="file" class="form-control-file mb-2" name="blocks[' + newData + '][photos][photo_two]" placeholder="">' +
+                        '</div>' +
+                        '</div>' +
+
+                        '<div class="col-3">' +
+                        '<div class="form-group">' +
+                        '<label for="Icon 1">Photo 3</label>' +
+                        '<input type="file" class="form-control-file mb-2" name="blocks[' + newData + '][photos][photo_three]" placeholder="">' +
+                        '</div>' +
+                        '</div>' +
+
+                        '<div class="col-3">' +
+                        '<div class="form-group">' +
+                        '<label for="Icon 1">Photo 4</label>' +
+                        '<input type="file" class="form-control-file mb-2" name="blocks[' + newData + '][photos][photo_four]" placeholder="">' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>';
+                    appendHtml(html, ".insert-before");
+                    break;
 
                     appendHtml(html, ".insert-before");
                     replaceEditor('content-' + newData);
