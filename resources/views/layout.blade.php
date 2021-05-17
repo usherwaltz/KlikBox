@@ -68,8 +68,8 @@
 
             <!-- BRAND ICON -->
             <a class="navbar-brand m-sm-0 mr-4 float-left" href="/home">
-                <img height="50" width="180" src="/images/logo-header.svg" alt="logo" class="d-none d-md-block">
-                <img height="20" src="/images/logo-sm.png" alt="small-logo" class="d-md-none">
+                <img height="50" width="180" src="/images/logo-header.svg" alt="logo" class="d-320-none">
+                <img height="20" src="/images/logo-sm.png" alt="small-logo" class="d-320">
             </a>
 
             <!-- SEARCH BOX -->

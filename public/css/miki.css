@@ -2113,3 +2113,21 @@ p.responsive-icon-text {
 .text-align-right {
     text-align: right !important;
 }
+
+.d-320 {
+    display: none;
+}
+
+.d-320-none {
+    display: block;
+}
+
+@media (max-width: 320px) {
+    .d-320 {
+        display: block;
+    }
+
+    .d-320-none {
+        display: none;
+    }
+}
