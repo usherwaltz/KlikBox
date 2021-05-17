@@ -188,6 +188,7 @@ class ProductController extends Controller
                             $blockToSave->photos = Json::encode($helperArray);
                             $blockToSave->save();
                         }
+                        break;
                 }
             }
         }

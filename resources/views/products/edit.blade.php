@@ -492,6 +492,9 @@
                                 '</div>' +
                             '</div>' +
                         '</div>';
+                    appendHtml(html, ".insert-before");
+                    replaceEditor('content-' + newData);
+                    break;
                 case 'photos':
                     html =
                         '<div class="block-wrapper" data-blok="' + newData + '">' +
