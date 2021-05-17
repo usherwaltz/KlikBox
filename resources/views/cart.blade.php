@@ -26,7 +26,7 @@
 			@endif
 		</div>
 		<div class="row cart-linup">
-			<div class="order-1 order-md-0 col-lg-6 max-600">
+			<div class="order-1 order-lg-0 col-lg-6 max-600">
 				@csrf
                 <div class="row m-0">
                     <h1 class="cart-address mobile-top-margin mb-4">Adresa za dostavu</h1>
@@ -38,8 +38,29 @@
                     <input class="form-control my-2 col-12 cart-input" type="text" name="city" id="city" required placeholder="Grad">
                     <input class="form-control my-2 col-12 cart-input" type="email" name="email" id="email" placeholder="Email adresa">
                 </div>
+                <div class="d-lg-none mt-4">
+                    <div class="frmbox">
+                        <input type="submit" value="Naruči Odmah" class="continueshoppingbtn cart-submit btn-orange">
+                    </div>
+                    <div class="garancy pt-2">
+                        <div class="row">
+                            <div class="col-4 garancy-box">
+                                <img src="/images/pay-pic.png" alt="pay">
+                                <p>PLAĆANJE <br>POUZEĆEM</p>
+                            </div>
+                            <div class="col-4 garancy-box">
+                                <img src="/images/delivery-pic.png" alt="delivery">
+                                <p>BRZA <br>DOSTAVA 24H</p>
+                            </div>
+                            <div class="col-4 garancy-box">
+                                <img src="/images/garancy-pic.png" alt="garancy">
+                                <p>GARANTOVAN<br> POVRAT NOVCA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="order-0 order-md-1 col-lg-6 max-600">
+            <div class="order-0 order-lg-1 col-lg-6 max-600">
                 <h2 class="cart-address mb-4">Proizvodi u korpi</h2>
                 <hr class="mb-0">
                     <table id="cart" class="table table-condensed">
@@ -75,7 +96,7 @@
 
                             ?>
                         <tr>
-                            <td>
+                            <td class="p-0 border-0">
                                 <div class="row justify-content-between">
                                     <div class="d-none d-md-block col-3 my-2">
                                         <img src="{{$products->where('id', $row->id)->first()->photo}}" alt="">
@@ -120,95 +141,32 @@
                 <div class="row">
                     <div class="d-none d-md-block col-3"></div>
                     <div class="col-6 col-md-6">Dostava</div>
-                    <div class="col-6 col-md-3">7 KM</div>
+                    <div class="col-6 col-md-3 text-align-right">7 KM</div>
                 </div>
                 <hr>
                 <div class="row mb-4">
                     <div class="d-none d-md-block col-3"></div>
                     <div class="col-6 col-md-6">Konačna cijena</div>
-                    <div class="col-6 col-md-3 font-bold cart-total">{{ $cartTotal+7 }} KM</div>
+                    <div class="col-6 col-md-3 font-bold cart-total text-align-right">{{ $cartTotal+7 }} KM</div>
                 </div>
-                <div class="frmbox">
-                    <input type="submit" value="Naruči Odmah" class="continueshoppingbtn cart-submit btn-orange">
-                </div>
-{{--                @if(setting('show_upsell'))--}}
-{{--                    <div class="card">--}}
-{{--                        <p class="title-sale">Upotpunite svoju narudžubu uz popust dostupan samo sada <strong>od čak 50%!</strong></p>--}}
-{{--                        <div class="sale">--}}
-{{--                            <div class="cart-product-sale">--}}
-{{--                                <a href="https://klikbox.ba/product/zastitna-maska-test-3">--}}
-{{--                                    <div class="card-box">--}}
-{{--                                        <div class="procent-box">--}}
-{{--                                            <div class="procent"><span>-50%</span></div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="img-box">--}}
-{{--                                            <img class="start-img" src="/photos/product-1.png" alt="">--}}
-{{--                                        </div>--}}
-{{--                                        <div class="title-box">--}}
-{{--                                            <p>zastitna maska test 3</p>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="price-box">--}}
-{{--                                            <span>50KM</span>20KM--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </a>--}}
-{{--                                <div class="sale-addtocart"><a href="#">Dodaj</a></div>--}}
-{{--                            </div>--}}
-{{--                            <div class="cart-product-sale">--}}
-{{--                                <a href="https://klikbox.ba/product/zastitna-maska-test-3">--}}
-{{--                                    <div class="card-box">--}}
-{{--                                        <div class="procent-box">--}}
-{{--                                            <div class="procent"><span>-50%</span></div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="img-box">--}}
-{{--                                            <img class="start-img" src="/photos/product-1.png" alt="">--}}
-{{--                                        </div>--}}
-{{--                                        <div class="title-box">--}}
-{{--                                            <p>zastitna maska test 3</p>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="price-box">--}}
-{{--                                            <span>50KM</span>20KM--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </a>--}}
-{{--                                <div class="sale-addtocart"><a href="#">Dodaj</a></div>--}}
-{{--                            </div>--}}
-{{--                            <div class="cart-product-sale">--}}
-{{--                                <a href="https://klikbox.ba/product/zastitna-maska-test-3">--}}
-{{--                                    <div class="card-box">--}}
-{{--                                        <div class="procent-box">--}}
-{{--                                            <div class="procent"><span>-50%</span></div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="img-box">--}}
-{{--                                            <img class="start-img" src="/photos/product-1.png" alt="">--}}
-{{--                                        </div>--}}
-{{--                                        <div class="title-box">--}}
-{{--                                            <p>zastitna maska test 3</p>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="price-box">--}}
-{{--                                            <span>50KM</span>20KM--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </a>--}}
-{{--                                <div class="sale-addtocart"><a href="#">Dodaj</a></div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                @endif--}}
-
-                <div class="garancy pt-2">
-                    <div class="row">
-                        <div class="col-4 garancy-box">
-                            <img src="/images/pay-pic.png" alt="pay">
-                            <p>PLAĆANJE <br>POUZEĆEM</p>
-                        </div>
-                        <div class="col-4 garancy-box">
-                            <img src="/images/delivery-pic.png" alt="delivery">
-                            <p>BRZA <br>DOSTAVA 24H</p>
-                        </div>
-                        <div class="col-4 garancy-box">
-                            <img src="/images/garancy-pic.png" alt="garancy">
-                            <p>GARANTOVAN<br> POVRAT NOVCA</p>
+                <div class="d-none d-lg-block">
+                    <div class="frmbox">
+                        <input type="submit" value="Naruči Odmah" class="continueshoppingbtn cart-submit btn-orange">
+                    </div>
+                    <div class="garancy pt-2">
+                        <div class="row">
+                            <div class="col-4 garancy-box">
+                                <img src="/images/pay-pic.png" alt="pay">
+                                <p>PLAĆANJE <br>POUZEĆEM</p>
+                            </div>
+                            <div class="col-4 garancy-box">
+                                <img src="/images/delivery-pic.png" alt="delivery">
+                                <p>BRZA <br>DOSTAVA 24H</p>
+                            </div>
+                            <div class="col-4 garancy-box">
+                                <img src="/images/garancy-pic.png" alt="garancy">
+                                <p>GARANTOVAN<br> POVRAT NOVCA</p>
+                            </div>
                         </div>
                     </div>
                 </div>

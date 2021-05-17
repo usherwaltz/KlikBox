@@ -1327,7 +1327,7 @@ a.bottom-add-cart {
 body .wrap {
     min-height: 100vh !important;
     position: relative;
-    padding-bottom: 154px !important;
+    padding-bottom: 174px !important;
     overflow: hidden !important;
 }
 
@@ -2104,4 +2104,12 @@ body {
 
 .nav-cart {
     padding-left: 0 !important;
+}
+
+p.responsive-icon-text {
+    margin: 0 !important;
+}
+
+.text-align-right {
+    text-align: right !important;
 }

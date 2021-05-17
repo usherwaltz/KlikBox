@@ -212,6 +212,7 @@
         });
 
         let CURRENT_ROUTE = "{{$route = Route::getCurrentRoute()->getActionMethod()}}";
+        let CURRENT_ACTION = "{{Route::getCurrentRoute()->getActionName()}}";
         let ENDPOINT = "{{ url('/') }}" + <?php $route = Route::getCurrentRoute()->getActionMethod(); if($route == 'index' || $route == 'home') { ?>
             "/homeproducts?page=";
         <?php } elseif ($route == 'novo') {?>
@@ -336,9 +337,10 @@
             });
 
             $('.search').keypress(function(event){
+                console.log("HERE MOBILE");
                 // event.preventDefault();
                 if(event.which == 13) {
-                    if(!possibleRoutes.includes(CURRENT_ROUTE)) {
+                    if(!possibleRoutes.includes(CURRENT_ROUTE) || CURRENT_ACTION.includes('CartController')) {
                         window.location.replace('/searchproducts?page=1&searchString=' + $(".search").val());
                     } else {
                         infinteLoadMore(1, '/searchproducts?page=')
@@ -347,9 +349,10 @@
             });
 
             $('#search').keypress(function(event){
+                console.log("HERE MOBILE");
                 // event.preventDefault();
                 if(event.which == 13) {
-                    if(!possibleRoutes.includes(CURRENT_ROUTE)) {
+                    if(!possibleRoutes.includes(CURRENT_ROUTE) || CURRENT_ACTION.includes('CartController')) {
                         window.location.replace('/searchproducts?page=1&searchString=' + $("#search").val());
                     } else {
                         infinteLoadMore(1, '/searchproducts?page=', true)
@@ -388,7 +391,7 @@
             });
 
             $('.search-mobile-content').on('click', function () {
-                if(!possibleRoutes.includes(CURRENT_ROUTE)) {
+                if(!possibleRoutes.includes(CURRENT_ROUTE) || CURRENT_ACTION.includes('CartController')) {
                     window.location.replace('/searchproducts?page=1&searchString=' + $("#search").val());
                 } else {
                     infinteLoadMore(1, '/searchproducts?page=', true)

@@ -47,7 +47,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-12 pt-5 pb-5">
+                        <div class="col-lg-6 col-md-12 pt-2 pt-md-5 pb-5">
                             <div class="bofu-right">
                                 <div class="message"><img src="/images/fire.png" alt="fire" width="21px">Još samo 12 artikala na zalihama</div>
                                 <div class="title"><h2>{{$product->name}}</h2></div>
