@@ -78,7 +78,7 @@
                                         <div class="attributes">
                                             @foreach ($attributes as $attribute )
                                                 <div class="atribut">
-                                                    <select name="{{Str::lower($attribute->name)}}" id="{{Str::lower($attribute->name)}}" class="attr-select" required>
+                                                    <select name="{{Str::lower($attribute->slug)}}" id="{{Str::lower($attribute->name)}}" class="attr-select" required>
                                                         <option value="">{{$attribute->name}}</option>
                                                         @foreach ($product->options->where('attribute_id',$attribute->id) as $option )
                                                             <option value="{{$option->value}}">{{$option->name}}</option>

@@ -61,9 +61,8 @@ class OrderController extends Controller
                 'cart' => $cart
             ],
         ];
-        $order = $orderData;
 
-        session()->put('order', $order);
+        session()->put('order', $orderData);
 
         return redirect(route('order.show', $id));
     }
@@ -143,7 +142,7 @@ class OrderController extends Controller
             session()->forget('order');
             session()->forget('cart');
 
-            Mail::to('mtopic@gmail.com')
+            Mail::to('narudzbe@klikbox.ba')
                 ->send(new OrderMail($order, $id));
             return view('order.finish', ['id' => $id]);
         } else {

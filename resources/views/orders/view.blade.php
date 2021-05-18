@@ -1,3 +1,10 @@
+<?php
+$total = 0;
+foreach ($order->items as $item) {
+   $total += $item->qty * $item->price;
+}
+?>
+
 @extends('layouts.app')
 
 @section('content')
@@ -16,14 +23,14 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
                             <div class="personal">
-           
+
                                 <p>Lični podaci</p>
-                                
+
                                 <h4>{{$order->name}} {{$order->lastname}}</h4>
                                 <h4>{{$order->city}}</h4>
                                 <h4> {{$order->street}}</h4>
                                 <h4>{{$order->phone}}</h4>
-                                <h4>{{$order->email}}</h4> 
+                                <h4>{{$order->email}}</h4>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6">
@@ -47,7 +54,7 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th colspan="3">TOTAL: {{$order->items->sum('price')}}</th>
+                                        <th colspan="3">TOTAL: {{$total + 7}}</th>
                                     </tr>
                                 </tfoot>
                             </table>

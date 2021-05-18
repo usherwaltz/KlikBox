@@ -67,6 +67,9 @@
                     @php $cartTotal = 0; @endphp
                     @foreach(Cart::content() as $row)
                             <?php
+                            $showColor = isset($row->options['boja']);
+                            $showSize = isset($row->options['velicina']);
+
                             $product = \App\Models\Product::getProduct($row->id);
                             $price = null;
 
@@ -77,6 +80,8 @@
                                     $fraction = $product->price - $whole;
                                     $price = $fraction >= 0.5 ? round($product->price) : $product->price;
                                     $cartTotal = $cartTotal + $price * $row->qty;
+                                    $item = Cart::get($row->rowId);
+                                    Cart::update($row->rowId, ['qty' => $row->qty, 'price' => $price, 'options' => $row->options]);
                                     break;
                                 case 2:
                                     $discountPrice = $product->price * 0.85;
@@ -84,6 +89,8 @@
                                     $fraction = $discountPrice - $whole;
                                     $price = $fraction >= 0.5 ? round($discountPrice) : $whole;
                                     $cartTotal = $cartTotal + $price * $row->qty;
+                                    $item = Cart::get($row->rowId);
+                                    Cart::update($row->rowId, ['qty' => $row->qty, 'price' => $price, 'options' => $row->options]);
                                     break;
                                 default:
                                     $discountPrice = $product->price * 0.75;
@@ -91,6 +98,8 @@
                                     $fraction = $discountPrice - $whole;
                                     $price = $fraction >= 0.5 ? round($discountPrice) : $whole;
                                     $cartTotal = $cartTotal + $price * $row->qty;
+                                    $item = Cart::get($row->rowId);
+                                    Cart::update($row->rowId, ['qty' => $row->qty, 'price' => $price, 'options' => $row->options]);
                                     break;
                             }
 
@@ -103,7 +112,7 @@
                                     </div>
                                     <div class="col-8 col-md-5 my-2 row justify-content-between">
                                         <div class="d-block align-self-center cart-product-name">
-                                            {{$row->name}}
+                                            {{$row->name}} @if($showColor) {{$row->options['boja']}} @endif @if($showSize) {{$row->options['velicina']}} @endif
                                         </div>
                                         <div class="d-block align-self-end">
                                             <div class="mt-2">
