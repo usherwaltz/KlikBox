@@ -1799,7 +1799,7 @@ body {
     height: 30px
 }
 
-@media (max-width: 579px) {
+@media (max-width: 768px) {
     .search-icon {
         width: 40px !important;
         height: 40px !important;
