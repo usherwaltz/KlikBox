@@ -2137,7 +2137,7 @@ p.responsive-icon-text {
     display: block;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 360px) {
     .d-320 {
         display: block;
     }
