@@ -2146,3 +2146,9 @@ p.responsive-icon-text {
         display: none;
     }
 }
+
+@media (max-width: 768px) {
+    .products-home {
+        margin-bottom: 25px;
+    }
+}
