@@ -76,8 +76,8 @@
                 <!-- SEARCH BOX -->
                 <div class="search-box d-none d-md-block">
                     <div class="row align-items-center search-row">
-                        <img class="search-icon col-md-2 col-lg-1 p-0" src="/images/search-icon.svg" alt="img">
-                        <input type="text" name="searchString" class="search p-0 col-md-2 col-lg-11" placeholder="Pretraga...">
+                        <img class="search-icon col-md-2 col-lg-2 col-xl-1 p-0" src="/images/search-icon.svg" alt="img">
+                        <input type="text" name="searchString" class="search p-0 col-md-2 col-lg-10 col-xl-11" placeholder="Pretraga...">
                     </div>
                 </div>
 
