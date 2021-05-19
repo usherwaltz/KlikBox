@@ -1651,9 +1651,9 @@ body {
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 360px) {
     .navbar-brand > img {
-        height: 1.5rem !important;
+        height: 1.3rem !important;
     }
 }
 
