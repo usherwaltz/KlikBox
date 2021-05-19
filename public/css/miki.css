@@ -1569,7 +1569,8 @@ body .wrap {
 }
 
 .navbar-brand {
-    margin: 0 0 0 10px;
+    margin-right: auto !important;
+    margin-left: 20px !important;
 }
 
 .footer-bg {
@@ -1611,9 +1612,9 @@ body {
         margin-right: 10px !important;
     }
 
-    .navbar-brand {
-        margin: 0 0 0 20px !important;
-    }
+    /*.navbar-brand {*/
+    /*    margin: 0 0 0 20px !important;*/
+    /*}*/
 }
 
 @media (max-width: 579px) {
@@ -1629,9 +1630,9 @@ body {
         height: calc(320px + 1.5rem) !important;
     }
 
-    .navbar-brand {
-        margin: 0 !important;
-    }
+    /*.navbar-brand {*/
+    /*    margin: 0 !important;*/
+    /*}*/
 
     .navbar-brand > img {
         height: 2.4rem !important;
@@ -2155,4 +2156,5 @@ p.responsive-icon-text {
 
 .navbar-toggler {
     padding-left: 0 !important;
+    padding-right: 0 !important;
 }
