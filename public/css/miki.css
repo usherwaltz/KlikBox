@@ -2152,3 +2152,7 @@ p.responsive-icon-text {
         margin-bottom: 25px;
     }
 }
+
+.navbar-toggler {
+    padding-left: 0 !important;
+}
