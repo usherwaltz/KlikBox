@@ -58,64 +58,66 @@
                 </div>
             </div>
         </div>
-        <nav class="navbar navbar-light bg-white container">
+        <div class="navbar-wrap bg-white shadow-sm">
+            <nav class="navbar navbar-light bg-white container-fluid container-lg">
 
-            <!-- DROPDOWN TOGGLE -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                <img src="/images/hamburger.svg" alt="menu">
-            </button>
+                <!-- DROPDOWN TOGGLE -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <img src="/images/hamburger.svg" alt="menu">
+                </button>
 
 
-            <!-- BRAND ICON -->
-            <a class="navbar-brand m-sm-0 mr-4 float-left" href="/home">
-                <img height="50" width="180" src="/images/logo-header.svg" alt="logo" class="d-320-none">
-                <img height="20" src="/images/logo-sm.png" alt="small-logo" class="d-320">
-            </a>
+                <!-- BRAND ICON -->
+                <a class="navbar-brand m-sm-0 mr-4 float-left" href="/home">
+                    <img height="50" width="180" src="/images/logo-header.svg" alt="logo" class="d-320-none">
+                    <img height="20" src="/images/logo-sm.png" alt="small-logo" class="d-320">
+                </a>
 
-            <!-- SEARCH BOX -->
-            <div class="search-box d-none d-md-block">
-                <div class="row align-items-center search-row">
-                    <img class="search-icon col-md-2 col-lg-1 p-0" src="/images/search-icon.svg" alt="img">
-                    <input type="text" name="searchString" class="search p-0 col-md-2 col-lg-11" placeholder="Pretraga...">
-                </div>
-            </div>
-
-            <!-- MOBILE SEARCH -->
-            <img class="d-sm-block d-md-none search-icon search-mobile col-1 p-0 margin-left-auto" src="/images/mobile-search-icon.svg" alt="img">
-
-            <!-- CONTACT PHONE -->
-            <a class="custom-anchor-tag d-none d-xl-block" href="tel:080050705">
-                <div class="header-contact">
-                    <div class="contact-icon">
-                        <img src="/images/phone-header.svg" alt="phone">
-                    </div>
-                    <div class="contact-text">
-                        <h5 class="mb-1">Besplatni telefon:</h5>
-                        <h3>080 05 07 05</h3>
+                <!-- SEARCH BOX -->
+                <div class="search-box d-none d-md-block">
+                    <div class="row align-items-center search-row">
+                        <img class="search-icon col-md-2 col-lg-1 p-0" src="/images/search-icon.svg" alt="img">
+                        <input type="text" name="searchString" class="search p-0 col-md-2 col-lg-11" placeholder="Pretraga...">
                     </div>
                 </div>
-            </a>
 
-            <!-- CART ICON -->
-            <button class="text-center col-lg-1 col-md-1 col-sm-1 col-2 order-3 order-md-4 order-lg-4 cart-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-controls="offcanvasRight">
+                <!-- MOBILE SEARCH -->
+                <img class="d-sm-block d-md-none search-icon search-mobile col-1 p-0 margin-left-auto" src="/images/mobile-search-icon.svg" alt="img">
+
+                <!-- CONTACT PHONE -->
+                <a class="custom-anchor-tag d-none d-xl-block" href="tel:080050705">
+                    <div class="header-contact">
+                        <div class="contact-icon">
+                            <img src="/images/phone-header.svg" alt="phone">
+                        </div>
+                        <div class="contact-text">
+                            <h5 class="mb-1">Besplatni telefon:</h5>
+                            <h3>080 05 07 05</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- CART ICON -->
+                <button class="text-center col-lg-1 col-md-1 col-sm-1 col-2 order-3 order-md-4 order-lg-4 cart-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-controls="offcanvasRight">
                     <img src="/images/cart-icon.svg" alt="cart-icon">
                     <div class="cart-count">{{ Cart::count() }}</div>
-            </button>
+                </button>
 
 
-            <div class="mobile-search-input" @if(Route::getCurrentRoute()->getActionMethod() != 'getProductsSearch') style="display: none" @endif>
-                <div class="row justify-content-center">
-                    <div class="col-10">
-                        <input id="search" type="text" name="searchString" class="mobile-search form-control" placeholder="Pretraga...">
-                    </div>
-                    <div class="col-2">
-                        <button class="px-0 btn btn-secondary search-mobile-content w-100">
-                            <i class="fas fa-search"></i>
-                        </button>
+                <div class="mobile-search-input" @if(Route::getCurrentRoute()->getActionMethod() != 'getProductsSearch') style="display: none" @endif>
+                    <div class="row justify-content-center">
+                        <div class="col-10">
+                            <input id="search" type="text" name="searchString" class="mobile-search form-control" placeholder="Pretraga...">
+                        </div>
+                        <div class="col-2">
+                            <button class="px-0 btn btn-secondary search-mobile-content w-100">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
     @forelse (Cart::content() as $row)
 {{--        {{$row->name}}--}}

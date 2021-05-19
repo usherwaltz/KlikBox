@@ -1629,6 +1629,14 @@ body {
         height: calc(320px + 1.5rem) !important;
     }
 
+    .navbar-brand {
+        margin: 0 !important;
+    }
+
+    .navbar-brand > img {
+        height: 2.4rem !important;
+    }
+
     .header-contact {
         justify-content: start !important;
     }
@@ -1777,6 +1785,7 @@ body {
 
 .search {
     height: 50px !important;
+    min-width: 70% !important;
     background-color: transparent;
 }
 
