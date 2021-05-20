@@ -71,6 +71,9 @@
                     @if($cleanAction === "Http\Controllers\ProductController@edit")
                     <div class="btn btn-success blok-submit ml-auto mr-2">Snimi Promjene</div>
                     @endif
+                    @if($cleanAction === "Http\Controllers\OrderController@index")
+                            <a href="{{\Illuminate\Support\Facades\URL::route('orders-export')}}" class="btn btn-success blok-submit ml-auto mr-2">Izvezi Narudžbe</a>
+                    @endif
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav">

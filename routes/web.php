@@ -67,6 +67,7 @@ Route::group(
         Route::post('imageupload', [ProductController::class, 'upload'])->name('imageupload');
         Route::delete('/remove', [BlockController::class, 'remove']);
         Route::resource('block', BlockController::class);
+        Route::get('orders/export/', [OrderController::class, 'export'])->name('orders-export');
         Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
         Route::get('orders/{id}', [OrderController::class, 'showOrder'])->name('orders.show');
         Route::get('/settings', [SettingsController::class,'index'])->name('settings');

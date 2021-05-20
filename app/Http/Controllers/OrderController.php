@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\OrderExport;
 use App\Models\Item;
 use App\Models\Order;
 use Illuminate\Support\Str;
@@ -11,6 +12,7 @@ use App\Mail\OrderMail;
 use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Mail;
+use Maatwebsite\Excel\Excel;
 
 class OrderController extends Controller
 {
@@ -162,5 +164,10 @@ class OrderController extends Controller
         $order = Order::find($id);
         $order->load('items');
         return view('orders.view', ['order' => $order]);
+    }
+
+    public function export()
+    {
+        return \Maatwebsite\Excel\Facades\Excel::download(new OrderExport, 'orders.xlsx');
     }
 }

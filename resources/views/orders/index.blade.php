@@ -38,9 +38,9 @@
                                         </td>
                                     </tr>
                                     @empty
-                                        
+
                                     @endforelse
-                                    
+
                                     <tr>
                                         <td scope="row"></td>
                                         <td></td>
