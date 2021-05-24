@@ -1,7 +1,7 @@
 <div>
     <h1>Napravljena nova narudzba</h1>
     <p>Narudzba {{$id}}</p>
-    <table>
+    <table cellpadding="10" border="1" align="center">
         <thead>
         <tr>
             <th>Datum</th>
@@ -45,7 +45,4 @@
             </tr>
         </tbody>
     </table>
-    <a href="{{route('orders.show',$id)}}" class="btn btn-sm btn-primary">
-        Pregled
-        </a>
 </div>
