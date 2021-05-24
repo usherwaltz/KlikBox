@@ -113,7 +113,7 @@ class OrderExport implements FromQuery, WithColumnWidths, WithMapping, WithHeadi
             $sheet->mergeCells("D$currentRow:D$final");
             $sheet->mergeCells("E$currentRow:E$final");
             $sheet->mergeCells("F$currentRow:F$final");
-            $sheet->mergeCells("J$currentRow:J$final");
+            $sheet->mergeCells("G$currentRow:G$final");
             $currentRow = $final + 1;
         }
     }
