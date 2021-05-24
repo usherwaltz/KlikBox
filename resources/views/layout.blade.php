@@ -98,9 +98,11 @@
                 </a>
 
                 <!-- CART ICON -->
-                <button class="text-center col-lg-1 col-md-1 col-sm-1 col-2 order-3 order-md-4 order-lg-4 cart-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-controls="offcanvasRight">
-                    <img src="/images/cart-icon.svg" alt="cart-icon">
-                    <div class="cart-count">{{ Cart::count() }}</div>
+                <button class="d-flex justify-content-end p-0 border-0 bg-white col-lg-1 col-md-1 col-sm-1 col-2 order-3 order-md-4 order-lg-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-controls="offcanvasRight">
+                    <div class="cart-button">
+                        <img src="/images/cart-icon.svg" alt="cart-icon">
+                        <div class="cart-count">{{ Cart::count() }}</div>
+                    </div>
                 </button>
 
 

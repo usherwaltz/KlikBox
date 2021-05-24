@@ -10,6 +10,16 @@
     $total = count(Cart::content());
 @endphp
 
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 <div class="con my-4">
 	<ul class="nav-cart">
 		<li class="activ">Vaša korpa</li>

@@ -33,7 +33,7 @@
             <div class="bofu-box">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-6 col-md-12 product-image-wrapper pt-lg-5 pb-lg-5">
+                        <div class="col-lg-6 col-md-12 product-image-wrapper pt-lg-5 pb-lg-5 no-left-padding">
                             <div class="bofu-left">
                                 @if($product->oldprice != null)
                                     <div class="start-procent">

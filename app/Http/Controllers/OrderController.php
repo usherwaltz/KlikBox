@@ -46,6 +46,16 @@ class OrderController extends Controller
     public function store(OrderRequest $request)
     {
 
+        $rules = [
+            'postcode' => 'required|numeric',
+            'phone' => 'required|numeric'
+        ];
+        $messages = [
+            'postcode.numeric' => 'Poštanski broj mora biti broj',
+            'phone.numeric' => 'Broj telefona mora biti broj'
+        ];
+        $this->validate($request, $rules, $messages);
+
         $cart = Cart::content();
         $id = Str::uuid()->toString();
         $requestData = [
