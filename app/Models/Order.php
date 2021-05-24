@@ -13,11 +13,6 @@ class Order extends Model
         'id' => 'string'
     ];
 
-    /**
-     * Method items
-     *
-     * @return void
-     */
     public function items()
     {
         return $this->hasMany(Item::class);

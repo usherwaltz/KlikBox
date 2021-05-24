@@ -2,18 +2,48 @@
     <h1>Napravljena nova narudzba</h1>
     <p>Narudzba {{$id}}</p>
     <table>
+        <thead>
         <tr>
+            <th>Datum</th>
             <th>Ime</th>
-            <td>{{$order->name}}</td>
-        </tr>
-        <tr>
             <th>Prezime</th>
-            <td>{{$order->lastname}}</td>
-        </tr>
-        <tr>
+            <th>Grad</th>
+            <th>Adresa</th>
+            <th>Poštanski broj</th>
+            <th>Email</th>
             <th>Broj telefona</th>
-            <td>{{$order->phone}}</td>
+            <th>Proizvod/i</th>
+            <th>Količina/e</th>
+            <th>Cijena/e</th>
         </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ date('d.m.Y H:i:s', strtotime($order->updated_at)) }}</td>
+                <td>{{$order->name}}</td>
+                <td>{{$order->lastname}}</td>
+                <td>{{$order->city}}</td>
+                <td>{{$order->street}}</td>
+                <td>{{$order->postcode}}</td>
+                <td>{{$order->email}}</td>
+                <td>{{$order->phone}}</td>
+                <td>
+                    @foreach($items as $item)
+                        {{$item->name}} <br>
+                    @endforeach
+                </td>
+                <td>
+                    @foreach($items as $item)
+                        {{$item->qty}} <br>
+                    @endforeach
+                </td>
+                <td>
+                    @foreach($items as $item)
+                        {{$item->price}} <br>
+                    @endforeach
+                </td>
+            </tr>
+        </tbody>
     </table>
     <a href="{{route('orders.show',$id)}}" class="btn btn-sm btn-primary">
         Pregled

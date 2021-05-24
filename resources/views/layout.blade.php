@@ -99,7 +99,7 @@
 
                 <!-- CART ICON -->
                 <button class="d-flex justify-content-end p-0 border-0 bg-white col-lg-1 col-md-1 col-sm-1 col-2 order-3 order-md-4 order-lg-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-controls="offcanvasRight">
-                    <div class="cart-button">
+                    <div class="cart-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-controls="offcanvasRight">
                         <img src="/images/cart-icon.svg" alt="cart-icon">
                         <div class="cart-count">{{ Cart::count() }}</div>
                     </div>
@@ -341,7 +341,6 @@
             });
 
             $('.search').keypress(function(event){
-                console.log("HERE MOBILE");
                 // event.preventDefault();
                 if(event.which == 13) {
                     if(!possibleRoutes.includes(CURRENT_ROUTE) || CURRENT_ACTION.includes('CartController')) {
