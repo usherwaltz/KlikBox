@@ -24,7 +24,7 @@ use App\Http\Controllers\SettingsController;
 |
 */
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/', [App\Http\Controllers\HomeController::class, 'about']);
 Route::get('/o-nama', [App\Http\Controllers\HomeController::class, 'about']);
 Route::get('/akcija', [HomeController::class, 'akcija']);
 Route::get('/novo', [HomeController::class, 'novo']);
