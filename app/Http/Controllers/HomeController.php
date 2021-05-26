@@ -304,7 +304,7 @@ class HomeController extends Controller
                 <div class="col-lg-4 col-md-4 col-xl p-0">
                     <div class="card m-2">
                         <div class="card-body">
-                            <a href="/product/' . $slug . '">
+                            <a href="/admin/product/' . $slug . '">
                                 <div class="card-box">
                                     '. $percent . '
                                     <div class="img-box image-placeholder">
