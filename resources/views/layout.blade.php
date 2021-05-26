@@ -218,13 +218,13 @@
         let CURRENT_ROUTE = "{{$route = Route::getCurrentRoute()->getActionMethod()}}";
         let CURRENT_ACTION = "{{Route::getCurrentRoute()->getActionName()}}";
         let ENDPOINT = "{{ url('/') }}" + <?php $route = Route::getCurrentRoute()->getActionMethod(); if($route == 'index' || $route == 'home') { ?>
-            "/homeproducts?page=";
+            "/admin/homeproducts?page=";
         <?php } elseif ($route == 'novo') {?>
-            "/novoproducts?page=";
+            "/admin/novoproducts?page=";
         <?php } elseif ($route == 'trend') {?>
-            "/trendproducts?page=";
+            "/admin/trendproducts?page=";
         <?php } elseif ($route == 'akcija') {?>
-            "/akcijaproducts?page=";
+            "/admin/akcijaproducts?page=";
         <?php } else { ?>
             "";
         <?php } ?>
@@ -236,7 +236,7 @@
             } else if (CURRENT_ROUTE === 'getSearchProducts') {
                 let isMobile;
                 isMobile = $('.search').length <= 0;
-                infinteLoadMore(page, '/searchproducts?page=', isMobile, true)
+                infinteLoadMore(page, '/admin/searchproducts?page=', isMobile, true)
             }
         });
 
@@ -344,9 +344,9 @@
                 // event.preventDefault();
                 if(event.which == 13) {
                     if(!possibleRoutes.includes(CURRENT_ROUTE) || CURRENT_ACTION.includes('CartController')) {
-                        window.location.replace('/searchproducts?page=1&searchString=' + $(".search").val());
+                        window.location.replace('/admin/searchproducts?page=1&searchString=' + $(".search").val());
                     } else {
-                        infinteLoadMore(1, '/searchproducts?page=')
+                        infinteLoadMore(1, '/admin/searchproducts?page=')
                     }
                 }
             });
@@ -356,9 +356,9 @@
                 // event.preventDefault();
                 if(event.which == 13) {
                     if(!possibleRoutes.includes(CURRENT_ROUTE) || CURRENT_ACTION.includes('CartController')) {
-                        window.location.replace('/searchproducts?page=1&searchString=' + $("#search").val());
+                        window.location.replace('/admin/searchproducts?page=1&searchString=' + $("#search").val());
                     } else {
-                        infinteLoadMore(1, '/searchproducts?page=', true)
+                        infinteLoadMore(1, '/admin/searchproducts?page=', true)
                     }
                 }
 
@@ -373,7 +373,7 @@
             $('.mobile-search-backdrop').on('click', function () {
                 $('#search').val('');
                 if(possibleRoutes.includes(CURRENT_ROUTE)) {
-                    infinteLoadMore(1, '/searchproducts?page=', true)
+                    infinteLoadMore(1, '/admin/searchproducts?page=', true)
                 }
                 $(".mobile-search-input").fadeOut()
                 $(".mobile-search-backdrop").fadeOut()
@@ -385,7 +385,7 @@
                     if (direction == 'back') {
                         $('#search').val('');
                         if(possibleRoutes.includes(CURRENT_ROUTE)) {
-                            infinteLoadMore(1, '/searchproducts?page=', true)
+                            infinteLoadMore(1, '/admin/searchproducts?page=', true)
                         }
                         $(".mobile-search-input").fadeOut()
                         $(".mobile-search-backdrop").fadeOut()
@@ -395,9 +395,9 @@
 
             $('.search-mobile-content').on('click', function () {
                 if(!possibleRoutes.includes(CURRENT_ROUTE) || CURRENT_ACTION.includes('CartController')) {
-                    window.location.replace('/searchproducts?page=1&searchString=' + $("#search").val());
+                    window.location.replace('/admin/searchproducts?page=1&searchString=' + $("#search").val());
                 } else {
-                    infinteLoadMore(1, '/searchproducts?page=', true)
+                    infinteLoadMore(1, '/admin/searchproducts?page=', true)
                 }
             });
 
