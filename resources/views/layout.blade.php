@@ -483,7 +483,7 @@
                         <span class="cart-total">{{$cartTotal + 7}} KM</span>
                     </div>
                 </div>
-                <a href="{{ url('cart') }}" class="orangebutton cartbtn cart-button-margin w-100 text-decoration-none">VIDI KORPU</a>
+                <a href="{{ url('/admin/cart') }}" class="orangebutton cartbtn cart-button-margin w-100 text-decoration-none">VIDI KORPU</a>
         @endif
         <a href="javascript:void(0)" class="orangebutton orangebutton-inverse cartbtn cart-button-margin w-100 text-decoration-none" data-bs-dismiss="offcanvas" aria-label="Close">NASTAVI KUPOVINU</a>
     </div>
