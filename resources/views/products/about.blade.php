@@ -42,7 +42,7 @@
 
     <div class="start">
         <div class="left-side">
-            <div class="logo-box"><a href="https://www.klikbox.ba"><img src="/images/logo-redirect.png" alt=""></a></div>
+            <div class="logo-box"><a href="#"><img src="/images/logo-redirect.png" alt=""></a></div>
         </div>
         <div class="right-side">
             <div class="nav">

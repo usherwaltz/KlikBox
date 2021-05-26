@@ -24,38 +24,42 @@ use App\Http\Controllers\SettingsController;
 |
 */
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
-Route::get('/o-nama', [App\Http\Controllers\HomeController::class, 'about']);
-Route::get('/akcija', [HomeController::class, 'akcija']);
-Route::get('/novo', [HomeController::class, 'novo']);
-Route::get('/trend', [HomeController::class, 'trend']);
-Route::get('/product/{slug}', [HomeController::class, 'show'])->name('product');
 
-//AJAX routes
-Route::get('/homeproducts', [HomeController::class, 'getHomeProducts']);
-Route::get('/novoproducts', [HomeController::class, 'getNovoProducts']);
-Route::get('/trendproducts', [HomeController::class, 'getTrendProducts']);
-Route::get('/akcijaproducts', [HomeController::class, 'getAkcijaProducts']);
-Route::get('/searchproducts', [HomeController::class, 'getSearchProducts']);
-// AJAX routes end
-
-Route::get('cart', [HomeController::class, 'cart']);
-Route::resource('cart', CartController::class);
-Route::resource('order', OrderController::class);
-Route::get('order/confirm/{id}', [OrderController::class, 'confirm'])
-    ->name('order.confirm');
-Route::get('add-to-cart/{id}', [HomeController::class, 'addToCart']);
-Route::patch('update-cart', [CartController::class, 'update']);
-
-Route::delete('remove-from-cart', [CartController::class, 'remove']);
+Route::get('/', [App\Http\Controllers\HomeController::class, 'about']);
 
 Auth::routes(['register' => false]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
-    ->name('home');
 Route::group(
     ['prefix' => 'admin', 'middleware' => 'auth'],
     function () {
+        Route::get('/o-nama', [App\Http\Controllers\HomeController::class, 'about']);
+        Route::get('/akcija', [HomeController::class, 'akcija']);
+        Route::get('/novo', [HomeController::class, 'novo']);
+        Route::get('/trend', [HomeController::class, 'trend']);
+        Route::get('/product/{slug}', [HomeController::class, 'show'])->name('product');
+
+//AJAX routes
+        Route::get('/homeproducts', [HomeController::class, 'getHomeProducts']);
+        Route::get('/novoproducts', [HomeController::class, 'getNovoProducts']);
+        Route::get('/trendproducts', [HomeController::class, 'getTrendProducts']);
+        Route::get('/akcijaproducts', [HomeController::class, 'getAkcijaProducts']);
+        Route::get('/searchproducts', [HomeController::class, 'getSearchProducts']);
+// AJAX routes end
+
+        Route::get('cart', [HomeController::class, 'cart']);
+        Route::resource('cart', CartController::class);
+        Route::resource('order', OrderController::class);
+        Route::get('order/confirm/{id}', [OrderController::class, 'confirm'])
+            ->name('order.confirm');
+        Route::get('add-to-cart/{id}', [HomeController::class, 'addToCart']);
+        Route::patch('update-cart', [CartController::class, 'update']);
+
+        Route::delete('remove-from-cart', [CartController::class, 'remove']);
+
+
+        Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
+            ->name('home');
+
         Route::get('/products/delete', [ProductController::class, 'delete'])->name('products.delete');
         Route::resource('products', ProductController::class);
         Route::get('/', [DashboardController::class, 'index']);
