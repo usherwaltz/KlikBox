@@ -453,7 +453,7 @@
                 </div>
                 <div class="col-8 row flex-column justify-content-between">
                     <span class="cart-product-name">{{$product->name}}<span class="cart-ammount"> X {{$row->qty}}</span></span>
-                    <span>{{$row->qty}} x {{$price}}.00 KM</span>
+                    <span>{{$row->qty}} x {{$price}} KM</span>
                 </div>
             </div>
 
