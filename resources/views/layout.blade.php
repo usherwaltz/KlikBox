@@ -71,7 +71,8 @@
 
 
                 <!-- BRAND ICON -->
-                <a class="navbar-brand mr-auto float-left" href="/home">
+{{--                <a class="navbar-brand mr-auto float-left" href="/home">--}}
+                <a class="navbar-brand mr-auto float-left" href="#">
                     <img height="50" src="/images/logo-header.svg" alt="logo" class="d-320-none">
                     <img height="20" src="/images/logo-sm.svg" alt="small-logo" class="d-320">
                 </a>
@@ -141,7 +142,8 @@
         <nav class="navbar navbar-bottom navbar-light shadow-sm bg-white footer-bg">
             <div class="mt-0 mt-md-2 container row-cols-sm-1 row-cols-md-3 row-cols-lg-4">
                 <!-- BRAND ICON -->
-                <a class="col-12 col-sm-12 col-md-12 margin-footer-320 text-align-initial" href="/home">
+{{--                <a class="col-12 col-sm-12 col-md-12 margin-footer-320 text-align-initial" href="/home">--}}
+                <a class="col-12 col-sm-12 col-md-12 margin-footer-320 text-align-initial" href="#">
                     <img height="50px" width="200" src="/images/logo-footer.svg" alt="logo" class="logo-default">
                 </a>
 
