@@ -42,7 +42,7 @@
 
     <div class="start">
         <div class="left-side">
-            <div class="logo-box"><a href="https://www.klikbox.ba"><img src="/images/logo-redirect.png" alt=""></a></div>
+            <div class="logo-box"><a href="https://www.klikbox.ba"><img src="/images/logo-footer.svg" alt=""></a></div>
         </div>
         <div class="right-side">
             <div class="nav">
@@ -50,7 +50,7 @@
                 <a href="#tofu">POSLOVANJE</a>
                 <a href="#contact">KONTAKT</a>
             </div>
-            <div class="headline">Vaša <br> kupovina <br> na klik!</div>
+            <div class="headline">Vaša kupovina <br> na klik!</div>
             <div class="desc">KlikBox je Vaša online prodavnica sa širokim asortimanom proizvoda vrhunskog kvaliteta. </div>
         </div>
     </div>
@@ -61,7 +61,7 @@
 
         <div class="about-box">
             <div class="title-box">O NAMA</div>
-            <div class="desc-box">Uz dugogodišnje iskustvo, orijentisani smo da odaberemo najkvalitetnije proizvode napravljene od visoko kalitetnih materijala, a sve da bi osigurali Vašu jednostavnu I sigurnu upotrebu proizvoda. Naši prozivodi namjenjeni su ispunjenju Vaših svakodnevne potreba!
+            <div class="desc-box">Uz dugogodišnje iskustvo, orijentisani smo da odaberemo najkvalitetnije proizvode napravljene od visoko kalitetnih materijala, a sve da bi osigurali Vašu jednostavnu I sigurnu upotrebu proizvoda. Naši prozivodi namjenjeni su ispunjenju Vaših svakodnevnih potreba!
             </div>
         </div>
 

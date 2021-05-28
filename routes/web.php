@@ -26,7 +26,7 @@ use App\Http\Controllers\SettingsController;
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'about']);
 Route::get('/o-nama', [App\Http\Controllers\HomeController::class, 'about']);
-//Route::get('/akcija', [HomeController::class, 'akcija']);
+Route::get('/akcija', [HomeController::class, 'akcija']);
 //Route::get('/novo', [HomeController::class, 'novo']);
 //Route::get('/trend', [HomeController::class, 'trend']);
 Route::get('/product/{slug}', [HomeController::class, 'show'])->name('product');
@@ -35,7 +35,7 @@ Route::get('/product/{slug}', [HomeController::class, 'show'])->name('product');
 //Route::get('/homeproducts', [HomeController::class, 'getHomeProducts']);
 //Route::get('/novoproducts', [HomeController::class, 'getNovoProducts']);
 //Route::get('/trendproducts', [HomeController::class, 'getTrendProducts']);
-//Route::get('/akcijaproducts', [HomeController::class, 'getAkcijaProducts']);
+Route::get('/akcijaproducts', [HomeController::class, 'getAkcijaProducts']);
 //Route::get('/searchproducts', [HomeController::class, 'getSearchProducts']);
 // AJAX routes end
 

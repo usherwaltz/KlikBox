@@ -44,15 +44,15 @@
                     <ul class="navbar-nav">
                         <li class="nav-item">
 {{--                            <a class="nav-link custom-anchor-tag text-center" href="/novo">NOVO</a>--}}
-                            <a class="nav-link custom-anchor-tag text-center" href="#">NOVO</a>
+{{--                            <a class="nav-link custom-anchor-tag text-center" href="#">NOVO</a>--}}
                         </li>
                         <li class="nav-item">
 {{--                            <a class="nav-link custom-anchor-tag text-center" href="/trend">TREND</a>--}}
-                            <a class="nav-link custom-anchor-tag text-center" href="#">TREND</a>
+{{--                            <a class="nav-link custom-anchor-tag text-center" href="#">TREND</a>--}}
                         </li>
                         <li class="nav-item">
-{{--                            <a class="nav-link custom-anchor-tag text-center" href="/akcija">AKCIJA</a>--}}
-                            <a class="nav-link custom-anchor-tag text-center" href="#">AKCIJA</a>
+                            <a class="nav-link custom-anchor-tag text-center" href="/akcija">AKCIJA</a>
+{{--                            <a class="nav-link custom-anchor-tag text-center" href="#">AKCIJA</a>--}}
                         </li>
                         <li class="nav-item">
                             <a class="nav-link custom-anchor-tag text-center" href="/o-nama">O NAMA</a>
