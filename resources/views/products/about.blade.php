@@ -106,7 +106,7 @@
     <div id="contact" class="contact">
         <div class="contact-box">
 
-            <div class="logo-box"><img src="/images/logo-redirect.png" alt=""></div>
+            <div class="logo-box"><img src="/images/logo-footer.svg" alt=""></div>
 
             <div class="info-box">
                 <div class="info-card">
