@@ -426,28 +426,33 @@
                 $product = \App\Models\Product::getProduct($row->id);
                 $price = null;
 
-                $n = $product->price;
-                switch($row->qty) {
-                    case 1:
-                        $whole = floor($product->price);
-                        $fraction = $product->price - $whole;
-                        $price = $fraction >= 0.5 ? round($product->price) : $product->price;
-                        $cartTotal = $cartTotal + $price * $row->qty;
-                        break;
-                    case 2:
-                        $discountPrice = $product->price * 0.85;
-                        $whole = floor($discountPrice);
-                        $fraction = $discountPrice - $whole;
-                        $price = $fraction >= 0.5 ? round($discountPrice) : $whole;
-                        $cartTotal = $cartTotal + $price * $row->qty;
-                        break;
-                    default:
-                        $discountPrice = $product->price * 0.75;
-                        $whole = floor($product->price * 0.75);
-                        $fraction = $discountPrice - $whole;
-                        $price = $fraction >= 0.5 ? round($discountPrice) : $whole;
-                        $cartTotal = $cartTotal + $price * $row->qty;
-                        break;
+                if($product->top_choice) {
+                    $n = $product->price;
+                    switch($row->qty) {
+                        case 1:
+                            $whole = floor($product->price);
+                            $fraction = $product->price - $whole;
+                            $price = $fraction >= 0.5 ? round($product->price) : $product->price;
+                            $cartTotal = $cartTotal + $price * $row->qty;
+                            break;
+                        case 2:
+                            $discountPrice = $product->price * 0.85;
+                            $whole = floor($discountPrice);
+                            $fraction = $discountPrice - $whole;
+                            $price = $fraction >= 0.5 ? round($discountPrice) : $whole;
+                            $cartTotal = $cartTotal + $price * $row->qty;
+                            break;
+                        default:
+                            $discountPrice = $product->price * 0.75;
+                            $whole = floor($product->price * 0.75);
+                            $fraction = $discountPrice - $whole;
+                            $price = $fraction >= 0.5 ? round($discountPrice) : $whole;
+                            $cartTotal = $cartTotal + $price * $row->qty;
+                            break;
+                    }
+                } else {
+                    $price = $product->price;
+                    $cartTotal = $cartTotal + $price * $row->qty;
                 }
 
             ?>

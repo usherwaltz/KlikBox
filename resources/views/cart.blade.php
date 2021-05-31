@@ -83,8 +83,9 @@
                             $product = \App\Models\Product::getProduct($row->id);
                             $price = null;
 
-                            $n = $product->price;
-                            switch($row->qty) {
+                            if($product->top_choice) {
+                                $n = $product->price;
+                                switch($row->qty) {
                                 case 1:
                                     $whole = floor($product->price);
                                     $fraction = $product->price - $whole;
@@ -112,7 +113,11 @@
                                     Cart::update($row->rowId, ['qty' => $row->qty, 'price' => $price, 'options' => $row->options]);
                                     break;
                             }
-
+                            } else {
+                                $price = $product->price;
+                                $cartTotal = $cartTotal + $price * $row->qty;
+                                Cart::update($row->rowId, ['qty' => $row->qty, 'price' => $price, 'options' => $row->options]);
+                            }
                             ?>
                         <tr>
                             <td class="p-0 border-0">
