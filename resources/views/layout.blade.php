@@ -35,96 +35,96 @@
 </head>
 
 <body>
-<div class="wrap">
-    <div class="mobile-search-backdrop"></div>
-    <header id="header" class="sticky-top bg-white shadow-sm">
-        <div class="collapse" id="navbarToggleExternalContent">
-            <div class="bg-light">
-                <div class="navbar-collapse collapse show" id="collapsibleNavbar" style="">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-{{--                            <a class="nav-link custom-anchor-tag text-center" href="/novo">NOVO</a>--}}
-{{--                            <a class="nav-link custom-anchor-tag text-center" href="#">NOVO</a>--}}
-                        </li>
-                        <li class="nav-item">
-{{--                            <a class="nav-link custom-anchor-tag text-center" href="/trend">TREND</a>--}}
-{{--                            <a class="nav-link custom-anchor-tag text-center" href="#">TREND</a>--}}
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link custom-anchor-tag text-center" href="/akcija">AKCIJA</a>
-{{--                            <a class="nav-link custom-anchor-tag text-center" href="#">AKCIJA</a>--}}
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link custom-anchor-tag text-center" href="/o-nama">O NAMA</a>
-                        </li>
-                    </ul>
-                </div>
+<header id="header" class="sticky-top bg-white shadow-sm">
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-light">
+            <div class="navbar-collapse collapse show" id="collapsibleNavbar" style="">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        {{--                            <a class="nav-link custom-anchor-tag text-center" href="/novo">NOVO</a>--}}
+                        {{--                            <a class="nav-link custom-anchor-tag text-center" href="#">NOVO</a>--}}
+                    </li>
+                    <li class="nav-item">
+                        {{--                            <a class="nav-link custom-anchor-tag text-center" href="/trend">TREND</a>--}}
+                        {{--                            <a class="nav-link custom-anchor-tag text-center" href="#">TREND</a>--}}
+                    </li>
+                    <li class="nav-item">
+                        {{--                            <a class="nav-link custom-anchor-tag text-center" href="/akcija">AKCIJA</a>--}}
+                        {{--                            <a class="nav-link custom-anchor-tag text-center" href="#">AKCIJA</a>--}}
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-anchor-tag text-center" href="/o-nama">O NAMA</a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="navbar-wrap bg-white shadow-sm">
-            <nav class="navbar navbar-light bg-white container-fluid container-lg">
+    </div>
+    <div class="navbar-wrap bg-white shadow-sm">
+        <nav class="navbar navbar-light bg-white container-fluid container-lg">
 
-                <!-- DROPDOWN TOGGLE -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <img src="/images/hamburger.svg" alt="menu">
-                </button>
+            <!-- DROPDOWN TOGGLE -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="/images/hamburger.svg" alt="menu">
+            </button>
 
 
-                <!-- BRAND ICON -->
-{{--                <a class="navbar-brand mr-auto float-left" href="/home">--}}
-                <a class="navbar-brand mr-auto float-left" href="#">
-                    <img height="50" src="/images/logo-header.svg" alt="logo" class="d-320-none">
-                    <img height="20" src="/images/logo-sm.svg" alt="small-logo" class="d-320">
-                </a>
+            <!-- BRAND ICON -->
+            {{--                <a class="navbar-brand mr-auto float-left" href="/home">--}}
+            <a class="navbar-brand mr-auto float-left" href="#">
+                <img height="50" src="/images/logo-header.svg" alt="logo" class="d-320-none">
+                <img height="20" src="/images/logo-sm.svg" alt="small-logo" class="d-320">
+            </a>
 
-                <!-- SEARCH BOX -->
-                <div class="search-box d-none d-md-block">
-                    <div class="row align-items-center search-row">
-                        <img class="search-icon col-md-2 col-lg-2 col-xl-1 p-0" src="/images/search-icon.svg" alt="img">
-                        <input type="text" name="searchString" class="search p-0 col-md-2 col-lg-10 col-xl-11" placeholder="Pretraga...">
+            <!-- SEARCH BOX -->
+            <div class="search-box d-none d-md-block">
+                <div class="row align-items-center search-row">
+                    <img class="search-icon col-md-2 col-lg-2 col-xl-1 p-0" src="/images/search-icon.svg" alt="img">
+                    <input type="text" name="searchString" class="search p-0 col-md-2 col-lg-10 col-xl-11" placeholder="Pretraga...">
+                </div>
+            </div>
+
+            <!-- MOBILE SEARCH -->
+            <img class="d-sm-block d-md-none search-icon search-mobile col-1 p-0 margin-left-auto" src="/images/mobile-search-icon.svg" alt="img">
+
+            <!-- CONTACT PHONE -->
+            <a class="custom-anchor-tag d-none d-xl-block" href="tel:080050705">
+                <div class="header-contact">
+                    <div class="contact-icon">
+                        <img src="/images/phone-header.svg" alt="phone">
+                    </div>
+                    <div class="contact-text">
+                        <h5 class="mb-1">Besplatni telefon:</h5>
+                        <h3>080 05 07 05</h3>
                     </div>
                 </div>
+            </a>
 
-                <!-- MOBILE SEARCH -->
-                <img class="d-sm-block d-md-none search-icon search-mobile col-1 p-0 margin-left-auto" src="/images/mobile-search-icon.svg" alt="img">
+            <!-- CART ICON -->
+            <button class="d-flex justify-content-end p-0 border-0 bg-white col-lg-1 col-md-1 col-sm-1 col-2 order-3 order-md-4 order-lg-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-controls="offcanvasRight">
+                <div class="cart-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-controls="offcanvasRight">
+                    <img src="/images/cart-icon.svg" alt="cart-icon">
+                    <div class="cart-count">{{ Cart::count() }}</div>
+                </div>
+            </button>
 
-                <!-- CONTACT PHONE -->
-                <a class="custom-anchor-tag d-none d-xl-block" href="tel:080050705">
-                    <div class="header-contact">
-                        <div class="contact-icon">
-                            <img src="/images/phone-header.svg" alt="phone">
-                        </div>
-                        <div class="contact-text">
-                            <h5 class="mb-1">Besplatni telefon:</h5>
-                            <h3>080 05 07 05</h3>
-                        </div>
+
+            <div class="mobile-search-input" @if(Route::getCurrentRoute()->getActionMethod() != 'getProductsSearch') style="display: none" @endif>
+                <div class="row justify-content-center">
+                    <div class="col-10">
+                        <input id="search" type="text" name="searchString" class="mobile-search form-control" placeholder="Pretraga...">
                     </div>
-                </a>
-
-                <!-- CART ICON -->
-                <button class="d-flex justify-content-end p-0 border-0 bg-white col-lg-1 col-md-1 col-sm-1 col-2 order-3 order-md-4 order-lg-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-controls="offcanvasRight">
-                    <div class="cart-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-controls="offcanvasRight">
-                        <img src="/images/cart-icon.svg" alt="cart-icon">
-                        <div class="cart-count">{{ Cart::count() }}</div>
-                    </div>
-                </button>
-
-
-                <div class="mobile-search-input" @if(Route::getCurrentRoute()->getActionMethod() != 'getProductsSearch') style="display: none" @endif>
-                    <div class="row justify-content-center">
-                        <div class="col-10">
-                            <input id="search" type="text" name="searchString" class="mobile-search form-control" placeholder="Pretraga...">
-                        </div>
-                        <div class="col-2">
-                            <button class="px-0 btn btn-secondary search-mobile-content w-100">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
+                    <div class="col-2">
+                        <button class="px-0 btn btn-secondary search-mobile-content w-100">
+                            <i class="fas fa-search"></i>
+                        </button>
                     </div>
                 </div>
-            </nav>
-        </div>
-    </header>
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="wrap">
+    <div class="mobile-search-backdrop"></div>
     @forelse (Cart::content() as $row)
 {{--        {{$row->name}}--}}
         @if(isset($row->options))

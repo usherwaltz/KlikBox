@@ -130,7 +130,6 @@
                                             <span>Proizvod dostupan samo na KlikBox.ba</span>
                                         </div>
                                         <input type="submit" class="addtocartbtn w-100" value="DODAJ U KORPU">
-                                    </form>
                                 </div>
                                 <div class="garancy">
                                     <div class="row">
@@ -293,7 +292,10 @@
         @endswitch
     @endfor
 
-        <a href="#bofu" class="orangebutton bottom-add-cart">DODAJ U KORPU</a>
+            <div class="text-center w-100 d-flex justify-content-center">
+                <input type="submit" class="orangebutton addtocartbtn" value="DODAJ U KORPU">
+            </div>
+        </form>
 </div>
 
 @endsection
