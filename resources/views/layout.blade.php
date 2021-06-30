@@ -69,8 +69,8 @@
 
 
             <!-- BRAND ICON -->
-            {{--                <a class="navbar-brand mr-auto float-left" href="/home">--}}
-            <a class="navbar-brand mr-auto float-left" href="#">
+            <a class="navbar-brand mr-auto float-left" href="/home">
+{{--            <a class="navbar-brand mr-auto float-left" href="#">--}}
                 <img height="50" src="/images/logo-header.svg" alt="logo" class="d-320-none">
                 <img height="20" src="/images/logo-sm.svg" alt="small-logo" class="d-320">
             </a>
