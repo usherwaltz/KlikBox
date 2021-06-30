@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
@@ -24,19 +25,19 @@ use App\Http\Controllers\SettingsController;
 |
 */
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'about']);
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/o-nama', [App\Http\Controllers\HomeController::class, 'about']);
 Route::get('/akcija', [HomeController::class, 'akcija']);
-//Route::get('/novo', [HomeController::class, 'novo']);
-//Route::get('/trend', [HomeController::class, 'trend']);
+Route::get('/novo', [HomeController::class, 'novo']);
+Route::get('/trend', [HomeController::class, 'trend']);
 Route::get('/product/{slug}', [HomeController::class, 'show'])->name('product');
 
 //AJAX routes
-//Route::get('/homeproducts', [HomeController::class, 'getHomeProducts']);
-//Route::get('/novoproducts', [HomeController::class, 'getNovoProducts']);
-//Route::get('/trendproducts', [HomeController::class, 'getTrendProducts']);
+Route::get('/homeproducts', [HomeController::class, 'getHomeProducts']);
+Route::get('/novoproducts', [HomeController::class, 'getNovoProducts']);
+Route::get('/trendproducts', [HomeController::class, 'getTrendProducts']);
 Route::get('/akcijaproducts', [HomeController::class, 'getAkcijaProducts']);
-//Route::get('/searchproducts', [HomeController::class, 'getSearchProducts']);
+Route::get('/searchproducts', [HomeController::class, 'getSearchProducts']);
 // AJAX routes end
 
 Route::get('cart', [HomeController::class, 'cart']);
@@ -51,8 +52,8 @@ Route::delete('remove-from-cart', [CartController::class, 'remove']);
 
 Auth::routes(['register' => false]);
 
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
-//    ->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])
+    ->name('home');
 Route::group(
     ['prefix' => 'admin', 'middleware' => 'auth'],
     function () {
